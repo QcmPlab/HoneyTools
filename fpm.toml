@@ -1,0 +1,15 @@
+name = "Honeytools"
+version = "0.1.0"
+license = "license"
+author = "Gabriele Bellomia"
+maintainer = "gbellomi@sissa.it"
+copyright = "Copyright 2022, Gabriele Bellomia"
+[build]
+auto-executables = true
+auto-tests = true
+auto-examples = true
+[install]
+library = true
+[dependencies]
+assert.git = "https://github.com/sourceryinstitute/assert.git"
+assert.tag = "1.4.0"
