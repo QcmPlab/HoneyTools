@@ -42,7 +42,7 @@ contains
 
    !> PUBLIC NAMES API [private at bottom]
 
-   function hex_norm(A) result(n)
+   pure function hex_norm(A) result(n)
       !! Norm of a point from its hex coordinates
       type(hex),intent(in) :: A
       integer              :: n
@@ -51,7 +51,7 @@ contains
                    abs(A%s))
    end function
 
-   function hex_distance(A,B) result(d)
+   pure function hex_distance(A,B) result(d)
       !! Distance of two points from their hex coordinates
       type(hex),intent(in) :: A,B
       integer              :: d
@@ -66,7 +66,7 @@ contains
 
    !> THESE ARE PRIVATE NAMES
 
-   function new_hex(q,r,s) result(self)
+   pure function new_hex(q,r,s) result(self)
       !! Safe constructor for the hex type
       integer,intent(in) :: q,r,s
       type(hex)          :: self
@@ -78,7 +78,7 @@ contains
       self%s = s
    end function
 
-   function eq_hex(A,B) result(isequal)
+   pure function eq_hex(A,B) result(isequal)
       !! Equality overload for hex type
       type(hex),intent(in) :: A,B
       logical              :: isequal
@@ -87,14 +87,14 @@ contains
                 A%s == B%s
    end function
 
-   function neq_hex(A,B) result(notequal)
+   pure function neq_hex(A,B) result(notequal)
       !! Inequality overload for hex type
       type(hex),intent(in) :: A,B
       logical              :: notequal
       notequal = .not.(eq_hex(A,B))
    end function
 
-   function add_hex(A,B) result(C)
+   pure function add_hex(A,B) result(C)
       !! Addition overload for hex type
       type(hex),intent(in) :: A,B
       type(hex)            :: C
@@ -103,7 +103,7 @@ contains
               s = A%s + B%s)
    end function
 
-   function sub_hex(A,B) result(C)
+   pure function sub_hex(A,B) result(C)
       !! Subtraction overload for hex type
       type(hex),intent(in) :: A,B
       type(hex)            :: C
@@ -112,7 +112,7 @@ contains
               s = A%s - B%s)
    end function
 
-   function rhs_hex(A,k) result(C)
+   pure function rhs_hex(A,k) result(C)
       !! Right scale overload for hex type
       type(hex),intent(in) :: A
       integer,intent(in)   :: k
@@ -122,7 +122,7 @@ contains
               s = A%s * k)
    end function
 
-   function lhs_hex(k,B) result(C)
+   pure function lhs_hex(k,B) result(C)
       !! Left scale overload for hex type
       integer,intent(in)   :: k
       type(hex),intent(in) :: B
@@ -132,7 +132,7 @@ contains
               s = k * B%s)
    end function
 
-   function dot_hex(A,B) result(C)
+   pure function dot_hex(A,B) result(C)
       !! Dot overload for hex type
       type(hex),intent(in) :: A,B
       integer              :: C
