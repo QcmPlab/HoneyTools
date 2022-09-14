@@ -1,11 +1,12 @@
 module honeytools
 
-   use coordinates
+   use hex_coordinates
+   use hex_neighbors
 
    implicit none
    private
 
-   public :: say_hello, hex, hex_norm, hex_distance, hex_print
+   public :: say_hello, hex, hex_norm, hex_distance, hex_print, hex_hop, hex_nearest
    public :: operator(==), operator(/=), operator(+), operator(-), operator(*)
 
 contains

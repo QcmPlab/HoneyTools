@@ -3,8 +3,9 @@ program check
     use assert_m, only : assert
     implicit none
   
-    type(hex) :: a,b,c
-    integer   :: i
+    type(hex)               :: a,b,c
+    type(hex),dimension(6)  :: neighborhood
+    integer                 :: i
   
     call say_hello()
 
@@ -38,5 +39,19 @@ program check
     c = c * i
 
     print*, hex_norm(c), "= |i*d|"
-    
+
+    print*, "Neighbors of hex a are [q,r,s]:"
+    do i = -2, 3
+        c = hex_hop(a,i)
+        open(unit=7,action='write')
+        call hex_print(c,quiet=.true.,unit=7)
+        call hex_print(c,quiet=.true.)
+    end do
+
+    print*, "Let's recompute them all at once:"
+    neighborhood = hex_nearest(a)
+    call hex_print(neighborhood,quiet=.true.)
+    open(unit=8,action='write')
+    call hex_print(neighborhood,quiet=.true.,unit=8)
+
 end program check

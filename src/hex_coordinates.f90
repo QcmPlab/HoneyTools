@@ -1,7 +1,8 @@
-module coordinates
+module hex_coordinates
    !! Defining special 3D coordinates for honeycomb lattices
 
    use assert_m, only : assert
+   
    implicit none
    private
 
@@ -43,25 +44,43 @@ contains
    ! PUBLIC NAMES API [private at bottom]
 
    pure function hex_norm(A) result(n)
-      !! Norm of a point from its hex coordinates
+      !! Taxicab norm of a point from its hex coordinates
       type(hex),intent(in) :: A
       integer              :: n
-      n = 0.5d0 * (abs(A%q) + &
-                   abs(A%r) + &
-                   abs(A%s))
+      n = (abs(A%q) + &
+           abs(A%r) + &
+           abs(A%s)) / 2
    end function
 
    pure function hex_distance(A,B) result(d)
-      !! Distance of two points from their hex coordinates
+      !! Taxicab distance of two points from their hex coordinates
       type(hex),intent(in) :: A,B
       integer              :: d
       d = hex_norm(A - B) ! overloaded subtraction
    end function
 
-   impure elemental subroutine hex_print(A)
+   impure elemental subroutine hex_print(A,unit,quiet)
       !! Pretty print of hex coordinates
-      type(hex),intent(in) :: A
-      print*, "Hex coordinates [q,r,s]: ", A%q, A%r, A%s
+      type(hex),intent(in)         :: A
+      integer,intent(in),optional  :: unit  !! default = <stdout>
+      logical,intent(in),optional  :: quiet !! default = .false.
+      integer                      :: stdunit
+      logical                      :: verbose
+      if(present(quiet))then
+         verbose = .not.quiet
+      else
+         verbose = .true.
+      endif
+      if(present(unit))then
+         stdunit = unit
+      else
+         stdunit = 6 ! stdout
+      endif
+      if(verbose)then
+         write(stdunit,*) "hex coordinate [q,r,s]: ", A%q, A%r, A%s
+      else
+         write(stdunit,*) A%q, A%r, A%s
+      endif
    end subroutine
 
    ! THESE ARE PRIVATE NAMES
@@ -141,5 +160,5 @@ contains
           A%s * B%s
    end function
 
-end module coordinates
+end module hex_coordinates
 
