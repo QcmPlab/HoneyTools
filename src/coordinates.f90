@@ -40,7 +40,7 @@ module coordinates
 
 contains
 
-   !> PUBLIC NAMES API [private at bottom]
+   ! PUBLIC NAMES API [private at bottom]
 
    pure function hex_norm(A) result(n)
       !! Norm of a point from its hex coordinates
@@ -64,15 +64,15 @@ contains
       print*, "Hex coordinates [q,r,s]: ", A%q, A%r, A%s
    end subroutine
 
-   !> THESE ARE PRIVATE NAMES
+   ! THESE ARE PRIVATE NAMES
 
    pure function new_hex(q,r,s) result(self)
       !! Safe constructor for the hex type
       integer,intent(in) :: q,r,s
       type(hex)          :: self
-      !> assertion on input coordinates
+      !> featuring an assertion on input coordinates
       call assert(q+r+s==0, "q + r + s == 0", q+r+s)
-      !> initialization of hex object
+      !> before the initialization of the object
       self%q = q
       self%r = r
       self%s = s
