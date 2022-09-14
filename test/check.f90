@@ -5,11 +5,12 @@ program check
   
     type(hex)               :: a,b,c
     type(hex),dimension(6)  :: neighborhood
+    type(unit_cell)         :: u,v
     integer                 :: i
   
     call say_hello()
 
-    a = hex(1,2,-3)
+    a = hex(1,2) ! s = -3 is computed internally
     b = hex(q=1,r=-2,s=1)
 
     call hex_print([a,b])
@@ -53,5 +54,12 @@ program check
     call hex_print(neighborhood,quiet=.true.)
     open(unit=8,action='write')
     call hex_print(neighborhood,quiet=.true.,unit=8)
+
+    u = unit_cell(orientation=armchair,size=1)
+    v = unit_cell(zigzag,origin=[-1,1])
+
+    call print_unit_cell([u,v])
+    open(unit=9,action='write')
+    call print_unit_cell([u,v],unit=9)
 
 end program check

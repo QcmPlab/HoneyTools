@@ -14,7 +14,8 @@ module hex_coordinates
    endtype
 
    interface hex !! constructor overload
-      procedure :: new_hex
+      procedure :: new_hex_cubic !(q,r,s)
+      procedure :: new_hex_axial !(q,r)
    end interface
 
    interface operator(==) !! equality overload
@@ -43,13 +44,13 @@ contains
 
    ! PUBLIC NAMES API [private at bottom]
 
-   pure function hex_norm(A) result(n)
+   pure function hex_norm(H) result(n)
       !! Taxicab norm of a point from its hex coordinates
-      type(hex),intent(in) :: A
+      type(hex),intent(in) :: H
       integer              :: n
-      n = (abs(A%q) + &
-           abs(A%r) + &
-           abs(A%s)) / 2
+      n = (abs(H%q) + &
+           abs(H%r) + &
+           abs(H%s)) / 2
    end function
 
    pure function hex_distance(A,B) result(d)
@@ -59,10 +60,10 @@ contains
       d = hex_norm(A - B) ! overloaded subtraction
    end function
 
-   impure elemental subroutine hex_print(A,unit,quiet)
+   impure elemental subroutine hex_print(H,unit,quiet)
       !! Pretty print of hex coordinates
-      type(hex),intent(in)         :: A
-      integer,intent(in),optional  :: unit  !! default = <stdout>
+      type(hex),intent(in)         :: H
+      integer,intent(in),optional  :: unit  !! default = $stdout
       logical,intent(in),optional  :: quiet !! default = .false.
       integer                      :: stdunit
       logical                      :: verbose
@@ -77,24 +78,34 @@ contains
          stdunit = 6 ! stdout
       endif
       if(verbose)then
-         write(stdunit,*) "hex coordinate [q,r,s]: ", A%q, A%r, A%s
+         write(stdunit,*) "hex coordinate [q,r,s]: ", H%q, H%r, H%s
       else
-         write(stdunit,*) A%q, A%r, A%s
+         write(stdunit,*) H%q, H%r, H%s
       endif
    end subroutine
 
    ! THESE ARE PRIVATE NAMES
 
-   pure function new_hex(q,r,s) result(self)
-      !! Safe constructor for the hex type
+   pure function new_hex_cubic(q,r,s) result(H)
+      !! Safe cubic constructor for the hex type
       integer,intent(in) :: q,r,s
-      type(hex)          :: self
+      type(hex)          :: H
       !> featuring an assertion on input coordinates
       call assert(q+r+s==0, "q + r + s == 0", q+r+s)
       !> before the initialization of the object
-      self%q = q
-      self%r = r
-      self%s = s
+      H%q = q
+      H%r = r
+      H%s = s
+   end function
+
+   pure function new_hex_axial(q,r) result(H)
+      !! Axial cubic constructor for the hex type
+      integer,intent(in)   :: q,r 
+      type(hex)            :: H
+      H%q = q
+      H%r = r
+      !> [s needs to be computed internally]
+      H%s = - q - r
    end function
 
    pure function eq_hex(A,B) result(isequal)
