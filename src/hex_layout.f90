@@ -24,8 +24,8 @@ module hex_layout
    real(8),dimension(2),parameter :: zq = [    sqrt(3d0),           0d0]
    real(8),dimension(2),parameter :: zr = [sqrt(3d0)/2d0,       3d0/2d0]
    ! Predefined orientations:
-   type(hex_orientation), parameter :: zigzag = hex_orientation(aq,ar,0.5d0)
-   type(hex_orientation), parameter :: armchair = hex_orientation(zq,zr,0d0)
+   type(hex_orientation), parameter :: armchair = hex_orientation(aq,ar,0d0)
+   type(hex_orientation), parameter :: zigzag = hex_orientation(zq,zr,0.5d0)
 
    type unit_cell
       !! Fields:
