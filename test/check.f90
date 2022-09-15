@@ -1,65 +1,92 @@
-program check
-    use honeytools !, only: say_hello
-    use assert_m, only : assert
-    implicit none
-  
-    type(hex)               :: a,b,c
-    type(hex),dimension(6)  :: neighborhood
-    type(unit_cell)         :: u,v
-    integer                 :: i
-  
-    call say_hello()
+program check_all
+   use honeytools
+   use assert_m, only : assert
+   implicit none
 
-    a = hex(1,2) ! s = -3 is computed internally
-    b = hex(q=1,r=-2,s=1)
+   type(hex)                :: a,b,c
+   type(hex),dimension(6)   :: neighborhood
+   type(unit_cell)          :: u,v
+   type(xy)                 :: center
+   type(xy),dimension(6)    :: centers
+   type(xy_tile)            :: vertices
+   type(xy_tile)            :: many_vertices(6)
+   integer                  :: i
 
-    call hex_print([a,b])
+   call say_hello()
 
-    call assert(a == a,"a == a")
-    call assert(b == b,"b == b")
+   a = hex(1,2) ! s = -3 is computed internally
+   b = hex(q=1,r=-2,s=1)
 
-    print*, a==a, "(a == a)"
-    print*, a==b, "(a == b)"
-    print*, a/=a, "(a != a)"
-    print*, a/=b, "(a != b)"
+   call hex_print([a,b])
 
-    c = a + b
-    c = a - b
+   call assert(a == a,"a == a")
+   call assert(b == b,"b == b")
 
-    print*, hex_distance(a,b), " = dist(a-b)"
-    print*, hex_norm(c), "= |a-b|"
+   print*, a==a, "(a == a)"
+   print*, a==b, "(a == b)"
+   print*, a/=a, "(a != a)"
+   print*, a/=b, "(a != b)"
 
-    i = a * b
+   c = a + b
+   c = a - b
 
-    print*, i, "= <a,b> = c"
+   print*, hex_distance(a,b), " = dist(a-b)"
+   print*, hex_norm(c), "= |a-b|"
 
-    c = i * c
+   i = a * b
 
-    print*, hex_norm(c), "= |i*c| = d"
+   print*, i, "= <a,b> = c"
 
-    c = c * i
+   c = i * c
 
-    print*, hex_norm(c), "= |i*d|"
+   print*, hex_norm(c), "= |i*c| = d"
 
-    print*, "Neighbors of hex a are [q,r,s]:"
-    do i = -2, 3
-        c = hex_hop(a,i)
-        open(unit=7,action='write')
-        call hex_print(c,quiet=.true.,unit=7)
-        call hex_print(c,quiet=.true.)
-    end do
+   c = c * i
 
-    print*, "Let's recompute them all at once:"
-    neighborhood = hex_nearest(a)
-    call hex_print(neighborhood,quiet=.true.)
-    open(unit=8,action='write')
-    call hex_print(neighborhood,quiet=.true.,unit=8)
+   print*, hex_norm(c), "= |i*d|"
 
-    u = unit_cell(orientation=armchair,size=1)
-    v = unit_cell(zigzag,origin=[-1,1])
+   print*, "Neighbors of hex a are [q,r,s]:"
+   do i = -2, 3
+      c = hex_hop(a,i)
+      open(unit=7,action='write')
+      call hex_print(c,quiet=.true.,unit=7)
+      call hex_print(c,quiet=.true.)
+   end do
 
-    call print_unit_cell([u,v])
-    open(unit=9,action='write')
-    call print_unit_cell([u,v],unit=9)
+   print*, "Let's recompute them all at once:"
+   neighborhood = hex_nearest(a)
+   call hex_print(neighborhood,quiet=.true.)
+   open(unit=8,action='write')
+   call hex_print(neighborhood,quiet=.true.,unit=8)
 
-end program check
+   u = unit_cell(orientation=armchair,size=1)
+   v = unit_cell(zigzag,origin=[-1,1])
+
+   call print_unit_cell([u,v])
+   open(unit=9,action='write')
+   call print_unit_cell([u,v],unit=9)
+
+   print*, "Neighbors of hex a are [x,y]:"
+   do i = 1,size(neighborhood)
+      center = hex2center(u,neighborhood(i))
+      call xy_print(center,quiet=.true.)
+   enddo
+   print*, "Let's re-convert them all at once:"
+   centers = hex2center(u,neighborhood)
+   call xy_print(centers,quiet=.true.)
+   open(unit=10,action='write')
+   call xy_print(centers,quiet=.true.,unit=10)
+
+   print*, "The vertices defining hex a are:"
+   vertices = hex2corner(u,a)
+   do i = 1,6
+      call xy_print(vertices%vertex(i))
+   enddo
+
+   print*, "Let's compute all-at-once the vertices for the neighborhood of a"
+   many_vertices = hex2corner(u,neighborhood)
+   do i = 1,6
+      call xy_print(many_vertices%vertex(i),quiet=.true.)
+   enddo
+
+end program check_all

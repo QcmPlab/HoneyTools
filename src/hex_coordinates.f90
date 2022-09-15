@@ -9,7 +9,7 @@ module hex_coordinates
    public :: hex, hex_norm, hex_distance, hex_print
    public :: operator(==), operator(/=), operator(+), operator(-), operator(*)
 
-   type hex !! cubic coordinates storage
+   type hex !! cubic coordinates for hexagonal tiles
       integer :: q, r, s
    endtype
 
@@ -45,7 +45,7 @@ contains
    ! PUBLIC NAMES API [private at bottom]
 
    pure function hex_norm(H) result(n)
-      !! Taxicab norm of a point from its hex coordinates
+      !! Taxicab norm from hex coordinates
       type(hex),intent(in) :: H
       integer              :: n
       n = (abs(H%q) + &
@@ -54,7 +54,7 @@ contains
    end function
 
    pure function hex_distance(A,B) result(d)
-      !! Taxicab distance of two points from their hex coordinates
+      !! Taxicab distance of hex coordinates
       type(hex),intent(in) :: A,B
       integer              :: d
       d = hex_norm(A - B) ! overloaded subtraction
@@ -78,7 +78,7 @@ contains
          stdunit = 6 ! stdout
       endif
       if(verbose)then
-         write(stdunit,*) "hex coordinate [q,r,s]: ", H%q, H%r, H%s
+         write(stdunit,*) "hex coordinates [q,r,s]: ", H%q, H%r, H%s
       else
          write(stdunit,*) H%q, H%r, H%s
       endif

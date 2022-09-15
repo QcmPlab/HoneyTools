@@ -4,37 +4,32 @@ module hex_layout
    implicit none
    private
 
-   public :: zigzag, armchair, unit_cell, print_unit_cell
+   public :: zigzag, armchair, unit_cell, print_unit_cell ! exp to top level
+   public :: hex_orientation, operator(==) ! not to be exported to top level
 
    type hex_orientation !! lattice-orientation data storage
-      real(8), dimension(2,2) :: F !! Forward rotation matrix
-      real(8), dimension(2,2) :: B !! Backward rotation matrix
-      real(8)                 :: angle !! in units of 60°
+      real(8), dimension(2) :: uq    !! 1st unit-vector
+      real(8), dimension(2) :: ur    !! 2nd unit-vector
+      real(8)               :: angle !! in units of 60°
    end type
 
    interface operator(==) ! equality overload
       procedure :: orientation_equality 
    end interface
-
-   ! Zigzag Forward Rotation Matrix:
-   real(8),dimension(2,2), parameter :: ZF = reshape([sqrt(3d0), sqrt(3d0)/2d0, &
-                                                         0d0,       3d0/2d0   ],[2,2])
-   ! Zigzag Backward Rotation Matrix:
-   real(8),dimension(2,2), parameter :: ZB = reshape([sqrt(3d0)/3d0, -1/3d0, &
-                                                         0d0,       2d0/3d0   ],[2,2])
-   ! Armchair Forward Rotation Matrix:
-   real(8),dimension(2,2), parameter :: AF = reshape([sqrt(3d0), sqrt(3d0)/2d0, &
-                                                         0d0,       3d0/2d0   ],[2,2])
-   ! Armchair Backward Rotation Matrix: 
-   real(8),dimension(2,2), parameter :: AB = reshape([sqrt(3d0)/3d0, -1/3d0, &
-                                                         0d0,       2d0/3d0   ],[2,2])                                            
-
-   type(hex_orientation), parameter :: zigzag = hex_orientation(ZF,ZB,0.5d0)
-   type(hex_orientation), parameter :: armchair = hex_orientation(AF,AB,0d0)
+      
+   ! Armchair unit-vectors:
+   real(8),dimension(2),parameter :: aq = [      3d0/2d0, sqrt(3d0)/2d0]
+   real(8),dimension(2),parameter :: ar = [          0d0,     sqrt(3d0)]
+   ! Zig-Zag unit-vectors:
+   real(8),dimension(2),parameter :: zq = [    sqrt(3d0),           0d0]
+   real(8),dimension(2),parameter :: zr = [sqrt(3d0)/2d0,       3d0/2d0]
+   ! Predefined orientations:
+   type(hex_orientation), parameter :: zigzag = hex_orientation(aq,ar,0.5d0)
+   type(hex_orientation), parameter :: armchair = hex_orientation(zq,zr,0d0)
 
    type unit_cell
       !! Fields:
-      !! • orientation :: armchair or zigzag, mandatory to construct
+      !! • orientation :: armchair or zigzag, mandatory
       !! • size        :: lattice parameter, optional, defaults to 1d0
       !! • origin      :: center of the cell, optional, defaults to [0d0,0d0]
       type(hex_orientation) :: orientation
@@ -71,8 +66,8 @@ contains
       !! Overload of == operator for hex_orientation type
       type(hex_orientation),intent(in) :: a,b
       logical                          :: isequal
-      isequal = all(a%F == b%F)
-      isequal = isequal .and. all(a%B == b%B)
+      isequal = all(a%uq == b%uq)
+      isequal = isequal .and. all(a%ur == b%ur)
       isequal = isequal .and. a%angle == b%angle
    end function
 
