@@ -1,6 +1,9 @@
 name: CI
 on:
   workflow_dispatch: # manual-run
+  push: 
+#    paths: 
+#      - '**.f90'     # diff in source-files
 jobs:
   Build:
     runs-on: ${{ matrix.os }}
