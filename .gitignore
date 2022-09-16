@@ -1,5 +1,6 @@
 # Build files
 **/*.mod
+**/*.o
 # FORD files
 doc/
 # RAW debugging

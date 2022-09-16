@@ -17,7 +17,6 @@ contains
       integer,intent(in)      :: idir
       type(hex)               :: dir
       type(hex),dimension(N)  :: all_directions ! List of allowed directions
-      integer :: itemp
       all_directions = [hex( 1, 0,-1 ), &
                         hex( 1,-1, 0 ), &
                         hex( 0,-1, 1 ), &

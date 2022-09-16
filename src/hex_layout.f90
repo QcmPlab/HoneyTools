@@ -66,9 +66,9 @@ contains
       !! Overload of == operator for hex_orientation type
       type(hex_orientation),intent(in) :: a,b
       logical                          :: isequal
-      isequal = all(a%uq == b%uq)
-      isequal = isequal .and. all(a%ur == b%ur)
-      isequal = isequal .and. a%angle == b%angle
+      isequal = all(abs(a%uq - b%uq) < 1d-12)
+      isequal = isequal .and. all(abs(a%ur - b%ur) < 1d-12)
+      isequal = isequal .and. (a%angle - b%angle) < 1d-12
    end function
 
 end module hex_layout
