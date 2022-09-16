@@ -122,9 +122,10 @@ program unit_test
    print*, ""
    print*, "Plotting neighborhood of hex a..."
    call hex_plot(v,neighborhood,backend="pyplot",figure_name='pyflower.svg')
-   call hex_plot(v,neighborhood,backend="gnuplot",figure_name='gnuflower.svg')
+   call hex_plot(v,neighborhood,backend="gnuplot",set_terminal='svg',figure_name='gnuflower.svg')
    call hex_plot(v,neighborhood,backend="gnuplot",set_terminal='dumb')
-   call hex_plot(v,neighborhood,backend="pyplot")
+   call hex_plot(v,neighborhood,backend="gnuplot")
+   !call hex_plot(v,neighborhood,backend="pyplot") ! this would be a problem in CI
    ! THIS HAS TO BE TESTED MUCH MORE CAREFULLY TO ASSURE GOOD COVERAGE
 
 end program unit_test

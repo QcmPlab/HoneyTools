@@ -61,7 +61,7 @@ contains
        case ("pyplot")
 
          call plt%initialize(xlabel='x',ylabel='y',axis_equal=.true.)
-         call plt%add_plot(x,y,label='',linestyle='o',markersize=5)
+         call plt%add_plot(x,y,label='',linestyle='o',markersize=15)
 
          if(present(script_name))then
             source_name = script_name
@@ -113,7 +113,7 @@ contains
          print*
          print*, "> Gnuplot GUI popping up..."
          print*
-         call gnu%plot(x,y,'with points pt 6 ps 1.2 lc rgb "#000000"')
+         call gnu%plot(x,y,'with circles pt 6 lc rgb "#1F77B4" fill solid noborder')
 
       end select
 
