@@ -2,8 +2,8 @@ name: CI
 on:
   workflow_dispatch: # manual-run
   push: 
-#    paths: 
-#      - '**.f90'     # diff in source-files
+    paths: 
+      - '**.f90'     # diff in source
 jobs:
   Build:
     runs-on: ${{ matrix.os }}
@@ -71,10 +71,19 @@ jobs:
       env:
         COV_DIR: build/coverage
 
-    - name: Upload coverage report
+    - name: Upload coverage report to CODECOV
       uses: codecov/codecov-action@v3
       with:
-        files: build/coverage/coverage.info      
+        files: build/coverage/coverage.info    
+
+    # Upload coverage-report to CODACY
+    - name: Upload coverage report to CODACY
+      uses: codacy/codacy-coverage-reporter-action@v1
+      with:
+        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        # or
+        # api-token: ${{ secrets.CODACY_API_TOKEN }}
+        coverage-reports: build/coverage/coverage.info   
 
     - name: Build documentation
       run: ford ./README.md
