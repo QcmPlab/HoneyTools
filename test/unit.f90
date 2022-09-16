@@ -127,6 +127,7 @@ program unit_test
    !call hex_plot(v,neighborhood,backend="gnuplot") ! this would be a problem in CI
    !call hex_plot(v,neighborhood,backend="pyplot")  ! this would be a problem in CI
    ! THIS HAS TO BE TESTED MUCH MORE CAREFULLY TO ASSURE GOOD COVERAGE
+   call hex_plot(u,neighborhood,backend='matlab') ! would skip due to <UNKNOWN BACKEND>
    call hex_plot(u,neighborhood,figure_name='pyflower.svg',script_name='test.py') ! auto pyplot!
    call hex_plot(u,neighborhood,backend="gnuplot",set_terminal='png',figure_name='gnuflower.png')
    call hex_plot(u,neighborhood,backend="gnuplot",set_terminal='dumb',script_name='test.gp')
