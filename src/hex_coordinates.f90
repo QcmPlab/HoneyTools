@@ -1,7 +1,7 @@
 module hex_coordinates
    !! Defining special 3D coordinates for honeycomb lattices
 
-   use assert_m, only : assert
+!  use assert_m, only : assert ![Needed for new_hex_cubic]
    
    implicit none
    private
@@ -11,11 +11,12 @@ module hex_coordinates
 
    type hex !! cubic coordinates for hexagonal tiles
       integer :: q, r, s
+      integer :: key = 0 !! needed for array look-up
    endtype
 
-   interface hex !! constructor overload
-      procedure :: new_hex_cubic !(q,r,s)
-      procedure :: new_hex_axial !(q,r)
+   interface hex !! constructor override
+!    procedure :: new_hex_cubic !(q,r,s,<key>)
+     procedure :: new_hex_axial !(q,r,<key>)
    end interface
 
    interface operator(==) !! equality overload
@@ -86,26 +87,34 @@ contains
 
    ! THESE ARE PRIVATE NAMES
 
-   pure function new_hex_cubic(q,r,s) result(H)
-      !! Safe cubic constructor for the hex type
-      integer,intent(in) :: q,r,s
-      type(hex)          :: H
-      !> featuring an assertion on input coordinates
-      call assert(q+r+s==0, "q + r + s == 0", q+r+s)
-      !> before the initialization of the object
-      H%q = q
-      H%r = r
-      H%s = s
-   end function
+!  pure function new_hex_cubic(q,r,s,key) result(H)
+!     !! Safe cubic constructor for the hex type
+!     integer,intent(in)            :: q,r,s
+!     integer,intent(in),optional   :: key
+!     type(hex)                     :: H
+!     !> featuring an assertion on input coordinates
+!     call assert(q+r+s==0, "q + r + s == 0", q+r+s)
+!     !> before the initialization of the object
+!     H%q = q
+!     H%r = r
+!     H%s = s
+!     if(present(key))then
+!        H%key = key
+!     end if
+!  end function
 
-   pure function new_hex_axial(q,r) result(H)
+   pure function new_hex_axial(q,r,key) result(H)
       !! Axial cubic constructor for the hex type
-      integer,intent(in)   :: q,r 
-      type(hex)            :: H
+      integer,intent(in)            :: q,r
+      integer,intent(in),optional   :: key !! pass for array lookup
+      type(hex)                     :: H
       H%q = q
       H%r = r
-      !> [s needs to be computed internally]
+      !> [s would be computed internally]
       H%s = - q - r
+      if(present(key))then
+         H%key = key
+      end if
    end function
 
    pure function eq_hex(A,B) result(isequal)
