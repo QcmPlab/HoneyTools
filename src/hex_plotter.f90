@@ -113,7 +113,7 @@ contains
          print*
          print*, "> Gnuplot GUI popping up..."
          print*
-         call gnu%plot(x,y,'with circles pt 6 lc rgb "#1F77B4" fill solid noborder')
+         call gnu%plot(x,y,'with circles lc rgb "#1F77B4" fill solid noborder')
 
       end select
 

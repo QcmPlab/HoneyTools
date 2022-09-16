@@ -47,6 +47,9 @@ jobs:
            --slave /usr/bin/gfortran gfortran /usr/bin/gfortran-${{ matrix.gcc_v }} \
            --slave /usr/bin/gcov gcov /usr/bin/gcov-${{ matrix.gcc_v }}
 
+    - name: Install Qt [Gnuplot dependency]
+      uses: jurplel/install-qt-action@v3
+
     - name: Install Gnuplot
       if: contains( matrix.os, 'ubuntu')
       run: |
