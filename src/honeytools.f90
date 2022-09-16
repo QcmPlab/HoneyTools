@@ -9,10 +9,7 @@ module honeytools
    implicit none
    private
 
-   public :: say_hello, hex, hex_norm, hex_distance, hex_print, hex_hop, hex_nearest
-   public :: operator(==), operator(/=), operator(+), operator(-), operator(*)
-   public :: zigzag, armchair, unit_cell, print_unit_cell  ! lattice layouts
-   public :: hex2center, hex2corner, xy, xy_tile, xy_print ! real-space coordinates
+   public :: say_hello
 
 contains
 

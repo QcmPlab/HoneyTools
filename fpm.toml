@@ -11,5 +11,7 @@ auto-examples = true
 [install]
 library = true
 [dependencies]
-assert.git = "https://github.com/sourceryinstitute/assert.git"
-assert.tag = "1.4.0"
+assert.git  = "https://github.com/sourceryinstitute/assert.git"
+assert.tag  = "1.4.0"
+ogpf.git    = "https://github.com/kookma/ogpf.git"
+ogpf.branch = "master" 
