@@ -18,6 +18,26 @@ module hex_plotter
 contains
 
    subroutine hex_plot(layout,hexagons,backend,figure_name,script_name,set_terminal)
+      !! Simple plotter for honeycomb structures. It features two backends, giving
+      !! access to either matplotlib(pyplot) or gnuplot internal machinery. Either
+      !! library needs to be installed in your system for hex_plot to work.
+      !! You can specify a figure_name to save the plot to disk. If not specified 
+      !! the plot would be just displayed in a popup window (or the terminal with 
+      !! suitable configuration of the gnuplot backend) and a corresponding script 
+      !! saved, aiming at fast reproduction (the script will all contain data). 
+      !! The script has a default name (hex_plot.{py,gp}), but you can optionally
+      !! give your own custom string, do not forget the appropriate file extension.
+      !! Regarding output formats instead, the two backends have slightly different
+      !! behavior: pyplot would infer the format from the given file extension in
+      !! figure_name, whilst gnuplot does need a proper "output terminal" to be set.
+      !! You can do that by passing the optional set_parameter variable. Refer to 
+      !! original gnuplot documentation for the list of available terminals and how
+      !! they should be chosen. For convenience we report that you can get the list
+      !! of (system dependent) available terminals in your console by executing the
+      !! gnuplot -e "set terminal" command in your shell. Furthermore all systems 
+      !! should be compatible with the "dumb" terminal option, which would direct
+      !! the plot to the terminal itself, in the form of ASCII art. This can be
+      !! very useful for HPC workflows.
       type(unit_cell),intent(in)       :: layout
       type(hex),intent(in)             :: hexagons(:)
       character(*),intent(in),optional :: backend !! default: "pyplot" (or "gnuplot")
