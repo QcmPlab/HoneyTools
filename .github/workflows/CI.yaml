@@ -74,7 +74,7 @@ jobs:
         files: build/coverage/coverage.info      
 
     - name: Build documentation
-      run: ford ./pyplot-fortran.md
+      run: ford ./README.md
 
   # - name: Deploy Documentation <AFTER MOVING TO QCMPLAB>
   #   if: github.ref == 'refs/heads/master'
