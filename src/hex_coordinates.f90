@@ -43,7 +43,7 @@ module hex_coordinates
 
 contains
 
-   ! PUBLIC NAMES API [private at bottom]
+   ! PUBLIC API [private at bottom]
 
    pure function hex_norm(H) result(n)
       !! Taxicab norm from hex coordinates
@@ -117,7 +117,7 @@ contains
       end if
    end function
 
-   pure function eq_hex(A,B) result(isequal)
+   pure elemental function eq_hex(A,B) result(isequal)
       !! Equality overload for hex type
       type(hex),intent(in) :: A,B
       logical              :: isequal
@@ -126,23 +126,23 @@ contains
                 A%s == B%s
    end function
 
-   pure function neq_hex(A,B) result(notequal)
+   pure elemental function neq_hex(A,B) result(notequal)
       !! Inequality overload for hex type
       type(hex),intent(in) :: A,B
       logical              :: notequal
       notequal = .not.(eq_hex(A,B))
    end function
 
-   pure function add_hex(A,B) result(C)
+   pure elemental function add_hex(A,B) result(C)
       !! Addition overload for hex type
-      type(hex),intent(in) :: A,B
-      type(hex)            :: C
+      type(hex),intent(in):: A,B
+      type(hex)           :: C
       C = hex(q = A%q + B%q, &
               r = A%r + B%r, &
               s = A%s + B%s)
    end function
 
-   pure function sub_hex(A,B) result(C)
+   pure elemental function sub_hex(A,B) result(C)
       !! Subtraction overload for hex type
       type(hex),intent(in) :: A,B
       type(hex)            :: C
@@ -151,7 +151,7 @@ contains
               s = A%s - B%s)
    end function
 
-   pure function rhs_hex(A,k) result(C)
+   pure elemental function rhs_hex(A,k) result(C)
       !! Right scale overload for hex type
       type(hex),intent(in) :: A
       integer,intent(in)   :: k
@@ -161,7 +161,7 @@ contains
               s = A%s * k)
    end function
 
-   pure function lhs_hex(k,B) result(C)
+   pure elemental function lhs_hex(k,B) result(C)
       !! Left scale overload for hex type
       integer,intent(in)   :: k
       type(hex),intent(in) :: B
@@ -171,7 +171,7 @@ contains
               s = k * B%s)
    end function
 
-   pure function dot_hex(A,B) result(C)
+   pure elemental function dot_hex(A,B) result(C)
       !! Dot overload for hex type
       type(hex),intent(in) :: A,B
       integer              :: C
