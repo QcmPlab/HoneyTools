@@ -1,4 +1,4 @@
-module hex_plotter
+module honeyplots
    !! Providing plotting facilities for hex tessellations
 
    use pyplot_module
@@ -125,15 +125,15 @@ contains
             call gnu%options('set output "'//figure_name//'"')
          endif
 
-         call gnu%options("set size ratio -1;")
-         call gnu%options("unset grid")
+         call gnu%options("set size ratio -1;") ! --> axis equal
+         call gnu%options("unset grid") ! --> grid off
          call gnu%xlabel('x')
          call gnu%ylabel('y')
          call gnu%filename(source_name)
          print*
          print*, "> Gnuplot GUI popping up..."
          print*
-         call gnu%plot(x,y,'with circles lc rgb "#1F77B4" fill solid noborder')
+         call gnu%plot(x,y,'with points pt 7 ps 3 lc rgb "#1F77B4"')
 
       end select
 
@@ -142,4 +142,4 @@ contains
    end subroutine
 
 
-end module
+end module honeyplots

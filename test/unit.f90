@@ -1,10 +1,10 @@
 program unit_test
    use honeytools, only: say_hello
+   use honeyplots
    use hex_coordinates
    use hex_layout
    use hex_neighbors
    use xy_coordinates
-   use hex_plotter
    use assert_m, only : assert
    implicit none
 
@@ -16,6 +16,8 @@ program unit_test
    type(xy_tile)            :: vertices
    type(xy_tile)            :: many_vertices(6)
    type(xy_site)            :: sublattice(6)
+   type(xy_lattice)         :: hexagons(6)
+   type(xy_lattice)         :: lattice
    integer                  :: i
 
    call say_hello()
@@ -119,6 +121,26 @@ program unit_test
    open(unit=18,action='write')
    call xy_print(sublattice,quiet=.true.,unit=18)
 
+   print*
+   print*, "Oh no, the sublattices actually miss some"
+   print*, "site, since we are at finite size!!! I.e."
+   print*, "the border effects disrupt the assumption"
+   print*, "that each hexagon correspons to two sites"
+   print*, "since connectivity is greatly suppressed "
+   print*, "therein. Hence we need an alternative way"
+   print*, "to build build a complete set of sites.  "
+   print*
+   hexagons = corner2lattice(many_vertices)
+   lattice = xy_ordered_union(hexagons(1),hexagons(2))
+   do i = 3,6
+      lattice = xy_ordered_union(lattice,hexagons(i))
+   enddo
+   call xy_print(lattice)
+   open(unit=19,action='write')
+   call xy_print(pack(lattice%site,lattice%site%label=="A"),quiet=.true.,unit=19)
+   open(unit=20,action='write')
+   call xy_print(pack(lattice%site,lattice%site%label=="B"),quiet=.true.,unit=20)
+
    print*, ""
    print*, "Plotting neighborhood of hex a..."
    call hex_plot(v,neighborhood,backend="pyplot",figure_name='pyflower.svg')
@@ -126,6 +148,8 @@ program unit_test
    call hex_plot(v,neighborhood,backend="gnuplot",set_terminal='dumb')
    !call hex_plot(v,neighborhood,backend="gnuplot") ! this would be a problem in CI
    !call hex_plot(v,neighborhood,backend="pyplot")  ! this would be a problem in CI
+   !call hex_plot(u,neighborhood,backend="gnuplot") ! this would be a problem in CI
+   !call hex_plot(u,neighborhood,backend="pyplot")  ! this would be a problem in CI
    ! THIS HAS TO BE TESTED MUCH MORE CAREFULLY TO ASSURE GOOD COVERAGE
    call hex_plot(u,neighborhood,backend='matlab') ! would skip due to <UNKNOWN BACKEND>
    call hex_plot(u,neighborhood,figure_name='pyflower.svg',script_name='test.py') ! auto pyplot!
