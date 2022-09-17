@@ -175,10 +175,16 @@ contains
       type(xy_lattice)              :: C
       integer                       :: i,j
       C = A !copy all data of A into C
+      do j = 1,size(A%site)
+         if(C%site(j)%key /= j)then
+            C%site(j)%key  = j
+         endif
+      enddo
       do i = 1,size(B%site)
          if(all(B%site(i) /= A%site))then
             call C%push_back(B%site(i))
-            C%site%key = size(A%site) + i
+            j = size(C%site)
+            C%site(j)%key=j
          endif
       enddo
       ! What if we allocate to (size(A)+size(B))
@@ -246,7 +252,12 @@ contains
          stdunit = 6 ! stdout
       endif
       if(verbose)then
-         write(stdunit,*) "real-space coordinates [x,y]: ", S%x, S%y
+         select type(S)
+          type is(xy_site)
+            write(stdunit,*) "site #", S%key, "[x,y]: ", S%x, S%y
+          class default
+            write(stdunit,*) "real-space coordinates [x,y]: ", S%x, S%y
+         end select
       else
          write(stdunit,*) S%x, S%y
       endif

@@ -135,11 +135,15 @@ program unit_test
    do i = 3,6
       lattice = xy_ordered_union(lattice,hexagons(i))
    enddo
+   
+   ! I/O tests with new method
    call xy_print(lattice)
    open(unit=19,action='write')
    call xy_print(pack(lattice%site,lattice%site%label=="A"),quiet=.true.,unit=19)
    open(unit=20,action='write')
    call xy_print(pack(lattice%site,lattice%site%label=="B"),quiet=.true.,unit=20)
+   open(unit=21,action='write')
+   call xy_print(lattice,quiet=.true.,unit=21)
 
    print*, ""
    print*, "Plotting neighborhood of hex a..."
