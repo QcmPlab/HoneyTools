@@ -7,7 +7,7 @@ module xy_coordinates
    implicit none
    private
 
-   public :: xy, xy_tile, xy_lattice, xy_print, xy_site, xy_ordered_union
+   public :: xy, xy_distance, xy_tile, xy_lattice, xy_print, xy_site, xy_ordered_union
    public :: hex2center, hex2corner, hex2site, corner2lattice
 
    integer, parameter :: N = 6 ! Number of vertices in a hexagon
@@ -55,6 +55,16 @@ module xy_coordinates
 contains
 
    ! PUBLIC API [private at bottom]
+
+   pure elemental function xy_distance(A,B) result(d)
+      !! Polymorphic euclidean distance for xy class
+      class(xy),intent(in)    :: A,B
+      type(xy)                :: C
+      real(8)                 :: d
+      C % x = A % x - B % x
+      C % y = A % y - B % y
+      d = xy_norm(C)
+   end function
 
    pure elemental function hex2site(layout,H,label) result(site)
       !! Convert hex coordinates to real 2D lattice sites
@@ -107,6 +117,7 @@ contains
          else
             corner%vertex(i)%label = "B"
          endif
+         corner%vertex%key = i + (H%key-1)*N
       enddo
    end function
 
@@ -211,6 +222,13 @@ contains
       class(xy),intent(in) :: A,B
       logical              :: notequal
       notequal = .not.(eq_xy(A,B))
+   end function
+
+   pure elemental function xy_norm(A) result(r)
+      !! polymorphic euclidean norm for xy class
+      class(xy),intent(in) :: A
+      real(8)              :: r
+      r = sqrt(A%x**2 + A%y**2)
    end function
 
    pure subroutine push_back(vec,val)

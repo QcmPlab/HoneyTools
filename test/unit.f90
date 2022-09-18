@@ -5,6 +5,7 @@ program unit_test
    use hex_layout
    use hex_neighbors
    use xy_coordinates
+   use xy_neighbors
    use assert_m, only : assert
    implicit none
 
@@ -18,7 +19,11 @@ program unit_test
    type(xy_site)            :: sublattice(6)
    type(xy_lattice)         :: hexagons(6)
    type(xy_lattice)         :: lattice
-   integer                  :: i
+   integer                  :: i,j,k
+   real(8),allocatable      :: shell_table(:,:)
+   real(8),allocatable      :: distance_set(:)
+   logical,allocatable      :: NN_(:,:),NN(:,:)
+   logical,allocatable      :: NNN(:,:)
 
    call say_hello()
 
@@ -144,6 +149,20 @@ program unit_test
    call xy_print(pack(lattice%site,lattice%site%label=="B"),quiet=.true.,unit=20)
    open(unit=21,action='write')
    call xy_print(lattice,quiet=.true.,unit=21)
+
+   ! Rusty test for xy_neighboors
+   call xy_shells(lattice,shell_table,distance_set)
+   call xy_nearest_neighbors(lattice,NN)
+   call xy_next_nearest_neighbors(lattice,NNN,NN_)
+   call assert(all(NN.eqv.NN_),"Consistent value for NN mask")
+   print*, "NEAREST NEIGHBORS"
+   do i = 1, size(lattice%site)
+      write(*,*) (NN(i,j), j = 1, size(lattice%site))
+   enddo
+   print*, "NEXT-NEAREST NEIGHBORS"
+   do i = 1, size(lattice%site)
+      write(*,*) (NNN(i,j), j = 1, size(lattice%site))
+   enddo
 
    print*, ""
    print*, "Plotting neighborhood of hex a..."
