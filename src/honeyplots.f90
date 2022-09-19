@@ -55,9 +55,9 @@ contains
       character(*),intent(in),optional        :: figure_name
       character(*),intent(in),optional        :: script_name
       character(*),intent(in),optional        :: set_terminal !! relevant to gnuplot backend
+      type(xy_lattice)                        :: sublattice
       character(8)                            :: engine
       character(32)                           :: source_name
-      logical,allocatable                     :: MaskA(:),MaskB(:)
       real(8),allocatable                     :: Ax(:),Ay(:)
       real(8),allocatable                     :: Bx(:),By(:)
       real(8),dimension(2)                    :: x,y,x1,y1,x2,y2
@@ -65,19 +65,13 @@ contains
       type(gpf)                               :: gnu
       integer                                 :: i,j,k,l
 
-      associate (all_sites => lattice%site)
+      sublattice = get_sublattice(lattice,"A")
+      Ax = sublattice%site%x
+      Ay = sublattice%site%y
 
-         ! Sublattice "A"
-         MaskA = all_sites%label=="A"
-         Ax = pack(all_sites%x,MaskA)
-         Ay = pack(all_sites%y,MaskA)
-
-         ! Sublattice "B"
-         MaskB = all_sites%label=="B"
-         Bx = pack(all_sites%x,MaskB)
-         By = pack(all_sites%y,MaskB)
-
-      end associate !all_sites
+      sublattice = get_sublattice(lattice,"B")
+      Bx = sublattice%site%x
+      By = sublattice%site%y
 
       if(present(backend))then
          engine = trim(backend)
@@ -213,7 +207,7 @@ contains
       integer                          :: M
       type(pyplot)                     :: plt
       type(gpf)                        :: gnu
-      type(xy_tile),allocatable        :: corner(:)
+      type(xy_lattice),allocatable     :: corner(:)
       real(8),dimension(N)             :: xtmp,ytmp
       real(8),allocatable              :: x(:),y(:)
       integer                          :: i,j
@@ -224,8 +218,8 @@ contains
 
       do i = 1,M
          do j = 1,N
-            xtmp(j) = corner(i)%vertex(j)%x
-            ytmp(j) = corner(i)%vertex(j)%y
+            xtmp(j) = corner(i)%site(j)%x
+            ytmp(j) = corner(i)%site(j)%y
          enddo
          x((1+N*(i-1)):N*i) = xtmp
          y((1+N*(i-1)):N*i) = ytmp

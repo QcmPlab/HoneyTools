@@ -7,8 +7,10 @@ module xy_coordinates
    implicit none
    private
 
-   public :: xy, xy_distance, xy_tile, xy_lattice, xy_print, xy_site, xy_ordered_union
-   public :: hex2center, hex2corner, hex2site, corner2lattice
+   public :: xy, xy_site, xy_lattice                  ! xy class hyerarchy
+   public :: xy_distance, xy_print, xy_ordered_union  ! xy-bound procedures
+   public :: hex2center, hex2corner, hex2site         ! hex-2-xy procedures
+   public :: get_sublattice                           ! xy_lattice utility
 
    integer, parameter :: N = 6 ! Number of vertices in a hexagon
    real(8), parameter :: PI = 4d0*atan(1d0) ! π to selected kind
@@ -33,18 +35,17 @@ module xy_coordinates
       integer      :: key=0
    end type
 
-   type xy_tile
-      !! Wrapper type for representing hexagons
-      !! by storing all its vertices (1:6)
-      type(xy_site),dimension(N) :: vertex
-   end type
-
    type xy_lattice
       !! Wrapper type for storing dynamically
       !! sized collections of lattice sites
       type(xy_site),allocatable  :: site(:)
    contains
+      generic :: operator(==) => eq_lattice
+      generic :: operator(/=) => neq_lattice
+      procedure, private :: eq_lattice
+      procedure, private :: neq_lattice
       procedure :: push_back
+
    end type
 
    interface xy_print
@@ -98,33 +99,36 @@ contains
    pure elemental function hex2corner(layout,H) result(corner)
       !! Convert hex coordinates to real 2D space
       !! [returning the xy coordinates for the hexagon corners,
-      !!  as appropriatiely wrapped in a "xy_tile" derived type]
+      !!  as appropriatiely wrapped in the "xy_lattice" type]
       !! Actual real-space layout has to be specified by passing
       !! a (scalar) unit_cell object.
       type(unit_cell),intent(in) :: layout
       type(hex),intent(in)       :: H
       type(xy)                   :: center
       type(xy)                   :: offset
-      type(xy_tile)              :: corner
+      type(xy_lattice)           :: corner
       integer                    :: i
       center = hex2center(layout,H)
+      allocate(corner%site(N))
       do i = 1,N
          offset = ith_corner_offset(layout,i)
-         corner%vertex(i)%x = center%x + offset%x
-         corner%vertex(i)%y = center%y + offset%y
+         corner%site(i)%x = center%x + offset%x
+         corner%site(i)%y = center%y + offset%y
          if(modulo(i,2)==1)then
-            corner%vertex(i)%label = "A"
+            corner%site(i)%label = "A"
          else
-            corner%vertex(i)%label = "B"
+            corner%site(i)%label = "B"
          endif
-         corner%vertex%key = i + (H%key-1)*N
+         corner%site%key = i + (H%key-1)*N
       enddo
    end function
 
-   pure elemental function corner2lattice(corner) result(lattice)
-      type(xy_tile),intent(in)   :: corner
-      type(xy_lattice)           :: lattice
-      lattice%site = corner%vertex
+   pure elemental function get_sublattice(lattice,label) result(sublattice)
+      !! Extract sublattice, given a lattice and a label ("A" or "B")
+      type(xy_lattice),intent(in)   :: lattice
+      character(1),intent(in)       :: label  !! A or B
+      type(xy_lattice)              :: sublattice
+      sublattice%site = pack(lattice%site,lattice%site%label==label)
    end function
 
    pure elemental function hex2center(layout,H) result(center)
@@ -222,6 +226,20 @@ contains
       class(xy),intent(in) :: A,B
       logical              :: notequal
       notequal = .not.(eq_xy(A,B))
+   end function
+
+   pure elemental function eq_lattice(A,B) result(isequal)
+      !! polymorphic equality overload for xy_lattice type
+      class(xy_lattice),intent(in)  :: A,B
+      logical                       :: isequal
+      isequal = all(eq_xy(A%site,B%site))
+   end function
+
+   pure elemental function neq_lattice(A,B) result(notequal)
+      !! polymorphic inequality overload for xy_lattice type
+      class(xy_lattice),intent(in)  :: A,B
+      logical                       :: notequal
+      notequal = .not.(eq_lattice(A,B))
    end function
 
    pure elemental function xy_norm(A) result(r)

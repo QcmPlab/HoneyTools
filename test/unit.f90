@@ -14,12 +14,13 @@ program unit_test
    type(unit_cell)          :: u,v
    type(xy)                 :: center
    type(xy),dimension(6)    :: centers
-   type(xy_tile)            :: vertices
-   type(xy_tile)            :: many_vertices(6)
-   type(xy_site)            :: sublattice(6)
+   type(xy_lattice)         :: vertices
+   type(xy_site)            :: subvector(6)
    type(xy_lattice)         :: hexagons(6)
    type(xy_lattice)         :: lattice
-   integer                  :: i,j,k
+   type(xy_lattice)         :: sublattice
+   integer                  :: i,j,k,l
+   integer,allocatable      :: H(:,:),indices(:)
    real(8),allocatable      :: shell_table(:,:)
    real(8),allocatable      :: distance_set(:)
    logical,allocatable      :: NN_(:,:),NN(:,:)
@@ -99,32 +100,32 @@ program unit_test
    print*, "The vertices defining hex a are:"
    vertices = hex2corner(v,a)
    do i = 1,6
-      call xy_print(vertices%vertex(i),unit=10,quiet=.true.)
+      call xy_print(vertices%site(i),unit=10,quiet=.true.)
    enddo
 
    print*, ""
    print*, "Let's compute all-at-once the vertices for the neighborhood of a"
-   many_vertices = hex2corner(v,neighborhood)
+   hexagons = hex2corner(v,neighborhood)
    do i = 1,6
-      call xy_print(many_vertices%vertex(i),quiet=.true.)
+      call xy_print(hexagons(i),quiet=.true.)
       open(unit=10+i,action='write')
-      call xy_print(many_vertices%vertex(i),quiet=.true.,unit=10+i)
+      call xy_print(hexagons(i),quiet=.true.,unit=10+i)
    enddo
 
    print*, ""
    print*, "Same thing but with unique entries!"
    print*, ""
    print*, "Sublattice 'A'"
-   sublattice = hex2site(v,neighborhood,label="A")
-   call xy_print(sublattice,quiet=.true.)
+   subvector = hex2site(v,neighborhood,label="A")
+   call xy_print(subvector,quiet=.true.)
    open(unit=17,action='write')
-   call xy_print(sublattice,quiet=.true.,unit=17)
+   call xy_print(subvector,quiet=.true.,unit=17)
    print*, ""
    print*, "Sublattice 'B'"
-   sublattice = hex2site(v,neighborhood,label="B")
-   call xy_print(sublattice,quiet=.true.)
+   subvector = hex2site(v,neighborhood,label="B")
+   call xy_print(subvector,quiet=.true.)
    open(unit=18,action='write')
-   call xy_print(sublattice,quiet=.true.,unit=18)
+   call xy_print(subvector,quiet=.true.,unit=18)
 
    print*
    print*, "Oh no, the sublattices actually miss some"
@@ -135,20 +136,48 @@ program unit_test
    print*, "therein. Hence we need an alternative way"
    print*, "to build build a complete set of sites.  "
    print*
-   hexagons = corner2lattice(many_vertices)
    lattice = xy_ordered_union(hexagons(1),hexagons(2))
    do i = 3,6
       lattice = xy_ordered_union(lattice,hexagons(i))
    enddo
-   
+   call assert(lattice==lattice,'test equality for lattices')
+   call assert(.not.(lattice/=lattice),'test inequality for lattices')
+
    ! I/O tests with new method
+   print*, "FULL LATTICE"
    call xy_print(lattice)
+   print*
+   print*, "A SUBLATTICE"
+   call xy_print(get_sublattice(lattice,"A"))
+   print*
+   print*, "B SUBLATTICE"
+   call xy_print(get_sublattice(lattice,"B"))
    open(unit=19,action='write')
-   call xy_print(pack(lattice%site,lattice%site%label=="A"),quiet=.true.,unit=19)
+   call xy_print(get_sublattice(lattice,"A"),quiet=.true.,unit=19)
    open(unit=20,action='write')
-   call xy_print(pack(lattice%site,lattice%site%label=="B"),quiet=.true.,unit=20)
+   call xy_print(get_sublattice(lattice,"B"),quiet=.true.,unit=20)
    open(unit=21,action='write')
    call xy_print(lattice,quiet=.true.,unit=21)
+
+   ! Fill an Hamiltonian with staggered onsite energies
+   L = size(lattice%site)
+   allocate(H(L,L)); H=0
+   ! Sublattice "A"
+   sublattice = get_sublattice(lattice,"A")
+   indices = sublattice%site%key
+   do i = 1,size(indices)
+      H(indices(i),indices(i)) = + 1
+   enddo
+   ! Sublattice "B"
+   sublattice = get_sublattice(lattice,"B")
+   indices = sublattice%site%key
+   do i = 1,size(indices)
+      H(indices(i),indices(i)) = - 1
+   enddo
+   open(unit=22,action='write')
+   do i = 1,size(H,1)
+      write(22,*) (H(i,j), j=1,size(H,1))
+   enddo
 
    print*, ""
    print*, "Plotting neighborhood of hex a..."
@@ -174,10 +203,12 @@ program unit_test
    do i = 1, size(lattice%site)
       write(*,*) (NN(i,j), j = 1, size(lattice%site))
    enddo
+   print*
    print*, "NEXT-NEAREST NEIGHBORS"
    do i = 1, size(lattice%site)
       write(*,*) (NNN(i,j), j = 1, size(lattice%site))
    enddo
+   print*
    call plot(lattice,backend='matlab')  ! would skip due to <UNKNOWN BACKEND>
    call plot(lattice,backend='gnuplot',figure_name='gnuflake.svg',set_terminal='svg')
    call plot(lattice,NN,script_name='xy_test.py',figure_name='pyflake.svg')
