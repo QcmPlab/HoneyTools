@@ -150,6 +150,21 @@ program unit_test
    open(unit=21,action='write')
    call xy_print(lattice,quiet=.true.,unit=21)
 
+   print*, ""
+   print*, "Plotting neighborhood of hex a..."
+   call plot(v,neighborhood,backend="pyplot",figure_name='pyflower.svg')
+   call plot(v,neighborhood,backend="gnuplot",set_terminal='svg',figure_name='gnuflower.svg')
+   call plot(v,neighborhood,backend="gnuplot",set_terminal='dumb')
+   !call plot(v,neighborhood,backend="gnuplot") ! this would be a problem in CI
+   !call plot(v,neighborhood,backend="pyplot")  ! this would be a problem in CI
+   !call plot(u,neighborhood,backend="gnuplot") ! this would be a problem in CI
+   !call plot(u,neighborhood,backend="pyplot")  ! this would be a problem in CI
+   ! THIS HAS TO BE TESTED MUCH MORE CAREFULLY TO ASSURE GOOD COVERAGE
+   call plot(u,neighborhood,backend='matlab') ! would skip due to <UNKNOWN BACKEND>
+   call plot(u,neighborhood,figure_name='pyflower.svg',script_name='hex_test.py') ! auto pyplot!
+   call plot(u,neighborhood,backend="gnuplot",set_terminal='png',figure_name='gnuflower.png')
+   call plot(u,neighborhood,backend="gnuplot",set_terminal='dumb',script_name='hex_test.gp')
+
    ! Rusty test for xy_neighboors
    call xy_shells(lattice,shell_table,distance_set)
    call xy_nearest_neighbors(lattice,NN)
@@ -163,20 +178,9 @@ program unit_test
    do i = 1, size(lattice%site)
       write(*,*) (NNN(i,j), j = 1, size(lattice%site))
    enddo
-
-   print*, ""
-   print*, "Plotting neighborhood of hex a..."
-   call hex_plot(v,neighborhood,backend="pyplot",figure_name='pyflower.svg')
-   call hex_plot(v,neighborhood,backend="gnuplot",set_terminal='svg',figure_name='gnuflower.svg')
-   call hex_plot(v,neighborhood,backend="gnuplot",set_terminal='dumb')
-   !call hex_plot(v,neighborhood,backend="gnuplot") ! this would be a problem in CI
-   !call hex_plot(v,neighborhood,backend="pyplot")  ! this would be a problem in CI
-   !call hex_plot(u,neighborhood,backend="gnuplot") ! this would be a problem in CI
-   !call hex_plot(u,neighborhood,backend="pyplot")  ! this would be a problem in CI
-   ! THIS HAS TO BE TESTED MUCH MORE CAREFULLY TO ASSURE GOOD COVERAGE
-   call hex_plot(u,neighborhood,backend='matlab') ! would skip due to <UNKNOWN BACKEND>
-   call hex_plot(u,neighborhood,figure_name='pyflower.svg',script_name='test.py') ! auto pyplot!
-   call hex_plot(u,neighborhood,backend="gnuplot",set_terminal='png',figure_name='gnuflower.png')
-   call hex_plot(u,neighborhood,backend="gnuplot",set_terminal='dumb',script_name='test.gp')
+   call plot(lattice,backend='matlab')  ! would skip due to <UNKNOWN BACKEND>
+   call plot(lattice,backend='gnuplot',figure_name='gnuflake.svg',set_terminal='svg')
+   call plot(lattice,NN,script_name='xy_test.py',figure_name='pyflake.svg')
+   call plot(lattice,NN,NNN,figure_name='pyball.svg')
 
 end program unit_test
