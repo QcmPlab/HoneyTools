@@ -152,12 +152,6 @@ contains
             source_name = "hex_plot.gp"
          endif
 
-         if(present(script_name))then
-            source_name = script_name
-         else
-            source_name = "hex_plot.gp"
-         endif
-
          if(present(set_terminal))then
             call gnu%options("set term "//set_terminal//";")
          else
@@ -272,12 +266,6 @@ contains
          endif
 
        case ("gnuplot")
-
-         if(present(script_name))then
-            source_name = script_name
-         else
-            source_name = "hex_plot.gp"
-         endif
 
          if(present(script_name))then
             source_name = script_name

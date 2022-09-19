@@ -182,5 +182,6 @@ program unit_test
    call plot(lattice,backend='gnuplot',figure_name='gnuflake.svg',set_terminal='svg')
    call plot(lattice,NN,script_name='xy_test.py',figure_name='pyflake.svg')
    call plot(lattice,NN,NNN,figure_name='pyball.svg')
+   call plot(lattice,backend='gnuplot',set_terminal='dumb',script_name='xy_test.gp')
 
 end program unit_test
