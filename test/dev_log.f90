@@ -1,12 +1,13 @@
-program unit_test
-   use honeytools, only: say_hello
-   use honeyplots
+program development_log
+
    use hex_coordinates
    use hex_layout
    use hex_neighbors
    use xy_coordinates
    use xy_neighbors
+   use honeyplots
    use assert_m, only : assert
+
    implicit none
 
    type(hex)                :: a,b,c
@@ -17,7 +18,7 @@ program unit_test
    type(xy_lattice)         :: vertices
    type(xy_site)            :: subvector(6)
    type(xy_lattice)         :: hexagons(6)
-   type(xy_lattice)         :: lattice
+   type(xy_lattice)         :: lattice,reticolo
    type(xy_lattice)         :: sublattice
    integer                  :: i,j,k,l
    integer,allocatable      :: H(:,:),indices(:)
@@ -26,9 +27,7 @@ program unit_test
    logical,allocatable      :: NN_(:,:),NN(:,:)
    logical,allocatable      :: NNN(:,:)
 
-   call say_hello()
-
-   a = hex(1,2) ! s = -3 is computed internally
+   a = hex(1,2,-3)   ! q+r+s==0 asserted internally
    b = hex(q=1,r=-2) ! s = 1 is computed internally
 
    call hex_print([a,b])
@@ -78,7 +77,9 @@ program unit_test
    u = unit_cell(orientation=armchair,size=1)
    v = unit_cell(zigzag,origin=[-1,1])
 
-   call print_unit_cell([u,v])
+   call u%print
+   call v%print
+   ! All together [elemental]
    open(unit=9,action='write')
    call print_unit_cell([u,v],unit=9)
 
@@ -140,8 +141,11 @@ program unit_test
    do i = 3,6
       lattice = xy_ordered_union(lattice,hexagons(i))
    enddo
-   call assert(lattice==lattice,'test equality for lattices')
-   call assert(.not.(lattice/=lattice),'test inequality for lattices')
+   ! All together mighty wrapper:
+   reticolo = hex2lattice(v,neighborhood)
+   call assert(lattice==reticolo,'test equality for lattices')
+   reticolo = hex2lattice(u,neighborhood)
+   call assert(lattice/=reticolo,'test inequality for lattices')
 
    ! I/O tests with new method
    print*, "FULL LATTICE"
@@ -215,4 +219,4 @@ program unit_test
    call plot(lattice,NN,NNN,figure_name='pyball.svg')
    call plot(lattice,backend='gnuplot',set_terminal='dumb',script_name='xy_test.gp')
 
-end program unit_test
+end program development_log

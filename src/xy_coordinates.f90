@@ -7,10 +7,10 @@ module xy_coordinates
    implicit none
    private
 
-   public :: xy, xy_site, xy_lattice                  ! xy class hyerarchy
-   public :: xy_distance, xy_print, xy_ordered_union  ! xy-bound procedures
-   public :: hex2center, hex2corner, hex2site         ! hex-2-xy procedures
-   public :: get_sublattice                           ! xy_lattice utility
+   public :: xy, xy_site, xy_lattice                        ! xy class hyerarchy
+   public :: xy_distance, xy_print, xy_ordered_union        ! xy-bound procedures
+   public :: hex2center, hex2corner, hex2site, hex2lattice  ! hex-2-xy procedures
+   public :: get_sublattice                                 ! xy_lattice utility
 
    integer, parameter :: N = 6 ! Number of vertices in a hexagon
    real(8), parameter :: PI = 4d0*atan(1d0) ! π to selected kind
@@ -28,11 +28,8 @@ module xy_coordinates
 
    type, extends(xy) :: xy_site
       !! A 2D point extension for inequivalent sites
-      !!     x,y   :: real-space coordinates
-      !!     label :: A or B (sublattice)
-      !!     key   :: for lattice lookup
-      character(1) :: label
-      integer      :: key=0
+      character(1) :: label !! A or B (sublattice)
+      integer      :: key=0 !! for lattice lookup
    end type
 
    type xy_lattice
@@ -45,7 +42,6 @@ module xy_coordinates
       procedure, private :: eq_lattice
       procedure, private :: neq_lattice
       procedure :: push_back
-
    end type
 
    interface xy_print
@@ -93,7 +89,7 @@ contains
       site%x = center%x + offset%x
       site%y = center%y + offset%y
       ! Lattice lookup
-      site%key = H%key
+      ! site % key = H % key (used to be a field of hex)
    end function
 
    pure elemental function hex2corner(layout,H) result(corner)
@@ -119,16 +115,8 @@ contains
          else
             corner%site(i)%label = "B"
          endif
-         corner%site%key = i + (H%key-1)*N
+         ! corner % site % key = i + (H % key-1)*N ! idem
       enddo
-   end function
-
-   pure elemental function get_sublattice(lattice,label) result(sublattice)
-      !! Extract sublattice, given a lattice and a label ("A" or "B")
-      type(xy_lattice),intent(in)   :: lattice
-      character(1),intent(in)       :: label  !! A or B
-      type(xy_lattice)              :: sublattice
-      sublattice%site = pack(lattice%site,lattice%site%label==label)
    end function
 
    pure elemental function hex2center(layout,H) result(center)
@@ -162,6 +150,31 @@ contains
       real(8)                    :: angle
       angle = 2d0*PI/N * (layout%orientation%angle + i) ! mixed math ok
       offset = xy(x=layout%size*cos(angle), y=layout%size*sin(angle))
+   end function
+
+   pure function hex2lattice(layout,hexagons) result(lattice)
+      !! Generate a type(xy_lattice) object from any given hex
+      !! array, provided a suitable layout (unit-cell)
+      type(unit_cell),intent(in) :: layout
+      type(hex),intent(in)       :: hexagons(:)
+      type(xy_lattice)           :: corners(size(hexagons))
+      type(xy_lattice)           :: lattice
+      integer                    :: i
+      corners = hex2corner(layout,hexagons)
+      lattice = xy_ordered_union(corners(1),corners(2))
+      do i = 3,size(hexagons)
+         lattice = xy_ordered_union(lattice,corners(i))
+      enddo
+   end function
+
+   pure elemental function get_sublattice(lattice,label) result(sublattice)
+      !! Extract sublattice, given a lattice and a label ("A" or "B")
+      type(xy_lattice),intent(in)   :: lattice
+      character(1),intent(in)       :: label  !! A or B
+      type(xy_lattice)              :: sublattice
+      associate (sites => lattice%site)
+         sublattice%site = pack(sites,sites%label==label)
+      end associate
    end function
 
    pure function xy_ordered_union(A,B) result(C)
@@ -262,12 +275,13 @@ contains
          allocate(tmp(len+1))
          tmp(:len) = vec%site
          call move_alloc(tmp,vec%site)
+         len = len + 1
       else
          len = 1
          allocate(vec%site(len))
       end if
       !PUSH val at the BACK
-      vec%site(len+1) = val
+      vec%site(len) = val
    end subroutine push_back
 
    impure elemental subroutine xy_class_print(S,unit,quiet)

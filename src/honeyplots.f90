@@ -96,7 +96,7 @@ contains
                      x(2) = lattice%site(j)%x
                      y(1) = lattice%site(i)%y
                      y(2) = lattice%site(j)%y
-                     call plt%add_plot(x,y,label='',linestyle='-k')
+                     call plt%add_plot(x,y,label='',linestyle='-k',linewidth=2)
                   endif
                enddo
             enddo
@@ -110,15 +110,15 @@ contains
                      x(2) = lattice%site(j)%x
                      y(1) = lattice%site(i)%y
                      y(2) = lattice%site(j)%y
-                     call plt%add_plot(x,y,label='',linestyle=':k')
+                     call plt%add_plot(x,y,label='',linestyle=':k',linewidth=1)
                   endif
                enddo
             enddo
          endif
          ! Sublattice "A"
-         call plt%add_plot(Ax,Ay,label='',linestyle='o',markersize=15)
+         call plt%add_plot(Ax,Ay,label='',linestyle='o',markersize=5)
          ! Sublattice "B
-         call plt%add_plot(Bx,By,label='',linestyle='o',markersize=15)
+         call plt%add_plot(Bx,By,label='',linestyle='o',markersize=5)
 
          if(present(script_name))then
             source_name = script_name
@@ -166,9 +166,9 @@ contains
          print*
          call gnu%plot(                                        &
             x1=Ax, y1=Ay,                                      &
-            ls1='with points pt 7 ps 3 lc rgb "#1F77B4"',      &
+            ls1='with points pt 7 ps 1 lc rgb "#1F77B4"',      &
             x2=Bx, y2=By,                                      &
-            ls2='with points pt 7 ps 3 lc rgb "#FF7F0E"'       &
+            ls2='with points pt 7 ps 1 lc rgb "#FF7F0E"'       &
             )
 
       end select
@@ -239,7 +239,7 @@ contains
        case ("pyplot")
 
          call plt%initialize(xlabel='x',ylabel='y',axis_equal=.true.)
-         call plt%add_plot(x,y,label='',linestyle='o',markersize=15)
+         call plt%add_plot(x,y,label='',linestyle='o',markersize=5)
 
          if(present(script_name))then
             source_name = script_name
@@ -285,7 +285,7 @@ contains
          print*
          print*, "> Gnuplot GUI popping up..."
          print*
-         call gnu%plot(x,y,'with points pt 7 ps 3 lc rgb "#1F77B4"')
+         call gnu%plot(x,y,'with points pt 7 ps 1 lc rgb "#1F77B4"')
 
       end select
 
