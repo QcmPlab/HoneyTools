@@ -12,7 +12,6 @@ program test_advanced_interface
 
    type(xy_lattice)        :: hlattice
    type(unit_cell)         :: mylayout
-   integer                 :: i,j,k
    logical,allocatable     :: NN(:,:),NNN(:,:)
 
    ! FINALLY SPECIAL HOLED FLAKE!
@@ -29,6 +28,8 @@ contains
       integer,intent(in)            :: radius
       type(xy_lattice)              :: lattice
       type(hex),allocatable         :: hexagons(:)
+      integer                       :: i,j
+      integer(4)                    :: k ! Needs to b a int32
       do i = -radius,+radius
          do j = max(-radius,-i-radius),min(radius,-i+radius)
             call odd_random_integer(k)
