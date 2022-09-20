@@ -7,7 +7,6 @@ module honeytools
    use hex_geometries
    use xy_coordinates
    use xy_neighbors
-   use honeyplots
 
    implicit none
    private
