@@ -2,7 +2,6 @@ program test_basic_user_experience
 
    use honeytools
    use stdlib_strings, only: to_string
-   use stdlib_hash_32bit, only: odd_random_integer
    use hex_coordinates, only: hex
    use xy_coordinates, only: hex2lattice
 

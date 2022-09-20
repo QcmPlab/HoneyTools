@@ -1,6 +1,5 @@
 program test_advanced_interface
 
-   use stdlib_hash_32bit, only: odd_random_integer
    use hex_coordinates
    use hex_layout
    use hex_geometries
@@ -28,18 +27,26 @@ contains
       integer,intent(in)            :: radius
       type(xy_lattice)              :: lattice
       type(hex),allocatable         :: hexagons(:)
-      integer                       :: i,j
-      integer(4)                    :: k ! Needs to b a int32
+      integer                       :: i,j,k
+      real(8)                       :: u
       do i = -radius,+radius
          do j = max(-radius,-i-radius),min(radius,-i+radius)
-            call odd_random_integer(k)
-            if(mod(k,3)/=0)then
+            k = randi(i,j)
+            if(mod(k,2)/=0)then
                call push_back(hexagons,hex(i,j))
             endif
          enddo
       enddo
       mylayout = unit_cell(zigzag)
       lattice = hex2lattice(mylayout,hexagons)
+   end function
+
+   !> Generate random integer in {p,p+1,…,q}
+   impure integer function randi(p,q)
+      integer,intent(in)   :: p,q
+      real(8)              :: r
+      call random_number(r)
+      randi = p + floor((q+1-p)*r)
    end function
 
 end program test_advanced_interface
