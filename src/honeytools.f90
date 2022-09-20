@@ -41,14 +41,14 @@ contains
       lattice = hex2lattice(layout,hexagons)
    end function
 
-   pure function get_flake(size,layout) &
+   pure function get_flake(radius,layout) &
       result(lattice)
       !! Get the lattice for a hexagon-shaped flake
-      integer,intent(in)         :: size
+      integer,intent(in)         :: radius
       type(unit_cell),intent(in) :: layout
       type(xy_lattice)           :: lattice
       type(hex),allocatable      :: hexagons(:)
-      hexagons = hex_flake(size)
+      hexagons = hex_flake(radius)
       lattice = hex2lattice(layout,hexagons)
    end function
 

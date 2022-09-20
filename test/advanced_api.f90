@@ -27,8 +27,8 @@ program test_advanced_interface
    ! Init the unit-cell with a custom lattice spacing
    mycell = unit_cell(mybasis,size=10,origin=[0,0])
 
-   ! FINALLY SPECIAL HOLED FLAKE!
-   lattice = holed_flake(10,mycell)
+   ! Call the special custom builder: get_holed_flake
+   lattice = get_holed_flake(10,mycell)
    call xy_next_nearest_neighbors(lattice,NNN,NN)
    call plot(lattice,backend='gnuplot',set_terminal='dumb')
    call plot(lattice,NN,figure_name='holed1.svg')
@@ -36,8 +36,8 @@ program test_advanced_interface
 
 contains
 
-   impure function holed_flake(radius,layout) result(flake)
-      !! Build a hexagon-shaped honeycomb flake
+   impure function get_holed_flake(radius,layout) result(flake)
+      !! Build a hexagon-shaped honeycomb flake, with random vacancies!
       integer,intent(in)            :: radius
       type(unit_cell),intent(in)    :: layout
       type(xy_lattice)              :: flake

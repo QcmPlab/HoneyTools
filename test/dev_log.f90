@@ -164,7 +164,7 @@ program development_log
    call xy_print(lattice,quiet=.true.,unit=21)
 
    ! Fill an Hamiltonian with staggered onsite energies
-   L = size(lattice%site)
+   L = lattice%size
    allocate(H(L,L)); H=0
    ! Sublattice "A"
    sublattice = get_sublattice(lattice,"A")
@@ -204,13 +204,13 @@ program development_log
    call xy_next_nearest_neighbors(lattice,NNN,NN_)
    call assert(all(NN.eqv.NN_),"Consistent value for NN mask")
    print*, "NEAREST NEIGHBORS"
-   do i = 1, size(lattice%site)
-      write(*,*) (NN(i,j), j = 1, size(lattice%site))
+   do i = 1, lattice%size
+      write(*,*) (NN(i,j), j = 1, lattice%size)
    enddo
    print*
    print*, "NEXT-NEAREST NEIGHBORS"
-   do i = 1, size(lattice%site)
-      write(*,*) (NNN(i,j), j = 1, size(lattice%site))
+   do i = 1, lattice%size
+      write(*,*) (NNN(i,j), j = 1, lattice%size)
    enddo
    print*
    call plot(lattice,backend='matlab')  ! would skip due to <UNKNOWN BACKEND>

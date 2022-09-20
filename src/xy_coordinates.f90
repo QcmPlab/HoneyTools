@@ -3,6 +3,7 @@ module xy_coordinates
 
    use hex_coordinates
    use hex_layout
+   use assert_m, only : assert ![pure assertion]
 
    implicit none
    private
@@ -36,6 +37,7 @@ module xy_coordinates
       !! Wrapper type for storing dynamically
       !! sized collections of lattice sites
       type(xy_site),allocatable  :: site(:)
+      integer                    :: size
    contains
       generic :: operator(==) => eq_lattice
       generic :: operator(/=) => neq_lattice
@@ -88,8 +90,6 @@ contains
       end select
       site%x = center%x + offset%x
       site%y = center%y + offset%y
-      ! Lattice lookup
-      ! site % key = H % key (used to be a field of hex)
    end function
 
    pure elemental function hex2corner(layout,H) result(corner)
@@ -106,6 +106,7 @@ contains
       integer                    :: i
       center = hex2center(layout,H)
       allocate(corner%site(N))
+      corner%size = N
       do i = 1,N
          offset = ith_corner_offset(layout,i)
          corner%site(i)%x = center%x + offset%x
@@ -115,7 +116,6 @@ contains
          else
             corner%site(i)%label = "B"
          endif
-         ! corner % site % key = i + (H % key-1)*N ! idem
       enddo
    end function
 
@@ -282,6 +282,8 @@ contains
       end if
       !PUSH val at the BACK
       vec%site(len) = val
+      !Increade formal size
+      vec%size = len
    end subroutine push_back
 
    impure elemental subroutine xy_class_print(S,unit,quiet)
