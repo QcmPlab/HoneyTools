@@ -1,5 +1,5 @@
 module hex_geometries
-   !! Provide constructor for common honeycomb structures
+   !! Provide common honeycomb geometries, as dynamic type(hex) arrays
 
    use hex_coordinates
    use hex_layout
@@ -8,13 +8,15 @@ module hex_geometries
    implicit none
    private
 
-   public :: supercell, triangle, hex_flake, armchair_stripe, zigzag_stripe, push_back
+   public :: hex_insert ! utility to grow hex arrays
+   public :: hex_supercell, hex_triangle, hex_flake
+   public :: hex_armchair_stripe, hex_zigzag_stripe
 
 contains
 
    ! PUBLIC API [private at bottom]
 
-   pure function supercell(rows,cols) result(hexagons)
+   pure function hex_supercell(rows,cols) result(hexagons)
       !! Build a honeycomb supercell (parallelogram)
       integer,intent(in)   :: rows,cols
       type(hex)            :: hexagons(rows*cols)
@@ -28,7 +30,7 @@ contains
       enddo
    end function
 
-   pure function triangle(size) result(hexagons)
+   pure function hex_triangle(size) result(hexagons)
       !! Build a triangle-shaped honeycomb flake
       integer,intent(in)      :: size
       type(hex),allocatable   :: hexagons(:)
@@ -36,7 +38,7 @@ contains
       call assert(size>1,"triangle size > 1",size)
       do i = 0,size
          do j = 0,size-i
-            call push_back(hexagons,hex(i,j))
+            call hex_insert(hexagons,hex(i,j))
          enddo
       enddo
    end function
@@ -48,12 +50,12 @@ contains
       integer                 :: i,j
       do i = -radius,+radius
          do j = max(-radius,-i-radius),min(radius,-i+radius)
-            call push_back(hexagons,hex(i,j))
+            call hex_insert(hexagons,hex(i,j))
          enddo
       enddo
    end function
 
-   pure function armchair_stripe(height,width) result(hexagons)
+   pure function hex_armchair_stripe(height,width) result(hexagons)
       !! Build a armchair-on-top honeycomb stripe/ribbon
       !! CONVERSION TO XY SITES REQUIRES ARMCHAIR LAYOUT
       integer,intent(in)      :: height,width
@@ -62,12 +64,12 @@ contains
       do i = 1,width
          offset = floor(i/2.d0)
          do j = 1-offset,height-offset
-            call push_back(hexagons,hex(i,j))
+            call hex_insert(hexagons,hex(i,j))
          enddo
       enddo
    end function
 
-   pure function zigzag_stripe(height,width) result(hexagons)
+   pure function hex_zigzag_stripe(height,width) result(hexagons)
       !! Build a zigzag-on-top honeycomb stripe/ribbon
       !! CONVERSION TO XY SITES REQUIRES ZIGZAG LAYOUT
       integer,intent(in)      :: height,width
@@ -76,16 +78,15 @@ contains
       do i = 1,height
          offset = floor(i/2.d0)
          do j = 1-offset,width-offset
-            call push_back(hexagons,hex(i,j))
+            call hex_insert(hexagons,hex(i,j))
          enddo
       enddo
    end function
 
-   ! PRIVATE NAMES
-
-   pure subroutine push_back(vec,val)
-      !! Poor man implementation of a dynamic
-      !! array, a là std::vector (but without
+   pure subroutine hex_insert(vec,val)
+      !! Utility to grow type(hex) arrays, it is a
+      !! poor man implementation of a dynamic array
+      !! insertion, a là std::vector (but with no
       !! preallocation and smart doubling...)
       type(hex),intent(inout),allocatable :: vec(:)
       type(hex),intent(in)                :: val
@@ -101,8 +102,8 @@ contains
          len = 1
          allocate(vec(len))
       end if
-      !PUSH val at the BACK
+      ! Insert val at back
       vec(len) = val
-   end subroutine push_back
+   end subroutine hex_insert
 
 end module hex_geometries

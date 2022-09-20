@@ -12,9 +12,10 @@ module honeytools
    implicit none
    private
 
-   public :: xy_lattice, xy_shells, xy_nearest_neighbors, xy_next_nearest_neighbors
+   public :: xy_lattice, xy_print, xy_shells
+   public :: xy_nearest_neighbors, xy_next_nearest_neighbors
    public :: unit_cell, armchair, zigzag ! to generate layouts
-   public :: get_supercell, get_triangle, get_flake, get_stripe, get_sublattice, plot
+   public :: get_supercell, get_triangle, get_flake, get_stripe, get_sublattice
 
 contains
 
@@ -25,7 +26,7 @@ contains
       type(unit_cell),intent(in)          :: layout
       type(xy_lattice)                    :: lattice
       type(hex),dimension(rows*cols)      :: hexagons
-      hexagons = supercell(rows,cols)
+      hexagons = hex_supercell(rows,cols)
       lattice = hex2lattice(layout,hexagons)
    end function
 
@@ -36,7 +37,7 @@ contains
       type(unit_cell),intent(in) :: layout
       type(xy_lattice)           :: lattice
       type(hex),allocatable      :: hexagons(:)
-      hexagons = triangle(size)
+      hexagons = hex_triangle(size)
       lattice = hex2lattice(layout,hexagons)
    end function
 
@@ -60,9 +61,9 @@ contains
       type(hex),allocatable      :: hexagons(:)
       associate(cell => layout%orientation)
          if(cell==armchair)then
-            hexagons = armchair_stripe(height,width)
+            hexagons = hex_armchair_stripe(height,width)
          elseif(cell==zigzag)then
-            hexagons = zigzag_stripe(height,width)
+            hexagons = hex_zigzag_stripe(height,width)
          else
          endif
          lattice = hex2lattice(layout,hexagons)
