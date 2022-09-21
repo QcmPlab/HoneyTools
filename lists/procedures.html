@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
+    <meta name="author" content="Gabriele Bellomia" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>All Procedures &ndash; HoneyTools
+</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">HoneyTools </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../lists/files.html">Source Files</a></li>
+            <li><a href="../lists/modules.html">Modules</a></li>
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
+            </ul>
+        
+            </li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+          </ul>
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12" id='text'>
+			 <h1>Procedures</h1>
+			 <table class="table table-striped">
+			 <thead><tr><th>Procedure</th><th>Location</th><th>Procedure Type</th><th>Description</th></tr></thead>
+			 <tbody>
+			   <tr><td><a href='../proc/add_hex.html'>add_hex</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Function</td><td><p>Addition overload for hex type</p></td></tr>
+			   <tr><td><a href='../proc/dot_hex.html'>dot_hex</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Function</td><td><p>Dot overload for hex type</p></td></tr>
+			   <tr><td><a href='../proc/eq_hex.html'>eq_hex</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Function</td><td><p>Equality overload for hex type</p></td></tr>
+			   <tr><td><a href='../proc/eq_lattice.html'>eq_lattice</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>polymorphic equality overload for xy_lattice type</p></td></tr>
+			   <tr><td><a href='../proc/eq_xy.html'>eq_xy</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>polymorphic equality overload for xy class</p></td></tr>
+			   <tr><td><a href='../proc/get_flake.html'>get_flake</a></td><td><a href='../module/honeytools.html'>honeytools</a></td><td>Function</td><td><p>Get the lattice for a hexagon-shaped flake</p></td></tr>
+			   <tr><td><a href='../proc/get_stripe.html'>get_stripe</a></td><td><a href='../module/honeytools.html'>honeytools</a></td><td>Function</td><td><p>Get the lattice for a hexagon-shaped flake</p></td></tr>
+			   <tr><td><a href='../proc/get_sublattice.html'>get_sublattice</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>Extract sublattice, given a lattice and a label ("A" or "B")</p></td></tr>
+			   <tr><td><a href='../proc/get_supercell.html'>get_supercell</a></td><td><a href='../module/honeytools.html'>honeytools</a></td><td>Function</td><td><p>Get the lattice for a honeycomb supercell</p></td></tr>
+			   <tr><td><a href='../proc/get_triangle.html'>get_triangle</a></td><td><a href='../module/honeytools.html'>honeytools</a></td><td>Function</td><td><p>Get the lattice for a triangle-shaped flake</p></td></tr>
+			   <tr><td><a href='../interface/hex.html'>hex</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Interface</td><td><p>constructor override</p></td></tr>
+			   <tr><td><a href='../proc/hex2center.html'>hex2center</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>Convert hex coordinates to real 2D space
+[returning the xy coordinates of the hexagon center]
+Actual real-space layout has to be specified by passing
+a (scalar) unit_cell object.</p></td></tr>
+			   <tr><td><a href='../proc/hex2corner.html'>hex2corner</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>Convert hex coordinates to real 2D space
+[returning the xy coordinates for the hexagon corners,
+ as appropriatiely wrapped in the "xy_lattice" type]
+Actual real-space layout has to be specified by passing
+a (scalar) unit_cell object.</p></td></tr>
+			   <tr><td><a href='../proc/hex2lattice.html'>hex2lattice</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>Generate a type(xy_lattice) object from any given hex
+array, provided a suitable layout (unit-cell)</p></td></tr>
+			   <tr><td><a href='../proc/hex2site.html'>hex2site</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>Convert hex coordinates to real 2D lattice sites
+[returning the xy coordinates for the unique unit-cell,
+ sites "A" and "B": this of course does not account for
+ border effects, so would be suitable only for simple,
+ periodized, systems, which for now are out of scope.]
+Actual real-space layout has to be specified by passing
+a (scalar) unit_cell object.</p></td></tr>
+			   <tr><td><a href='../proc/hex_armchair_stripe.html'>hex_armchair_stripe</a></td><td><a href='../module/hex_geometries.html'>hex_geometries</a></td><td>Function</td><td><p>Build a armchair-on-top honeycomb stripe/ribbon
+CONVERSION TO XY SITES REQUIRES ARMCHAIR LAYOUT</p></td></tr>
+			   <tr><td><a href='../proc/hex_direction.html'>hex_direction</a></td><td><a href='../module/hex_neighbors.html'>hex_neighbors</a></td><td>Function</td><td><p>Return a direction in pseudo-3D hex space, given a (signed) integer label</p></td></tr>
+			   <tr><td><a href='../proc/hex_distance.html'>hex_distance</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Function</td><td><p>Taxicab distance of hex coordinates</p></td></tr>
+			   <tr><td><a href='../proc/hex_flake.html'>hex_flake</a></td><td><a href='../module/hex_geometries.html'>hex_geometries</a></td><td>Function</td><td><p>Build a hexagon-shaped honeycomb flake</p></td></tr>
+			   <tr><td><a href='../proc/hex_hop.html'>hex_hop</a></td><td><a href='../module/hex_neighbors.html'>hex_neighbors</a></td><td>Function</td><td><p>Return the nearest neighbor of H in the i-th direction: Ni</p></td></tr>
+			   <tr><td><a href='../proc/hex_insert.html'>hex_insert</a></td><td><a href='../module/hex_geometries.html'>hex_geometries</a></td><td>Subroutine</td><td><p>Utility to grow type(hex) arrays, it is a
+poor man implementation of a dynamic array
+insertion, a là std::vector (but with no
+preallocation and smart doubling...)</p></td></tr>
+			   <tr><td><a href='../proc/hex_line.html'>hex_line</a></td><td><a href='../module/hex_geometries.html'>hex_geometries</a></td><td>Function</td><td><p>Draw a line between A and B, in hex space</p></td></tr>
+			   <tr><td><a href='../proc/hex_nearest.html'>hex_nearest</a></td><td><a href='../module/hex_neighbors.html'>hex_neighbors</a></td><td>Function</td><td><p>Return the vector of all nearest hex_neighbors of hex H</p></td></tr>
+			   <tr><td><a href='../proc/hex_norm.html'>hex_norm</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Function</td><td><p>Taxicab norm from hex coordinates</p></td></tr>
+			   <tr><td><a href='../proc/hex_plot.html'>hex_plot</a></td><td><a href='../module/honeyplots.html'>honeyplots</a></td><td>Subroutine</td><td><p>Simple plotter for arrays of type(hex). It features two backends, giving
+access to either matplotlib(pyplot) or gnuplot internal machinery. Either
+library needs to be installed in your system for hex_plot to work.
+You can specify a figure_name to save the plot to disk. If not specified
+the plot would be just displayed in a popup window (or the terminal with
+suitable configuration of the gnuplot backend) and a corresponding script
+saved, aiming at fast reproduction (the script will all contain data).
+The script has a default name (hex_plot.{py,gp}), but you can optionally
+give your own custom string, do not forget the appropriate file extension.
+Regarding output formats instead, the two backends have slightly different
+behavior: pyplot would infer the format from the given file extension in
+figure_name, whilst gnuplot does need a proper "output terminal" to be set.
+You can do that by passing the optional set_parameter variable. Refer to
+original gnuplot documentation for the list of available terminals and how
+they should be chosen. For convenience we report that you can get the list
+of (system dependent) available terminals in your console by executing the
+gnuplot -e "set terminal" command in your shell. Furthermore all systems
+should be compatible with the "dumb" terminal option, which would direct
+the plot to the terminal itself, in the form of ASCII art. This can be
+very useful for HPC workflows.</p></td></tr>
+			   <tr><td><a href='../proc/hex_print.html'>hex_print</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Subroutine</td><td><p>Pretty print of hex coordinates</p></td></tr>
+			   <tr><td><a href='../proc/hex_round.html'>hex_round</a></td><td><a href='../module/hex_geometries.html'>hex_geometries</a></td><td>Function</td><td><p>Round a triplet of reals to a proper hex object</p><a href="../proc/hex_round.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/hex_supercell.html'>hex_supercell</a></td><td><a href='../module/hex_geometries.html'>hex_geometries</a></td><td>Function</td><td><p>Build a honeycomb supercell (parallelogram)</p></td></tr>
+			   <tr><td><a href='../proc/hex_triangle.html'>hex_triangle</a></td><td><a href='../module/hex_geometries.html'>hex_geometries</a></td><td>Function</td><td><p>Build a triangle-shaped honeycomb flake</p></td></tr>
+			   <tr><td><a href='../proc/hex_zigzag_stripe.html'>hex_zigzag_stripe</a></td><td><a href='../module/hex_geometries.html'>hex_geometries</a></td><td>Function</td><td><p>Build a zigzag-on-top honeycomb stripe/ribbon
+CONVERSION TO XY SITES REQUIRES ZIGZAG LAYOUT</p></td></tr>
+			   <tr><td><a href='../proc/ith_corner_offset.html'>ith_corner_offset</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>Compute the i-th offset vector connecting the hexagon center
+to its corners, returning a (scalar) xy coordinate</p></td></tr>
+			   <tr><td><a href='../proc/lhs_hex.html'>lhs_hex</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Function</td><td><p>Left scale overload for hex type</p></td></tr>
+			   <tr><td><a href='../proc/linear_interpolation.html'>linear_interpolation</a></td><td><a href='../module/hex_geometries.html'>hex_geometries</a></td><td>Function</td><td><p>Linear interpolation from a to b, with step t
+a + (b - a) * t = a * (1-t) + b * t
+for better floating-point precision</p></td></tr>
+			   <tr><td><a href='../proc/neq_hex.html'>neq_hex</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Function</td><td><p>Inequality overload for hex type</p></td></tr>
+			   <tr><td><a href='../proc/neq_lattice.html'>neq_lattice</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>polymorphic inequality overload for xy_lattice type</p></td></tr>
+			   <tr><td><a href='../proc/neq_xy.html'>neq_xy</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>polymorphic inequality overload for xy class</p></td></tr>
+			   <tr><td><a href='../proc/new_hex_axial.html'>new_hex_axial</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Function</td><td><p>Axial cubic constructor for the hex type
+[s would be computed internally]</p></td></tr>
+			   <tr><td><a href='../proc/new_hex_cubic.html'>new_hex_cubic</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Function</td><td><p>Safe cubic constructor for the hex type
+featuring an assertion on input coordinates
+before the initialization of the object</p></td></tr>
+			   <tr><td><a href='../interface/operator%28ASTERISK%29.html'>operator(*)</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Interface</td><td><p>product overload</p></td></tr>
+			   <tr><td><a href='../interface/operator%28%2B%29.html'>operator(+)</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Interface</td><td><p>addition overload</p></td></tr>
+			   <tr><td><a href='../interface/operator%28-%29.html'>operator(-)</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Interface</td><td><p>subtraction overload</p></td></tr>
+			   <tr><td><a href='../interface/operator%28SLASH%3D%29.html'>operator(/=)</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Interface</td><td><p>inequality overload</p></td></tr>
+			   <tr><td><a href='../interface/operator%28%3D%3D%29.html'>operator(==)</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Interface</td><td><p>equality overload</p></td></tr>
+			   <tr><td><a href='../proc/orientation_equality.html'>orientation_equality</a></td><td><a href='../module/hex_layout.html'>hex_layout</a></td><td>Function</td><td><p>Overload of == operator for hex_orientation type</p></td></tr>
+			   <tr><td><a href='../interface/plot.html'>plot</a></td><td><a href='../module/honeyplots.html'>honeyplots</a></td><td>Interface</td><td></td></tr>
+			   <tr><td><a href='../proc/print_unit_cell.html'>print_unit_cell</a></td><td><a href='../module/hex_layout.html'>hex_layout</a></td><td>Subroutine</td><td><p>Pretty print of hex coordinates</p></td></tr>
+			   <tr><td><a href='../proc/push_back.html'>push_back</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Subroutine</td><td><p>Poor man implementation of a dynamic
+array, a là std::vector (but without
+preallocation and smart doubling...)</p></td></tr>
+			   <tr><td><a href='../proc/rhs_hex.html'>rhs_hex</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Function</td><td><p>Right scale overload for hex type</p></td></tr>
+			   <tr><td><a href='../proc/sub_hex.html'>sub_hex</a></td><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td>Function</td><td><p>Subtraction overload for hex type</p></td></tr>
+			   <tr><td><a href='../proc/xy_class_print.html'>xy_class_print</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Subroutine</td><td><p>Pretty print of xy coordinates in static arrays</p></td></tr>
+			   <tr><td><a href='../proc/xy_distance.html'>xy_distance</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>Polymorphic euclidean distance for xy class</p></td></tr>
+			   <tr><td><a href='../proc/xy_lattice_print.html'>xy_lattice_print</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Subroutine</td><td><p>Pretty print of xy coordinates in dynamic arrays</p></td></tr>
+			   <tr><td><a href='../proc/xy_nearest_neighbors.html'>xy_nearest_neighbors</a></td><td><a href='../module/xy_neighbors.html'>xy_neighbors</a></td><td>Subroutine</td><td><p>Build a mask for the nearest neighbors of a given
+lattice. It is a NxN matrix, with N the number of
+sites in the lattice, stocking .true. values only
+for the pairs of sites linked by a "NN-bond".
+It calls internally xy_shells, for all inter-site
+distances, so if you need more than NNs consider
+calling xy_shells directly. Note that we provide
+a similar subroutine for next-nearest-neighbors,
+which optionally gives also the NNs, so if just
+two shells are needed you should call that.</p><a href="../proc/xy_nearest_neighbors.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/xy_next_nearest_neighbors.html'>xy_next_nearest_neighbors</a></td><td><a href='../module/xy_neighbors.html'>xy_neighbors</a></td><td>Subroutine</td><td><p>Build a mask for the next-nearest neighbors of a given lattice.
+It is a NxN matrix, with N the number of sites in the lattice,
+storing .true. values only for the pairs of sites linked by a
+"NNN-bond". Optionally builds a nearest-neighbors mask, too.
+It calls internally xy_shells, for all inter-site
+distances, so if you need more than NNNs consider
+calling xy_shells directly. Note that we provide
+a similar subroutine for nearest-neighbors only,
+so if you just need NNs consider calling it.</p><a href="../proc/xy_next_nearest_neighbors.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/xy_norm.html'>xy_norm</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>polymorphic euclidean norm for xy class</p></td></tr>
+			   <tr><td><a href='../proc/xy_ordered_union.html'>xy_ordered_union</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Function</td><td><p>An ordered-keys set union for xy_lattices.
+It compares the lattice sites, looking at
+their x and y coordinates only: equal x,y
+entries are inserted in C just once, so to
+make it a set. A and B must be sets too.
+The sublattice labels are preserved in the
+process, assuming that two sites with the
+same x,y pertain to the same sublattice.
+For A the keys are assumed to be 1:size(A),
+and preserved as such (with an assertion).
+The keys of B are instead discarded, so to
+be replaced by size(A):size(C), which thus
+amounts to have result C uniquely indexed
+as 1, 2, ... , size(A) + size(B).
+This allows building consistently indexed
+matrices to act on the lattice array, such
+as real-space tight-binding hamiltonians.
+The keys would then be used to index other
+real space quantities, such as LDOS, Chern
+marker, local magnetization, and so on.</p></td></tr>
+			   <tr><td><a href='../proc/xy_plot.html'>xy_plot</a></td><td><a href='../module/honeyplots.html'>honeyplots</a></td><td>Subroutine</td><td><p>CURRENTLY GNUPLOT DOES NOT SUPPORT NN AND NNN LINKS, HELP IS WELCOME!
+Simple plotter for class(xy_lattice) objects. If optional argument nn_mask
+is passed it draws the nearest-neighbor bonds too. Similarly, if optional
+argument nnn_mask is passed a dashed link to next-nearest neighbors would
+be drawed. Otherwise only lallice sites. It features two backends, giving
+access to either matplotlib(pyplot) or gnuplot internal machinery. Either
+library needs to be installed in your system for hex_plot to work.
+You can specify a figure_name to save the plot to disk. If not specified
+the plot would be just displayed in a popup window (or the terminal with
+suitable configuration of the gnuplot backend) and a corresponding script
+saved, aiming at fast reproduction (the script will all contain data).
+The script has a default name (hex_plot.{py,gp}), but you can optionally
+give your own custom string, do not forget the appropriate file extension.
+Regarding output formats instead, the two backends have slightly different
+behavior: pyplot would infer the format from the given file extension in
+figure_name, whilst gnuplot does need a proper "output terminal" to be set.
+You can do that by passing the optional set_parameter variable. Refer to
+original gnuplot documentation for the list of available terminals and how
+they should be chosen. For convenience we report that you can get the list
+of (system dependent) available terminals in your console by executing the
+gnuplot -e "set terminal" command in your shell. Furthermore all systems
+should be compatible with the "dumb" terminal option, which would direct
+the plot to the terminal itself, in the form of ASCII art. This can be
+very useful for HPC workflows.</p><a href="../proc/xy_plot.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../interface/xy_print.html'>xy_print</a></td><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td>Interface</td><td></td></tr>
+			   <tr><td><a href='../proc/xy_shells.html'>xy_shells</a></td><td><a href='../module/xy_neighbors.html'>xy_neighbors</a></td><td>Subroutine</td><td><p>Build a /ordered/ set of all inter-atomic distances
+in a given xy_lattice and a table storing distances
+among all sites. Searching this matrix for the n-th
+set entry gives a mask of all pairs of atomic sites
+that are n-th order neigbors.
+E.g. shell_table == distance_set(1) would provide a
+mask for nearest neighbors, from which we can build
+the tight-binding hopping term of the corresponding
+lattice hamiltonian.</p></td></tr>
+			 </tbody></table>
+             <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: call~~graph~~CallGraph Pages: 1 -->
+<svg id="callgraphCallGraph" width="855pt" height="992pt"
+ viewBox="0.00 0.00 855.00 992.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="call~~graph~~CallGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 988)">
+<title>call~~graph~~CallGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-988 851,-988 851,4 -4,4"/>
+<!-- proc~hex2center -->
+<g id="call~~graph~~CallGraph_node1" class="node">
+<title>proc~hex2center</title>
+<g id="a_call~~graph~~CallGraph_node1"><a xlink:href=".././proc/hex2center.html" xlink:title="hex2center">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="832.5,-213 759.5,-213 759.5,-189 832.5,-189 832.5,-213"/>
+<text text-anchor="middle" x="796" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex2center</text>
+</a>
+</g>
+</g>
+<!-- interface~hex -->
+<g id="call~~graph~~CallGraph_node2" class="node">
+<title>interface~hex</title>
+<g id="a_call~~graph~~CallGraph_node2"><a xlink:href=".././interface/hex.html" xlink:title="hex">
+<polygon fill="#a7506f" stroke="#a7506f" points="383,-465 329,-465 329,-441 383,-441 383,-465"/>
+<text text-anchor="middle" x="356" y="-450.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex</text>
+</a>
+</g>
+</g>
+<!-- proc~new_hex_cubic -->
+<g id="call~~graph~~CallGraph_node45" class="node">
+<title>proc~new_hex_cubic</title>
+<g id="a_call~~graph~~CallGraph_node45"><a xlink:href=".././proc/new_hex_cubic.html" xlink:title="new_hex_cubic">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="541.5,-444 449.5,-444 449.5,-420 541.5,-420 541.5,-444"/>
+<text text-anchor="middle" x="495.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">new_hex_cubic</text>
+</a>
+</g>
+</g>
+<!-- interface~hex&#45;&gt;proc~new_hex_cubic -->
+<g id="call~~graph~~CallGraph_edge1" class="edge">
+<title>interface~hex&#45;&gt;proc~new_hex_cubic</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M383.19,-449C399.11,-446.57 420.06,-443.37 439.48,-440.4"/>
+<polygon fill="#000000" stroke="#000000" points="440.11,-443.85 449.47,-438.88 439.05,-436.93 440.11,-443.85"/>
+</g>
+<!-- proc~new_hex_axial -->
+<g id="call~~graph~~CallGraph_node57" class="node">
+<title>proc~new_hex_axial</title>
+<g id="a_call~~graph~~CallGraph_node57"><a xlink:href=".././proc/new_hex_axial.html" xlink:title="new_hex_axial">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="540,-486 451,-486 451,-462 540,-462 540,-486"/>
+<text text-anchor="middle" x="495.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">new_hex_axial</text>
+</a>
+</g>
+</g>
+<!-- interface~hex&#45;&gt;proc~new_hex_axial -->
+<g id="call~~graph~~CallGraph_edge2" class="edge">
+<title>interface~hex&#45;&gt;proc~new_hex_axial</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M383.19,-457C399.44,-459.48 420.93,-462.76 440.69,-465.78"/>
+<polygon fill="#000000" stroke="#000000" points="440.42,-469.28 450.83,-467.33 441.48,-462.36 440.42,-469.28"/>
+</g>
+<!-- proc~hex2site -->
+<g id="call~~graph~~CallGraph_node3" class="node">
+<title>proc~hex2site</title>
+<g id="a_call~~graph~~CallGraph_node3"><a xlink:href=".././proc/hex2site.html" xlink:title="hex2site">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="679,-192 622,-192 622,-168 679,-168 679,-192"/>
+<text text-anchor="middle" x="650.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex2site</text>
+</a>
+</g>
+</g>
+<!-- proc~hex2site&#45;&gt;proc~hex2center -->
+<g id="call~~graph~~CallGraph_edge3" class="edge">
+<title>proc~hex2site&#45;&gt;proc~hex2center</title>
+<path fill="none" stroke="#000000" d="M679.17,-184.05C699.03,-186.96 726.26,-190.94 749.32,-194.32"/>
+<polygon fill="#000000" stroke="#000000" points="748.85,-197.78 759.25,-195.77 749.86,-190.86 748.85,-197.78"/>
+</g>
+<!-- proc~ith_corner_offset -->
+<g id="call~~graph~~CallGraph_node15" class="node">
+<title>proc~ith_corner_offset</title>
+<g id="a_call~~graph~~CallGraph_node15"><a xlink:href=".././proc/ith_corner_offset.html" xlink:title="ith_corner_offset">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="847,-265 745,-265 745,-241 847,-241 847,-265"/>
+<text text-anchor="middle" x="796" y="-250.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ith_corner_offset</text>
+</a>
+</g>
+</g>
+<!-- proc~hex2site&#45;&gt;proc~ith_corner_offset -->
+<g id="call~~graph~~CallGraph_edge4" class="edge">
+<title>proc~hex2site&#45;&gt;proc~ith_corner_offset</title>
+<path fill="none" stroke="#000000" d="M679.15,-188.88C688.76,-192.28 699.51,-196.45 709,-201 714.97,-203.86 744.12,-221.62 766.84,-235.6"/>
+<polygon fill="#000000" stroke="#000000" points="765.13,-238.66 775.48,-240.93 768.81,-232.7 765.13,-238.66"/>
+</g>
+<!-- proc~xy_lattice_print -->
+<g id="call~~graph~~CallGraph_node4" class="node">
+<title>proc~xy_lattice_print</title>
+<g id="a_call~~graph~~CallGraph_node4"><a xlink:href=".././proc/xy_lattice_print.html" xlink:title="xy_lattice_print">
+<polygon fill="#d9534f" stroke="#d9534f" points="124.5,-591 31.5,-591 31.5,-567 124.5,-567 124.5,-591"/>
+<text text-anchor="middle" x="78" y="-576.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_lattice_print</text>
+</a>
+</g>
+</g>
+<!-- interface~xy_print -->
+<g id="call~~graph~~CallGraph_node49" class="node">
+<title>interface~xy_print</title>
+<g id="a_call~~graph~~CallGraph_node49"><a xlink:href=".././interface/xy_print.html" xlink:title="xy_print">
+<polygon fill="#a7506f" stroke="#a7506f" points="262,-591 207,-591 207,-567 262,-567 262,-591"/>
+<text text-anchor="middle" x="234.5" y="-576.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_print</text>
+</a>
+</g>
+</g>
+<!-- proc~xy_lattice_print&#45;&gt;interface~xy_print -->
+<g id="call~~graph~~CallGraph_edge5" class="edge">
+<title>proc~xy_lattice_print&#45;&gt;interface~xy_print</title>
+<path fill="none" stroke="#000000" d="M124.52,-572.78C147.47,-571.97 174.94,-572.09 196.56,-573.14"/>
+<polygon fill="#000000" stroke="#000000" points="196.47,-576.64 206.65,-573.74 196.88,-569.66 196.47,-576.64"/>
+</g>
+<!-- proc~xy_nearest_neighbors -->
+<g id="call~~graph~~CallGraph_node5" class="node">
+<title>proc~xy_nearest_neighbors</title>
+<g id="a_call~~graph~~CallGraph_node5"><a xlink:href=".././proc/xy_nearest_neighbors.html" xlink:title="xy_nearest_neighbors">
+<polygon fill="#d9534f" stroke="#d9534f" points="142,-690 14,-690 14,-666 142,-666 142,-690"/>
+<text text-anchor="middle" x="78" y="-675.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_nearest_neighbors</text>
+</a>
+</g>
+</g>
+<!-- proc~xy_shells -->
+<g id="call~~graph~~CallGraph_node31" class="node">
+<title>proc~xy_shells</title>
+<g id="a_call~~graph~~CallGraph_node31"><a xlink:href=".././proc/xy_shells.html" xlink:title="xy_shells">
+<polygon fill="#d9534f" stroke="#d9534f" points="264.5,-654 204.5,-654 204.5,-630 264.5,-630 264.5,-654"/>
+<text text-anchor="middle" x="234.5" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_shells</text>
+</a>
+</g>
+</g>
+<!-- proc~xy_nearest_neighbors&#45;&gt;proc~xy_shells -->
+<g id="call~~graph~~CallGraph_edge6" class="edge">
+<title>proc~xy_nearest_neighbors&#45;&gt;proc~xy_shells</title>
+<path fill="none" stroke="#000000" d="M130.88,-665.91C151.53,-661.1 174.92,-655.65 194.14,-651.17"/>
+<polygon fill="#000000" stroke="#000000" points="195.11,-654.54 204.06,-648.86 193.52,-647.72 195.11,-654.54"/>
+</g>
+<!-- proc~hex_direction -->
+<g id="call~~graph~~CallGraph_node6" class="node">
+<title>proc~hex_direction</title>
+<g id="a_call~~graph~~CallGraph_node6"><a xlink:href=".././proc/hex_direction.html" xlink:title="hex_direction">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="397.5,-732 314.5,-732 314.5,-708 397.5,-708 397.5,-732"/>
+<text text-anchor="middle" x="356" y="-717.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_direction</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_hop -->
+<g id="call~~graph~~CallGraph_node7" class="node">
+<title>proc~hex_hop</title>
+<g id="a_call~~graph~~CallGraph_node7"><a xlink:href=".././proc/hex_hop.html" xlink:title="hex_hop">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="263,-732 206,-732 206,-708 263,-708 263,-732"/>
+<text text-anchor="middle" x="234.5" y="-717.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_hop</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_hop&#45;&gt;proc~hex_direction -->
+<g id="call~~graph~~CallGraph_edge7" class="edge">
+<title>proc~hex_hop&#45;&gt;proc~hex_direction</title>
+<path fill="none" stroke="#000000" d="M263.22,-720C275.42,-720 290.16,-720 304.22,-720"/>
+<polygon fill="#000000" stroke="#000000" points="304.29,-723.5 314.29,-720 304.29,-716.5 304.29,-723.5"/>
+</g>
+<!-- proc~add_hex -->
+<g id="call~~graph~~CallGraph_node8" class="node">
+<title>proc~add_hex</title>
+<g id="a_call~~graph~~CallGraph_node8"><a xlink:href=".././proc/add_hex.html" xlink:title="add_hex">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="263,-549 206,-549 206,-525 263,-525 263,-549"/>
+<text text-anchor="middle" x="234.5" y="-534.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">add_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~add_hex&#45;&gt;interface~hex -->
+<g id="call~~graph~~CallGraph_edge8" class="edge">
+<title>proc~add_hex&#45;&gt;interface~hex</title>
+<path fill="none" stroke="#000000" d="M261.43,-524.94C266.7,-522.2 272.12,-519.16 277,-516 297.47,-502.76 318.89,-485.15 334.09,-471.92"/>
+<polygon fill="#000000" stroke="#000000" points="336.67,-474.31 341.85,-465.07 332.04,-469.06 336.67,-474.31"/>
+</g>
+<!-- proc~hex_distance -->
+<g id="call~~graph~~CallGraph_node9" class="node">
+<title>proc~hex_distance</title>
+<g id="a_call~~graph~~CallGraph_node9"><a xlink:href=".././proc/hex_distance.html" xlink:title="hex_distance">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="691.5,-150 609.5,-150 609.5,-126 691.5,-126 691.5,-150"/>
+<text text-anchor="middle" x="650.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_distance</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_norm -->
+<g id="call~~graph~~CallGraph_node50" class="node">
+<title>proc~hex_norm</title>
+<g id="a_call~~graph~~CallGraph_node50"><a xlink:href=".././proc/hex_norm.html" xlink:title="hex_norm">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="828.5,-150 763.5,-150 763.5,-126 828.5,-126 828.5,-150"/>
+<text text-anchor="middle" x="796" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_norm</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_distance&#45;&gt;proc~hex_norm -->
+<g id="call~~graph~~CallGraph_edge9" class="edge">
+<title>proc~hex_distance&#45;&gt;proc~hex_norm</title>
+<path fill="none" stroke="#000000" d="M691.85,-138C710.97,-138 733.78,-138 753.09,-138"/>
+<polygon fill="#000000" stroke="#000000" points="753.12,-141.5 763.12,-138 753.12,-134.5 753.12,-141.5"/>
+</g>
+<!-- proc~sub_hex -->
+<g id="call~~graph~~CallGraph_node10" class="node">
+<title>proc~sub_hex</title>
+<g id="a_call~~graph~~CallGraph_node10"><a xlink:href=".././proc/sub_hex.html" xlink:title="sub_hex">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="262,-381 207,-381 207,-357 262,-357 262,-381"/>
+<text text-anchor="middle" x="234.5" y="-366.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sub_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~sub_hex&#45;&gt;interface~hex -->
+<g id="call~~graph~~CallGraph_edge10" class="edge">
+<title>proc~sub_hex&#45;&gt;interface~hex</title>
+<path fill="none" stroke="#000000" d="M261.43,-381.06C266.7,-383.8 272.12,-386.84 277,-390 297.47,-403.24 318.89,-420.85 334.09,-434.08"/>
+<polygon fill="#000000" stroke="#000000" points="332.04,-436.94 341.85,-440.93 336.67,-431.69 332.04,-436.94"/>
+</g>
+<!-- proc~hex_zigzag_stripe -->
+<g id="call~~graph~~CallGraph_node11" class="node">
+<title>proc~hex_zigzag_stripe</title>
+<g id="a_call~~graph~~CallGraph_node11"><a xlink:href=".././proc/hex_zigzag_stripe.html" xlink:title="hex_zigzag_stripe">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="548.5,-150 442.5,-150 442.5,-126 548.5,-126 548.5,-150"/>
+<text text-anchor="middle" x="495.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_zigzag_stripe</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_insert -->
+<g id="call~~graph~~CallGraph_node26" class="node">
+<title>proc~hex_insert</title>
+<g id="a_call~~graph~~CallGraph_node26"><a xlink:href=".././proc/hex_insert.html" xlink:title="hex_insert">
+<polygon fill="#d9534f" stroke="#d9534f" points="684,-234 617,-234 617,-210 684,-210 684,-234"/>
+<text text-anchor="middle" x="650.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_insert</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_zigzag_stripe&#45;&gt;proc~hex_insert -->
+<g id="call~~graph~~CallGraph_edge11" class="edge">
+<title>proc~hex_zigzag_stripe&#45;&gt;proc~hex_insert</title>
+<path fill="none" stroke="#000000" d="M539.44,-150.08C545.25,-152.58 550.94,-155.53 556,-159 576.28,-172.9 571.79,-186.99 592,-201 596.64,-204.22 601.83,-207 607.14,-209.4"/>
+<polygon fill="#000000" stroke="#000000" points="606.16,-212.78 616.75,-213.3 608.8,-206.29 606.16,-212.78"/>
+</g>
+<!-- proc~hex2corner -->
+<g id="call~~graph~~CallGraph_node12" class="node">
+<title>proc~hex2corner</title>
+<g id="a_call~~graph~~CallGraph_node12"><a xlink:href=".././proc/hex2corner.html" xlink:title="hex2corner">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="687,-276 614,-276 614,-252 687,-252 687,-276"/>
+<text text-anchor="middle" x="650.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex2corner</text>
+</a>
+</g>
+</g>
+<!-- proc~hex2corner&#45;&gt;proc~hex2center -->
+<g id="call~~graph~~CallGraph_edge12" class="edge">
+<title>proc~hex2corner&#45;&gt;proc~hex2center</title>
+<path fill="none" stroke="#000000" d="M686.39,-251.92C693.91,-249.13 701.76,-246.08 709,-243 727.15,-235.28 746.96,-225.69 762.98,-217.62"/>
+<polygon fill="#000000" stroke="#000000" points="764.61,-220.72 771.94,-213.07 761.44,-214.48 764.61,-220.72"/>
+</g>
+<!-- proc~hex2corner&#45;&gt;proc~ith_corner_offset -->
+<g id="call~~graph~~CallGraph_edge13" class="edge">
+<title>proc~hex2corner&#45;&gt;proc~ith_corner_offset</title>
+<path fill="none" stroke="#000000" d="M687.34,-261.25C701.57,-260.16 718.35,-258.88 734.36,-257.65"/>
+<polygon fill="#000000" stroke="#000000" points="735.04,-261.11 744.74,-256.85 734.5,-254.13 735.04,-261.11"/>
+</g>
+<!-- proc~xy_class_print -->
+<g id="call~~graph~~CallGraph_node13" class="node">
+<title>proc~xy_class_print</title>
+<g id="a_call~~graph~~CallGraph_node13"><a xlink:href=".././proc/xy_class_print.html" xlink:title="xy_class_print">
+<polygon fill="#d9534f" stroke="#d9534f" points="399,-591 313,-591 313,-567 399,-567 399,-591"/>
+<text text-anchor="middle" x="356" y="-576.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_class_print</text>
+</a>
+</g>
+</g>
+<!-- proc~rhs_hex -->
+<g id="call~~graph~~CallGraph_node14" class="node">
+<title>proc~rhs_hex</title>
+<g id="a_call~~graph~~CallGraph_node14"><a xlink:href=".././proc/rhs_hex.html" xlink:title="rhs_hex">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="261.5,-507 207.5,-507 207.5,-483 261.5,-483 261.5,-507"/>
+<text text-anchor="middle" x="234.5" y="-492.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rhs_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~rhs_hex&#45;&gt;interface~hex -->
+<g id="call~~graph~~CallGraph_edge14" class="edge">
+<title>proc~rhs_hex&#45;&gt;interface~hex</title>
+<path fill="none" stroke="#000000" d="M261.72,-485.78C278.61,-479.85 300.79,-472.05 319.28,-465.56"/>
+<polygon fill="#000000" stroke="#000000" points="320.56,-468.81 328.84,-462.2 318.24,-462.21 320.56,-468.81"/>
+</g>
+<!-- proc~hex_nearest -->
+<g id="call~~graph~~CallGraph_node16" class="node">
+<title>proc~hex_nearest</title>
+<g id="a_call~~graph~~CallGraph_node16"><a xlink:href=".././proc/hex_nearest.html" xlink:title="hex_nearest">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="116,-732 40,-732 40,-708 116,-708 116,-732"/>
+<text text-anchor="middle" x="78" y="-717.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_nearest</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_nearest&#45;&gt;proc~hex_hop -->
+<g id="call~~graph~~CallGraph_edge15" class="edge">
+<title>proc~hex_nearest&#45;&gt;proc~hex_hop</title>
+<path fill="none" stroke="#000000" d="M116.01,-720C140.11,-720 171.47,-720 195.73,-720"/>
+<polygon fill="#000000" stroke="#000000" points="195.99,-723.5 205.99,-720 195.99,-716.5 195.99,-723.5"/>
+</g>
+<!-- proc~hex_flake -->
+<g id="call~~graph~~CallGraph_node17" class="node">
+<title>proc~hex_flake</title>
+<g id="a_call~~graph~~CallGraph_node17"><a xlink:href=".././proc/hex_flake.html" xlink:title="hex_flake">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="527,-276 464,-276 464,-252 527,-252 527,-276"/>
+<text text-anchor="middle" x="495.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_flake</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_flake&#45;&gt;proc~hex_insert -->
+<g id="call~~graph~~CallGraph_edge16" class="edge">
+<title>proc~hex_flake&#45;&gt;proc~hex_insert</title>
+<path fill="none" stroke="#000000" d="M527.09,-255.6C550.04,-249.3 581.72,-240.61 607.1,-233.64"/>
+<polygon fill="#000000" stroke="#000000" points="608.13,-236.99 616.84,-230.96 606.27,-230.24 608.13,-236.99"/>
+</g>
+<!-- proc~get_supercell -->
+<g id="call~~graph~~CallGraph_node18" class="node">
+<title>proc~get_supercell</title>
+<g id="a_call~~graph~~CallGraph_node18"><a xlink:href=".././proc/get_supercell.html" xlink:title="get_supercell">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="397.5,-391 314.5,-391 314.5,-367 397.5,-367 397.5,-391"/>
+<text text-anchor="middle" x="356" y="-376.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_supercell</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_supercell -->
+<g id="call~~graph~~CallGraph_node30" class="node">
+<title>proc~hex_supercell</title>
+<g id="a_call~~graph~~CallGraph_node30"><a xlink:href=".././proc/hex_supercell.html" xlink:title="hex_supercell">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="538,-402 453,-402 453,-378 538,-378 538,-402"/>
+<text text-anchor="middle" x="495.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_supercell</text>
+</a>
+</g>
+</g>
+<!-- proc~get_supercell&#45;&gt;proc~hex_supercell -->
+<g id="call~~graph~~CallGraph_edge17" class="edge">
+<title>proc~get_supercell&#45;&gt;proc~hex_supercell</title>
+<path fill="none" stroke="#000000" d="M397.51,-382.24C411.67,-383.37 427.77,-384.66 442.72,-385.86"/>
+<polygon fill="#000000" stroke="#000000" points="442.6,-389.36 452.85,-386.67 443.16,-382.38 442.6,-389.36"/>
+</g>
+<!-- proc~hex2lattice -->
+<g id="call~~graph~~CallGraph_node32" class="node">
+<title>proc~hex2lattice</title>
+<g id="a_call~~graph~~CallGraph_node32"><a xlink:href=".././proc/hex2lattice.html" xlink:title="hex2lattice">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="531,-318 460,-318 460,-294 531,-294 531,-318"/>
+<text text-anchor="middle" x="495.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex2lattice</text>
+</a>
+</g>
+</g>
+<!-- proc~get_supercell&#45;&gt;proc~hex2lattice -->
+<g id="call~~graph~~CallGraph_edge18" class="edge">
+<title>proc~get_supercell&#45;&gt;proc~hex2lattice</title>
+<path fill="none" stroke="#000000" d="M372.72,-366.81C387.99,-355.4 412.15,-338.43 435,-327 439.9,-324.55 445.15,-322.26 450.44,-320.15"/>
+<polygon fill="#000000" stroke="#000000" points="451.8,-323.38 459.91,-316.57 449.32,-316.83 451.8,-323.38"/>
+</g>
+<!-- proc~hex_line -->
+<g id="call~~graph~~CallGraph_node19" class="node">
+<title>proc~hex_line</title>
+<g id="a_call~~graph~~CallGraph_node19"><a xlink:href=".././proc/hex_line.html" xlink:title="hex_line">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="523.5,-108 467.5,-108 467.5,-84 523.5,-84 523.5,-108"/>
+<text text-anchor="middle" x="495.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_line</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_line&#45;&gt;proc~hex_distance -->
+<g id="call~~graph~~CallGraph_edge19" class="edge">
+<title>proc~hex_line&#45;&gt;proc~hex_distance</title>
+<path fill="none" stroke="#000000" d="M523.5,-103.41C544.48,-109.17 574.16,-117.32 599.45,-124.26"/>
+<polygon fill="#000000" stroke="#000000" points="598.68,-127.68 609.25,-126.95 600.54,-120.93 598.68,-127.68"/>
+</g>
+<!-- proc~hex_line&#45;&gt;proc~hex_insert -->
+<g id="call~~graph~~CallGraph_edge20" class="edge">
+<title>proc~hex_line&#45;&gt;proc~hex_insert</title>
+<path fill="none" stroke="#000000" d="M523.6,-100.58C534.76,-103.64 547.12,-108.69 556,-117 585.65,-144.76 562.5,-173.08 592,-201 596.4,-205.17 601.69,-208.52 607.26,-211.21"/>
+<polygon fill="#000000" stroke="#000000" points="606.21,-214.56 616.79,-215.15 608.88,-208.09 606.21,-214.56"/>
+</g>
+<!-- proc~hex_round -->
+<g id="call~~graph~~CallGraph_node33" class="node">
+<title>proc~hex_round</title>
+<g id="a_call~~graph~~CallGraph_node33"><a xlink:href=".././proc/hex_round.html" xlink:title="hex_round">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="684,-108 617,-108 617,-84 684,-84 684,-108"/>
+<text text-anchor="middle" x="650.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_round</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_line&#45;&gt;proc~hex_round -->
+<g id="call~~graph~~CallGraph_edge21" class="edge">
+<title>proc~hex_line&#45;&gt;proc~hex_round</title>
+<path fill="none" stroke="#000000" d="M523.5,-96C546.52,-96 580.03,-96 606.7,-96"/>
+<polygon fill="#000000" stroke="#000000" points="606.92,-99.5 616.92,-96 606.92,-92.5 606.92,-99.5"/>
+</g>
+<!-- proc~linear_interpolation -->
+<g id="call~~graph~~CallGraph_node42" class="node">
+<title>proc~linear_interpolation</title>
+<g id="a_call~~graph~~CallGraph_node42"><a xlink:href=".././proc/linear_interpolation.html" xlink:title="linear_interpolation">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="709,-66 592,-66 592,-42 709,-42 709,-66"/>
+<text text-anchor="middle" x="650.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">linear_interpolation</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_line&#45;&gt;proc~linear_interpolation -->
+<g id="call~~graph~~CallGraph_edge22" class="edge">
+<title>proc~hex_line&#45;&gt;proc~linear_interpolation</title>
+<path fill="none" stroke="#000000" d="M523.5,-88.59C543.48,-83.1 571.36,-75.45 595.81,-68.74"/>
+<polygon fill="#000000" stroke="#000000" points="596.98,-72.05 605.69,-66.03 595.12,-65.3 596.98,-72.05"/>
+</g>
+<!-- proc~print_unit_cell -->
+<g id="call~~graph~~CallGraph_node20" class="node">
+<title>proc~print_unit_cell</title>
+<g id="a_call~~graph~~CallGraph_node20"><a xlink:href=".././proc/print_unit_cell.html" xlink:title="print_unit_cell">
+<polygon fill="#d9534f" stroke="#d9534f" points="121.5,-774 34.5,-774 34.5,-750 121.5,-750 121.5,-774"/>
+<text text-anchor="middle" x="78" y="-759.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">print_unit_cell</text>
+</a>
+</g>
+</g>
+<!-- proc~push_back -->
+<g id="call~~graph~~CallGraph_node21" class="node">
+<title>proc~push_back</title>
+<g id="a_call~~graph~~CallGraph_node21"><a xlink:href=".././proc/push_back.html" xlink:title="push_back">
+<polygon fill="#d9534f" stroke="#d9534f" points="112.5,-816 43.5,-816 43.5,-792 112.5,-792 112.5,-816"/>
+<text text-anchor="middle" x="78" y="-801.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">push_back</text>
+</a>
+</g>
+</g>
+<!-- proc~neq_hex -->
+<g id="call~~graph~~CallGraph_node22" class="node">
+<title>proc~neq_hex</title>
+<g id="a_call~~graph~~CallGraph_node22"><a xlink:href=".././proc/neq_hex.html" xlink:title="neq_hex">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="263,-858 206,-858 206,-834 263,-834 263,-858"/>
+<text text-anchor="middle" x="234.5" y="-843.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">neq_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~eq_hex -->
+<g id="call~~graph~~CallGraph_node25" class="node">
+<title>proc~eq_hex</title>
+<g id="a_call~~graph~~CallGraph_node25"><a xlink:href=".././proc/eq_hex.html" xlink:title="eq_hex">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="383,-879 329,-879 329,-855 383,-855 383,-879"/>
+<text text-anchor="middle" x="356" y="-864.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">eq_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~neq_hex&#45;&gt;proc~eq_hex -->
+<g id="call~~graph~~CallGraph_edge23" class="edge">
+<title>proc~neq_hex&#45;&gt;proc~eq_hex</title>
+<path fill="none" stroke="#000000" d="M263.22,-850.87C279.7,-853.77 300.8,-857.48 318.62,-860.61"/>
+<polygon fill="#000000" stroke="#000000" points="318.21,-864.09 328.66,-862.37 319.42,-857.19 318.21,-864.09"/>
+</g>
+<!-- interface~operator(+) -->
+<g id="call~~graph~~CallGraph_node23" class="node">
+<title>interface~operator(+)</title>
+<g id="a_call~~graph~~CallGraph_node23"><a xlink:href=".././interface/operator%28%2B%29.html" xlink:title="operator(+)">
+<polygon fill="#a7506f" stroke="#a7506f" points="116,-549 40,-549 40,-525 116,-525 116,-549"/>
+<text text-anchor="middle" x="78" y="-534.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">operator(+)</text>
+</a>
+</g>
+</g>
+<!-- interface~operator(+)&#45;&gt;proc~add_hex -->
+<g id="call~~graph~~CallGraph_edge24" class="edge">
+<title>interface~operator(+)&#45;&gt;proc~add_hex</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M116.01,-537C140.11,-537 171.47,-537 195.73,-537"/>
+<polygon fill="#000000" stroke="#000000" points="195.99,-540.5 205.99,-537 195.99,-533.5 195.99,-540.5"/>
+</g>
+<!-- proc~orientation_equality -->
+<g id="call~~graph~~CallGraph_node24" class="node">
+<title>proc~orientation_equality</title>
+<g id="a_call~~graph~~CallGraph_node24"><a xlink:href=".././proc/orientation_equality.html" xlink:title="orientation_equality">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="137.5,-900 18.5,-900 18.5,-876 137.5,-876 137.5,-900"/>
+<text text-anchor="middle" x="78" y="-885.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">orientation_equality</text>
+</a>
+</g>
+</g>
+<!-- interface~operator(&#45;) -->
+<g id="call~~graph~~CallGraph_node27" class="node">
+<title>interface~operator(&#45;)</title>
+<g id="a_call~~graph~~CallGraph_node27"><a xlink:href=".././interface/operator%28-%29.html" xlink:title="operator(&#45;)">
+<polygon fill="#a7506f" stroke="#a7506f" points="113,-381 43,-381 43,-357 113,-357 113,-381"/>
+<text text-anchor="middle" x="78" y="-366.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">operator(&#45;)</text>
+</a>
+</g>
+</g>
+<!-- interface~operator(&#45;)&#45;&gt;proc~sub_hex -->
+<g id="call~~graph~~CallGraph_edge25" class="edge">
+<title>interface~operator(&#45;)&#45;&gt;proc~sub_hex</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M113.29,-369C138.03,-369 171.38,-369 196.68,-369"/>
+<polygon fill="#000000" stroke="#000000" points="196.98,-372.5 206.98,-369 196.98,-365.5 196.98,-372.5"/>
+</g>
+<!-- proc~lhs_hex -->
+<g id="call~~graph~~CallGraph_node28" class="node">
+<title>proc~lhs_hex</title>
+<g id="a_call~~graph~~CallGraph_node28"><a xlink:href=".././proc/lhs_hex.html" xlink:title="lhs_hex">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="261.5,-423 207.5,-423 207.5,-399 261.5,-399 261.5,-423"/>
+<text text-anchor="middle" x="234.5" y="-408.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lhs_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~lhs_hex&#45;&gt;interface~hex -->
+<g id="call~~graph~~CallGraph_edge26" class="edge">
+<title>proc~lhs_hex&#45;&gt;interface~hex</title>
+<path fill="none" stroke="#000000" d="M261.72,-420.22C278.61,-426.15 300.79,-433.95 319.28,-440.44"/>
+<polygon fill="#000000" stroke="#000000" points="318.24,-443.79 328.84,-443.8 320.56,-437.19 318.24,-443.79"/>
+</g>
+<!-- proc~xy_ordered_union -->
+<g id="call~~graph~~CallGraph_node29" class="node">
+<title>proc~xy_ordered_union</title>
+<g id="a_call~~graph~~CallGraph_node29"><a xlink:href=".././proc/xy_ordered_union.html" xlink:title="xy_ordered_union">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="704,-318 597,-318 597,-294 704,-294 704,-318"/>
+<text text-anchor="middle" x="650.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_ordered_union</text>
+</a>
+</g>
+</g>
+<!-- proc~xy_distance -->
+<g id="call~~graph~~CallGraph_node58" class="node">
+<title>proc~xy_distance</title>
+<g id="a_call~~graph~~CallGraph_node58"><a xlink:href=".././proc/xy_distance.html" xlink:title="xy_distance">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="393.5,-680 318.5,-680 318.5,-656 393.5,-656 393.5,-680"/>
+<text text-anchor="middle" x="356" y="-665.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_distance</text>
+</a>
+</g>
+</g>
+<!-- proc~xy_shells&#45;&gt;proc~xy_distance -->
+<g id="call~~graph~~CallGraph_edge27" class="edge">
+<title>proc~xy_shells&#45;&gt;proc~xy_distance</title>
+<path fill="none" stroke="#000000" d="M264.73,-648.36C277.87,-651.22 293.7,-654.66 308.41,-657.86"/>
+<polygon fill="#000000" stroke="#000000" points="307.85,-661.32 318.36,-660.03 309.34,-654.48 307.85,-661.32"/>
+</g>
+<!-- sort -->
+<g id="call~~graph~~CallGraph_node61" class="node">
+<title>sort</title>
+<polygon fill="#777777" stroke="#777777" points="383,-638 329,-638 329,-614 383,-614 383,-638"/>
+<text text-anchor="middle" x="356" y="-623.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort</text>
+</g>
+<!-- proc~xy_shells&#45;&gt;sort -->
+<g id="call~~graph~~CallGraph_edge28" class="edge">
+<title>proc~xy_shells&#45;&gt;sort</title>
+<path fill="none" stroke="#000000" d="M264.73,-638.09C280.98,-635.91 301.35,-633.18 318.63,-630.87"/>
+<polygon fill="#000000" stroke="#000000" points="319.47,-634.29 328.92,-629.49 318.54,-627.35 319.47,-634.29"/>
+</g>
+<!-- proc~hex2lattice&#45;&gt;proc~hex2corner -->
+<g id="call~~graph~~CallGraph_edge29" class="edge">
+<title>proc~hex2lattice&#45;&gt;proc~hex2corner</title>
+<path fill="none" stroke="#000000" d="M531.22,-296.47C552.82,-290.54 580.83,-282.85 604.17,-276.44"/>
+<polygon fill="#000000" stroke="#000000" points="605.14,-279.81 613.86,-273.78 603.29,-273.06 605.14,-279.81"/>
+</g>
+<!-- proc~hex2lattice&#45;&gt;proc~xy_ordered_union -->
+<g id="call~~graph~~CallGraph_edge30" class="edge">
+<title>proc~hex2lattice&#45;&gt;proc~xy_ordered_union</title>
+<path fill="none" stroke="#000000" d="M531.22,-306C547.66,-306 567.82,-306 586.8,-306"/>
+<polygon fill="#000000" stroke="#000000" points="586.89,-309.5 596.89,-306 586.89,-302.5 586.89,-309.5"/>
+</g>
+<!-- proc~get_triangle -->
+<g id="call~~graph~~CallGraph_node34" class="node">
+<title>proc~get_triangle</title>
+<g id="a_call~~graph~~CallGraph_node34"><a xlink:href=".././proc/get_triangle.html" xlink:title="get_triangle">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="394,-328 318,-328 318,-304 394,-304 394,-328"/>
+<text text-anchor="middle" x="356" y="-313.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_triangle</text>
+</a>
+</g>
+</g>
+<!-- proc~get_triangle&#45;&gt;proc~hex2lattice -->
+<g id="call~~graph~~CallGraph_edge32" class="edge">
+<title>proc~get_triangle&#45;&gt;proc~hex2lattice</title>
+<path fill="none" stroke="#000000" d="M394.21,-313.29C411.23,-312.06 431.54,-310.58 449.42,-309.28"/>
+<polygon fill="#000000" stroke="#000000" points="449.91,-312.75 459.63,-308.54 449.4,-305.77 449.91,-312.75"/>
+</g>
+<!-- proc~hex_triangle -->
+<g id="call~~graph~~CallGraph_node56" class="node">
+<title>proc~hex_triangle</title>
+<g id="a_call~~graph~~CallGraph_node56"><a xlink:href=".././proc/hex_triangle.html" xlink:title="hex_triangle">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="534.5,-360 456.5,-360 456.5,-336 534.5,-336 534.5,-360"/>
+<text text-anchor="middle" x="495.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_triangle</text>
+</a>
+</g>
+</g>
+<!-- proc~get_triangle&#45;&gt;proc~hex_triangle -->
+<g id="call~~graph~~CallGraph_edge31" class="edge">
+<title>proc~get_triangle&#45;&gt;proc~hex_triangle</title>
+<path fill="none" stroke="#000000" d="M394.21,-324.66C410.3,-328.4 429.33,-332.83 446.47,-336.82"/>
+<polygon fill="#000000" stroke="#000000" points="445.77,-340.25 456.3,-339.11 447.36,-333.43 445.77,-340.25"/>
+</g>
+<!-- proc~neq_xy -->
+<g id="call~~graph~~CallGraph_node35" class="node">
+<title>proc~neq_xy</title>
+<g id="a_call~~graph~~CallGraph_node35"><a xlink:href=".././proc/neq_xy.html" xlink:title="neq_xy">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="261.5,-984 207.5,-984 207.5,-960 261.5,-960 261.5,-984"/>
+<text text-anchor="middle" x="234.5" y="-969.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">neq_xy</text>
+</a>
+</g>
+</g>
+<!-- proc~eq_xy -->
+<g id="call~~graph~~CallGraph_node54" class="node">
+<title>proc~eq_xy</title>
+<g id="a_call~~graph~~CallGraph_node54"><a xlink:href=".././proc/eq_xy.html" xlink:title="eq_xy">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="383,-963 329,-963 329,-939 383,-939 383,-963"/>
+<text text-anchor="middle" x="356" y="-948.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">eq_xy</text>
+</a>
+</g>
+</g>
+<!-- proc~neq_xy&#45;&gt;proc~eq_xy -->
+<g id="call~~graph~~CallGraph_edge33" class="edge">
+<title>proc~neq_xy&#45;&gt;proc~eq_xy</title>
+<path fill="none" stroke="#000000" d="M261.72,-967.39C278.46,-964.45 300.38,-960.6 318.76,-957.37"/>
+<polygon fill="#000000" stroke="#000000" points="319.59,-960.78 328.84,-955.6 318.38,-953.88 319.59,-960.78"/>
+</g>
+<!-- proc~get_flake -->
+<g id="call~~graph~~CallGraph_node36" class="node">
+<title>proc~get_flake</title>
+<g id="a_call~~graph~~CallGraph_node36"><a xlink:href=".././proc/get_flake.html" xlink:title="get_flake">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="386.5,-276 325.5,-276 325.5,-252 386.5,-252 386.5,-276"/>
+<text text-anchor="middle" x="356" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_flake</text>
+</a>
+</g>
+</g>
+<!-- proc~get_flake&#45;&gt;proc~hex_flake -->
+<g id="call~~graph~~CallGraph_edge34" class="edge">
+<title>proc~get_flake&#45;&gt;proc~hex_flake</title>
+<path fill="none" stroke="#000000" d="M386.84,-264C406.38,-264 432.19,-264 453.64,-264"/>
+<polygon fill="#000000" stroke="#000000" points="453.77,-267.5 463.77,-264 453.77,-260.5 453.77,-267.5"/>
+</g>
+<!-- proc~get_flake&#45;&gt;proc~hex2lattice -->
+<g id="call~~graph~~CallGraph_edge35" class="edge">
+<title>proc~get_flake&#45;&gt;proc~hex2lattice</title>
+<path fill="none" stroke="#000000" d="M386.84,-273.11C405.3,-278.75 429.34,-286.1 450.03,-292.42"/>
+<polygon fill="#000000" stroke="#000000" points="449.28,-295.85 459.87,-295.42 451.33,-289.15 449.28,-295.85"/>
+</g>
+<!-- proc~get_stripe -->
+<g id="call~~graph~~CallGraph_node37" class="node">
+<title>proc~get_stripe</title>
+<g id="a_call~~graph~~CallGraph_node37"><a xlink:href=".././proc/get_stripe.html" xlink:title="get_stripe">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="388.5,-192 323.5,-192 323.5,-168 388.5,-168 388.5,-192"/>
+<text text-anchor="middle" x="356" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_stripe</text>
+</a>
+</g>
+</g>
+<!-- proc~get_stripe&#45;&gt;proc~hex_zigzag_stripe -->
+<g id="call~~graph~~CallGraph_edge38" class="edge">
+<title>proc~get_stripe&#45;&gt;proc~hex_zigzag_stripe</title>
+<path fill="none" stroke="#000000" d="M388.55,-170.36C405.36,-165.23 426.42,-158.8 445.32,-153.02"/>
+<polygon fill="#000000" stroke="#000000" points="446.44,-156.34 454.98,-150.07 444.39,-149.65 446.44,-156.34"/>
+</g>
+<!-- proc~get_stripe&#45;&gt;proc~hex2lattice -->
+<g id="call~~graph~~CallGraph_edge37" class="edge">
+<title>proc~get_stripe&#45;&gt;proc~hex2lattice</title>
+<path fill="none" stroke="#000000" d="M364.65,-192.04C380.51,-216.7 417,-271.72 435,-285 439.57,-288.37 444.74,-291.24 450.06,-293.67"/>
+<polygon fill="#000000" stroke="#000000" points="449.15,-297.08 459.73,-297.59 451.78,-290.59 449.15,-297.08"/>
+</g>
+<!-- proc~hex_armchair_stripe -->
+<g id="call~~graph~~CallGraph_node53" class="node">
+<title>proc~hex_armchair_stripe</title>
+<g id="a_call~~graph~~CallGraph_node53"><a xlink:href=".././proc/hex_armchair_stripe.html" xlink:title="hex_armchair_stripe">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="556,-192 435,-192 435,-168 556,-168 556,-192"/>
+<text text-anchor="middle" x="495.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_armchair_stripe</text>
+</a>
+</g>
+</g>
+<!-- proc~get_stripe&#45;&gt;proc~hex_armchair_stripe -->
+<g id="call~~graph~~CallGraph_edge36" class="edge">
+<title>proc~get_stripe&#45;&gt;proc~hex_armchair_stripe</title>
+<path fill="none" stroke="#000000" d="M388.55,-180C399.43,-180 412.1,-180 424.81,-180"/>
+<polygon fill="#000000" stroke="#000000" points="424.98,-183.5 434.98,-180 424.98,-176.5 424.98,-183.5"/>
+</g>
+<!-- proc~xy_norm -->
+<g id="call~~graph~~CallGraph_node38" class="node">
+<title>proc~xy_norm</title>
+<g id="a_call~~graph~~CallGraph_node38"><a xlink:href=".././proc/xy_norm.html" xlink:title="xy_norm">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="524.5,-680 466.5,-680 466.5,-656 524.5,-656 524.5,-680"/>
+<text text-anchor="middle" x="495.5" y="-665.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_norm</text>
+</a>
+</g>
+</g>
+<!-- interface~plot -->
+<g id="call~~graph~~CallGraph_node39" class="node">
+<title>interface~plot</title>
+<g id="a_call~~graph~~CallGraph_node39"><a xlink:href=".././interface/plot.html" xlink:title="plot">
+<polygon fill="#a7506f" stroke="#a7506f" points="383,-108 329,-108 329,-84 383,-84 383,-108"/>
+<text text-anchor="middle" x="356" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plot</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_plot -->
+<g id="call~~graph~~CallGraph_node44" class="node">
+<title>proc~hex_plot</title>
+<g id="a_call~~graph~~CallGraph_node44"><a xlink:href=".././proc/hex_plot.html" xlink:title="hex_plot">
+<polygon fill="#d9534f" stroke="#d9534f" points="524,-234 467,-234 467,-210 524,-210 524,-234"/>
+<text text-anchor="middle" x="495.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_plot</text>
+</a>
+</g>
+</g>
+<!-- interface~plot&#45;&gt;proc~hex_plot -->
+<g id="call~~graph~~CallGraph_edge40" class="edge">
+<title>interface~plot&#45;&gt;proc~hex_plot</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M364.65,-108.04C380.51,-132.7 417,-187.72 435,-201 441.57,-205.85 449.36,-209.65 457.1,-212.61"/>
+<polygon fill="#000000" stroke="#000000" points="456.19,-216 466.78,-215.92 458.45,-209.37 456.19,-216"/>
+</g>
+<!-- proc~xy_plot -->
+<g id="call~~graph~~CallGraph_node52" class="node">
+<title>proc~xy_plot</title>
+<g id="a_call~~graph~~CallGraph_node52"><a xlink:href=".././proc/xy_plot.html" xlink:title="xy_plot">
+<polygon fill="#d9534f" stroke="#d9534f" points="522.5,-45 468.5,-45 468.5,-21 522.5,-21 522.5,-45"/>
+<text text-anchor="middle" x="495.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_plot</text>
+</a>
+</g>
+</g>
+<!-- interface~plot&#45;&gt;proc~xy_plot -->
+<g id="call~~graph~~CallGraph_edge39" class="edge">
+<title>interface~plot&#45;&gt;proc~xy_plot</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M383.19,-84C404.69,-74.15 435.35,-60.1 459.05,-49.24"/>
+<polygon fill="#000000" stroke="#000000" points="460.78,-52.3 468.41,-44.95 457.86,-45.94 460.78,-52.3"/>
+</g>
+<!-- proc~dot_hex -->
+<g id="call~~graph~~CallGraph_node40" class="node">
+<title>proc~dot_hex</title>
+<g id="a_call~~graph~~CallGraph_node40"><a xlink:href=".././proc/dot_hex.html" xlink:title="dot_hex">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="261.5,-465 207.5,-465 207.5,-441 261.5,-441 261.5,-465"/>
+<text text-anchor="middle" x="234.5" y="-450.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dot_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~eq_lattice -->
+<g id="call~~graph~~CallGraph_node41" class="node">
+<title>proc~eq_lattice</title>
+<g id="a_call~~graph~~CallGraph_node41"><a xlink:href=".././proc/eq_lattice.html" xlink:title="eq_lattice">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="266.5,-942 202.5,-942 202.5,-918 266.5,-918 266.5,-942"/>
+<text text-anchor="middle" x="234.5" y="-927.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">eq_lattice</text>
+</a>
+</g>
+</g>
+<!-- proc~eq_lattice&#45;&gt;proc~eq_xy -->
+<g id="call~~graph~~CallGraph_edge41" class="edge">
+<title>proc~eq_lattice&#45;&gt;proc~eq_xy</title>
+<path fill="none" stroke="#000000" d="M266.59,-935.46C282.62,-938.28 302.27,-941.73 318.96,-944.67"/>
+<polygon fill="#000000" stroke="#000000" points="318.46,-948.13 328.92,-946.42 319.68,-941.24 318.46,-948.13"/>
+</g>
+<!-- proc~neq_lattice -->
+<g id="call~~graph~~CallGraph_node43" class="node">
+<title>proc~neq_lattice</title>
+<g id="a_call~~graph~~CallGraph_node43"><a xlink:href=".././proc/neq_lattice.html" xlink:title="neq_lattice">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="113.5,-942 42.5,-942 42.5,-918 113.5,-918 113.5,-942"/>
+<text text-anchor="middle" x="78" y="-927.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">neq_lattice</text>
+</a>
+</g>
+</g>
+<!-- proc~neq_lattice&#45;&gt;proc~eq_lattice -->
+<g id="call~~graph~~CallGraph_edge42" class="edge">
+<title>proc~neq_lattice&#45;&gt;proc~eq_lattice</title>
+<path fill="none" stroke="#000000" d="M113.67,-930C136.95,-930 167.73,-930 192.26,-930"/>
+<polygon fill="#000000" stroke="#000000" points="192.35,-933.5 202.35,-930 192.35,-926.5 192.35,-933.5"/>
+</g>
+<!-- proc~hex_plot&#45;&gt;proc~hex2corner -->
+<g id="call~~graph~~CallGraph_edge43" class="edge">
+<title>proc~hex_plot&#45;&gt;proc~hex2corner</title>
+<path fill="none" stroke="#000000" d="M524.21,-229.61C546.41,-235.7 578.01,-244.38 603.93,-251.49"/>
+<polygon fill="#000000" stroke="#000000" points="603.34,-254.96 613.91,-254.23 605.19,-248.21 603.34,-254.96"/>
+</g>
+<!-- assert -->
+<g id="call~~graph~~CallGraph_node60" class="node">
+<title>assert</title>
+<polygon fill="#777777" stroke="#777777" points="677.5,-402 623.5,-402 623.5,-378 677.5,-378 677.5,-402"/>
+<text text-anchor="middle" x="650.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">assert</text>
+</g>
+<!-- proc~new_hex_cubic&#45;&gt;assert -->
+<g id="call~~graph~~CallGraph_edge44" class="edge">
+<title>proc~new_hex_cubic&#45;&gt;assert</title>
+<path fill="none" stroke="#000000" d="M540.34,-419.96C563.52,-413.6 591.61,-405.89 613.5,-399.88"/>
+<polygon fill="#000000" stroke="#000000" points="614.67,-403.19 623.38,-397.17 612.81,-396.44 614.67,-403.19"/>
+</g>
+<!-- interface~operator(ASTERISK) -->
+<g id="call~~graph~~CallGraph_node46" class="node">
+<title>interface~operator(ASTERISK)</title>
+<g id="a_call~~graph~~CallGraph_node46"><a xlink:href=".././interface/operator%28ASTERISK%29.html" xlink:title="operator(*)">
+<polygon fill="#a7506f" stroke="#a7506f" points="114,-465 42,-465 42,-441 114,-441 114,-465"/>
+<text text-anchor="middle" x="78" y="-450.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">operator(*)</text>
+</a>
+</g>
+</g>
+<!-- interface~operator(ASTERISK)&#45;&gt;proc~rhs_hex -->
+<g id="call~~graph~~CallGraph_edge45" class="edge">
+<title>interface~operator(ASTERISK)&#45;&gt;proc~rhs_hex</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M114.06,-462.53C138.94,-469.29 172.25,-478.35 197.37,-485.18"/>
+<polygon fill="#000000" stroke="#000000" points="196.68,-488.62 207.24,-487.86 198.51,-481.86 196.68,-488.62"/>
+</g>
+<!-- interface~operator(ASTERISK)&#45;&gt;proc~lhs_hex -->
+<g id="call~~graph~~CallGraph_edge46" class="edge">
+<title>interface~operator(ASTERISK)&#45;&gt;proc~lhs_hex</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M114.06,-443.47C138.94,-436.71 172.25,-427.65 197.37,-420.82"/>
+<polygon fill="#000000" stroke="#000000" points="198.51,-424.14 207.24,-418.14 196.68,-417.38 198.51,-424.14"/>
+</g>
+<!-- interface~operator(ASTERISK)&#45;&gt;proc~dot_hex -->
+<g id="call~~graph~~CallGraph_edge47" class="edge">
+<title>interface~operator(ASTERISK)&#45;&gt;proc~dot_hex</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M114.06,-453C138.83,-453 171.95,-453 197.04,-453"/>
+<polygon fill="#000000" stroke="#000000" points="197.24,-456.5 207.24,-453 197.24,-449.5 197.24,-456.5"/>
+</g>
+<!-- interface~operator(==) -->
+<g id="call~~graph~~CallGraph_node47" class="node">
+<title>interface~operator(==)</title>
+<g id="a_call~~graph~~CallGraph_node47"><a xlink:href=".././interface/operator%28%3D%3D%29.html" xlink:title="operator(==)">
+<polygon fill="#a7506f" stroke="#a7506f" points="277,-900 192,-900 192,-876 277,-876 277,-900"/>
+<text text-anchor="middle" x="234.5" y="-885.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">operator(==)</text>
+</a>
+</g>
+</g>
+<!-- interface~operator(==)&#45;&gt;proc~eq_hex -->
+<g id="call~~graph~~CallGraph_edge48" class="edge">
+<title>interface~operator(==)&#45;&gt;proc~eq_hex</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M277.3,-880.66C290.78,-878.28 305.62,-875.68 318.68,-873.38"/>
+<polygon fill="#000000" stroke="#000000" points="319.47,-876.8 328.72,-871.62 318.26,-869.9 319.47,-876.8"/>
+</g>
+<!-- proc~get_sublattice -->
+<g id="call~~graph~~CallGraph_node48" class="node">
+<title>proc~get_sublattice</title>
+<g id="a_call~~graph~~CallGraph_node48"><a xlink:href=".././proc/get_sublattice.html" xlink:title="get_sublattice">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="694,-24 607,-24 607,0 694,0 694,-24"/>
+<text text-anchor="middle" x="650.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_sublattice</text>
+</a>
+</g>
+</g>
+<!-- interface~xy_print&#45;&gt;proc~xy_lattice_print -->
+<g id="call~~graph~~CallGraph_edge50" class="edge">
+<title>interface~xy_print&#45;&gt;proc~xy_lattice_print</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M206.65,-584.26C186.87,-585.65 159.27,-586.07 134.79,-585.51"/>
+<polygon fill="#000000" stroke="#000000" points="134.62,-582.01 124.52,-585.22 134.41,-589 134.62,-582.01"/>
+</g>
+<!-- interface~xy_print&#45;&gt;proc~xy_class_print -->
+<g id="call~~graph~~CallGraph_edge49" class="edge">
+<title>interface~xy_print&#45;&gt;proc~xy_class_print</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M262.02,-579C273.97,-579 288.52,-579 302.53,-579"/>
+<polygon fill="#000000" stroke="#000000" points="302.6,-582.5 312.6,-579 302.6,-575.5 302.6,-582.5"/>
+</g>
+<!-- proc~hex_print -->
+<g id="call~~graph~~CallGraph_node51" class="node">
+<title>proc~hex_print</title>
+<g id="a_call~~graph~~CallGraph_node51"><a xlink:href=".././proc/hex_print.html" xlink:title="hex_print">
+<polygon fill="#d9534f" stroke="#d9534f" points="108.5,-984 47.5,-984 47.5,-960 108.5,-960 108.5,-984"/>
+<text text-anchor="middle" x="78" y="-969.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_print</text>
+</a>
+</g>
+</g>
+<!-- proc~xy_plot&#45;&gt;proc~get_sublattice -->
+<g id="call~~graph~~CallGraph_edge51" class="edge">
+<title>proc~xy_plot&#45;&gt;proc~get_sublattice</title>
+<path fill="none" stroke="#000000" d="M522.8,-29.39C543.08,-26.61 571.77,-22.67 596.73,-19.24"/>
+<polygon fill="#000000" stroke="#000000" points="597.37,-22.69 606.8,-17.86 596.42,-15.75 597.37,-22.69"/>
+</g>
+<!-- proc~hex_armchair_stripe&#45;&gt;proc~hex_insert -->
+<g id="call~~graph~~CallGraph_edge52" class="edge">
+<title>proc~hex_armchair_stripe&#45;&gt;proc~hex_insert</title>
+<path fill="none" stroke="#000000" d="M540.34,-192.04C561.29,-197.78 586.25,-204.64 607.02,-210.34"/>
+<polygon fill="#000000" stroke="#000000" points="606.27,-213.76 616.84,-213.03 608.12,-207.01 606.27,-213.76"/>
+</g>
+<!-- interface~operator(SLASH=) -->
+<g id="call~~graph~~CallGraph_node55" class="node">
+<title>interface~operator(SLASH=)</title>
+<g id="a_call~~graph~~CallGraph_node55"><a xlink:href=".././interface/operator%28SLASH%3D%29.html" xlink:title="operator(/=)">
+<polygon fill="#a7506f" stroke="#a7506f" points="117.5,-858 38.5,-858 38.5,-834 117.5,-834 117.5,-858"/>
+<text text-anchor="middle" x="78" y="-843.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">operator(/=)</text>
+</a>
+</g>
+</g>
+<!-- interface~operator(SLASH=)&#45;&gt;proc~neq_hex -->
+<g id="call~~graph~~CallGraph_edge53" class="edge">
+<title>interface~operator(SLASH=)&#45;&gt;proc~neq_hex</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M117.59,-846C141.41,-846 171.85,-846 195.55,-846"/>
+<polygon fill="#000000" stroke="#000000" points="195.59,-849.5 205.59,-846 195.59,-842.5 195.59,-849.5"/>
+</g>
+<!-- proc~hex_triangle&#45;&gt;proc~hex_insert -->
+<g id="call~~graph~~CallGraph_edge55" class="edge">
+<title>proc~hex_triangle&#45;&gt;proc~hex_insert</title>
+<path fill="none" stroke="#000000" d="M534.68,-339.77C542.41,-336.74 550,-332.62 556,-327 585.65,-299.24 562.5,-270.92 592,-243 596.4,-238.83 601.69,-235.48 607.26,-232.79"/>
+<polygon fill="#000000" stroke="#000000" points="608.88,-235.91 616.79,-228.85 606.21,-229.44 608.88,-235.91"/>
+</g>
+<!-- proc~hex_triangle&#45;&gt;assert -->
+<g id="call~~graph~~CallGraph_edge54" class="edge">
+<title>proc~hex_triangle&#45;&gt;assert</title>
+<path fill="none" stroke="#000000" d="M534.71,-358.49C558.88,-365.12 589.91,-373.64 613.61,-380.15"/>
+<polygon fill="#000000" stroke="#000000" points="612.71,-383.53 623.28,-382.8 614.56,-376.78 612.71,-383.53"/>
+</g>
+<!-- proc~xy_distance&#45;&gt;proc~xy_norm -->
+<g id="call~~graph~~CallGraph_edge56" class="edge">
+<title>proc~xy_distance&#45;&gt;proc~xy_norm</title>
+<path fill="none" stroke="#000000" d="M393.85,-668C413.13,-668 436.72,-668 456.21,-668"/>
+<polygon fill="#000000" stroke="#000000" points="456.28,-671.5 466.28,-668 456.28,-664.5 456.28,-671.5"/>
+</g>
+<!-- proc~xy_next_nearest_neighbors -->
+<g id="call~~graph~~CallGraph_node59" class="node">
+<title>proc~xy_next_nearest_neighbors</title>
+<g id="a_call~~graph~~CallGraph_node59"><a xlink:href=".././proc/xy_next_nearest_neighbors.html" xlink:title="xy_next_nearest_neighbors">
+<polygon fill="#d9534f" stroke="#d9534f" points="156,-648 0,-648 0,-624 156,-624 156,-648"/>
+<text text-anchor="middle" x="78" y="-633.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_next_nearest_neighbors</text>
+</a>
+</g>
+</g>
+<!-- proc~xy_next_nearest_neighbors&#45;&gt;proc~xy_shells -->
+<g id="call~~graph~~CallGraph_edge57" class="edge">
+<title>proc~xy_next_nearest_neighbors&#45;&gt;proc~xy_shells</title>
+<path fill="none" stroke="#000000" d="M156.25,-639C169.42,-639.51 182.59,-640.02 194.23,-640.47"/>
+<polygon fill="#000000" stroke="#000000" points="194.31,-643.98 204.44,-640.87 194.58,-636.99 194.31,-643.98"/>
+</g>
+</g>
+</svg>
+</div><script>var pancallgraphCallGraph = svgPanZoom('#callgraphCallGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="597pt" height="32pt"
+ viewBox="0.00 0.00 596.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 592.5,-28 592.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="388.5,-24 243.5,-24 243.5,0 388.5,0 388.5,-24"/>
+<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="465,-24 407,-24 407,0 465,0 465,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="588.5,-24 483.5,-24 483.5,0 588.5,0 588.5,-24"/>
+<text text-anchor="middle" x="536" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module.
+    </p>
+    </div></div></div></div>
+        </div>
+      </div>
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2022 
+</p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+  </body>
+</html>

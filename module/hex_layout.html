@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
+    <meta name="author" content="Gabriele Bellomia" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>hex_layout &ndash; HoneyTools</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">HoneyTools </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../lists/files.html">Source Files</a></li>
+            <li><a href="../lists/modules.html">Modules</a></li>
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
+            </ul>
+        
+            </li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+          </ul>
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>hex_layout 
+    <small>Module</small>
+    </h1>
+    <div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 6.3% of total for modules and submodules.">56 statements</a>
+     </li> 
+    <li><i class="fa fa-code"></i><a href="../src/hex_layout.f90"> Source File</a></li>
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+     <li><a href='../sourcefile/hex_layout.f90.html'>hex_layout.f90</a></li>
+     <li class="active">hex_layout</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    <div id="sidebar">
+  <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/hex_layout.html#variable-armchair">armchair</a>
+      <a class="list-group-item" href="../module/hex_layout.html#variable-zigzag">zigzag</a>
+      <a class="list-group-item" href="../module/hex_layout.html#variable-aq">aq</a>
+      <a class="list-group-item" href="../module/hex_layout.html#variable-ar">ar</a>
+      <a class="list-group-item" href="../module/hex_layout.html#variable-zq">zq</a>
+      <a class="list-group-item" href="../module/hex_layout.html#variable-zr">zr</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
+  <div id="types-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/hex_layout.html#type-hex_orientation">hex_orientation</a>
+      <a class="list-group-item" href="../module/hex_layout.html#type-unit_cell">unit_cell</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/hex_layout.html#proc-orientation_equality">orientation_equality</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      <a class="list-group-item" href="../module/hex_layout.html#proc-print_unit_cell">print_unit_cell</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <p>Defining hexagonal unit-cells</p>
+<br>    
+        <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Used by</h3>
+      </div>
+      <ul class="list-group">
+  <li class="list-group-item">
+    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~hex_layout~~UsedByGraph Pages: 1 -->
+<svg id="modulehex_layoutUsedByGraph" width="437pt" height="142pt"
+ viewBox="0.00 0.00 437.00 142.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~hex_layout~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 138)">
+<title>module~~hex_layout~~UsedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-138 433,-138 433,4 -4,4"/>
+<!-- module~hex_layout -->
+<g id="module~~hex_layout~~UsedByGraph_node1" class="node">
+<title>module~hex_layout</title>
+<polygon fill="none" stroke="black" points="70,-84 0,-84 0,-60 70,-60 70,-84"/>
+<text text-anchor="middle" x="35" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50">hex_layout</text>
+</g>
+<!-- module~xy_coordinates -->
+<g id="module~~hex_layout~~UsedByGraph_node2" class="node">
+<title>module~xy_coordinates</title>
+<g id="a_module~~hex_layout~~UsedByGraph_node2"><a xlink:href=".././module/xy_coordinates.html" xlink:title="xy_coordinates">
+<polygon fill="#337ab7" stroke="#337ab7" points="201,-104 108,-104 108,-80 201,-80 201,-104"/>
+<text text-anchor="middle" x="154.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates</text>
+</a>
+</g>
+</g>
+<!-- module~xy_coordinates&#45;&gt;module~hex_layout -->
+<g id="module~~hex_layout~~UsedByGraph_edge1" class="edge">
+<title>module~xy_coordinates&#45;&gt;module~hex_layout</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M107.73,-84.21C98.65,-82.66 89.13,-81.04 80.11,-79.51"/>
+<polygon fill="#000000" stroke="#000000" points="80.62,-76.04 70.18,-77.82 79.45,-82.95 80.62,-76.04"/>
+</g>
+<!-- module~honeyplots -->
+<g id="module~~hex_layout~~UsedByGraph_node3" class="node">
+<title>module~honeyplots</title>
+<g id="a_module~~hex_layout~~UsedByGraph_node3"><a xlink:href=".././module/honeyplots.html" xlink:title="honeyplots">
+<polygon fill="#337ab7" stroke="#337ab7" points="429,-134 358,-134 358,-110 429,-110 429,-134"/>
+<text text-anchor="middle" x="393.5" y="-119.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeyplots</text>
+</a>
+</g>
+</g>
+<!-- module~honeyplots&#45;&gt;module~hex_layout -->
+<g id="module~~hex_layout~~UsedByGraph_edge2" class="edge">
+<title>module~honeyplots&#45;&gt;module~hex_layout</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M279.5,-132C201.97,-129.32 179.65,-137.36 106,-113 89.81,-107.65 73.28,-98.19 60.35,-89.7"/>
+<polygon fill="#000000" stroke="#000000" points="62.26,-86.77 52.02,-84.05 58.33,-92.56 62.26,-86.77"/>
+</g>
+<!-- module~honeyplots&#45;&gt;module~xy_coordinates -->
+<g id="module~~hex_layout~~UsedByGraph_edge6" class="edge">
+<title>module~honeyplots&#45;&gt;module~xy_coordinates</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M357.57,-127.39C335.74,-130.2 307.03,-132.88 281.5,-132"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M279.5,-132C247.57,-130.9 213.12,-118.83 188.66,-108.24"/>
+<polygon fill="#000000" stroke="#000000" points="190.03,-105.02 179.47,-104.13 187.17,-111.41 190.03,-105.02"/>
+</g>
+<!-- module~xy_neighbors -->
+<g id="module~~hex_layout~~UsedByGraph_node6" class="node">
+<title>module~xy_neighbors</title>
+<g id="a_module~~hex_layout~~UsedByGraph_node6"><a xlink:href=".././module/xy_neighbors.html" xlink:title="xy_neighbors">
+<polygon fill="#337ab7" stroke="#337ab7" points="322,-104 239,-104 239,-80 322,-80 322,-104"/>
+<text text-anchor="middle" x="280.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_neighbors</text>
+</a>
+</g>
+</g>
+<!-- module~honeyplots&#45;&gt;module~xy_neighbors -->
+<g id="module~~hex_layout~~UsedByGraph_edge9" class="edge">
+<title>module~honeyplots&#45;&gt;module~xy_neighbors</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M357.99,-112.67C349.76,-110.45 340.8,-108.03 332.02,-105.65"/>
+<polygon fill="#000000" stroke="#000000" points="332.79,-102.24 322.22,-103.01 330.96,-108.99 332.79,-102.24"/>
+</g>
+<!-- module~hex_geometries -->
+<g id="module~~hex_layout~~UsedByGraph_node4" class="node">
+<title>module~hex_geometries</title>
+<g id="a_module~~hex_layout~~UsedByGraph_node4"><a xlink:href=".././module/hex_geometries.html" xlink:title="hex_geometries">
+<polygon fill="#337ab7" stroke="#337ab7" points="203,-24 106,-24 106,0 203,0 203,-24"/>
+<text text-anchor="middle" x="154.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_geometries</text>
+</a>
+</g>
+</g>
+<!-- module~hex_geometries&#45;&gt;module~hex_layout -->
+<g id="module~~hex_layout~~UsedByGraph_edge3" class="edge">
+<title>module~hex_geometries&#45;&gt;module~hex_layout</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M129.72,-24.14C112.2,-33.09 88.16,-45.36 68.81,-55.24"/>
+<polygon fill="#000000" stroke="#000000" points="67.06,-52.21 59.74,-59.88 70.24,-58.45 67.06,-52.21"/>
+</g>
+<!-- module~honeytools -->
+<g id="module~~hex_layout~~UsedByGraph_node5" class="node">
+<title>module~honeytools</title>
+<g id="a_module~~hex_layout~~UsedByGraph_node5"><a xlink:href=".././module/honeytools.html" xlink:title="honeytools">
+<polygon fill="#337ab7" stroke="#337ab7" points="429,-83 358,-83 358,-59 429,-59 429,-83"/>
+<text text-anchor="middle" x="393.5" y="-68.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeytools</text>
+</a>
+</g>
+</g>
+<!-- module~honeytools&#45;&gt;module~hex_layout -->
+<g id="module~~hex_layout~~UsedByGraph_edge4" class="edge">
+<title>module~honeytools&#45;&gt;module~hex_layout</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M279.5,-52C209.85,-46.19 128.98,-56.14 80.19,-63.98"/>
+<polygon fill="#000000" stroke="#000000" points="79.58,-60.53 70.28,-65.61 80.72,-67.44 79.58,-60.53"/>
+</g>
+<!-- module~honeytools&#45;&gt;module~xy_coordinates -->
+<g id="module~~hex_layout~~UsedByGraph_edge7" class="edge">
+<title>module~honeytools&#45;&gt;module~xy_coordinates</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M279.5,-52C246.07,-49.21 209.75,-63.08 185.12,-75.24"/>
+<polygon fill="#000000" stroke="#000000" points="183.25,-72.26 175.96,-79.95 186.45,-78.49 183.25,-72.26"/>
+</g>
+<!-- module~honeytools&#45;&gt;module~hex_geometries -->
+<g id="module~~hex_layout~~UsedByGraph_edge8" class="edge">
+<title>module~honeytools&#45;&gt;module~hex_geometries</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M357.7,-63.46C335.93,-59.13 307.22,-54.15 281.5,-52"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M279.5,-52C248.59,-49.42 215.22,-38.13 190.89,-28.2"/>
+<polygon fill="#000000" stroke="#000000" points="191.96,-24.85 181.38,-24.2 189.24,-31.3 191.96,-24.85"/>
+</g>
+<!-- module~honeytools&#45;&gt;module~xy_neighbors -->
+<g id="module~~hex_layout~~UsedByGraph_edge10" class="edge">
+<title>module~honeytools&#45;&gt;module~xy_neighbors</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M357.99,-77.53C349.85,-79.07 341,-80.74 332.3,-82.39"/>
+<polygon fill="#000000" stroke="#000000" points="331.39,-79 322.22,-84.3 332.7,-85.88 331.39,-79"/>
+</g>
+<!-- module~xy_neighbors&#45;&gt;module~xy_coordinates -->
+<g id="module~~hex_layout~~UsedByGraph_edge5" class="edge">
+<title>module~xy_neighbors&#45;&gt;module~xy_coordinates</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M238.9,-92C230.17,-92 220.81,-92 211.61,-92"/>
+<polygon fill="#000000" stroke="#000000" points="211.35,-88.5 201.35,-92 211.35,-95.5 211.35,-88.5"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses.
+    </p>
+    </div></div></div></div>
+  </li>
+      </ul>
+    </div>
+
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/hex_layout.html#variable-armchair">armchair</a>
+      <a class="list-group-item" href="../module/hex_layout.html#variable-zigzag">zigzag</a>
+      <a class="list-group-item" href="../module/hex_layout.html#variable-aq">aq</a>
+      <a class="list-group-item" href="../module/hex_layout.html#variable-ar">ar</a>
+      <a class="list-group-item" href="../module/hex_layout.html#variable-zq">zq</a>
+      <a class="list-group-item" href="../module/hex_layout.html#variable-zr">zr</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
+  <div id="types-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/hex_layout.html#type-hex_orientation">hex_orientation</a>
+      <a class="list-group-item" href="../module/hex_layout.html#type-unit_cell">unit_cell</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/hex_layout.html#proc-orientation_equality">orientation_equality</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      <a class="list-group-item" href="../module/hex_layout.html#proc-print_unit_cell">print_unit_cell</a>
+    </div>
+  </div>
+</div>
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+
+    <section>
+    <h2>Variables</h2>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-armchair"></span>type(<a href='../type/hex_orientation.html'>hex_orientation</a>),</td>
+<td>public,</td>  <td>parameter</td><td>::</td>
+  <td><strong>armchair</strong></td><td> =</td><td>hex_orientation(aq, ar, 0d0)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-zigzag"></span>type(<a href='../type/hex_orientation.html'>hex_orientation</a>),</td>
+<td>public,</td>  <td>parameter</td><td>::</td>
+  <td><strong>zigzag</strong></td><td> =</td><td>hex_orientation(zq, zr, 0.5d0)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-aq"></span>real(kind=8),</td>
+<td>private,</td>  <td>parameter, dimension(2)</td><td>::</td>
+  <td><strong>aq</strong></td><td> =</td><td>[3d0/2d0, sqrt(3d0)/2d0]</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-ar"></span>real(kind=8),</td>
+<td>private,</td>  <td>parameter, dimension(2)</td><td>::</td>
+  <td><strong>ar</strong></td><td> =</td><td>[0d0, sqrt(3d0)]</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-zq"></span>real(kind=8),</td>
+<td>private,</td>  <td>parameter, dimension(2)</td><td>::</td>
+  <td><strong>zq</strong></td><td> =</td><td>[sqrt(3d0), 0d0]</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-zr"></span>real(kind=8),</td>
+<td>private,</td>  <td>parameter, dimension(2)</td><td>::</td>
+  <td><strong>zr</strong></td><td> =</td><td>[sqrt(3d0)/2d0, 3d0/2d0]</td><td></td>
+</tr>
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+
+    
+    <section>
+     <h2>Derived Types</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-hex_orientation"></span><h3>type, public :: <a href='../type/hex_orientation.html'>hex_orientation</a>  </h3></div>
+  <div class="panel-body">
+    <p>lattice-orientation data storage</p>
+     <h4>Components</h4>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-uq"></span>real(kind=8),</td>
+<td>private,</td>  <td>dimension(2)</td><td>::</td>
+  <td><strong>uq</strong></td><td></td><td></td><td><p>1st unit-vector</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-ur"></span>real(kind=8),</td>
+<td>private,</td>  <td>dimension(2)</td><td>::</td>
+  <td><strong>ur</strong></td><td></td><td></td><td><p>2nd unit-vector</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-angle"></span>real(kind=8),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>angle</strong></td><td></td><td></td><td><p>in units of 60°</p></td>
+</tr>
+</tbody>
+</table>
+
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+       <tr><td>generic, public :: <strong><a href='../type/hex_orientation.html#boundprocedure-operator%28%3D%3D%29~4'>operator(==)</a></strong>  => orientation_equality </td>
+       <td></td></tr>
+       <tr><td>procedure, private :: <strong><a href='../type/hex_orientation.html#boundprocedure-orientation_equality'>orientation_equality</a></strong>  </td>
+       <td></td></tr>
+       </tbody>
+       </table>
+  </div>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-unit_cell"></span><h3>type, public :: <a href='../type/unit_cell.html'>unit_cell</a>  </h3></div>
+  <div class="panel-body">
+    <p>Wrapper type to define all about a honeycomb structure</p>
+     <h4>Components</h4>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-orientation"></span>type(<a href='../type/hex_orientation.html'>hex_orientation</a>),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>orientation</strong></td><td></td><td></td><td><p>armchair or zigzag</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-size"></span>real(kind=8),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>size</strong></td><td> =</td><td>1d0</td><td><p>lattice parameter</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-origin"></span>real(kind=8),</td>
+<td>private,</td>  <td>dimension(2)</td><td>::</td>
+  <td><strong>origin</strong></td><td> =</td><td>[0d0, 0d0]</td><td></td>
+</tr>
+</tbody>
+</table>
+
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+       <tr><td>procedure, public :: <strong><a href='../type/unit_cell.html#boundprocedure-print'>print</a></strong>  => print_unit_cell </td>
+       <td><p>call layout%print</p></td></tr>
+       </tbody>
+       </table>
+  </div>
+</div>
+
+    </section>
+  <br>
+    
+ 
+    <section>
+    <h2>Functions</h2>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-orientation_equality"></span><h3>private pure function <a href='../proc/orientation_equality.html'>orientation_equality</a>(a, b) result(isequal)</h3></div>
+  <div class="panel-body">
+       
+<p>Overload of == operator for hex_orientation type</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/hex_orientation.html'>hex_orientation</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>a</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/hex_orientation.html'>hex_orientation</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>b</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>logical</small></h4>  
+
+  </div>
+  </div>
+
+    </section>
+    <br>
+
+    <section>
+    <h2>Subroutines</h2>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-print_unit_cell"></span><h3>public impure elemental subroutine <a href='../proc/print_unit_cell.html'>print_unit_cell</a>(C, unit)</h3></div>
+  <div class="panel-body">
+       
+<p>Pretty print of hex coordinates</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>C</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in),</td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>unit</strong></td><td><p>default = $stdout</p></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+    </section>    
+    <br>
+    
+    </div>
+  </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2022 
+</p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+  </body>
+</html>
