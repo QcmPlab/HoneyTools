@@ -1,9 +1,10 @@
 name = "Honeytools"
-version = "0.1.0"
-license = "license"
+license = "LGPL-3.0"
 author = "Gabriele Bellomia"
-maintainer = "gbellomi@sissa.it"
+maintainer = "gbellomia@live.it"
 copyright = "Copyright 2022, Gabriele Bellomia"
+description = "Honeycomb flakes, sheets, ribbons, whatever. Made easy."
+keywords = ["tight-binding","graphene","honeycomb","flakes","ribbons","stripes","lattice"]
 [build]
 auto-executables = true
 auto-tests = true
