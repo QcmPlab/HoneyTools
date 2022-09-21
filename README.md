@@ -6,7 +6,7 @@
 [![test](https://img.shields.io/github/workflow/status/qcmplab/honeytools/TEST?label=test-suite&logo=Fortran&style=flat-square)](https://github.com/qcmplab/HoneyTools/actions/workflows/test.yaml)
 [![docs](https://img.shields.io/github/workflow/status/qcmplab/honeytools/DOCS?label=docs-gen&logo=Fortran&style=flat-square)](https://github.com/qcmplab/HoneyTools/actions/workflows/docs.yaml)
 [![codecov](https://img.shields.io/codecov/c/github/qcmplab/honeytools?label=coverage&logo=codecov&style=flat-square)](https://codecov.io/gh/qcmplab/honeytools)
-[![codacy](https://img.shields.io/codacy/grade/dc72f36f44b74dcda8b942c9d9760d4f)](https://app.codacy.com/gh/QcmPlab/HoneyTools/dashboard?branch=master)
+[![codacy](https://img.shields.io/codacy/grade/dc72f36f44b74dcda8b942c9d9760d4f?logo=codacy&style=flat-square)](https://app.codacy.com/gh/QcmPlab/HoneyTools/dashboard?branch=master)
 
 `HoneyTools` provides a set of Fortran modules to easily deal with nontrivial honeycomb structures in real-space: generate the coordinates, compute all the neighbor-shells, get direct access to logical masks for nearest and next-nearest neighbors (nth-order can be easily computed from the shell table), hence readily build tight-binding hamiltonians, or any other lattice quantity requiring real-space geometrical information.
 
