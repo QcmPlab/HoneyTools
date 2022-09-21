@@ -35,9 +35,9 @@ jobs:
     - name: Generate DOCS
       run: ford ./docs.config
 
-    # - name: Deploy Documentation <AFTER MOVING TO QCMPLAB>
-    #   if: github.ref == 'refs/heads/master'
-    #   uses: JamesIves/github-pages-deploy-action@4.1.0
-    #   with:
-    #     branch: gh-pages # The branch the action should deploy to.
-    #     folder: doc  # The folder the action should deploy.
+    - name: Deploy DOCS
+      if: github.ref == 'refs/heads/master'
+      uses: JamesIves/github-pages-deploy-action@4.1.0
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: doc  # The folder the action should deploy.
