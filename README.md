@@ -1,12 +1,12 @@
-<img alt="HoneyTools" width=375 src=./res/logo.svg>
+<img alt="HoneyTools" width=404 src=./res/logo.svg>
 
 ###### Honeycomb flakes, sheets, ribbons, whatever. Made easy.
 -------
-[![build](https://img.shields.io/github/workflow/status/bellomia/honeytools/BUILD?logo=Fortran&style=flat-square)](https://github.com/bellomia/HoneyTools/actions/workflows/build.yaml)
-[![test](https://img.shields.io/github/workflow/status/bellomia/honeytools/TEST?label=test-suite&logo=Fortran&style=flat-square)](https://github.com/bellomia/HoneyTools/actions/workflows/test.yaml)
-[![docs](https://img.shields.io/github/workflow/status/bellomia/honeytools/DOCS?label=docs-gen&logo=Fortran&style=flat-square)](https://github.com/bellomia/HoneyTools/actions/workflows/docs.yaml)
-[![codecov](https://img.shields.io/codecov/c/github/bellomia/honeytools?label=coverage&logo=codecov&style=flat-square)](https://codecov.io/gh/bellomia/honeytools)
-[![codacy](https://img.shields.io/codacy/grade/6cad511300d34773b5991a16933d7a7f?logo=codacy&style=flat-square)](https://www.codacy.com/gh/bellomia/HoneyTools/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bellomia/HoneyTools&amp;utm_campaign=Badge_Grade)
+[![build](https://img.shields.io/github/workflow/status/qcmplab/honeytools/BUILD?logo=Fortran&style=flat-square)](https://github.com/qcmplab/HoneyTools/actions/workflows/build.yaml)
+[![test](https://img.shields.io/github/workflow/status/qcmplab/honeytools/TEST?label=test-suite&logo=Fortran&style=flat-square)](https://github.com/qcmplab/HoneyTools/actions/workflows/test.yaml)
+[![docs](https://img.shields.io/github/workflow/status/qcmplab/honeytools/DOCS?label=docs-gen&logo=Fortran&style=flat-square)](https://github.com/qcmplab/HoneyTools/actions/workflows/docs.yaml)
+[![codecov](https://img.shields.io/codecov/c/github/qcmplab/honeytools?label=coverage&logo=codecov&style=flat-square)](https://codecov.io/gh/qcmplab/honeytools)
+[![codacy](https://img.shields.io/codacy/grade/dc72f36f44b74dcda8b942c9d9760d4f)](https://app.codacy.com/gh/QcmPlab/HoneyTools/dashboard?branch=master)
 
 `HoneyTools` provides a set of Fortran modules to easily deal with nontrivial honeycomb structures in real-space: generate the coordinates, compute all the neighbor-shells, get direct access to logical masks for nearest and next-nearest neighbors (nth-order can be easily computed from the shell table), hence readily build tight-binding hamiltonians, or any other lattice quantity requiring real-space geometrical information.
 
@@ -59,7 +59,7 @@ use honeyplots, only: plot
 ```
 Nevertheless we stress that the `honeytools` module provides all the core functionality to generate many common and not-so-common finite honeycomb structures: we have detached the plotting routines in a separated module to ensure a low dependency weight, especially in _non-sudo_ environments, where getting control on the exact version, path and configuration of `python`/`matplotlib` and `gnuplot` could easily become a hassle. 
 
-A fairly comprehensive set of examples can be found in the project's wiki, if you are looking for an _unbelievably_ easy way to generate flakes, ribbons & stripes, islands... just [go there](https://github.com/bellomia/HoneyTools/wiki/A.-Basic-usage:-supercells,-stripes-and-flakes,-all-out-of-the-box!) and be happy.
+A fairly comprehensive set of examples can be found in the project's wiki, if you are looking for an _unbelievably_ easy way to generate flakes, ribbons & stripes, islands... just [go there](https://github.com/qcmplab/HoneyTools/wiki/A.-Basic-usage:-supercells,-stripes-and-flakes,-all-out-of-the-box!) and be happy.
 
 For more advances usage you can instead include (a suitable subset of) the low-level modules, namely:
 
@@ -74,15 +74,15 @@ use xy_neighbors
 
 Which would provide access to the full API of the library. The usage is bounded to a good understanding of the core implementation: the special _cubic_ coordinates representing 2D hexagonal tessellations as a constrained 3D lattice. You can read extensively about the idea on this [delightful blog-post about videogame-development](https://www.redblobgames.com/grids/hexagons/), featuring fancy interactive visualizations and ---_for real_--- all you'll ever need to understand  in dept the underlying ideas. This package has taken profound inspiration from that article and the material it links to... not all that is described there is actually implemented here and not all you have here is explained there, but I could never provide a better coverage for the background theory. So yeah, take it a look!
 
-The wiki provides an [advanced example](https://github.com/bellomia/HoneyTools/wiki/B.-An-advanced-example:-flake-with-random-vacancies-🚀) too, though you'll find it a rather small and probably incomplete account of what can be done: the library is so flexible that even a _huge hexagonal island with random vacancies_ can be coded in less than 100 lines of code (declarations included!).
+The wiki provides an [advanced example](https://github.com/qcmplab/HoneyTools/wiki/B.-An-advanced-example:-flake-with-random-vacancies-🚀) too, though you'll find it a rather small and probably incomplete account of what can be done: the library is so flexible that even a _huge hexagonal island with random vacancies_ can be coded in less than 100 lines of code (declarations included!).
 
 ## Documentation
 
-The repository is configured for source-based, automated, API documentation via [FORD](https://github.com/Fortran-FOSS-Programmers/ford), so that you can generate the html files for your specific local version by running
+The repository is configured for source-based, automated, API docs generation via [FORD](https://github.com/Fortran-FOSS-Programmers/ford), so that you can build the html files for your specific local version by running
 ```sh
-ford docs-config.md
+ford docs.config
 ```
-at the root directory of the project. Alternatively you can examine the officially generated docs for the latest git tag at `<insert-link>`.
+at the root directory of the project. Alternatively you can examine the [official docs for the latest commit on master](https://qcmplab.github.io/HoneyTools/), as generated by our continuous deployment workflow.
 
 ## Gallery
 
@@ -104,4 +104,4 @@ This program is free software: you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU LGPL for more details.
 
-You should have received a copy of the GNU LGPL along with this program. If not, see http://www.gnu.org/licenses/.
+You should have received a copy of the GNU LGPL along with this program. If not, see [gnu.org/licenses](http://www.gnu.org/licenses/).

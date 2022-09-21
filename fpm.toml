@@ -1,5 +1,5 @@
 name = "Honeytools"
-license = "LGPL-3.0"
+license = "LGPL-3.0-or-later"
 author = "Gabriele Bellomia"
 maintainer = "gbellomia@live.it"
 copyright = "Copyright 2022, Gabriele Bellomia"

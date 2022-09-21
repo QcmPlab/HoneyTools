@@ -44,6 +44,7 @@ program test_hex_math
    
    a = hex(0, 0, 0)
    b = hex(1,-5, 4)
+   
    rule = [a, hex(0, -1, 1), hex(0, -2, 2), hex(1, -3, 2), hex(1, -4, 3), b]
    line = hex_line(a,b)
 
