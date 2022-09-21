@@ -37,7 +37,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Generate DOCS
-      run: ford ./README.md
+      run: ford ./docs.config
 
     # - name: Deploy Documentation <AFTER MOVING TO QCMPLAB>
     #   if: github.ref == 'refs/heads/master'
