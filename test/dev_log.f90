@@ -27,6 +27,10 @@ program development_log
    logical,allocatable      :: NN_(:,:),NN(:,:)
    logical,allocatable      :: NNN(:,:)
 
+   print*
+   print*, "DEVELOPMENT LOG [regression testsuite]"
+   print*
+
    a = hex(1,2,-3)   ! q+r+s==0 asserted internally
    b = hex(q=1,r=-2) ! s = 1 is computed internally
 
@@ -218,5 +222,9 @@ program development_log
    call plot(lattice,NN,script_name='xy_test.py',figure_name='pyflake.svg')
    call plot(lattice,NN,NNN,figure_name='pyball.svg')
    call plot(lattice,backend='gnuplot',set_terminal='dumb',script_name='xy_test.gp')
+
+   print*
+   print*, "DEVELOPMENT LOG [> passed!]"
+   print*
 
 end program development_log

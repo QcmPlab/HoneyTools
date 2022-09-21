@@ -15,6 +15,10 @@ program test_advanced_interface
    real(8)                 :: e1(2),e2(2)
    type(hex_orientation)   :: mybasis
 
+   print*
+   print*, "ADVANCED API [regression testsuite]"
+   print*
+
    ! Custom lattice unit vectors
    e1 = 3d0/2d0*[1d0, 1d0/sqrt(3d0)]
    e2 = 3d0/2d0*[1d0,-1d0/sqrt(3d0)]
@@ -33,6 +37,10 @@ program test_advanced_interface
    call plot(lattice,backend='gnuplot',set_terminal='dumb')
    call plot(lattice,NN,figure_name='holed1.svg')
    call plot(lattice,NN,NNN,figure_name='holed2.svg')
+
+   print*
+   print*, "ADVANCED API [> passed!]"
+   print*
 
 contains
 

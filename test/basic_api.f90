@@ -11,6 +11,10 @@ program test_basic_user_experience
    integer                 :: i,j,k
    logical,allocatable     :: NN(:,:),NNN(:,:)
 
+   print*
+   print*, "BASIC USER EXPERIENCE [regression testsuite]"
+   print*
+
    mylayout = unit_cell(orientation=armchair)
    do i = 1,6
       hlattice = get_flake(radius=i,layout=mylayout)
@@ -63,5 +67,9 @@ program test_basic_user_experience
       call plot(hlattice,backend='gnuplot',set_terminal='dumb')
       call plot(hlattice,NN,NNN,figure_name='triangle'//str(i)//'.svg')
    enddo
+
+   print*
+   print*, "BASIC USER EXPERIENCE [> passed!]"
+   print*
 
 end program test_basic_user_experience
