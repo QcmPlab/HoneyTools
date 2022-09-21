@@ -1,0 +1,42 @@
+name: BUILD
+on:
+  workflow_dispatch: # manual-run
+  push: 
+    paths: 
+      - '**.f90'     # diff in source
+jobs:
+  CI:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        gcc_v: [9,10] # Version of GFortran we want to use.
+        python-version: [3.9] # Version of Python we want to use.
+    env:
+      FC: gfortran-${{ matrix.gcc_v }}
+      GCC_V: ${{ matrix.gcc_v }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Fortran Package Manager
+      uses: fortran-lang/setup-fpm@v4
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install GFortran on Linux
+      if: contains( matrix.os, 'ubuntu')
+      run: |
+        sudo apt-get install lcov
+        sudo update-alternatives \
+           --install /usr/bin/gcc gcc /usr/bin/gcc-${{ matrix.gcc_v }} 100 \
+           --slave /usr/bin/gfortran gfortran /usr/bin/gfortran-${{ matrix.gcc_v }} \
+           --slave /usr/bin/gcov gcov /usr/bin/gcov-${{ matrix.gcc_v }}
+
+    - name: Build project
+      run: fpm build --profile debug   
+
+    - name: Install library
+      run: fpm install

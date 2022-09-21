@@ -1,0 +1,47 @@
+name: DOCS
+on:
+  workflow_dispatch: # manual-run
+  push: 
+    paths: 
+      - '**.f90'     # diff in source
+jobs:
+  CD:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        gcc_v: [9,10] # Version of GFortran we want to use.
+        python-version: [3.9] # Version of Python we want to use.
+    env:
+      FC: gfortran-${{ matrix.gcc_v }}
+      GCC_V: ${{ matrix.gcc_v }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v1 # Use pip to install latest CMake, & FORD/Jin2For, etc.
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Setup Graphviz
+      uses: ts-graphviz/setup-graphviz@v1
+
+    - name: Install FORD
+      if: contains( matrix.os, 'ubuntu')
+      run: |
+        python -m pip install --upgrade pip
+        pip install ford
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Generate DOCS
+      run: ford ./README.md
+
+    # - name: Deploy Documentation <AFTER MOVING TO QCMPLAB>
+    #   if: github.ref == 'refs/heads/master'
+    #   uses: JamesIves/github-pages-deploy-action@4.1.0
+    #   with:
+    #     branch: gh-pages # The branch the action should deploy to.
+    #     folder: doc  # The folder the action should deploy.

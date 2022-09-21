@@ -1,11 +1,11 @@
-name: CI
+name: TEST
 on:
   workflow_dispatch: # manual-run
   push: 
     paths: 
       - '**.f90'     # diff in source
 jobs:
-  Build:
+  CI:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -26,9 +26,6 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Setup Graphviz
-      uses: ts-graphviz/setup-graphviz@v1
-
     - name: Setup Fortran Package Manager
       uses: fortran-lang/setup-fpm@v4
       with:
@@ -38,10 +35,10 @@ jobs:
       if: contains( matrix.os, 'ubuntu')
       run: |
         python -m pip install --upgrade pip
-        pip install numpy matplotlib ford
+        pip install numpy matplotlib
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Install GFortran Linux
+    - name: Install GFortran on Linux
       if: contains( matrix.os, 'ubuntu')
       run: |
         sudo apt-get install lcov
@@ -81,13 +78,3 @@ jobs:
         # or
         # api-token: ${{ secrets.CODACY_API_TOKEN }}
         coverage-reports: build/coverage/coverage.info   
-
-    - name: Build documentation
-      run: ford ./README.md
-
-  # - name: Deploy Documentation <AFTER MOVING TO QCMPLAB>
-  #   if: github.ref == 'refs/heads/master'
-  #   uses: JamesIves/github-pages-deploy-action@4.1.0
-  #   with:
-  #     branch: gh-pages # The branch the action should deploy to.
-  #     folder: doc  # The folder the action should deploy.
