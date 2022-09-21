@@ -42,7 +42,7 @@ program test_basic_user_experience
    call plot(hlattice,NN,NNN,figure_name='supercell_zigzag.svg')
 
    mylayout = unit_cell(armchair)
-   hlattice = get_stripe(4,5,mylayout)
+   hlattice = get_stripe(5,9,mylayout)
    call xy_next_nearest_neighbors(hlattice,NNN,NN)
    call xy_print(hlattice)
    call plot(hlattice,backend='gnuplot',set_terminal='dumb')
@@ -55,7 +55,7 @@ program test_basic_user_experience
    call plot(hlattice,backend='gnuplot',set_terminal='dumb')
    call plot(hlattice,NN,NNN,figure_name='stripe_zigzag.svg')
 
-   mylayout = unit_cell(armchair)
+   mylayout = unit_cell(zigzag)
    do i = 2,5 ! triangles of size = 1 cannot exist
       hlattice = get_triangle(i,mylayout)
       call xy_next_nearest_neighbors(hlattice,NNN,NN)
