@@ -11,6 +11,7 @@ module hex_geometries
    public :: hex_insert ! utility to grow hex arrays
    public :: hex_supercell, hex_triangle, hex_flake
    public :: hex_armchair_stripe, hex_zigzag_stripe
+   public :: hex_line ! to "draw" lines in hex space
 
 contains
 
@@ -28,7 +29,7 @@ contains
             hexagons(k) = hex(q=i,r=j)
          enddo
       enddo
-   end function
+   end function hex_supercell
 
    pure function hex_triangle(size) result(hexagons)
       !! Build a triangle-shaped honeycomb flake
@@ -41,7 +42,7 @@ contains
             call hex_insert(hexagons,hex(i,j))
          enddo
       enddo
-   end function
+   end function hex_triangle
 
    pure function hex_flake(radius) result(hexagons)
       !! Build a hexagon-shaped honeycomb flake
@@ -53,7 +54,7 @@ contains
             call hex_insert(hexagons,hex(i,j))
          enddo
       enddo
-   end function
+   end function hex_flake
 
    pure function hex_armchair_stripe(height,width) result(hexagons)
       !! Build a armchair-on-top honeycomb stripe/ribbon
@@ -67,7 +68,7 @@ contains
             call hex_insert(hexagons,hex(i,j))
          enddo
       enddo
-   end function
+   end function hex_armchair_stripe
 
    pure function hex_zigzag_stripe(height,width) result(hexagons)
       !! Build a zigzag-on-top honeycomb stripe/ribbon
@@ -81,7 +82,37 @@ contains
             call hex_insert(hexagons,hex(i,j))
          enddo
       enddo
-   end function
+   end function hex_zigzag_stripe
+
+   pure function hex_line(A,B) result(line)
+      !! Draw a line between A and B, in hex space
+      type(hex),intent(in)  :: A,B
+      type(hex),allocatable :: line(:)
+      real(8),dimension(3)  :: lntrp
+      integer,dimension(3)  :: ai,bi
+      real(8),dimension(3)  :: ar,br
+      real(8)               :: step
+      integer               :: dist,i
+      dist = hex_distance(A,B)
+      step = 1d0 / max(dist,1) ! handle A==B :)
+      do i = 0,dist
+         ! Unpack
+         ai = [A%q,A%r,A%s]
+         bi = [B%q,B%r,B%s]
+         ! Cast
+         ar = real(ai,8)
+         br = real(bi,8)
+         ! Nudge
+         ar(1:2) = ar(1:2) + 1d-6
+         ar(3)   = ar(3)   - 2d-6
+         br(1:2) = br(1:2) + 1d-6
+         br(3)   = br(3)   - 2d-6
+         ! Interpolate
+         lntrp = linear_interpolation(ar,br,step*i)
+         ! Grow the vect
+         call hex_insert(line,hex_round(lntrp))
+      enddo
+   end function hex_line
 
    pure subroutine hex_insert(vec,val)
       !! Utility to grow type(hex) arrays, it is a
@@ -105,5 +136,48 @@ contains
       ! Insert val at back
       vec(len) = val
    end subroutine hex_insert
+
+   ! THESE ARE PRIVATE NAMES
+
+   pure elemental function linear_interpolation(a,b,t) result(l)
+      !! Linear interpolation from a to b, with step t
+      !! a + (b - a) * t = a * (1-t) + b * t
+      !! for better floating-point precision
+      real(8),intent(in)   :: a,b,t
+      real(8)              :: l
+      l = a * (1-t) + b * t
+   end function linear_interpolation
+
+   pure function hex_round(xyz) result(qrs)
+      !! Round a triplet of reals to a proper hex object
+      !! > this needs to preserve the q+r+s==0 condition
+      real(8),intent(in)   :: xyz(3)
+      type(hex)            :: qrs
+      real(8)              :: x,y,z
+      integer              :: q,r,s
+      real(8)              :: dq,dr,ds
+      ! Unpack
+      x = xyz(1)
+      y = xyz(2)
+      z = xyz(3)
+      ! Round xyz
+      q = nint(x)
+      r = nint(y)
+      s = nint(z)
+      ! Eval diffs
+      dq = abs(x-q)
+      dr = abs(x-r)
+      ds = abs(x-s)
+      ! Reset bigger diff
+      if(dq > dr .and. dq > ds)then
+         q = -r-s
+      elseif(dr > ds)then
+         r = -q-s
+      else
+         s = -q-r
+      endif
+      ! Repack
+      qrs = hex(q,r,s) ! internal assertion :)
+   end function hex_round
 
 end module hex_geometries
