@@ -141,17 +141,6 @@ contains
       !        ⎣y⎦   ⎣uq(2)  ur(2)⎦   ⎣r⎦
    end function
 
-   pure function ith_corner_offset(layout,i) result(offset)
-      !! Compute the i-th offset vector connecting the hexagon center
-      !! to its corners, returning a (scalar) xy coordinate
-      type(unit_cell),intent(in) :: layout
-      integer,intent(in)         :: i
-      type(xy)                   :: offset
-      real(8)                    :: angle
-      angle = 2d0*PI/N * (layout%orientation%angle + i) ! mixed math ok
-      offset = xy(x=layout%size*cos(angle), y=layout%size*sin(angle))
-   end function
-
    pure function hex2lattice(layout,hexagons) result(lattice)
       !! Generate a type(xy_lattice) object from any given hex
       !! array, provided a suitable layout (unit-cell)
@@ -226,8 +215,21 @@ contains
 
    ! THESE ARE PRIVATE NAMES
 
+   pure function ith_corner_offset(layout,i) result(offset)
+      !! Compute the i-th offset vector connecting the hexagon center
+      !! to its corners, returning a (scalar) xy coordinate
+      type(unit_cell),intent(in) :: layout
+      integer,intent(in)         :: i
+      type(xy)                   :: offset
+      real(8)                    :: angle
+      angle = 2d0*PI/N * (layout%orientation%angle + i) ! mixed math ok
+      offset = xy(x=layout%size*cos(angle), y=layout%size*sin(angle))
+   end function
+
    pure elemental function eq_xy(A,B) result(isequal)
-      !! polymorphic equality overload for xy class
+      !! tolerance equality for xy class
+      !! [absolute tol hard-coded to 1d-12]
+      !! -> probably to improve...
       class(xy),intent(in) :: A,B
       logical              :: isequal
       isequal = abs(A%x - B%x) < 1d-12
@@ -235,7 +237,9 @@ contains
    end function
 
    pure elemental function neq_xy(A,B) result(notequal)
-      !! polymorphic inequality overload for xy class
+      !! tolerance inequality for xy class
+      !! [absolute tol hard-coded to 1d-12]
+      !! -> probably to improve...
       class(xy),intent(in) :: A,B
       logical              :: notequal
       notequal = .not.(eq_xy(A,B))

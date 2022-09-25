@@ -4,7 +4,7 @@
 -------
 [![build](https://img.shields.io/github/workflow/status/qcmplab/honeytools/BUILD?logo=Fortran&style=flat-square)](https://github.com/qcmplab/HoneyTools/actions/workflows/build.yaml)
 [![test](https://img.shields.io/github/workflow/status/qcmplab/honeytools/TEST?label=test-suite&logo=Fortran&style=flat-square)](https://github.com/qcmplab/HoneyTools/actions/workflows/test.yaml)
-[![docs](https://img.shields.io/github/workflow/status/qcmplab/honeytools/DOCS?label=docs-gen&logo=Fortran&style=flat-square)](https://github.com/qcmplab/HoneyTools/actions/workflows/docs.yaml)
+[![docs](https://img.shields.io/github/workflow/status/qcmplab/honeytools/DOCS?label=docs-gen&logo=Fortran&style=flat-square)](https://qcmplab.github.io/HoneyTools/)
 [![codecov](https://img.shields.io/codecov/c/github/qcmplab/honeytools?label=coverage&logo=codecov&style=flat-square)](https://codecov.io/gh/qcmplab/honeytools)
 [![codacy](https://img.shields.io/codacy/grade/dc72f36f44b74dcda8b942c9d9760d4f?logo=codacy&style=flat-square)](https://app.codacy.com/gh/QcmPlab/HoneyTools/dashboard?branch=master)
 
@@ -72,7 +72,7 @@ use xy_coordinates
 use xy_neighbors
 ```
 
-Which would provide access to the full API of the library. The usage is bounded to a good understanding of the core implementation: the special _cubic_ coordinates representing 2D hexagonal tessellations as a constrained 3D lattice. You can read extensively about the idea on this [delightful blog-post about videogame-development](https://www.redblobgames.com/grids/hexagons/), featuring fancy interactive visualizations and ---_for real_--- all you'll ever need to understand  in dept the underlying ideas. This package has taken profound inspiration from that article and the material it links to... not all that is described there is actually implemented here and not all you have here is explained there, but I could never provide a better coverage for the background theory. So yeah, take it a look!
+Which would provide access to the full API of the library. The usage is bound to a good understanding of the core implementation: the special _cubic_ coordinates representing 2D hexagonal tessellations as a constrained 3D lattice. You can read extensively about the idea on this [delightful blog-post about videogame-development](https://www.redblobgames.com/grids/hexagons/), featuring fancy interactive visualizations and ---_for real_--- all you'll ever need to understand  in dept the underlying ideas. This package has taken profound inspiration from that article and the material it links to... not all that is described there is actually implemented here and not all you have here is explained there, but I could never provide a better coverage for the background theory. So yeah, take it a look!
 
 The wiki provides an [advanced example](https://github.com/qcmplab/HoneyTools/wiki/B.-An-advanced-example:-flake-with-random-vacancies-🚀) too, though you'll find it a rather small and probably incomplete account of what can be done: the library is so flexible that even a _huge hexagonal island with random vacancies_ can be coded in less than 100 lines of code (declarations included!).
 

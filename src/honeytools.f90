@@ -11,7 +11,7 @@ module honeytools
    implicit none
    private
 
-   public :: xy_lattice, xy_print, xy_shells
+   public :: xy_lattice, xy_print, xy_shells, xy_nn_hop, xy_nnn_hop
    public :: xy_nearest_neighbors, xy_next_nearest_neighbors
    public :: unit_cell, armchair, zigzag ! to generate layouts
    public :: get_supercell, get_triangle, get_flake, get_stripe, get_sublattice
