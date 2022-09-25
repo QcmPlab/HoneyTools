@@ -1,4 +1,4 @@
-<img alt="HoneyTools" width=404 src=./res/logo.svg>
+<img alt="HoneyTools" width=404 src=./res/logo.svg align="center">
 
 ###### Honeycomb flakes, sheets, ribbons, whatever. Made easy.
 -------
