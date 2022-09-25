@@ -10,23 +10,19 @@
 
 `HoneyTools` provides a set of Fortran modules to easily deal with nontrivial honeycomb structures in real-space: generate the coordinates, compute all the neighbor-shells, get direct access to logical masks for nearest and next-nearest neighbors (nth-order can be easily computed from the shell table), hence readily build tight-binding hamiltonians, or any other lattice quantity requiring real-space geometrical information.
 
-- [Build system](#build-system)
+- [Installation as library](#installation-as-library)
+- [Inclusion as `fpm` dependency](#inclusion-as-fpm-dependency)
 - [Usage overview](#usage-overview)
 - [Documentation](#documentation)
 - [Gallery](#gallery)
 - [License](#license)
 
-## Build system
+## Installation as library
 
 The library supports the Fortran Package Manager ([`fpm`](https://fpm.fortran-lang.org/en/index.html)). As such it can be built by simply invoking
 
 ```
 fpm build
-```
-or directly installed in the system via
-
-```
-fpm install
 ```
 
 Custom compiler and flags can be easily selected via environment variables (or command line options), as
@@ -40,12 +36,54 @@ Custom compiler and flags can be easily selected via environment variables (or c
 | `FPM_AR`             | Archiver path         | `--archiver`   |
 | `FPM_LDFLAGS`        | Link flags            | `--link-flag`  |
 
-Finally the provided test programs can be ran with the special command
+Then it can be install in the system via
+
+```
+fpm install
+```
+which would copy all the modules in the `$HOME/.local/include` directory and the library file in `$HOME/.local/lib`. This should suffice to manage linking with other libraries and programs. As an example you can write a [`pkg-config`](https://people.freedesktop.org/~dbn/pkg-config-guide.html) file as
+
+```sh
+# honeytools.pc
+prefix=$HOME/.local
+exec_prefix=${prefix}/bin
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: honeytools
+Description: The HoneyTools library
+Version: x.y.z
+Cflags: -I${includedir}
+Libs: -L${libdir} -lHoneytools 
+```
+and then load it invoking 
+
+```sh
+export PKG_CONFIG_PATH=path/to/honeytools.pc:$PKG_CONFIG_PATH
+```
+
+In the case you may want to run locally the provided test programs. For that just type:
 
 ```
 fpm test "test_name"
 ```
-where the "test_name" string, referring to the source filenames (without `.f90` extension) contained in the `test/` directory, can be omitted to run the test-suite as a whole. This is regularly done in our dedicated CI workflow.
+where the "test_name" string, referring to the source filenames (without `.f90` extension) contained in the `test/` directory, can be omitted to run the test-suite as a whole. This is regularly done in our dedicated CI workflow, anyway. 
+
+Finally, if for any reason you suspect that `fpm` is messing with incremental compilation (or especially after installing the library, which moves away the modules...), you can reset the build by running:
+
+```
+fpm clean
+```
+
+## Inclusion as `fpm` dependency
+
+If you want to add `HoneyTools` as a dependency for your own `fpm` project just add the following lines to your `fpm.toml` file:
+
+```toml
+[dependencies]
+honeytools.git = "https://github.com/QcmPlab/HoneyTools.git"
+honeytools.tag = "X.Y.Z" # choose a version among git tags
+```
 
 ## Usage overview
 
