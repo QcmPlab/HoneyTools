@@ -59,7 +59,7 @@ contains
       NN = xy_nn_hop(layout,S,i)
       counter = 0
       do j = 1,3
-         tmp = xy_nn_hop(layout,NN,j)
+         tmp = xy_nn_hop(layout,NN,j+i-1)
          if(tmp/=S)then
             counter = counter + 1
             NNN(counter) = tmp
