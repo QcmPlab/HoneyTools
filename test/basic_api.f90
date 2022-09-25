@@ -16,7 +16,7 @@ program test_basic_user_experience
    print*
 
    mylayout = unit_cell(orientation=armchair)
-   do i = 1,6
+   do i = 0,6
       hlattice = get_flake(radius=i,layout=mylayout)
       call xy_nearest_neighbors(lattice=hlattice,nn_mask=NN)
       if(i==1)then

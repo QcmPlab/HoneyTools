@@ -116,6 +116,7 @@ contains
          else
             corner%site(i)%label = "B"
          endif
+         corner%site(i)%key = i
       enddo
    end function
 
@@ -150,6 +151,10 @@ contains
       type(xy_lattice)           :: lattice
       integer                    :: i
       corners = hex2corner(layout,hexagons)
+      if(size(corners)==1)then
+         lattice = corners(1)
+         return
+      endif
       lattice = xy_ordered_union(corners(1),corners(2))
       do i = 3,size(hexagons)
          lattice = xy_ordered_union(lattice,corners(i))
