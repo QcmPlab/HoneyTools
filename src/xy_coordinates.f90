@@ -116,6 +116,7 @@ contains
          else
             corner%site(i)%label = "B"
          endif
+         corner%site(i)%key = i
       enddo
    end function
 
