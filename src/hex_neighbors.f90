@@ -28,7 +28,10 @@ contains
    end function
 
    pure function hex_hop(H,i) result(Ni)
-      !! Return the nearest neighbor of H in the i-th direction: Ni
+      !! Return the nearest neighbor of H, 
+      !! by hopping in the i-th direction.
+      !! You can feed any i ∈ ℤ, but you'd
+      !! get only 6 inequivalent neighbors
       type(hex),intent(in)    :: H  
       integer,intent(in)      :: i
       type(hex)               :: Ni

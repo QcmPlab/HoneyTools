@@ -86,7 +86,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.3% of total for modules and submodules.">29 statements</a>
+    title=" 3.1% of total for modules and submodules.">29 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/hex_neighbors.f90"> Source File</a></li>
   </ul>
@@ -114,7 +114,7 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/hex_neighbors.html#variable-n~3">N</a>
+      <a class="list-group-item" href="../module/hex_neighbors.html#variable-n~4">N</a>
     </div>
   </div>
 </div>
@@ -383,7 +383,7 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/hex_neighbors.html#variable-n~3">N</a>
+      <a class="list-group-item" href="../module/hex_neighbors.html#variable-n~4">N</a>
     </div>
   </div>
 </div>
@@ -408,7 +408,7 @@
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-n~3"></span>integer,</td>
+  <td><span class="anchor" id="variable-n~4"></span>integer,</td>
 <td>private,</td>  <td>parameter</td><td>::</td>
   <td><strong>N</strong></td><td> =</td><td>6</td><td></td>
 </tr>
@@ -452,7 +452,10 @@
   <div class="panel-heading codesum"><span class="anchor" id="proc-hex_hop"></span><h3>public pure function <a href='../proc/hex_hop.html'>hex_hop</a>(H, i) result(Ni)</h3></div>
   <div class="panel-body">
        
-<p>Return the nearest neighbor of H in the i-th direction: Ni</p>
+<p>Return the nearest neighbor of H, 
+by hopping in the i-th direction.
+You can feed any i ∈ ℤ, but you'd
+get only 6 inequivalent neighbors</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>

@@ -2,14 +2,77 @@ module xy_neighbors
    !! Defining all neighbors shells for given xy lattices
 
    use xy_coordinates
+   use hex_layout
    use stdlib_sorting, only: sort !=> ord_sort (impure)
 
    implicit none
    private
 
-   public xy_shells, xy_nearest_neighbors, xy_next_nearest_neighbors
+   public xy_nearest_neighbors, xy_next_nearest_neighbors
+   public xy_nn_hop, xy_nnn_hop, xy_shells
+
+   integer, parameter :: N = 6 ! Number of vertices in a hexagon
+   real(8), parameter :: PI = 4d0*atan(1d0) ! π to selected kind
 
 contains
+
+   ! PUBLIC API [private at bottom]
+
+   pure function xy_nn_hop(layout,S,i) result(Ni)
+      !! Return the nearest neighbor of a lattice site, by hopping in
+      !! the i-th direction. You can feed any i ∈ ℤ, but you can get
+      !! only 3 inequivalent neighbors, depending on the label of the
+      !! given site: "A" and "B" activate two different suitable sets
+      !! of hopping directions. A lattice layout is required to build
+      !! the concrete hopping vectors.
+      type(unit_cell),intent(in) :: layout
+      type(xy_site),intent(in)   :: S
+      integer,intent(in)         :: i
+      type(xy_site)              :: Ni
+      type(xy)                   :: Oi
+      select case (S%label)
+       case("A")
+         Oi = ith_A_offset(layout,i)
+         Ni % label = "B"
+       case("B")
+         Oi = ith_B_offset(layout,i)
+         Ni % label = "A"
+      end select
+      Ni % x = S % x + Oi % x
+      Ni % y = S % y + Oi % y
+   end function
+
+   pure function xy_nnn_hop(layout,S,i) result(Ni)
+      !! Return the i-th next-nearest neighbor of a lattice site, by
+      !! taking two xy_nn_hops in the suitable direction.
+      !! You can feed any i ∈ ℤ, but you can get only 6 inequivalent
+      !! neighbors, depending on the label of the given site:
+      !! "A" and "B" activate two different suitable sets of NN hops,
+      !! A lattice layout is required to build the concrete hoppings.
+      type(unit_cell),intent(in) :: layout
+      type(xy_site),intent(in)   :: S
+      integer,intent(in)         :: i
+      type(xy_site)              :: Ni
+      type(xy_site)              :: NN,tmp
+      type(xy_site)              :: NNN(2)
+      integer                    :: j,counter
+      NN = xy_nn_hop(layout,S,i)
+      counter = 0
+      do j = 1,3
+         tmp = xy_nn_hop(layout,NN,j)
+         if(tmp/=S)then
+            counter = counter + 1
+            NNN(counter) = tmp
+         endif
+      enddo
+      if(modulo(i,2)==1)then
+         !  for i = ...,1,3,5,...
+         NI = NNN(1)
+      else
+         !  for i = ...,2,4,6,...
+         NI = NNN(2)
+      endif
+   end function
 
    pure subroutine xy_nearest_neighbors(lattice,nn_mask)
       !! Build a mask for the nearest neighbors of a given
@@ -97,5 +160,37 @@ contains
       distance_set = pack(distance_set,distance_set/=0d0)
       call sort(distance_set)
    end subroutine xy_shells
+
+   ! THESE ARE PRIVATE NAMES
+
+   pure function ith_A_offset(layout,i) result(offset)
+      !! Compute the offset vector connecting a site with label "A",
+      !! to its i-th neighbor, returning a (scalar) xy coordinate.
+      !! It takes any i ∈ ℤ, but there will only be 3 inequivalent
+      !! output vectors, pointing to the three nearest neighbors.
+      type(unit_cell),intent(in) :: layout
+      integer,intent(in)         :: i
+      type(xy)                   :: offset
+      real(8)                    :: angle
+      angle = 4d0*PI/N*(layout%orientation%angle+i) ! mixed math ok
+      angle = angle + 2d0*pi/N * (1 - layout%orientation%angle)
+      !-----> 60°,180°,300°...
+      offset = xy(x=layout%size*cos(angle), y=layout%size*sin(angle))
+   end function
+
+   pure function ith_B_offset(layout,i) result(offset)
+      !! Compute the offset vector connecting a site with label "B",
+      !! to its i-th neighbor, returning a (scalar) xy coordinate.
+      !! It takes any i ∈ ℤ, but there will only be 3 inequivalent
+      !! output vectors, pointing to the three nearest neighbors.
+      type(unit_cell),intent(in) :: layout
+      integer,intent(in)         :: i
+      type(xy)                   :: offset
+      real(8)                    :: angle
+      angle = 4d0*PI/N*(layout%orientation%angle+i) ! mixed math ok
+      angle = angle + 2d0*pi/N * (2 - layout%orientation%angle)
+      !-----> 120°,240°,360°...
+      offset = xy(x=layout%size*cos(angle), y=layout%size*sin(angle))
+   end function
 
 end module xy_neighbors

@@ -86,7 +86,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.7% of total for procedures.">5 statements</a>
+    title=" 0.6% of total for procedures.">5 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/xy_coordinates.f90"> Source File</a></li>
   </ul>
@@ -121,7 +121,9 @@
     <h2>private pure elemental function neq_xy(A, B) result(notequal)</h2>
     
 
-    <p>polymorphic inequality overload for xy class</p>
+    <p>tolerance inequality for xy class
+[absolute tol hard-coded to 1d-12]
+-&gt; probably to improve...</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">

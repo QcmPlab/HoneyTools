@@ -86,7 +86,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for procedures.">6 statements</a>
+    title=" 0.7% of total for procedures.">6 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/xy_coordinates.f90"> Source File</a></li>
   </ul>
@@ -121,7 +121,9 @@
     <h2>private pure elemental function eq_xy(A, B) result(isequal)</h2>
     
 
-    <p>polymorphic equality overload for xy class</p>
+    <p>tolerance equality for xy class
+[absolute tol hard-coded to 1d-12]
+-&gt; probably to improve...</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
