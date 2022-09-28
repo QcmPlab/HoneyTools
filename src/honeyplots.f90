@@ -15,6 +15,8 @@ module honeyplots
    public :: xy_plot, hex_plot, plot
 
    integer, parameter :: N = 6 ! Number of vertices in a hexagon
+   real(8), parameter :: F(3) = [0.4510d0, 0.3098d0, 0.5882d0] ! Fortran-lang color
+   real(8), parameter :: Y(3) = [0.9608d0, 0.8157d0, 0.0118d0] ! HoneyTools' Yellow
 
    interface plot
       procedure :: xy_plot
@@ -116,14 +118,14 @@ contains
             enddo
          endif
          ! Sublattice "A"
-         call plt%add_plot(Ax,Ay,label='',linestyle='o',markersize=5)
+         call plt%add_plot(Ax,Ay,label='',linestyle='o',markersize=5,color=F)
          ! Sublattice "B
-         call plt%add_plot(Bx,By,label='',linestyle='o',markersize=5)
+         call plt%add_plot(Bx,By,label='',linestyle='o',markersize=5,color=Y)
 
          if(present(script_name))then
             source_name = script_name
          else
-            source_name = "hex_plot.py"
+            source_name = "xy_plot.py"
          endif
 
          if(present(figure_name))then
@@ -143,7 +145,7 @@ contains
          if(present(script_name))then
             source_name = script_name
          else
-            source_name = "hex_plot.gp"
+            source_name = "xy_plot.gp"
          endif
 
          if(present(set_terminal))then
@@ -166,9 +168,9 @@ contains
          print*
          call gnu%plot(                                        &
             x1=Ax, y1=Ay,                                      &
-            ls1='with points pt 7 ps 1 lc rgb "#1F77B4"',      &
+            ls1='with points pt 7 ps 1 lc rgb "#734F96"',      &
             x2=Bx, y2=By,                                      &
-            ls2='with points pt 7 ps 1 lc rgb "#FF7F0E"'       &
+            ls2='with points pt 7 ps 1 lc rgb "#F5D003"'       &
             )
 
       end select
@@ -239,7 +241,7 @@ contains
        case ("pyplot")
 
          call plt%initialize(xlabel='x',ylabel='y',axis_equal=.true.)
-         call plt%add_plot(x,y,label='',linestyle='o',markersize=5)
+         call plt%add_plot(x,y,label='',linestyle='o',markersize=5,color=F)
 
          if(present(script_name))then
             source_name = script_name
@@ -285,7 +287,7 @@ contains
          print*
          print*, "> Gnuplot GUI popping up..."
          print*
-         call gnu%plot(x,y,'with points pt 7 ps 1 lc rgb "#1F77B4"')
+         call gnu%plot(x,y,'with points pt 7 ps 1 lc rgb "#734F96"')
 
       end select
 
