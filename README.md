@@ -1,4 +1,4 @@
-<img alt="HoneyTools" width=404 src=./res/logo.svg align="center">
+[<img alt="HoneyTools" width=404 src=./res/logo.svg align="center">](https://qcmplab.github.io/HoneyTools/)
 
 ###### Honeycomb flakes, sheets, ribbons, whatever. Made easy.
 -------
@@ -8,12 +8,13 @@
 [![codecov](https://img.shields.io/codecov/c/github/qcmplab/honeytools?label=coverage&logo=codecov&style=flat-square)](https://codecov.io/gh/qcmplab/honeytools)
 [![codacy](https://img.shields.io/codacy/grade/dc72f36f44b74dcda8b942c9d9760d4f?logo=codacy&style=flat-square)](https://app.codacy.com/gh/QcmPlab/HoneyTools/dashboard?branch=master)
 
-`HoneyTools` provides a set of Fortran modules to easily deal with nontrivial honeycomb structures in real-space: generate the coordinates, compute all the neighbor-shells, get direct access to logical masks for nearest and next-nearest neighbors (nth-order can be easily computed from the shell table), hence readily build tight-binding hamiltonians, or any other lattice quantity requiring real-space geometrical information.
+`HoneyTools` provides a set of Fortran modules to easily deal with nontrivial honeycomb structures in real-space: generate the coordinates, compute all the distance shells, get direct access to logical masks for nearest and next-nearest neighbors (nth-order can be easily computed from the shell table). All this is primarily intended as a convenience to build tight-binding hamiltonians, but it can easily be exploited to work on any other lattice quantity, requiring real-space geometrical information.
 
+#### Table of Contents
 - [Installation as library](#installation-as-library)
 - [Inclusion as `fpm` dependency](#inclusion-as-fpm-dependency)
 - [Usage overview](#usage-overview)
-- [Documentation](#documentation)
+- [API Documentation](#api-documentation)
 - [Gallery](#gallery)
 - [License](#license)
 
@@ -36,12 +37,12 @@ Custom compiler and flags can be easily selected via environment variables (or c
 | `FPM_AR`             | Archiver path         | `--archiver`   |
 | `FPM_LDFLAGS`        | Link flags            | `--link-flag`  |
 
-Then it can be install in the system via
+System installation can then be achieved via
 
 ```
 fpm install
 ```
-which would copy all the modules in the `$HOME/.local/include` directory and the library file in `$HOME/.local/lib`. This should suffice to manage linking with other libraries and programs. As an example you can write a [`pkg-config`](https://people.freedesktop.org/~dbn/pkg-config-guide.html) file as
+which would _move_ all the modules in the `$HOME/.local/include` directory and the library file in `$HOME/.local/lib`. This should suffice to manage linking with other libraries and programs. As an example you can write a [`pkg-config`](https://people.freedesktop.org/~dbn/pkg-config-guide.html) file as
 
 ```sh
 # honeytools.pc
@@ -52,7 +53,7 @@ libdir=${prefix}/lib
 
 Name: honeytools
 Description: The HoneyTools library
-Version: x.y.z
+Version: X.Y.Z
 Cflags: -I${includedir}
 Libs: -L${libdir} -lHoneyTools 
 ```
@@ -62,7 +63,7 @@ and then load it invoking
 export PKG_CONFIG_PATH=path/to/honeytools.pc:$PKG_CONFIG_PATH
 ```
 
-In the case you may want to run locally the provided test programs. For that just type:
+To locally run the provided test units, just type:
 
 ```
 fpm test "test_name"
@@ -99,7 +100,7 @@ Nevertheless we stress that the `honeytools` module provides all the core functi
 
 A fairly comprehensive set of examples can be found in the project's wiki, if you are looking for an _unbelievably_ easy way to generate flakes, ribbons & stripes, islands... just [go there](https://github.com/qcmplab/HoneyTools/wiki/A.-Basic-usage:-supercells,-stripes-and-flakes,-all-out-of-the-box!) and be happy.
 
-For more advances usage you can instead include (a suitable subset of) the low-level modules, namely:
+For more advanced usage you can instead include (a suitable subset of) the low-level modules, namely:
 
 ```fortran
 use hex_coordinates
@@ -110,17 +111,17 @@ use xy_coordinates
 use xy_neighbors
 ```
 
-Which would provide access to the full API of the library. The usage is bound to a good understanding of the core implementation: the special _cubic_ coordinates representing 2D hexagonal tessellations as a constrained 3D lattice. You can read extensively about the idea on this [delightful blog-post about videogame-development](https://www.redblobgames.com/grids/hexagons/), featuring fancy interactive visualizations and ---_for real_--- all you'll ever need to understand  in dept the underlying ideas. This package has taken profound inspiration from that article and the material it links to... not all that is described there is actually implemented here and not all you have here is explained there, but I could never provide a better coverage for the background theory. So yeah, take it a look!
+Which would provide access to the full API of the library. The usage is bound to a good understanding of the core implementation choice: the definition of special _cubic_ coordinates representing 2D hexagonal tessellations as a constrained 3D lattice. You can read extensively about the idea on this [delightful blog-post about videogame-development](https://www.redblobgames.com/grids/hexagons/), featuring fancy interactive visualizations and ---_for real_--- everything you'll ever need to understand in dept the underlying principles and the technical tricks. This package has taken profound inspiration from that article and the material it links to.: not all that is described there is actually implemented here and not all you have here is explained there but for sure I could never provide a better coverage for the background theory. So yeah, give it a look!
 
-The wiki provides an [advanced example](https://github.com/qcmplab/HoneyTools/wiki/B.-An-advanced-example:-flake-with-random-vacancies-🚀) too, though you'll find it a rather small and probably incomplete account of what can be done: the library is so flexible that even a _huge hexagonal island with random vacancies_ can be coded in less than 100 lines of code (declarations included!).
+The wiki provides an [advanced example](https://github.com/qcmplab/HoneyTools/wiki/B.-An-advanced-example:-flake-with-random-vacancies-🚀) too, though you'll find it a rather small and incomplete account of what can be done: the library is so flexible that even a _huge hexagonal island with random vacancies_ can be coded in less than 100 lines of code (declarations included!). We intend to gradually expand the advanced usage section in the wiki and welcome any contribution therein: if you use the package for anything that is not covered in the basic usage section, please consider to step forward and help documenting it.
 
-## Documentation
+## API documentation
 
 The repository is configured for source-based, automated, API docs generation via [FORD](https://github.com/Fortran-FOSS-Programmers/ford), so that you can build the html files for your specific local version by running
 ```sh
 ford docs.config
 ```
-at the root directory of the project. Alternatively you can examine the [official docs for the latest commit on master](https://qcmplab.github.io/HoneyTools/), as generated by our continuous deployment workflow.
+at the root directory of the project. Alternatively you can examine the [official docs for the latest commit on master](https://qcmplab.github.io/HoneyTools/), as generated by our continuous delivery workflow.
 
 ## Gallery
 
