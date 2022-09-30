@@ -54,7 +54,7 @@ Name: honeytools
 Description: The HoneyTools library
 Version: x.y.z
 Cflags: -I${includedir}
-Libs: -L${libdir} -lHoneytools 
+Libs: -L${libdir} -lHoneyTools 
 ```
 and then load it invoking 
 
