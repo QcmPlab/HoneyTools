@@ -15,8 +15,8 @@ module honeyplots
    public :: xy_plot, hex_plot, plot
 
    integer, parameter :: N = 6 ! Number of vertices in a hexagon
-   real(8), parameter :: F(3) = [0.4510d0, 0.3098d0, 0.5882d0] ! Fortran-lang color
-   real(8), parameter :: Y(3) = [0.9608d0, 0.8157d0, 0.0118d0] ! HoneyTools' Yellow
+   real(8), parameter :: FL(3) = [0.4510d0, 0.3098d0, 0.5882d0] ! Fortran-lang color
+   real(8), parameter :: HY(3) = [0.9608d0, 0.8157d0, 0.0118d0] ! HoneyTools' Yellow
 
    interface plot
       procedure :: xy_plot
@@ -118,9 +118,9 @@ contains
             enddo
          endif
          ! Sublattice "A"
-         call plt%add_plot(Ax,Ay,label='',linestyle='o',markersize=5,color=F)
+         call plt%add_plot(Ax,Ay,label='',linestyle='o',markersize=5,color=FL)
          ! Sublattice "B
-         call plt%add_plot(Bx,By,label='',linestyle='o',markersize=5,color=Y)
+         call plt%add_plot(Bx,By,label='',linestyle='o',markersize=5,color=HY)
 
          if(present(script_name))then
             source_name = script_name
@@ -241,7 +241,7 @@ contains
        case ("pyplot")
 
          call plt%initialize(xlabel='x',ylabel='y',axis_equal=.true.)
-         call plt%add_plot(x,y,label='',linestyle='o',markersize=5,color=F)
+         call plt%add_plot(x,y,label='',linestyle='o',markersize=5,color=FL)
 
          if(present(script_name))then
             source_name = script_name
