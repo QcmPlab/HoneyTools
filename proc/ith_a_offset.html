@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
+      <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
     <meta name="author" content="Gabriele Bellomia" >
     <link rel="icon" href="../favicon.png">
 
@@ -14,16 +14,16 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script src="../js/jquery-2.1.3.min.js"></script>
-    <script src="../js/svg-pan-zoom.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="../js/jquery-2.1.3.min.js"></script>
+         <script src="../js/svg-pan-zoom.min.js"></script>
 
   </head>
 
@@ -45,31 +45,39 @@
           <ul class="nav navbar-nav">
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
-              data-toggle="dropdown" role="button"
-              aria-haspopup="true"
-     aria-expanded="false">Contents <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="../lists/files.html">Source Files</a></li>
-            <li><a href="../lists/modules.html">Modules</a></li>
-            <li><a href="../lists/procedures.html">Procedures</a></li>
-                   <li><a href="../lists/types.html">Derived Types</a></li>
-       
-            </ul>
-        
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="../lists/files.html">Source Files</a></li>
+                  <li><a href="../lists/modules.html">Modules</a></li>
+                  <li><a href="../lists/procedures.html">Procedures</a></li>
+                  <li><a href="../lists/types.html">Derived Types</a></li>
+              </ul>
             </li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="../lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/types.html">Derived Types</a>
+              </li>
           </ul>
-        <form action="../search.html" class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
-        </div>
-<!--
-        <button type="submit" class="btn btn-default">Submit</button>
--->
-        </form>
+            <form action="../search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -78,47 +86,72 @@
   <div class="row">
     <h1>ith_A_offset
       <small>Function</small>
+      
     </h1>
-    <div class="row">
-  <div class="col-lg-12">
-<div class="well well-sm">
-  <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     <li><i class="fa fa-list-ol"></i>
-       <a data-toggle="tooltip"
-    data-placement="bottom" data-html="true"
-    title=" 1.1% of total for procedures.">9 statements</a>
-     </li> 
-    <li><i class="fa fa-code"></i><a href="../src/xy_neighbors.f90"> Source File</a></li>
-  </ul>
-  <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/xy_neighbors.f90.html'>xy_neighbors.f90</a></li>
-     <li><a href='../module/xy_neighbors.html'>xy_neighbors</a></li>
-     <li class="active">ith_A_offset</li>
-  </ol>
-</div>
-</div>
-</div>
-<script>
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-  })
-</script>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title=" 1.1% of total for procedures.">9 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/xy_neighbors.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/xy_neighbors.f90.html'>xy_neighbors.f90</a></li>
+              <li><a href='../module/xy_neighbors.html'>xy_neighbors</a></li>
+          <li class="active">ith_A_offset</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 
   </div>
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    <div id="sidebar">
-  <h3>Contents</h3>
- 
-<em>None</em>
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-</div>
+
+  </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private pure function ith_A_offset(layout, i) result(offset)</h2>
+    <h2>private pure function ith_A_offset(layout, i) result(offset)  
+</h2>
     
 
     <p>Compute the offset vector connecting a site with label "A",
@@ -126,27 +159,58 @@ to its i-th neighbor, returning a (scalar) xy coordinate.
 It takes any i ∈ ℤ, but there will only be 3 inequivalent
 output vectors, pointing to the three nearest neighbors.</p>
 
-    <h3>Arguments</h3>
-      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-layout~8"></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-i~4"></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>i</strong></td><td></td>
-</tr>
-</tbody>
-</table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-offset~2"></span>type(<a href='../type/xy.html'>xy</a>)</small></h3>
-    
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-layout~3"></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-offset"></span>
+          type(<a href='../type/xy.html'>xy</a>)
+        </small>
+      </h3>
+      
     <br>
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -159,52 +223,62 @@ output vectors, pointing to the three nearest neighbors.</p>
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~ith_a_offset~~CalledByGraph Pages: 1 -->
-<svg id="procith_a_offsetCalledByGraph" width="299pt" height="32pt"
- viewBox="0.00 0.00 299.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="procith_a_offsetCalledByGraph" width="533pt" height="32pt"
+ viewBox="0.00 0.00 533.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="proc~~ith_a_offset~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>proc~~ith_a_offset~~CalledByGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 295,-28 295,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 529,-28 529,4 -4,4"/>
 <!-- proc~ith_a_offset -->
 <g id="proc~~ith_a_offset~~CalledByGraph_node1" class="node">
 <title>proc~ith_a_offset</title>
-<polygon fill="none" stroke="black" points="291,-24 217,-24 217,0 291,0 291,-24"/>
-<text text-anchor="middle" x="254" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">ith_A_offset</text>
+<polygon fill="none" stroke="black" points="525,-24 373,-24 373,0 525,0 525,-24"/>
+<text text-anchor="middle" x="449" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">xy_neighbors::ith_A_offset</text>
 </g>
 <!-- proc~xy_nn_hop -->
 <g id="proc~~ith_a_offset~~CalledByGraph_node2" class="node">
 <title>proc~xy_nn_hop</title>
-<g id="a_proc~~ith_a_offset~~CalledByGraph_node2"><a xlink:href=".././proc/xy_nn_hop.html" xlink:title="xy_nn_hop">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="181,-24 112,-24 112,0 181,0 181,-24"/>
-<text text-anchor="middle" x="146.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_nn_hop</text>
+<g id="a_proc~~ith_a_offset~~CalledByGraph_node2"><a xlink:href=".././proc/xy_nn_hop.html" xlink:title="xy_neighbors::xy_nn_hop">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="337,-24 190,-24 190,0 337,0 337,-24"/>
+<text text-anchor="middle" x="263.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_neighbors::xy_nn_hop</text>
 </a>
 </g>
 </g>
 <!-- proc~xy_nn_hop&#45;&gt;proc~ith_a_offset -->
 <g id="proc~~ith_a_offset~~CalledByGraph_edge1" class="edge">
 <title>proc~xy_nn_hop&#45;&gt;proc~ith_a_offset</title>
-<path fill="none" stroke="#000000" d="M181.17,-12C189.23,-12 197.98,-12 206.5,-12"/>
-<polygon fill="#000000" stroke="#000000" points="206.73,-15.5 216.73,-12 206.73,-8.5 206.73,-15.5"/>
+<path fill="none" stroke="#000000" d="M337.02,-12C345.52,-12 354.25,-12 362.89,-12"/>
+<polygon fill="#000000" stroke="#000000" points="362.99,-15.5 372.99,-12 362.99,-8.5 362.99,-15.5"/>
 </g>
 <!-- proc~xy_nnn_hop -->
 <g id="proc~~ith_a_offset~~CalledByGraph_node3" class="node">
 <title>proc~xy_nnn_hop</title>
-<g id="a_proc~~ith_a_offset~~CalledByGraph_node3"><a xlink:href=".././proc/xy_nnn_hop.html" xlink:title="xy_nnn_hop">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="76,-24 0,-24 0,0 76,0 76,-24"/>
-<text text-anchor="middle" x="38" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_nnn_hop</text>
+<g id="a_proc~~ith_a_offset~~CalledByGraph_node3"><a xlink:href=".././proc/xy_nnn_hop.html" xlink:title="xy_neighbors::xy_nnn_hop">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="154,-24 0,-24 0,0 154,0 154,-24"/>
+<text text-anchor="middle" x="77" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_neighbors::xy_nnn_hop</text>
 </a>
 </g>
 </g>
 <!-- proc~xy_nnn_hop&#45;&gt;proc~xy_nn_hop -->
 <g id="proc~~ith_a_offset~~CalledByGraph_edge2" class="edge">
 <title>proc~xy_nnn_hop&#45;&gt;proc~xy_nn_hop</title>
-<path fill="none" stroke="#000000" d="M76.25,-12C84.44,-12 93.18,-12 101.6,-12"/>
-<polygon fill="#000000" stroke="#000000" points="101.66,-15.5 111.66,-12 101.66,-8.5 101.66,-15.5"/>
+<path fill="none" stroke="#000000" d="M154.11,-12C162.51,-12 171.09,-12 179.56,-12"/>
+<polygon fill="#000000" stroke="#000000" points="179.83,-15.5 189.83,-12 179.83,-8.5 179.83,-15.5"/>
 </g>
 </g>
 </svg>
-</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
-    <p>Nodes of different colours represent the following: </p>
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -254,21 +328,41 @@ output vectors, pointing to the three nearest neighbors.</p>
 </g>
 </svg>
 
-    
-    <p>Solid arrows point from a procedure to one which it calls. Dashed 
-    arrows point from an interface to procedures which implement that interface.
-    This could include the module procedures in a generic interface or the
-    implementation in a submodule of an interface in a parent module.
-    </p>
-    </div></div></div></div>
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      <h3>Contents</h3>
- 
-<em>None</em>
+        <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
@@ -286,50 +380,50 @@ output vectors, pointing to the three nearest neighbors.</p>
     </div>
   </div>
 
-    <hr>    
+      <hr>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2022 
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2023 
 </p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
         </div>
-        <div class="col-xs-6 col-md-6">
-          <p class="text-right">
-            Documentation generated by 
-            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-          </p>
-        </div>
-      </div>
-      <br>
-      </div> <!-- /container -->    
+        <br>
+      </div> <!-- /container -->
     </footer>
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-<!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
--->
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
 
-    <!-- MathJax JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-      });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script src="../tipuesearch/tipuesearch_content.js"></script>
-    <script src="../tipuesearch/tipuesearch_set.js"></script>
-    <script src="../tipuesearch/tipuesearch.js"></script>
-    
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
   </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
+      <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
     <meta name="author" content="Gabriele Bellomia" >
     <link rel="icon" href="../favicon.png">
 
@@ -14,16 +14,16 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script src="../js/jquery-2.1.3.min.js"></script>
-    <script src="../js/svg-pan-zoom.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="../js/jquery-2.1.3.min.js"></script>
+         <script src="../js/svg-pan-zoom.min.js"></script>
 
   </head>
 
@@ -45,31 +45,39 @@
           <ul class="nav navbar-nav">
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
-              data-toggle="dropdown" role="button"
-              aria-haspopup="true"
-     aria-expanded="false">Contents <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="../lists/files.html">Source Files</a></li>
-            <li><a href="../lists/modules.html">Modules</a></li>
-            <li><a href="../lists/procedures.html">Procedures</a></li>
-                   <li><a href="../lists/types.html">Derived Types</a></li>
-       
-            </ul>
-        
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="../lists/files.html">Source Files</a></li>
+                  <li><a href="../lists/modules.html">Modules</a></li>
+                  <li><a href="../lists/procedures.html">Procedures</a></li>
+                  <li><a href="../lists/types.html">Derived Types</a></li>
+              </ul>
             </li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="../lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/types.html">Derived Types</a>
+              </li>
           </ul>
-        <form action="../search.html" class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
-        </div>
-<!--
-        <button type="submit" class="btn btn-default">Submit</button>
--->
-        </form>
+            <form action="../search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -78,78 +86,143 @@
   <div class="row">
     <h1>get_supercell
       <small>Function</small>
+      
     </h1>
-    <div class="row">
-  <div class="col-lg-12">
-<div class="well well-sm">
-  <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     <li><i class="fa fa-list-ol"></i>
-       <a data-toggle="tooltip"
-    data-placement="bottom" data-html="true"
-    title=" 1.0% of total for procedures.">8 statements</a>
-     </li> 
-    <li><i class="fa fa-code"></i><a href="../src/honeytools.f90"> Source File</a></li>
-  </ul>
-  <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/honeytools.f90.html'>honeytools.f90</a></li>
-     <li><a href='../module/honeytools.html'>honeytools</a></li>
-     <li class="active">get_supercell</li>
-  </ol>
-</div>
-</div>
-</div>
-<script>
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-  })
-</script>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title=" 1.0% of total for procedures.">8 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/honeytools.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/honeytools.f90.html'>honeytools.f90</a></li>
+              <li><a href='../module/honeytools.html'>honeytools</a></li>
+          <li class="active">get_supercell</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 
   </div>
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    <div id="sidebar">
-  <h3>Contents</h3>
- 
-<em>None</em>
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-</div>
+
+  </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public pure function get_supercell(rows, cols, layout) result(lattice)</h2>
+    <h2>public pure function get_supercell(rows, cols, layout) result(lattice)  
+</h2>
     
 
     <p>Get the lattice for a honeycomb supercell</p>
 
-    <h3>Arguments</h3>
-      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-rows~2"></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>rows</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-cols~2"></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>cols</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-layout~11"></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-</tbody>
-</table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-lattice~7"></span>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small></h3>
-    
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rows~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rows</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cols~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cols</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-layout~11"></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-lattice~7"></span>
+          type(<a href='../type/xy_lattice.html'>xy_lattice</a>)
+        </small>
+      </h3>
+      
     <br>
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -162,112 +235,201 @@
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~get_supercell~~CallsGraph Pages: 1 -->
-<svg id="procget_supercellCallsGraph" width="493pt" height="95pt"
- viewBox="0.00 0.00 493.00 95.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~get_supercell~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 91)">
+<svg id="procget_supercellCallsGraph" width="641pt" height="145pt"
+ viewBox="0.00 0.00 641.00 144.63" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~get_supercell~~CallsGraph" class="graph" transform="scale(1.47 1.47) rotate(0) translate(4 209)">
 <title>proc~~get_supercell~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-91 489,-91 489,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-209 940,-209 940,4 -4,4"/>
 <!-- proc~get_supercell -->
 <g id="proc~~get_supercell~~CallsGraph_node1" class="node">
 <title>proc~get_supercell</title>
-<polygon fill="none" stroke="black" points="83,-66 0,-66 0,-42 83,-42 83,-66"/>
-<text text-anchor="middle" x="41.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">get_supercell</text>
-</g>
-<!-- proc~hex_supercell -->
-<g id="proc~~get_supercell~~CallsGraph_node2" class="node">
-<title>proc~hex_supercell</title>
-<g id="a_proc~~get_supercell~~CallsGraph_node2"><a xlink:href=".././proc/hex_supercell.html" xlink:title="hex_supercell">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="204,-87 119,-87 119,-63 204,-63 204,-87"/>
-<text text-anchor="middle" x="161.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_supercell</text>
-</a>
-</g>
-</g>
-<!-- proc~get_supercell&#45;&gt;proc~hex_supercell -->
-<g id="proc~~get_supercell~~CallsGraph_edge1" class="edge">
-<title>proc~get_supercell&#45;&gt;proc~hex_supercell</title>
-<path fill="none" stroke="#000000" d="M83.11,-61.23C91.35,-62.69 100.12,-64.26 108.69,-65.78"/>
-<polygon fill="#000000" stroke="#000000" points="108.15,-69.24 118.61,-67.55 109.38,-62.35 108.15,-69.24"/>
+<polygon fill="none" stroke="black" points="149,-51 0,-51 0,-27 149,-27 149,-51"/>
+<text text-anchor="middle" x="74.5" y="-36.6" font-family="Helvetica,sans-Serif" font-size="10.50">honeytools::get_supercell</text>
 </g>
 <!-- proc~hex2lattice -->
-<g id="proc~~get_supercell~~CallsGraph_node3" class="node">
+<g id="proc~~get_supercell~~CallsGraph_node2" class="node">
 <title>proc~hex2lattice</title>
-<g id="a_proc~~get_supercell~~CallsGraph_node3"><a xlink:href=".././proc/hex2lattice.html" xlink:title="hex2lattice">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="197,-45 126,-45 126,-21 197,-21 197,-45"/>
-<text text-anchor="middle" x="161.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex2lattice</text>
+<g id="a_proc~~get_supercell~~CallsGraph_node2"><a xlink:href=".././proc/hex2lattice.html" xlink:title="xy_coordinates::hex2lattice">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="353,-72 194,-72 194,-48 353,-48 353,-72"/>
+<text text-anchor="middle" x="273.5" y="-57.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2lattice</text>
 </a>
 </g>
 </g>
 <!-- proc~get_supercell&#45;&gt;proc~hex2lattice -->
-<g id="proc~~get_supercell~~CallsGraph_edge2" class="edge">
+<g id="proc~~get_supercell~~CallsGraph_edge1" class="edge">
 <title>proc~get_supercell&#45;&gt;proc~hex2lattice</title>
-<path fill="none" stroke="#000000" d="M83.11,-46.77C93.62,-44.9 104.99,-42.88 115.7,-40.97"/>
-<polygon fill="#000000" stroke="#000000" points="116.48,-44.39 125.71,-39.19 115.26,-37.5 116.48,-44.39"/>
+<path fill="none" stroke="#000000" d="M149.14,-46.85C160.38,-48.05 172.08,-49.3 183.61,-50.53"/>
+<polygon fill="#000000" stroke="#000000" points="183.36,-54.02 193.68,-51.6 184.1,-47.06 183.36,-54.02"/>
+</g>
+<!-- proc~hex_supercell -->
+<g id="proc~~get_supercell~~CallsGraph_node3" class="node">
+<title>proc~hex_supercell</title>
+<g id="a_proc~~get_supercell~~CallsGraph_node3"><a xlink:href=".././proc/hex_supercell.html" xlink:title="hex_geometries::hex_supercell">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="362,-30 185,-30 185,-6 362,-6 362,-30"/>
+<text text-anchor="middle" x="273.5" y="-15.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_geometries::hex_supercell</text>
+</a>
+</g>
+</g>
+<!-- proc~get_supercell&#45;&gt;proc~hex_supercell -->
+<g id="proc~~get_supercell~~CallsGraph_edge2" class="edge">
+<title>proc~get_supercell&#45;&gt;proc~hex_supercell</title>
+<path fill="none" stroke="#000000" d="M149.14,-31.15C157.54,-30.26 166.2,-29.33 174.86,-28.41"/>
+<polygon fill="#000000" stroke="#000000" points="175.43,-31.87 185,-27.33 174.68,-24.91 175.43,-31.87"/>
 </g>
 <!-- proc~hex2corner -->
 <g id="proc~~get_supercell~~CallsGraph_node4" class="node">
 <title>proc~hex2corner</title>
-<g id="a_proc~~get_supercell~~CallsGraph_node4"><a xlink:href=".././proc/hex2corner.html" xlink:title="hex2corner">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="330,-66 257,-66 257,-42 330,-42 330,-66"/>
-<text text-anchor="middle" x="293.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex2corner</text>
+<g id="a_proc~~get_supercell~~CallsGraph_node4"><a xlink:href=".././proc/hex2corner.html" xlink:title="xy_coordinates::hex2corner">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="576,-102 415,-102 415,-78 576,-78 576,-102"/>
+<text text-anchor="middle" x="495.5" y="-87.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2corner</text>
 </a>
 </g>
 </g>
 <!-- proc~hex2lattice&#45;&gt;proc~hex2corner -->
 <g id="proc~~get_supercell~~CallsGraph_edge3" class="edge">
 <title>proc~hex2lattice&#45;&gt;proc~hex2corner</title>
-<path fill="none" stroke="#000000" d="M197.34,-38.63C212.39,-41.06 230.22,-43.94 246.35,-46.55"/>
-<polygon fill="#000000" stroke="#000000" points="246.23,-50.07 256.66,-48.21 247.35,-43.16 246.23,-50.07"/>
+<path fill="none" stroke="#000000" d="M353.3,-70.75C370,-73.02 387.74,-75.44 404.81,-77.77"/>
+<polygon fill="#000000" stroke="#000000" points="404.39,-81.24 414.77,-79.13 405.33,-74.31 404.39,-81.24"/>
 </g>
 <!-- proc~xy_ordered_union -->
 <g id="proc~~get_supercell~~CallsGraph_node5" class="node">
 <title>proc~xy_ordered_union</title>
-<g id="a_proc~~get_supercell~~CallsGraph_node5"><a xlink:href=".././proc/xy_ordered_union.html" xlink:title="xy_ordered_union">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="347,-24 240,-24 240,0 347,0 347,-24"/>
-<text text-anchor="middle" x="293.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_ordered_union</text>
+<g id="a_proc~~get_supercell~~CallsGraph_node5"><a xlink:href=".././proc/xy_ordered_union.html" xlink:title="xy_coordinates::xy_ordered_union">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="593,-41 398,-41 398,-17 593,-17 593,-41"/>
+<text text-anchor="middle" x="495.5" y="-26.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::xy_ordered_union</text>
 </a>
 </g>
 </g>
 <!-- proc~hex2lattice&#45;&gt;proc~xy_ordered_union -->
 <g id="proc~~get_supercell~~CallsGraph_edge4" class="edge">
 <title>proc~hex2lattice&#45;&gt;proc~xy_ordered_union</title>
-<path fill="none" stroke="#000000" d="M197.34,-27.37C207.36,-25.75 218.6,-23.94 229.76,-22.13"/>
-<polygon fill="#000000" stroke="#000000" points="230.64,-25.54 239.95,-20.49 229.52,-18.63 230.64,-25.54"/>
+<path fill="none" stroke="#000000" d="M353.3,-48.9C368.17,-46.8 383.87,-44.59 399.18,-42.43"/>
+<polygon fill="#000000" stroke="#000000" points="399.76,-45.89 409.17,-41.02 398.78,-38.95 399.76,-45.89"/>
 </g>
 <!-- proc~hex2center -->
 <g id="proc~~get_supercell~~CallsGraph_node6" class="node">
 <title>proc~hex2center</title>
-<g id="a_proc~~get_supercell~~CallsGraph_node6"><a xlink:href=".././proc/hex2center.html" xlink:title="hex2center">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="470.5,-87 397.5,-87 397.5,-63 470.5,-63 470.5,-87"/>
-<text text-anchor="middle" x="434" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex2center</text>
+<g id="a_proc~~get_supercell~~CallsGraph_node6"><a xlink:href=".././proc/hex2center.html" xlink:title="xy_coordinates::hex2center">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="817.5,-163 657.5,-163 657.5,-139 817.5,-139 817.5,-163"/>
+<text text-anchor="middle" x="737.5" y="-148.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2center</text>
 </a>
 </g>
 </g>
 <!-- proc~hex2corner&#45;&gt;proc~hex2center -->
 <g id="proc~~get_supercell~~CallsGraph_edge5" class="edge">
 <title>proc~hex2corner&#45;&gt;proc~hex2center</title>
-<path fill="none" stroke="#000000" d="M330.17,-59.41C347.61,-62.05 368.82,-65.27 387.42,-68.09"/>
-<polygon fill="#000000" stroke="#000000" points="387.04,-71.57 397.45,-69.61 388.09,-64.65 387.04,-71.57"/>
+<path fill="none" stroke="#000000" d="M532.78,-102.03C559.26,-110.54 596.12,-121.85 629,-130 638.86,-132.45 649.29,-134.79 659.62,-136.96"/>
+<polygon fill="#000000" stroke="#000000" points="658.96,-140.4 669.46,-138.98 660.38,-133.54 658.96,-140.4"/>
 </g>
 <!-- proc~ith_corner_offset -->
 <g id="proc~~get_supercell~~CallsGraph_node7" class="node">
 <title>proc~ith_corner_offset</title>
-<g id="a_proc~~get_supercell~~CallsGraph_node7"><a xlink:href=".././proc/ith_corner_offset.html" xlink:title="ith_corner_offset">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="485,-45 383,-45 383,-21 485,-21 485,-45"/>
-<text text-anchor="middle" x="434" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ith_corner_offset</text>
+<g id="a_proc~~get_supercell~~CallsGraph_node7"><a xlink:href=".././proc/ith_corner_offset.html" xlink:title="xy_coordinates::ith_corner_offset">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="832.5,-121 642.5,-121 642.5,-97 832.5,-97 832.5,-121"/>
+<text text-anchor="middle" x="737.5" y="-106.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::ith_corner_offset</text>
 </a>
 </g>
 </g>
 <!-- proc~hex2corner&#45;&gt;proc~ith_corner_offset -->
 <g id="proc~~get_supercell~~CallsGraph_edge6" class="edge">
 <title>proc~hex2corner&#45;&gt;proc~ith_corner_offset</title>
-<path fill="none" stroke="#000000" d="M330.17,-48.59C343.19,-46.62 358.31,-44.33 372.87,-42.12"/>
-<polygon fill="#000000" stroke="#000000" points="373.48,-45.57 382.84,-40.61 372.43,-38.64 373.48,-45.57"/>
+<path fill="none" stroke="#000000" d="M576.08,-96.3C594.01,-97.72 613.3,-99.25 632.07,-100.73"/>
+<polygon fill="#000000" stroke="#000000" points="631.89,-104.23 642.13,-101.53 632.44,-97.25 631.89,-104.23"/>
+</g>
+<!-- site -->
+<g id="proc~~get_supercell~~CallsGraph_node9" class="node">
+<title>site</title>
+<polygon fill="#777777" stroke="#777777" points="936,-41 882,-41 882,-17 936,-17 936,-41"/>
+<text text-anchor="middle" x="909" y="-26.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">site</text>
+</g>
+<!-- proc~hex2corner&#45;&gt;site -->
+<g id="proc~~get_supercell~~CallsGraph_edge7" class="edge">
+<title>proc~hex2corner&#45;&gt;site</title>
+<path fill="none" stroke="#000000" d="M576.07,-85.73C647.44,-80.75 754.67,-70.45 846,-50 854.61,-48.07 863.7,-45.38 872.18,-42.57"/>
+<polygon fill="#000000" stroke="#000000" points="873.49,-45.82 881.8,-39.25 871.21,-39.21 873.49,-45.82"/>
+</g>
+<!-- proc~push_back -->
+<g id="proc~~get_supercell~~CallsGraph_node8" class="node">
+<title>proc~push_back</title>
+<g id="a_proc~~get_supercell~~CallsGraph_node8"><a xlink:href=".././proc/push_back.html" xlink:title="xy_coordinates::xy_lattice%push_back">
+<polygon fill="#d9534f" stroke="#d9534f" points="846,-41 629,-41 629,-17 846,-17 846,-41"/>
+<text text-anchor="middle" x="737.5" y="-26.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::xy_lattice%push_back</text>
+</a>
+</g>
+</g>
+<!-- proc~xy_ordered_union&#45;&gt;proc~push_back -->
+<g id="proc~~get_supercell~~CallsGraph_edge8" class="edge">
+<title>proc~xy_ordered_union&#45;&gt;proc~push_back</title>
+<path fill="none" stroke="#000000" d="M593.08,-29C601.51,-29 610.09,-29 618.66,-29"/>
+<polygon fill="#000000" stroke="#000000" points="618.71,-32.5 628.71,-29 618.71,-25.5 618.71,-32.5"/>
+</g>
+<!-- proc~xy_ordered_union&#45;&gt;site -->
+<g id="proc~~get_supercell~~CallsGraph_edge9" class="edge">
+<title>proc~xy_ordered_union&#45;&gt;site</title>
+<path fill="none" stroke="#000000" d="M558.8,-16.96C629.04,-5.3 746.44,8.4 846,-8 854.7,-9.44 863.83,-11.93 872.32,-14.71"/>
+<polygon fill="#000000" stroke="#000000" points="871.34,-18.08 881.94,-18.06 873.64,-11.47 871.34,-18.08"/>
+</g>
+<!-- origin -->
+<g id="proc~~get_supercell~~CallsGraph_node10" class="node">
+<title>origin</title>
+<polygon fill="#777777" stroke="#777777" points="936,-205 882,-205 882,-181 936,-181 936,-205"/>
+<text text-anchor="middle" x="909" y="-190.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">origin</text>
+</g>
+<!-- proc~hex2center&#45;&gt;origin -->
+<g id="proc~~get_supercell~~CallsGraph_edge10" class="edge">
+<title>proc~hex2center&#45;&gt;origin</title>
+<path fill="none" stroke="#000000" d="M787.07,-163.04C814.24,-169.77 847.52,-178.01 872.28,-184.15"/>
+<polygon fill="#000000" stroke="#000000" points="871.45,-187.55 881.99,-186.56 873.13,-180.75 871.45,-187.55"/>
+</g>
+<!-- uq -->
+<g id="proc~~get_supercell~~CallsGraph_node11" class="node">
+<title>uq</title>
+<polygon fill="#777777" stroke="#777777" points="936,-163 882,-163 882,-139 936,-139 936,-163"/>
+<text text-anchor="middle" x="909" y="-148.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">uq</text>
+</g>
+<!-- proc~hex2center&#45;&gt;uq -->
+<g id="proc~~get_supercell~~CallsGraph_edge11" class="edge">
+<title>proc~hex2center&#45;&gt;uq</title>
+<path fill="none" stroke="#000000" d="M817.79,-151C836.55,-151 855.67,-151 871.45,-151"/>
+<polygon fill="#000000" stroke="#000000" points="871.8,-154.5 881.8,-151 871.8,-147.5 871.8,-154.5"/>
+</g>
+<!-- ur -->
+<g id="proc~~get_supercell~~CallsGraph_node12" class="node">
+<title>ur</title>
+<polygon fill="#777777" stroke="#777777" points="936,-121 882,-121 882,-97 936,-97 936,-121"/>
+<text text-anchor="middle" x="909" y="-106.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ur</text>
+</g>
+<!-- proc~hex2center&#45;&gt;ur -->
+<g id="proc~~get_supercell~~CallsGraph_edge12" class="edge">
+<title>proc~hex2center&#45;&gt;ur</title>
+<path fill="none" stroke="#000000" d="M807.34,-138.97C820.26,-136.32 833.59,-133.3 846,-130 854.6,-127.71 863.75,-124.86 872.3,-122"/>
+<polygon fill="#000000" stroke="#000000" points="873.67,-125.23 881.99,-118.67 871.4,-118.61 873.67,-125.23"/>
+</g>
+<!-- proc~push_back&#45;&gt;site -->
+<g id="proc~~get_supercell~~CallsGraph_edge13" class="edge">
+<title>proc~push_back&#45;&gt;site</title>
+<path fill="none" stroke="#000000" d="M846.33,-29C855.3,-29 863.91,-29 871.69,-29"/>
+<polygon fill="#000000" stroke="#000000" points="871.75,-32.5 881.75,-29 871.75,-25.5 871.75,-32.5"/>
 </g>
 </g>
 </svg>
-</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
-    <p>Nodes of different colours represent the following: </p>
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+</div>                <script>
+                  var panprocget_supercellCallsGraph = svgPanZoom('#procget_supercellCallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -317,21 +479,41 @@
 </g>
 </svg>
 
-    
-    <p>Solid arrows point from a procedure to one which it calls. Dashed 
-    arrows point from an interface to procedures which implement that interface.
-    This could include the module procedures in a generic interface or the
-    implementation in a submodule of an interface in a parent module.
-    </p>
-    </div></div></div></div>
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      <h3>Contents</h3>
- 
-<em>None</em>
+        <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
@@ -349,50 +531,50 @@
     </div>
   </div>
 
-    <hr>    
+      <hr>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2022 
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2023 
 </p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
         </div>
-        <div class="col-xs-6 col-md-6">
-          <p class="text-right">
-            Documentation generated by 
-            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-          </p>
-        </div>
-      </div>
-      <br>
-      </div> <!-- /container -->    
+        <br>
+      </div> <!-- /container -->
     </footer>
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-<!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
--->
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
 
-    <!-- MathJax JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-      });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script src="../tipuesearch/tipuesearch_content.js"></script>
-    <script src="../tipuesearch/tipuesearch_set.js"></script>
-    <script src="../tipuesearch/tipuesearch.js"></script>
-    
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
   </body>
 </html>

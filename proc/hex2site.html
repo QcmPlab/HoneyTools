@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
+      <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
     <meta name="author" content="Gabriele Bellomia" >
     <link rel="icon" href="../favicon.png">
 
@@ -14,16 +14,16 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script src="../js/jquery-2.1.3.min.js"></script>
-    <script src="../js/svg-pan-zoom.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="../js/jquery-2.1.3.min.js"></script>
+         <script src="../js/svg-pan-zoom.min.js"></script>
 
   </head>
 
@@ -45,31 +45,39 @@
           <ul class="nav navbar-nav">
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
-              data-toggle="dropdown" role="button"
-              aria-haspopup="true"
-     aria-expanded="false">Contents <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="../lists/files.html">Source Files</a></li>
-            <li><a href="../lists/modules.html">Modules</a></li>
-            <li><a href="../lists/procedures.html">Procedures</a></li>
-                   <li><a href="../lists/types.html">Derived Types</a></li>
-       
-            </ul>
-        
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="../lists/files.html">Source Files</a></li>
+                  <li><a href="../lists/modules.html">Modules</a></li>
+                  <li><a href="../lists/procedures.html">Procedures</a></li>
+                  <li><a href="../lists/types.html">Derived Types</a></li>
+              </ul>
             </li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="../lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/types.html">Derived Types</a>
+              </li>
           </ul>
-        <form action="../search.html" class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
-        </div>
-<!--
-        <button type="submit" class="btn btn-default">Submit</button>
--->
-        </form>
+            <form action="../search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -78,47 +86,72 @@
   <div class="row">
     <h1>hex2site
       <small>Function</small>
+      
     </h1>
-    <div class="row">
-  <div class="col-lg-12">
-<div class="well well-sm">
-  <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     <li><i class="fa fa-list-ol"></i>
-       <a data-toggle="tooltip"
-    data-placement="bottom" data-html="true"
-    title=" 2.3% of total for procedures.">19 statements</a>
-     </li> 
-    <li><i class="fa fa-code"></i><a href="../src/xy_coordinates.f90"> Source File</a></li>
-  </ul>
-  <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/xy_coordinates.f90.html'>xy_coordinates.f90</a></li>
-     <li><a href='../module/xy_coordinates.html'>xy_coordinates</a></li>
-     <li class="active">hex2site</li>
-  </ol>
-</div>
-</div>
-</div>
-<script>
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-  })
-</script>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title=" 2.3% of total for procedures.">19 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/xy_coordinates.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/xy_coordinates.f90.html'>xy_coordinates.f90</a></li>
+              <li><a href='../module/xy_coordinates.html'>xy_coordinates</a></li>
+          <li class="active">hex2site</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 
   </div>
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    <div id="sidebar">
-  <h3>Contents</h3>
- 
-<em>None</em>
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-</div>
+
+  </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public pure elemental function hex2site(layout, H, label) result(site)</h2>
+    <h2>public pure elemental function hex2site(layout, H, label) result(site)  
+</h2>
     
 
     <p>Convert hex coordinates to real 2D lattice sites
@@ -129,33 +162,73 @@
 Actual real-space layout has to be specified by passing
 a (scalar) unit_cell object.</p>
 
-    <h3>Arguments</h3>
-      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-layout"></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-h~5"></span>type(<a href='../type/hex.html'>hex</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>H</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-label~2"></span>character(len=1),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>label</strong></td><td><p>A or B</p></td>
-</tr>
-</tbody>
-</table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-site~2"></span>type(<a href='../type/xy_site.html'>xy_site</a>)</small></h3>
-    
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-layout~6"></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-h~7"></span>
+              type(<a href='../type/hex.html'>hex</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>H</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-label"></span>
+              character(len=1),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>label</strong></td>
+            <td>
+                <p>A or B</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-site~2"></span>
+          type(<a href='../type/xy_site.html'>xy_site</a>)
+        </small>
+      </h3>
+      
     <br>
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -168,52 +241,98 @@ a (scalar) unit_cell object.</p>
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~hex2site~~CallsGraph Pages: 1 -->
-<svg id="prochex2siteCallsGraph" width="203pt" height="74pt"
- viewBox="0.00 0.00 203.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~hex2site~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<svg id="prochex2siteCallsGraph" width="469pt" height="116pt"
+ viewBox="0.00 0.00 469.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~hex2site~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
 <title>proc~~hex2site~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 199,-70 199,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 465,-112 465,4 -4,4"/>
 <!-- proc~hex2site -->
 <g id="proc~~hex2site~~CallsGraph_node1" class="node">
 <title>proc~hex2site</title>
-<polygon fill="none" stroke="black" points="57,-45 0,-45 0,-21 57,-21 57,-45"/>
-<text text-anchor="middle" x="28.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">hex2site</text>
+<polygon fill="none" stroke="black" points="145,-45 0,-45 0,-21 145,-21 145,-45"/>
+<text text-anchor="middle" x="72.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">xy_coordinates::hex2site</text>
 </g>
 <!-- proc~hex2center -->
 <g id="proc~~hex2site~~CallsGraph_node2" class="node">
 <title>proc~hex2center</title>
-<g id="a_proc~~hex2site~~CallsGraph_node2"><a xlink:href=".././proc/hex2center.html" xlink:title="hex2center">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="180.5,-66 107.5,-66 107.5,-42 180.5,-42 180.5,-66"/>
-<text text-anchor="middle" x="144" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex2center</text>
+<g id="a_proc~~hex2site~~CallsGraph_node2"><a xlink:href=".././proc/hex2center.html" xlink:title="xy_coordinates::hex2center">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="356,-66 196,-66 196,-42 356,-42 356,-66"/>
+<text text-anchor="middle" x="276" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2center</text>
 </a>
 </g>
 </g>
 <!-- proc~hex2site&#45;&gt;proc~hex2center -->
 <g id="proc~~hex2site~~CallsGraph_edge1" class="edge">
 <title>proc~hex2site&#45;&gt;proc~hex2center</title>
-<path fill="none" stroke="#000000" d="M57.27,-38.14C69.29,-40.36 83.7,-43.03 97.23,-45.53"/>
-<polygon fill="#000000" stroke="#000000" points="96.89,-49.03 107.36,-47.41 98.17,-42.15 96.89,-49.03"/>
+<path fill="none" stroke="#000000" d="M145.11,-40.46C158.18,-41.83 171.97,-43.26 185.48,-44.67"/>
+<polygon fill="#000000" stroke="#000000" points="185.43,-48.18 195.74,-45.74 186.16,-41.22 185.43,-48.18"/>
 </g>
 <!-- proc~ith_corner_offset -->
 <g id="proc~~hex2site~~CallsGraph_node3" class="node">
 <title>proc~ith_corner_offset</title>
-<g id="a_proc~~hex2site~~CallsGraph_node3"><a xlink:href=".././proc/ith_corner_offset.html" xlink:title="ith_corner_offset">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="195,-24 93,-24 93,0 195,0 195,-24"/>
-<text text-anchor="middle" x="144" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ith_corner_offset</text>
+<g id="a_proc~~hex2site~~CallsGraph_node3"><a xlink:href=".././proc/ith_corner_offset.html" xlink:title="xy_coordinates::ith_corner_offset">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="371,-24 181,-24 181,0 371,0 371,-24"/>
+<text text-anchor="middle" x="276" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::ith_corner_offset</text>
 </a>
 </g>
 </g>
 <!-- proc~hex2site&#45;&gt;proc~ith_corner_offset -->
 <g id="proc~~hex2site~~CallsGraph_edge2" class="edge">
 <title>proc~hex2site&#45;&gt;proc~ith_corner_offset</title>
-<path fill="none" stroke="#000000" d="M57.27,-27.86C65.09,-26.42 73.91,-24.78 82.85,-23.13"/>
-<polygon fill="#000000" stroke="#000000" points="83.74,-26.52 92.94,-21.26 82.47,-19.64 83.74,-26.52"/>
+<path fill="none" stroke="#000000" d="M145.11,-25.54C153.4,-24.67 161.98,-23.78 170.6,-22.88"/>
+<polygon fill="#000000" stroke="#000000" points="171.13,-26.34 180.72,-21.83 170.41,-19.38 171.13,-26.34"/>
+</g>
+<!-- origin -->
+<g id="proc~~hex2site~~CallsGraph_node4" class="node">
+<title>origin</title>
+<polygon fill="#777777" stroke="#777777" points="461,-108 407,-108 407,-84 461,-84 461,-108"/>
+<text text-anchor="middle" x="434" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">origin</text>
+</g>
+<!-- proc~hex2center&#45;&gt;origin -->
+<g id="proc~~hex2site~~CallsGraph_edge3" class="edge">
+<title>proc~hex2center&#45;&gt;origin</title>
+<path fill="none" stroke="#000000" d="M321.7,-66.04C345.59,-72.47 374.62,-80.28 397.03,-86.32"/>
+<polygon fill="#000000" stroke="#000000" points="396.26,-89.73 406.83,-88.95 398.08,-82.97 396.26,-89.73"/>
+</g>
+<!-- uq -->
+<g id="proc~~hex2site~~CallsGraph_node5" class="node">
+<title>uq</title>
+<polygon fill="#777777" stroke="#777777" points="461,-66 407,-66 407,-42 461,-42 461,-66"/>
+<text text-anchor="middle" x="434" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">uq</text>
+</g>
+<!-- proc~hex2center&#45;&gt;uq -->
+<g id="proc~~hex2site~~CallsGraph_edge4" class="edge">
+<title>proc~hex2center&#45;&gt;uq</title>
+<path fill="none" stroke="#000000" d="M356.37,-54C370.46,-54 384.49,-54 396.62,-54"/>
+<polygon fill="#000000" stroke="#000000" points="396.74,-57.5 406.74,-54 396.74,-50.5 396.74,-57.5"/>
+</g>
+<!-- ur -->
+<g id="proc~~hex2site~~CallsGraph_node6" class="node">
+<title>ur</title>
+<polygon fill="#777777" stroke="#777777" points="461,-24 407,-24 407,0 461,0 461,-24"/>
+<text text-anchor="middle" x="434" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ur</text>
+</g>
+<!-- proc~hex2center&#45;&gt;ur -->
+<g id="proc~~hex2site~~CallsGraph_edge5" class="edge">
+<title>proc~hex2center&#45;&gt;ur</title>
+<path fill="none" stroke="#000000" d="M335.41,-41.97C347.25,-39.24 359.57,-36.2 371,-33 379.57,-30.6 388.71,-27.7 397.25,-24.83"/>
+<polygon fill="#000000" stroke="#000000" points="398.62,-28.06 406.95,-21.51 396.35,-21.44 398.62,-28.06"/>
 </g>
 </g>
 </svg>
-</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
-    <p>Nodes of different colours represent the following: </p>
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -263,21 +382,41 @@ a (scalar) unit_cell object.</p>
 </g>
 </svg>
 
-    
-    <p>Solid arrows point from a procedure to one which it calls. Dashed 
-    arrows point from an interface to procedures which implement that interface.
-    This could include the module procedures in a generic interface or the
-    implementation in a submodule of an interface in a parent module.
-    </p>
-    </div></div></div></div>
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      <h3>Contents</h3>
- 
-<em>None</em>
+        <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
@@ -295,50 +434,50 @@ a (scalar) unit_cell object.</p>
     </div>
   </div>
 
-    <hr>    
+      <hr>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2022 
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2023 
 </p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
         </div>
-        <div class="col-xs-6 col-md-6">
-          <p class="text-right">
-            Documentation generated by 
-            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-          </p>
-        </div>
-      </div>
-      <br>
-      </div> <!-- /container -->    
+        <br>
+      </div> <!-- /container -->
     </footer>
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-<!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
--->
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
 
-    <!-- MathJax JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-      });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script src="../tipuesearch/tipuesearch_content.js"></script>
-    <script src="../tipuesearch/tipuesearch_set.js"></script>
-    <script src="../tipuesearch/tipuesearch.js"></script>
-    
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
   </body>
 </html>

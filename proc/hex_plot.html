@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
+      <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
     <meta name="author" content="Gabriele Bellomia" >
     <link rel="icon" href="../favicon.png">
 
@@ -14,16 +14,16 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script src="../js/jquery-2.1.3.min.js"></script>
-    <script src="../js/svg-pan-zoom.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="../js/jquery-2.1.3.min.js"></script>
+         <script src="../js/svg-pan-zoom.min.js"></script>
 
   </head>
 
@@ -45,31 +45,39 @@
           <ul class="nav navbar-nav">
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
-              data-toggle="dropdown" role="button"
-              aria-haspopup="true"
-     aria-expanded="false">Contents <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="../lists/files.html">Source Files</a></li>
-            <li><a href="../lists/modules.html">Modules</a></li>
-            <li><a href="../lists/procedures.html">Procedures</a></li>
-                   <li><a href="../lists/types.html">Derived Types</a></li>
-       
-            </ul>
-        
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="../lists/files.html">Source Files</a></li>
+                  <li><a href="../lists/modules.html">Modules</a></li>
+                  <li><a href="../lists/procedures.html">Procedures</a></li>
+                  <li><a href="../lists/types.html">Derived Types</a></li>
+              </ul>
             </li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="../lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/types.html">Derived Types</a>
+              </li>
           </ul>
-        <form action="../search.html" class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
-        </div>
-<!--
-        <button type="submit" class="btn btn-default">Submit</button>
--->
-        </form>
+            <form action="../search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -78,52 +86,78 @@
   <div class="row">
     <h1>hex_plot
       <small>Subroutine</small>
+      
     </h1>
-    <div class="row">
-  <div class="col-lg-12">
-<div class="well well-sm">
-  <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     <li><i class="fa fa-list-ol"></i>
-       <a data-toggle="tooltip"
-    data-placement="bottom" data-html="true"
-    title=" 9.7% of total for procedures.">79 statements</a>
-     </li> 
-    <li><i class="fa fa-code"></i><a href="../src/honeyplots.f90"> Source File</a></li>
-  </ul>
-  <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/honeyplots.f90.html'>honeyplots.f90</a></li>
-     <li><a href='../module/honeyplots.html'>honeyplots</a></li>
-     <li class="active">hex_plot</li>
-  </ol>
-</div>
-</div>
-</div>
-<script>
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-  })
-</script>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title=" 9.7% of total for procedures.">79 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/honeyplots.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/honeyplots.f90.html'>honeyplots.f90</a></li>
+              <li><a href='../module/honeyplots.html'>honeyplots</a></li>
+          <li class="active">hex_plot</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 
   </div>
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    <div id="sidebar">
-  <h3>Contents</h3>
- 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
-  <div class="list-group">
-    <a class="list-group-item" href="../proc/hex_plot.html#src">hex_plot</a>
-  </div>
-</div>
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="panel panel-primary">
+      <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/hex_plot.html#src">hex_plot</a>
+      </div>
+    </div>
 
-</div>
+
+  </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine hex_plot(layout, hexagons, backend, figure_name, script_name, set_terminal)</h2>
+    <h2>public  subroutine hex_plot(layout, hexagons, backend, figure_name, script_name, set_terminal)  
+</h2>
     
 
     <p>Simple plotter for arrays of type(hex). It features two backends, giving
@@ -147,48 +181,110 @@ should be compatible with the "dumb" terminal option, which would direct
 the plot to the terminal itself, in the form of ASCII art. This can be
 very useful for HPC workflows.</p>
 
+
     <h3>Arguments</h3>
-      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-layout~10"></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-layout~5"></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
 <td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-hexagons~2"></span>type(<a href='../type/hex.html'>hex</a>),</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hexagons"></span>
+              type(<a href='../type/hex.html'>hex</a>),
+            </td>
 <td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>hexagons</strong>(:)</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-backend~2"></span>character,</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hexagons</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-backend~2"></span>
+              character(len=*),
+            </td>
 <td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>backend</strong></td><td><p>default: "pyplot" (or "gnuplot")</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-figure_name~2"></span>character,</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>backend</strong></td>
+            <td>
+                <p>default: "pyplot" (or "gnuplot")</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-figure_name~2"></span>
+              character(len=*),
+            </td>
 <td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>figure_name</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-script_name~2"></span>character,</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>figure_name</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-script_name~2"></span>
+              character(len=*),
+            </td>
 <td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>script_name</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-set_terminal~2"></span>character,</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>script_name</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-set_terminal~2"></span>
+              character(len=*),
+            </td>
 <td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>set_terminal</strong></td><td><p>relevant to gnuplot backend</p></td>
-</tr>
-</tbody>
-</table>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>set_terminal</strong></td>
+            <td>
+                <p>relevant to gnuplot backend</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
     <br>
     <div class="panel panel-default">
@@ -202,67 +298,336 @@ very useful for HPC workflows.</p>
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~hex_plot~~CallsGraph Pages: 1 -->
-<svg id="prochex_plotCallsGraph" width="312pt" height="74pt"
- viewBox="0.00 0.00 312.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~hex_plot~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<svg id="prochex_plotCallsGraph" width="641pt" height="449pt"
+ viewBox="0.00 0.00 641.00 449.12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~hex_plot~~CallsGraph" class="graph" transform="scale(1.19 1.19) rotate(0) translate(4 532)">
 <title>proc~~hex_plot~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 308,-70 308,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-532 761,-532 761,4 -4,4"/>
 <!-- proc~hex_plot -->
 <g id="proc~~hex_plot~~CallsGraph_node1" class="node">
 <title>proc~hex_plot</title>
-<polygon fill="none" stroke="black" points="57,-45 0,-45 0,-21 57,-21 57,-45"/>
-<text text-anchor="middle" x="28.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">hex_plot</text>
+<polygon fill="none" stroke="black" points="123,-358 0,-358 0,-334 123,-334 123,-358"/>
+<text text-anchor="middle" x="61.5" y="-343.6" font-family="Helvetica,sans-Serif" font-size="10.50">honeyplots::hex_plot</text>
+</g>
+<!-- add_plot -->
+<g id="proc~~hex_plot~~CallsGraph_node2" class="node">
+<title>add_plot</title>
+<polygon fill="#777777" stroke="#777777" points="698.5,-528 640.5,-528 640.5,-504 698.5,-504 698.5,-528"/>
+<text text-anchor="middle" x="669.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">add_plot</text>
+</g>
+<!-- proc~hex_plot&#45;&gt;add_plot -->
+<g id="proc~~hex_plot~~CallsGraph_edge1" class="edge">
+<title>proc~hex_plot&#45;&gt;add_plot</title>
+<path fill="none" stroke="#000000" d="M69.79,-358C83.96,-380.18 117.48,-427.36 159,-450 316.64,-535.98 541.43,-527.55 630.27,-520.02"/>
+<polygon fill="#000000" stroke="#000000" points="630.77,-523.49 640.41,-519.11 630.14,-516.52 630.77,-523.49"/>
+</g>
+<!-- filename -->
+<g id="proc~~hex_plot~~CallsGraph_node3" class="node">
+<title>filename</title>
+<polygon fill="#777777" stroke="#777777" points="699.5,-486 639.5,-486 639.5,-462 699.5,-462 699.5,-486"/>
+<text text-anchor="middle" x="669.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">filename</text>
+</g>
+<!-- proc~hex_plot&#45;&gt;filename -->
+<g id="proc~~hex_plot~~CallsGraph_edge2" class="edge">
+<title>proc~hex_plot&#45;&gt;filename</title>
+<path fill="none" stroke="#000000" d="M74.66,-358.06C91.83,-374.27 124.9,-402.6 159,-416 324.42,-481 541.68,-479.89 629.34,-476.26"/>
+<polygon fill="#000000" stroke="#000000" points="629.54,-479.75 639.37,-475.8 629.22,-472.76 629.54,-479.75"/>
+</g>
+<!-- initialize -->
+<g id="proc~~hex_plot~~CallsGraph_node4" class="node">
+<title>initialize</title>
+<polygon fill="#777777" stroke="#777777" points="698,-444 641,-444 641,-420 698,-420 698,-444"/>
+<text text-anchor="middle" x="669.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">initialize</text>
+</g>
+<!-- proc~hex_plot&#45;&gt;initialize -->
+<g id="proc~~hex_plot~~CallsGraph_edge3" class="edge">
+<title>proc~hex_plot&#45;&gt;initialize</title>
+<path fill="none" stroke="#000000" d="M84.77,-358.17C103.87,-368 132.43,-381.26 159,-388 331.08,-431.63 545.17,-433.95 630.67,-432.87"/>
+<polygon fill="#000000" stroke="#000000" points="630.97,-436.37 640.92,-432.72 630.87,-429.37 630.97,-436.37"/>
+</g>
+<!-- interface~plot -->
+<g id="proc~~hex_plot~~CallsGraph_node5" class="node">
+<title>interface~plot</title>
+<g id="a_proc~~hex_plot~~CallsGraph_node5"><a xlink:href=".././interface/plot.html" xlink:title="honeyplots::plot">
+<polygon fill="#a7506f" stroke="#a7506f" points="289,-358 190,-358 190,-334 289,-334 289,-358"/>
+<text text-anchor="middle" x="239.5" y="-343.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeyplots::plot</text>
+</a>
+</g>
+</g>
+<!-- proc~hex_plot&#45;&gt;interface~plot -->
+<g id="proc~~hex_plot~~CallsGraph_edge4" class="edge">
+<title>proc~hex_plot&#45;&gt;interface~plot</title>
+<path fill="none" stroke="#000000" d="M123.07,-339.55C141.36,-339.14 161.4,-339.15 179.58,-339.59"/>
+<polygon fill="#000000" stroke="#000000" points="179.66,-343.09 189.75,-339.89 179.86,-336.1 179.66,-343.09"/>
+</g>
+<!-- options -->
+<g id="proc~~hex_plot~~CallsGraph_node6" class="node">
+<title>options</title>
+<polygon fill="#777777" stroke="#777777" points="696.5,-402 642.5,-402 642.5,-378 696.5,-378 696.5,-402"/>
+<text text-anchor="middle" x="669.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">options</text>
+</g>
+<!-- proc~hex_plot&#45;&gt;options -->
+<g id="proc~~hex_plot~~CallsGraph_edge5" class="edge">
+<title>proc~hex_plot&#45;&gt;options</title>
+<path fill="none" stroke="#000000" d="M110.32,-358.08C125.76,-361.53 143.02,-364.92 159,-367 335.4,-390.01 548.73,-391.07 632.37,-390.46"/>
+<polygon fill="#000000" stroke="#000000" points="632.41,-393.96 642.38,-390.37 632.35,-386.96 632.41,-393.96"/>
 </g>
 <!-- proc~hex2corner -->
-<g id="proc~~hex_plot~~CallsGraph_node2" class="node">
+<g id="proc~~hex_plot~~CallsGraph_node7" class="node">
 <title>proc~hex2corner</title>
-<g id="a_proc~~hex_plot~~CallsGraph_node2"><a xlink:href=".././proc/hex2corner.html" xlink:title="hex2corner">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="166,-45 93,-45 93,-21 166,-21 166,-45"/>
-<text text-anchor="middle" x="129.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex2corner</text>
+<g id="a_proc~~hex_plot~~CallsGraph_node7"><a xlink:href=".././proc/hex2corner.html" xlink:title="xy_coordinates::hex2corner">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="320,-129 159,-129 159,-105 320,-105 320,-129"/>
+<text text-anchor="middle" x="239.5" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2corner</text>
 </a>
 </g>
 </g>
 <!-- proc~hex_plot&#45;&gt;proc~hex2corner -->
-<g id="proc~~hex_plot~~CallsGraph_edge1" class="edge">
+<g id="proc~~hex_plot~~CallsGraph_edge6" class="edge">
 <title>proc~hex_plot&#45;&gt;proc~hex2corner</title>
-<path fill="none" stroke="#000000" d="M57.08,-33C65.05,-33 73.98,-33 82.76,-33"/>
-<polygon fill="#000000" stroke="#000000" points="82.91,-36.5 92.91,-33 82.91,-29.5 82.91,-36.5"/>
+<path fill="none" stroke="#000000" d="M66.62,-333.91C77.58,-303.18 109.95,-220.8 159,-168 171.66,-154.37 188.72,-142.8 203.78,-134.15"/>
+<polygon fill="#000000" stroke="#000000" points="205.78,-137.04 212.85,-129.15 202.4,-130.91 205.78,-137.04"/>
+</g>
+<!-- savefig -->
+<g id="proc~~hex_plot~~CallsGraph_node8" class="node">
+<title>savefig</title>
+<polygon fill="#777777" stroke="#777777" points="696.5,-318 642.5,-318 642.5,-294 696.5,-294 696.5,-318"/>
+<text text-anchor="middle" x="669.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">savefig</text>
+</g>
+<!-- proc~hex_plot&#45;&gt;savefig -->
+<g id="proc~~hex_plot~~CallsGraph_edge7" class="edge">
+<title>proc~hex_plot&#45;&gt;savefig</title>
+<path fill="none" stroke="#000000" d="M109.82,-333.95C125.39,-330.46 142.84,-327.04 159,-325 335.43,-302.69 548.74,-303.7 632.38,-305.16"/>
+<polygon fill="#000000" stroke="#000000" points="632.32,-308.66 642.39,-305.35 632.45,-301.66 632.32,-308.66"/>
+</g>
+<!-- showfig -->
+<g id="proc~~hex_plot~~CallsGraph_node9" class="node">
+<title>showfig</title>
+<polygon fill="#777777" stroke="#777777" points="696.5,-276 642.5,-276 642.5,-252 696.5,-252 696.5,-276"/>
+<text text-anchor="middle" x="669.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">showfig</text>
+</g>
+<!-- proc~hex_plot&#45;&gt;showfig -->
+<g id="proc~~hex_plot~~CallsGraph_edge8" class="edge">
+<title>proc~hex_plot&#45;&gt;showfig</title>
+<path fill="none" stroke="#000000" d="M85.99,-333.83C105.12,-324.53 133.09,-312.27 159,-306 332.51,-263.98 547.91,-262.06 632.25,-263.17"/>
+<polygon fill="#000000" stroke="#000000" points="632.28,-266.67 642.34,-263.33 632.39,-259.67 632.28,-266.67"/>
+</g>
+<!-- xlabel -->
+<g id="proc~~hex_plot~~CallsGraph_node10" class="node">
+<title>xlabel</title>
+<polygon fill="#777777" stroke="#777777" points="696.5,-234 642.5,-234 642.5,-210 696.5,-210 696.5,-234"/>
+<text text-anchor="middle" x="669.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xlabel</text>
+</g>
+<!-- proc~hex_plot&#45;&gt;xlabel -->
+<g id="proc~~hex_plot~~CallsGraph_edge9" class="edge">
+<title>proc~hex_plot&#45;&gt;xlabel</title>
+<path fill="none" stroke="#000000" d="M74.26,-333.78C91.22,-317.04 124.33,-287.5 159,-274 326.25,-208.87 546.54,-214.12 632.22,-219.25"/>
+<polygon fill="#000000" stroke="#000000" points="632.26,-222.76 642.46,-219.91 632.71,-215.78 632.26,-222.76"/>
+</g>
+<!-- ylabel -->
+<g id="proc~~hex_plot~~CallsGraph_node11" class="node">
+<title>ylabel</title>
+<polygon fill="#777777" stroke="#777777" points="696.5,-192 642.5,-192 642.5,-168 696.5,-168 696.5,-192"/>
+<text text-anchor="middle" x="669.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ylabel</text>
+</g>
+<!-- proc~hex_plot&#45;&gt;ylabel -->
+<g id="proc~~hex_plot~~CallsGraph_edge10" class="edge">
+<title>proc~hex_plot&#45;&gt;ylabel</title>
+<path fill="none" stroke="#000000" d="M68.41,-333.72C81.07,-308.94 113.43,-253.22 159,-229 318.29,-144.34 545.33,-163.13 632.51,-174.54"/>
+<polygon fill="#000000" stroke="#000000" points="632.05,-178.02 642.43,-175.89 632.99,-171.08 632.05,-178.02"/>
+</g>
+<!-- interface~plot&#45;&gt;proc~hex_plot -->
+<g id="proc~~hex_plot~~CallsGraph_edge11" class="edge">
+<title>interface~plot&#45;&gt;proc~hex_plot</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.75,-352.11C172.26,-352.72 152.15,-352.89 133.17,-352.63"/>
+<polygon fill="#000000" stroke="#000000" points="133.13,-349.13 123.07,-352.45 133,-356.13 133.13,-349.13"/>
+</g>
+<!-- proc~xy_plot -->
+<g id="proc~~hex_plot~~CallsGraph_node14" class="node">
+<title>proc~xy_plot</title>
+<g id="a_proc~~hex_plot~~CallsGraph_node14"><a xlink:href=".././proc/xy_plot.html" xlink:title="honeyplots::xy_plot">
+<polygon fill="#d9534f" stroke="#d9534f" points="509,-358 393,-358 393,-334 509,-334 509,-358"/>
+<text text-anchor="middle" x="451" y="-343.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeyplots::xy_plot</text>
+</a>
+</g>
+</g>
+<!-- interface~plot&#45;&gt;proc~xy_plot -->
+<g id="proc~~hex_plot~~CallsGraph_edge12" class="edge">
+<title>interface~plot&#45;&gt;proc~xy_plot</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M289.09,-340.2C316.89,-339.16 352.19,-338.97 382.63,-339.65"/>
+<polygon fill="#000000" stroke="#000000" points="382.67,-343.15 392.75,-339.91 382.85,-336.15 382.67,-343.15"/>
 </g>
 <!-- proc~hex2center -->
-<g id="proc~~hex_plot~~CallsGraph_node3" class="node">
+<g id="proc~~hex_plot~~CallsGraph_node12" class="node">
 <title>proc~hex2center</title>
-<g id="a_proc~~hex_plot~~CallsGraph_node3"><a xlink:href=".././proc/hex2center.html" xlink:title="hex2center">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="289.5,-66 216.5,-66 216.5,-42 289.5,-42 289.5,-66"/>
-<text text-anchor="middle" x="253" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex2center</text>
+<g id="a_proc~~hex_plot~~CallsGraph_node12"><a xlink:href=".././proc/hex2center.html" xlink:title="xy_coordinates::hex2center">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="531,-108 371,-108 371,-84 531,-84 531,-108"/>
+<text text-anchor="middle" x="451" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2center</text>
 </a>
 </g>
 </g>
 <!-- proc~hex2corner&#45;&gt;proc~hex2center -->
-<g id="proc~~hex_plot~~CallsGraph_edge2" class="edge">
+<g id="proc~~hex_plot~~CallsGraph_edge13" class="edge">
 <title>proc~hex2corner&#45;&gt;proc~hex2center</title>
-<path fill="none" stroke="#000000" d="M166.3,-39.19C178.9,-41.37 193.24,-43.84 206.54,-46.14"/>
-<polygon fill="#000000" stroke="#000000" points="206.01,-49.6 216.46,-47.86 207.2,-42.71 206.01,-49.6"/>
+<path fill="none" stroke="#000000" d="M320,-109.03C333.28,-107.7 347.14,-106.31 360.65,-104.96"/>
+<polygon fill="#000000" stroke="#000000" points="361.3,-108.41 370.9,-103.93 360.6,-101.44 361.3,-108.41"/>
 </g>
 <!-- proc~ith_corner_offset -->
-<g id="proc~~hex_plot~~CallsGraph_node4" class="node">
+<g id="proc~~hex_plot~~CallsGraph_node13" class="node">
 <title>proc~ith_corner_offset</title>
-<g id="a_proc~~hex_plot~~CallsGraph_node4"><a xlink:href=".././proc/ith_corner_offset.html" xlink:title="ith_corner_offset">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="304,-24 202,-24 202,0 304,0 304,-24"/>
-<text text-anchor="middle" x="253" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ith_corner_offset</text>
+<g id="a_proc~~hex_plot~~CallsGraph_node13"><a xlink:href=".././proc/ith_corner_offset.html" xlink:title="xy_coordinates::ith_corner_offset">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="546,-66 356,-66 356,-42 546,-42 546,-66"/>
+<text text-anchor="middle" x="451" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::ith_corner_offset</text>
 </a>
 </g>
 </g>
 <!-- proc~hex2corner&#45;&gt;proc~ith_corner_offset -->
-<g id="proc~~hex_plot~~CallsGraph_edge3" class="edge">
+<g id="proc~~hex_plot~~CallsGraph_edge14" class="edge">
 <title>proc~hex2corner&#45;&gt;proc~ith_corner_offset</title>
-<path fill="none" stroke="#000000" d="M166.3,-26.81C174.25,-25.44 182.89,-23.95 191.52,-22.45"/>
-<polygon fill="#000000" stroke="#000000" points="192.35,-25.86 201.61,-20.71 191.16,-18.96 192.35,-25.86"/>
+<path fill="none" stroke="#000000" d="M270.54,-104.87C293.65,-95.83 326.51,-83.62 356,-75 364.02,-72.66 372.49,-70.43 380.92,-68.36"/>
+<polygon fill="#000000" stroke="#000000" points="381.87,-71.73 390.78,-66.01 380.24,-64.92 381.87,-71.73"/>
+</g>
+<!-- site -->
+<g id="proc~~hex_plot~~CallsGraph_node15" class="node">
+<title>site</title>
+<polygon fill="#777777" stroke="#777777" points="696.5,-150 642.5,-150 642.5,-126 696.5,-126 696.5,-150"/>
+<text text-anchor="middle" x="669.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">site</text>
+</g>
+<!-- proc~hex2corner&#45;&gt;site -->
+<g id="proc~~hex_plot~~CallsGraph_edge15" class="edge">
+<title>proc~hex2corner&#45;&gt;site</title>
+<path fill="none" stroke="#000000" d="M320,-120.9C413.17,-125.47 563.53,-132.85 632.2,-136.22"/>
+<polygon fill="#000000" stroke="#000000" points="632.33,-139.73 642.49,-136.72 632.68,-132.74 632.33,-139.73"/>
+</g>
+<!-- origin -->
+<g id="proc~~hex_plot~~CallsGraph_node16" class="node">
+<title>origin</title>
+<polygon fill="#777777" stroke="#777777" points="696.5,-108 642.5,-108 642.5,-84 696.5,-84 696.5,-108"/>
+<text text-anchor="middle" x="669.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">origin</text>
+</g>
+<!-- proc~hex2center&#45;&gt;origin -->
+<g id="proc~~hex_plot~~CallsGraph_edge16" class="edge">
+<title>proc~hex2center&#45;&gt;origin</title>
+<path fill="none" stroke="#000000" d="M531.08,-96C565.63,-96 604.47,-96 632.02,-96"/>
+<polygon fill="#000000" stroke="#000000" points="632.35,-99.5 642.35,-96 632.35,-92.5 632.35,-99.5"/>
+</g>
+<!-- uq -->
+<g id="proc~~hex_plot~~CallsGraph_node18" class="node">
+<title>uq</title>
+<polygon fill="#777777" stroke="#777777" points="696.5,-66 642.5,-66 642.5,-42 696.5,-42 696.5,-66"/>
+<text text-anchor="middle" x="669.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">uq</text>
+</g>
+<!-- proc~hex2center&#45;&gt;uq -->
+<g id="proc~~hex_plot~~CallsGraph_edge17" class="edge">
+<title>proc~hex2center&#45;&gt;uq</title>
+<path fill="none" stroke="#000000" d="M514.04,-83.96C552.38,-76.53 600.23,-67.24 632.43,-61"/>
+<polygon fill="#000000" stroke="#000000" points="633.15,-64.42 642.3,-59.08 631.82,-57.55 633.15,-64.42"/>
+</g>
+<!-- ur -->
+<g id="proc~~hex_plot~~CallsGraph_node19" class="node">
+<title>ur</title>
+<polygon fill="#777777" stroke="#777777" points="696.5,-24 642.5,-24 642.5,0 696.5,0 696.5,-24"/>
+<text text-anchor="middle" x="669.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ur</text>
+</g>
+<!-- proc~hex2center&#45;&gt;ur -->
+<g id="proc~~hex_plot~~CallsGraph_edge18" class="edge">
+<title>proc~hex2center&#45;&gt;ur</title>
+<path fill="none" stroke="#000000" d="M527.1,-83.91C533.72,-81.47 540.12,-78.53 546,-75 567.07,-62.34 561.04,-45.85 582,-33 597.02,-23.79 615.82,-18.62 632.05,-15.71"/>
+<polygon fill="#000000" stroke="#000000" points="632.95,-19.12 642.29,-14.11 631.86,-12.2 632.95,-19.12"/>
+</g>
+<!-- proc~xy_plot&#45;&gt;add_plot -->
+<g id="proc~~hex_plot~~CallsGraph_edge19" class="edge">
+<title>proc~xy_plot&#45;&gt;add_plot</title>
+<path fill="none" stroke="#000000" d="M459,-358.29C476.05,-387.04 522.73,-459 582,-495 596.52,-503.82 614.52,-508.93 630.33,-511.9"/>
+<polygon fill="#000000" stroke="#000000" points="629.91,-515.38 640.35,-513.56 631.05,-508.48 629.91,-515.38"/>
+</g>
+<!-- proc~xy_plot&#45;&gt;filename -->
+<g id="proc~~hex_plot~~CallsGraph_edge20" class="edge">
+<title>proc~xy_plot&#45;&gt;filename</title>
+<path fill="none" stroke="#000000" d="M462.9,-358.01C483.77,-380.27 531.8,-427.91 582,-453 596.6,-460.3 613.88,-465.15 629.14,-468.33"/>
+<polygon fill="#000000" stroke="#000000" points="628.84,-471.83 639.32,-470.27 630.16,-464.96 628.84,-471.83"/>
+</g>
+<!-- proc~xy_plot&#45;&gt;initialize -->
+<g id="proc~~hex_plot~~CallsGraph_edge21" class="edge">
+<title>proc~xy_plot&#45;&gt;initialize</title>
+<path fill="none" stroke="#000000" d="M472.52,-358.09C497.61,-372.43 541.72,-396.25 582,-411 597.56,-416.7 615.27,-421.31 630.59,-424.74"/>
+<polygon fill="#000000" stroke="#000000" points="630.25,-428.25 640.76,-426.93 631.72,-421.4 630.25,-428.25"/>
+</g>
+<!-- proc~xy_plot&#45;&gt;interface~plot -->
+<g id="proc~~hex_plot~~CallsGraph_edge22" class="edge">
+<title>proc~xy_plot&#45;&gt;interface~plot</title>
+<path fill="none" stroke="#000000" d="M392.75,-352.09C363.69,-352.96 328.43,-352.97 299.17,-352.13"/>
+<polygon fill="#000000" stroke="#000000" points="299.2,-348.63 289.09,-351.8 298.97,-355.63 299.2,-348.63"/>
+</g>
+<!-- proc~xy_plot&#45;&gt;options -->
+<g id="proc~~hex_plot~~CallsGraph_edge23" class="edge">
+<title>proc~xy_plot&#45;&gt;options</title>
+<path fill="none" stroke="#000000" d="M509.17,-357.62C548.34,-365.58 599.08,-375.89 632.66,-382.72"/>
+<polygon fill="#000000" stroke="#000000" points="632,-386.15 642.5,-384.72 633.4,-379.29 632,-386.15"/>
+</g>
+<!-- proc~xy_plot&#45;&gt;savefig -->
+<g id="proc~~hex_plot~~CallsGraph_edge25" class="edge">
+<title>proc~xy_plot&#45;&gt;savefig</title>
+<path fill="none" stroke="#000000" d="M509.17,-335.44C548.34,-328.2 599.08,-318.83 632.66,-312.62"/>
+<polygon fill="#000000" stroke="#000000" points="633.3,-316.06 642.5,-310.8 632.03,-309.18 633.3,-316.06"/>
+</g>
+<!-- proc~xy_plot&#45;&gt;showfig -->
+<g id="proc~~hex_plot~~CallsGraph_edge26" class="edge">
+<title>proc~xy_plot&#45;&gt;showfig</title>
+<path fill="none" stroke="#000000" d="M474.43,-333.78C499.89,-320.31 542.96,-298.74 582,-285 598.26,-279.28 616.78,-274.55 632.5,-271.04"/>
+<polygon fill="#000000" stroke="#000000" points="633.33,-274.45 642.37,-268.92 631.85,-267.6 633.33,-274.45"/>
+</g>
+<!-- proc~xy_plot&#45;&gt;xlabel -->
+<g id="proc~~hex_plot~~CallsGraph_edge28" class="edge">
+<title>proc~xy_plot&#45;&gt;xlabel</title>
+<path fill="none" stroke="#000000" d="M463.66,-333.78C485.04,-312.11 532.83,-267 582,-243 597.61,-235.38 616.18,-230.41 632.11,-227.22"/>
+<polygon fill="#000000" stroke="#000000" points="632.94,-230.63 642.14,-225.37 631.67,-223.74 632.94,-230.63"/>
+</g>
+<!-- proc~xy_plot&#45;&gt;ylabel -->
+<g id="proc~~hex_plot~~CallsGraph_edge29" class="edge">
+<title>proc~xy_plot&#45;&gt;ylabel</title>
+<path fill="none" stroke="#000000" d="M459.35,-333.63C476.8,-305.38 523.68,-235.88 582,-201 597.12,-191.96 615.93,-186.8 632.15,-183.87"/>
+<polygon fill="#000000" stroke="#000000" points="633.04,-187.27 642.36,-182.24 631.94,-180.36 633.04,-187.27"/>
+</g>
+<!-- proc~xy_plot&#45;&gt;site -->
+<g id="proc~~hex_plot~~CallsGraph_edge27" class="edge">
+<title>proc~xy_plot&#45;&gt;site</title>
+<path fill="none" stroke="#000000" d="M456.84,-333.65C470.74,-299.88 514.16,-205.49 582,-159 596.64,-148.97 615.55,-143.71 631.96,-140.96"/>
+<polygon fill="#000000" stroke="#000000" points="632.9,-144.37 642.31,-139.49 631.91,-137.43 632.9,-144.37"/>
+</g>
+<!-- proc~get_sublattice -->
+<g id="proc~~hex_plot~~CallsGraph_node17" class="node">
+<title>proc~get_sublattice</title>
+<g id="a_proc~~hex_plot~~CallsGraph_node17"><a xlink:href=".././proc/get_sublattice.html" xlink:title="xy_coordinates::get_sublattice">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="757,-360 582,-360 582,-336 757,-336 757,-360"/>
+<text text-anchor="middle" x="669.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::get_sublattice</text>
+</a>
+</g>
+</g>
+<!-- proc~xy_plot&#45;&gt;proc~get_sublattice -->
+<g id="proc~~hex_plot~~CallsGraph_edge24" class="edge">
+<title>proc~xy_plot&#45;&gt;proc~get_sublattice</title>
+<path fill="none" stroke="#000000" d="M509.17,-346.53C528.31,-346.7 550.22,-346.91 571.53,-347.1"/>
+<polygon fill="#000000" stroke="#000000" points="571.57,-350.6 581.61,-347.2 571.64,-343.6 571.57,-350.6"/>
 </g>
 </g>
 </svg>
-</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
-    <p>Nodes of different colours represent the following: </p>
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+</div>                <script>
+                  var panprochex_plotCallsGraph = svgPanZoom('#prochex_plotCallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -312,13 +677,15 @@ very useful for HPC workflows.</p>
 </g>
 </svg>
 
-    
-    <p>Solid arrows point from a procedure to one which it calls. Dashed 
-    arrows point from an interface to procedures which implement that interface.
-    This could include the module procedures in a generic interface or the
-    implementation in a submodule of an interface in a parent module.
-    </p>
-    </div></div></div></div>
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="panel panel-default">
@@ -332,37 +699,74 @@ very useful for HPC workflows.</p>
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~hex_plot~~CalledByGraph Pages: 1 -->
-<svg id="prochex_plotCalledByGraph" width="155pt" height="32pt"
- viewBox="0.00 0.00 155.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="prochex_plotCalledByGraph" width="418pt" height="32pt"
+ viewBox="0.00 0.00 418.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="proc~~hex_plot~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>proc~~hex_plot~~CalledByGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 151,-28 151,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 414,-28 414,4 -4,4"/>
 <!-- proc~hex_plot -->
 <g id="proc~~hex_plot~~CalledByGraph_node1" class="node">
 <title>proc~hex_plot</title>
-<polygon fill="none" stroke="black" points="147,-24 90,-24 90,0 147,0 147,-24"/>
-<text text-anchor="middle" x="118.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">hex_plot</text>
+<polygon fill="none" stroke="black" points="123,-24 0,-24 0,0 123,0 123,-24"/>
+<text text-anchor="middle" x="61.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">honeyplots::hex_plot</text>
 </g>
 <!-- interface~plot -->
 <g id="proc~~hex_plot~~CalledByGraph_node2" class="node">
 <title>interface~plot</title>
-<g id="a_proc~~hex_plot~~CalledByGraph_node2"><a xlink:href=".././interface/plot.html" xlink:title="plot">
-<polygon fill="#a7506f" stroke="#a7506f" points="54,-24 0,-24 0,0 54,0 54,-24"/>
-<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plot</text>
+<g id="a_proc~~hex_plot~~CalledByGraph_node2"><a xlink:href=".././interface/plot.html" xlink:title="honeyplots::plot">
+<polygon fill="#a7506f" stroke="#a7506f" points="258,-24 159,-24 159,0 258,0 258,-24"/>
+<text text-anchor="middle" x="208.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeyplots::plot</text>
 </a>
 </g>
+</g>
+<!-- proc~hex_plot&#45;&gt;interface~plot -->
+<g id="proc~~hex_plot~~CalledByGraph_edge2" class="edge">
+<title>proc~hex_plot&#45;&gt;interface~plot</title>
+<path fill="none" stroke="#000000" d="M123.15,-5.33C131.65,-5.21 140.37,-5.22 148.83,-5.36"/>
+<polygon fill="#000000" stroke="#000000" points="148.91,-8.86 158.98,-5.59 149.07,-1.86 148.91,-8.86"/>
 </g>
 <!-- interface~plot&#45;&gt;proc~hex_plot -->
 <g id="proc~~hex_plot~~CalledByGraph_edge1" class="edge">
 <title>interface~plot&#45;&gt;proc~hex_plot</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M54.37,-12C62.29,-12 71.13,-12 79.64,-12"/>
-<polygon fill="#000000" stroke="#000000" points="79.76,-15.5 89.76,-12 79.76,-8.5 79.76,-15.5"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M158.98,-18.41C150.73,-18.65 142,-18.77 133.31,-18.75"/>
+<polygon fill="#000000" stroke="#000000" points="133.18,-15.25 123.15,-18.67 133.13,-22.25 133.18,-15.25"/>
+</g>
+<!-- proc~xy_plot -->
+<g id="proc~~hex_plot~~CalledByGraph_node3" class="node">
+<title>proc~xy_plot</title>
+<g id="a_proc~~hex_plot~~CalledByGraph_node3"><a xlink:href=".././proc/xy_plot.html" xlink:title="honeyplots::xy_plot">
+<polygon fill="#d9534f" stroke="#d9534f" points="410,-24 294,-24 294,0 410,0 410,-24"/>
+<text text-anchor="middle" x="352" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeyplots::xy_plot</text>
+</a>
+</g>
+</g>
+<!-- interface~plot&#45;&gt;proc~xy_plot -->
+<g id="proc~~hex_plot~~CalledByGraph_edge4" class="edge">
+<title>interface~plot&#45;&gt;proc~xy_plot</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M258.2,-5.55C266.47,-5.32 275.19,-5.22 283.84,-5.26"/>
+<polygon fill="#000000" stroke="#000000" points="283.89,-8.76 293.93,-5.36 283.97,-1.76 283.89,-8.76"/>
+</g>
+<!-- proc~xy_plot&#45;&gt;interface~plot -->
+<g id="proc~~hex_plot~~CalledByGraph_edge3" class="edge">
+<title>proc~xy_plot&#45;&gt;interface~plot</title>
+<path fill="none" stroke="#000000" d="M293.93,-18.64C285.51,-18.78 276.82,-18.79 268.36,-18.66"/>
+<polygon fill="#000000" stroke="#000000" points="268.27,-15.16 258.2,-18.45 268.12,-22.16 268.27,-15.16"/>
 </g>
 </g>
 </svg>
-</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
-    <p>Nodes of different colours represent the following: </p>
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -412,26 +816,47 @@ very useful for HPC workflows.</p>
 </g>
 </svg>
 
-    
-    <p>Solid arrows point from a procedure to one which it calls. Dashed 
-    arrows point from an interface to procedures which implement that interface.
-    This could include the module procedures in a generic interface or the
-    implementation in a submodule of an interface in a parent module.
-    </p>
-    </div></div></div></div>
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      <h3>Contents</h3>
- 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
-  <div class="list-group">
-    <a class="list-group-item" href="../proc/hex_plot.html#src">hex_plot</a>
-  </div>
-</div>
+        <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="panel panel-primary">
+      <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/hex_plot.html#src">hex_plot</a>
+      </div>
+    </div>
+
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
@@ -570,50 +995,50 @@ very useful for HPC workflows.</p>
     </div>
   </div>
 
-    <hr>    
+      <hr>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2022 
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2023 
 </p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
         </div>
-        <div class="col-xs-6 col-md-6">
-          <p class="text-right">
-            Documentation generated by 
-            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-          </p>
-        </div>
-      </div>
-      <br>
-      </div> <!-- /container -->    
+        <br>
+      </div> <!-- /container -->
     </footer>
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-<!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
--->
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
 
-    <!-- MathJax JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-      });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script src="../tipuesearch/tipuesearch_content.js"></script>
-    <script src="../tipuesearch/tipuesearch_set.js"></script>
-    <script src="../tipuesearch/tipuesearch.js"></script>
-    
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
   </body>
 </html>

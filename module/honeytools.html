@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
+      <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
     <meta name="author" content="Gabriele Bellomia" >
     <link rel="icon" href="../favicon.png">
 
@@ -14,16 +14,16 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script src="../js/jquery-2.1.3.min.js"></script>
-    <script src="../js/svg-pan-zoom.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="../js/jquery-2.1.3.min.js"></script>
+         <script src="../js/svg-pan-zoom.min.js"></script>
 
   </head>
 
@@ -45,299 +45,343 @@
           <ul class="nav navbar-nav">
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
-              data-toggle="dropdown" role="button"
-              aria-haspopup="true"
-     aria-expanded="false">Contents <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="../lists/files.html">Source Files</a></li>
-            <li><a href="../lists/modules.html">Modules</a></li>
-            <li><a href="../lists/procedures.html">Procedures</a></li>
-                   <li><a href="../lists/types.html">Derived Types</a></li>
-       
-            </ul>
-        
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="../lists/files.html">Source Files</a></li>
+                  <li><a href="../lists/modules.html">Modules</a></li>
+                  <li><a href="../lists/procedures.html">Procedures</a></li>
+                  <li><a href="../lists/types.html">Derived Types</a></li>
+              </ul>
             </li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="../lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/types.html">Derived Types</a>
+              </li>
           </ul>
-        <form action="../search.html" class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
-        </div>
-<!--
-        <button type="submit" class="btn btn-default">Submit</button>
--->
-        </form>
+            <form action="../search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
   <div class="row">
-    <h1>honeytools 
-    <small>Module</small>
+    <h1>honeytools
+      <small>Module</small>
+      
     </h1>
-    <div class="row">
-  <div class="col-lg-12">
-<div class="well well-sm">
-  <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     <li><i class="fa fa-list-ol"></i>
-       <a data-toggle="tooltip"
-    data-placement="bottom" data-html="true"
-    title=" 5.7% of total for modules and submodules.">54 statements</a>
-     </li> 
-    <li><i class="fa fa-code"></i><a href="../src/honeytools.f90"> Source File</a></li>
-  </ul>
-  <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/honeytools.f90.html'>honeytools.f90</a></li>
-     <li class="active">honeytools</li>
-  </ol>
-</div>
-</div>
-</div>
-<script>
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-  })
-</script>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title=" 5.7% of total for modules and submodules.">54 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/honeytools.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/honeytools.f90.html'>honeytools.f90</a></li>
+          <li class="active">honeytools</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 
   </div>
-  
+
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    <div id="sidebar">
-  <h3>Contents</h3>
- 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
-  <div id="funcs-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/honeytools.html#proc-get_supercell">get_supercell</a>
-      <a class="list-group-item" href="../module/honeytools.html#proc-get_triangle">get_triangle</a>
-      <a class="list-group-item" href="../module/honeytools.html#proc-get_flake">get_flake</a>
-      <a class="list-group-item" href="../module/honeytools.html#proc-get_stripe">get_stripe</a>
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#funcs-0">Functions</a>
+        </h3>
+      </div>
+      <div id="funcs-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/honeytools.html#proc-get_supercell">get_supercell</a>
+            <a class="list-group-item" href="../module/honeytools.html#proc-get_triangle">get_triangle</a>
+            <a class="list-group-item" href="../module/honeytools.html#proc-get_flake">get_flake</a>
+            <a class="list-group-item" href="../module/honeytools.html#proc-get_stripe">get_stripe</a>
+        </div>
+      </div>
     </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
   </div>
-</div>
-
-</div>
 
     </div>
-    
+
     <div class="col-md-9" id='text'>
-    <p>Top level API: what you probably want to use</p>
-<br>        <div class="panel panel-default">
+      <p>Top level API: what you probably want to use</p>
+<br>          <div class="panel panel-default">
       <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
+        <h3 class="panel-title">Uses</h3>
       </div>
       <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/hex_coordinates.html'>hex_coordinates</a></li>
-    <li><a href='../module/xy_neighbors.html'>xy_neighbors</a></li>
-    <li><a href='../module/hex_layout.html'>hex_layout</a></li>
-    <li><a href='../module/hex_geometries.html'>hex_geometries</a></li>
-    <li><a href='../module/xy_coordinates.html'>xy_coordinates</a></li>
-    <li><a href='../module/hex_neighbors.html'>hex_neighbors</a></li>
-  </ul>
-      </li>
-      <li class="list-group-item">
-  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+          <li class="list-group-item">
+            <ul class="list-inline">
+                <li><a href='../module/hex_coordinates.html'>hex_coordinates</a></li>
+                <li><a href='../module/hex_geometries.html'>hex_geometries</a></li>
+                <li><a href='../module/hex_neighbors.html'>hex_neighbors</a></li>
+                <li><a href='../module/hex_layout.html'>hex_layout</a></li>
+                <li><a href='../module/xy_coordinates.html'>xy_coordinates</a></li>
+                <li><a href='../module/xy_neighbors.html'>xy_neighbors</a></li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: module~~honeytools~~UsesGraph Pages: 1 -->
-<svg id="modulehoneytoolsUsesGraph" width="571pt" height="232pt"
- viewBox="0.00 0.00 571.00 232.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~honeytools~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 228)">
+<svg id="modulehoneytoolsUsesGraph" width="571pt" height="203pt"
+ viewBox="0.00 0.00 571.00 203.15" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~honeytools~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 199.15)">
 <title>module~~honeytools~~UsesGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-228 567,-228 567,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-199.15 567,-199.15 567,4 -4,4"/>
 <!-- module~honeytools -->
 <g id="module~~honeytools~~UsesGraph_node1" class="node">
 <title>module~honeytools</title>
-<polygon fill="none" stroke="black" points="563,-164 492,-164 492,-140 563,-140 563,-164"/>
-<text text-anchor="middle" x="527.5" y="-149.6" font-family="Helvetica,sans-Serif" font-size="10.50">honeytools</text>
+<polygon fill="none" stroke="black" points="563,-124.12 492,-124.12 492,-100.12 563,-100.12 563,-124.12"/>
+<text text-anchor="middle" x="527.5" y="-109.72" font-family="Helvetica,sans-Serif" font-size="10.50">honeytools</text>
 </g>
 <!-- module~hex_coordinates -->
 <g id="module~~honeytools~~UsesGraph_node2" class="node">
 <title>module~hex_coordinates</title>
 <g id="a_module~~honeytools~~UsesGraph_node2"><a xlink:href=".././module/hex_coordinates.html" xlink:title="hex_coordinates">
-<polygon fill="#337ab7" stroke="#337ab7" points="197,-224 97,-224 97,-200 197,-200 197,-224"/>
-<text text-anchor="middle" x="147" y="-209.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_coordinates</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="197,-183.12 97,-183.12 97,-159.12 197,-159.12 197,-183.12"/>
+<text text-anchor="middle" x="147" y="-168.72" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_coordinates</text>
 </a>
 </g>
 </g>
 <!-- module~honeytools&#45;&gt;module~hex_coordinates -->
 <g id="module~~honeytools~~UsesGraph_edge1" class="edge">
 <title>module~honeytools&#45;&gt;module~hex_coordinates</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M510.35,-164.04C496.63,-173.6 476.04,-186.41 456,-193 382.32,-217.25 359.84,-206.06 282.5,-212"/>
-</g>
-<!-- module~xy_coordinates -->
-<g id="module~~honeytools~~UsesGraph_node3" class="node">
-<title>module~xy_coordinates</title>
-<g id="a_module~~honeytools~~UsesGraph_node3"><a xlink:href=".././module/xy_coordinates.html" xlink:title="xy_coordinates">
-<polygon fill="#337ab7" stroke="#337ab7" points="328,-104 235,-104 235,-80 328,-80 328,-104"/>
-<text text-anchor="middle" x="281.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates</text>
-</a>
-</g>
-</g>
-<!-- module~honeytools&#45;&gt;module~xy_coordinates -->
-<g id="module~~honeytools~~UsesGraph_edge2" class="edge">
-<title>module~honeytools&#45;&gt;module~xy_coordinates</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M491.88,-144.32C469.28,-139.71 439.04,-134.3 412,-132"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M410,-132C378.17,-129.29 343.68,-117.92 318.62,-107.99"/>
-<polygon fill="#000000" stroke="#000000" points="319.74,-104.67 309.16,-104.14 317.1,-111.15 319.74,-104.67"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M516.74,-124.17C504.3,-138.55 481.37,-162.06 456,-173.12 384.89,-204.12 360.07,-192.18 282.5,-192.12"/>
 </g>
 <!-- module~hex_geometries -->
-<g id="module~~honeytools~~UsesGraph_node4" class="node">
+<g id="module~~honeytools~~UsesGraph_node3" class="node">
 <title>module~hex_geometries</title>
-<g id="a_module~~honeytools~~UsesGraph_node4"><a xlink:href=".././module/hex_geometries.html" xlink:title="hex_geometries">
-<polygon fill="#337ab7" stroke="#337ab7" points="330,-184 233,-184 233,-160 330,-160 330,-184"/>
-<text text-anchor="middle" x="281.5" y="-169.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_geometries</text>
+<g id="a_module~~honeytools~~UsesGraph_node3"><a xlink:href=".././module/hex_geometries.html" xlink:title="hex_geometries">
+<polygon fill="#337ab7" stroke="#337ab7" points="330,-122.12 233,-122.12 233,-98.12 330,-98.12 330,-122.12"/>
+<text text-anchor="middle" x="281.5" y="-107.72" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_geometries</text>
 </a>
 </g>
 </g>
 <!-- module~honeytools&#45;&gt;module~hex_geometries -->
-<g id="module~~honeytools~~UsesGraph_edge3" class="edge">
+<g id="module~~honeytools~~UsesGraph_edge2" class="edge">
 <title>module~honeytools&#45;&gt;module~hex_geometries</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M410,-132C375.57,-129.07 338.03,-143.09 312.67,-155.33"/>
-<polygon fill="#000000" stroke="#000000" points="310.94,-152.28 303.57,-159.9 314.08,-158.54 310.94,-152.28"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M491.88,-110.81C469.14,-110.27 438.76,-110.16 412,-112.12"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M410,-112.12C387.22,-113.78 362.1,-113.78 340.22,-113.18"/>
+<polygon fill="#000000" stroke="#000000" points="340.19,-109.68 330.09,-112.86 339.97,-116.68 340.19,-109.68"/>
 </g>
 <!-- module~hex_layout -->
-<g id="module~~honeytools~~UsesGraph_node5" class="node">
+<g id="module~~honeytools~~UsesGraph_node4" class="node">
 <title>module~hex_layout</title>
-<g id="a_module~~honeytools~~UsesGraph_node5"><a xlink:href=".././module/hex_layout.html" xlink:title="hex_layout">
-<polygon fill="#337ab7" stroke="#337ab7" points="182,-144 112,-144 112,-120 182,-120 182,-144"/>
-<text text-anchor="middle" x="147" y="-129.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_layout</text>
+<g id="a_module~~honeytools~~UsesGraph_node4"><a xlink:href=".././module/hex_layout.html" xlink:title="hex_layout">
+<polygon fill="#337ab7" stroke="#337ab7" points="182,-102.12 112,-102.12 112,-78.12 182,-78.12 182,-102.12"/>
+<text text-anchor="middle" x="147" y="-87.72" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_layout</text>
 </a>
 </g>
 </g>
 <!-- module~honeytools&#45;&gt;module~hex_layout -->
-<g id="module~~honeytools~~UsesGraph_edge4" class="edge">
+<g id="module~~honeytools~~UsesGraph_edge3" class="edge">
 <title>module~honeytools&#45;&gt;module~hex_layout</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M410,-132C333.89,-125.51 244.89,-127.54 192.67,-129.7"/>
-<polygon fill="#000000" stroke="#000000" points="192.25,-126.21 182.41,-130.14 192.55,-133.21 192.25,-126.21"/>
-</g>
-<!-- module~xy_neighbors -->
-<g id="module~~honeytools~~UsesGraph_node6" class="node">
-<title>module~xy_neighbors</title>
-<g id="a_module~~honeytools~~UsesGraph_node6"><a xlink:href=".././module/xy_neighbors.html" xlink:title="xy_neighbors">
-<polygon fill="#337ab7" stroke="#337ab7" points="452.5,-84 369.5,-84 369.5,-60 452.5,-60 452.5,-84"/>
-<text text-anchor="middle" x="411" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_neighbors</text>
-</a>
-</g>
-</g>
-<!-- module~honeytools&#45;&gt;module~xy_neighbors -->
-<g id="module~~honeytools~~UsesGraph_edge5" class="edge">
-<title>module~honeytools&#45;&gt;module~xy_neighbors</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M509.11,-139.85C490.09,-126.56 459.4,-105.12 437.62,-89.9"/>
-<polygon fill="#000000" stroke="#000000" points="439.38,-86.86 429.18,-84 435.37,-92.6 439.38,-86.86"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M515.67,-99.98C502.72,-86.14 479.79,-63.68 456,-50.12 404.83,-20.96 388.16,-18.34 330,-9.12 287.42,-2.36 273.03,6.9 233,-9.12 202.5,-21.32 176.72,-50.26 161.8,-70.03"/>
+<polygon fill="#000000" stroke="#000000" points="158.97,-67.97 155.91,-78.12 164.62,-72.09 158.97,-67.97"/>
 </g>
 <!-- module~hex_neighbors -->
-<g id="module~~honeytools~~UsesGraph_node7" class="node">
+<g id="module~~honeytools~~UsesGraph_node5" class="node">
 <title>module~hex_neighbors</title>
-<g id="a_module~~honeytools~~UsesGraph_node7"><a xlink:href=".././module/hex_neighbors.html" xlink:title="hex_neighbors">
-<polygon fill="#337ab7" stroke="#337ab7" points="456,-184 366,-184 366,-160 456,-160 456,-184"/>
-<text text-anchor="middle" x="411" y="-169.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_neighbors</text>
+<g id="a_module~~honeytools~~UsesGraph_node5"><a xlink:href=".././module/hex_neighbors.html" xlink:title="hex_neighbors">
+<polygon fill="#337ab7" stroke="#337ab7" points="456,-164.12 366,-164.12 366,-140.12 456,-140.12 456,-164.12"/>
+<text text-anchor="middle" x="411" y="-149.72" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_neighbors</text>
 </a>
 </g>
 </g>
 <!-- module~honeytools&#45;&gt;module~hex_neighbors -->
-<g id="module~~honeytools~~UsesGraph_edge6" class="edge">
+<g id="module~~honeytools~~UsesGraph_edge4" class="edge">
 <title>module~honeytools&#45;&gt;module~hex_neighbors</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M491.84,-158.05C483.79,-159.46 475.04,-160.99 466.38,-162.5"/>
-<polygon fill="#000000" stroke="#000000" points="465.55,-159.09 456.3,-164.26 466.75,-165.99 465.55,-159.09"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M492.15,-124.12C480.93,-128.04 468.3,-132.45 456.45,-136.59"/>
+<polygon fill="#000000" stroke="#000000" points="455.01,-133.38 446.73,-139.99 457.32,-139.99 455.01,-133.38"/>
+</g>
+<!-- module~xy_coordinates -->
+<g id="module~~honeytools~~UsesGraph_node6" class="node">
+<title>module~xy_coordinates</title>
+<g id="a_module~~honeytools~~UsesGraph_node6"><a xlink:href=".././module/xy_coordinates.html" xlink:title="xy_coordinates">
+<polygon fill="#337ab7" stroke="#337ab7" points="328,-164.12 235,-164.12 235,-140.12 328,-140.12 328,-164.12"/>
+<text text-anchor="middle" x="281.5" y="-149.72" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates</text>
+</a>
+</g>
+</g>
+<!-- module~honeytools&#45;&gt;module~xy_coordinates -->
+<g id="module~~honeytools~~UsesGraph_edge5" class="edge">
+<title>module~honeytools&#45;&gt;module~xy_coordinates</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M410,-112.12C377.93,-114.46 343.21,-125.99 318.12,-136.07"/>
+<polygon fill="#000000" stroke="#000000" points="316.56,-132.93 308.66,-139.99 319.24,-139.4 316.56,-132.93"/>
+</g>
+<!-- module~xy_neighbors -->
+<g id="module~~honeytools~~UsesGraph_node7" class="node">
+<title>module~xy_neighbors</title>
+<g id="a_module~~honeytools~~UsesGraph_node7"><a xlink:href=".././module/xy_neighbors.html" xlink:title="xy_neighbors">
+<polygon fill="#337ab7" stroke="#337ab7" points="452.5,-83.12 369.5,-83.12 369.5,-59.12 452.5,-59.12 452.5,-83.12"/>
+<text text-anchor="middle" x="411" y="-68.72" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_neighbors</text>
+</a>
+</g>
+</g>
+<!-- module~honeytools&#45;&gt;module~xy_neighbors -->
+<g id="module~~honeytools~~UsesGraph_edge6" class="edge">
+<title>module~honeytools&#45;&gt;module~xy_neighbors</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M492.77,-100.04C481.11,-95.86 467.87,-91.12 455.54,-86.71"/>
+<polygon fill="#000000" stroke="#000000" points="456.48,-83.33 445.89,-83.25 454.12,-89.92 456.48,-83.33"/>
 </g>
 <!-- assert_m -->
 <g id="module~~honeytools~~UsesGraph_node8" class="node">
 <title>assert_m</title>
-<g id="a_module~~honeytools~~UsesGraph_node8"><a xlink:href="https://github.com/sourceryinstitute/assert#documentation-1" xlink:title="assert_m">
-<polygon fill="#337ab7" stroke="#337ab7" points="61,-184 0,-184 0,-160 61,-160 61,-184"/>
-<text text-anchor="middle" x="30.5" y="-169.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">assert_m</text>
-</a>
-</g>
+<polygon fill="#337ab7" stroke="#337ab7" points="61,-163.12 0,-163.12 0,-139.12 61,-139.12 61,-163.12"/>
+<text text-anchor="middle" x="30.5" y="-148.72" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">assert_m</text>
 </g>
 <!-- module~hex_coordinates&#45;&gt;assert_m -->
 <g id="module~~honeytools~~UsesGraph_edge7" class="edge">
 <title>module~hex_coordinates&#45;&gt;assert_m</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M111.65,-200C98.84,-195.52 84.2,-190.41 70.97,-185.79"/>
-<polygon fill="#000000" stroke="#000000" points="71.77,-182.36 61.18,-182.37 69.46,-188.97 71.77,-182.36"/>
-</g>
-<!-- module~xy_coordinates&#45;&gt;module~hex_coordinates -->
-<g id="module~~honeytools~~UsesGraph_edge8" class="edge">
-<title>module~xy_coordinates&#45;&gt;module~hex_coordinates</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M266.82,-104.39C243.59,-125.43 196.3,-168.26 168.9,-193.07"/>
-<polygon fill="#000000" stroke="#000000" points="166.47,-190.55 161.41,-199.86 171.17,-195.74 166.47,-190.55"/>
-</g>
-<!-- module~xy_coordinates&#45;&gt;module~hex_layout -->
-<g id="module~~honeytools~~UsesGraph_edge10" class="edge">
-<title>module~xy_coordinates&#45;&gt;module~hex_layout</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M240.75,-104C225.49,-108.61 207.99,-113.89 192.33,-118.62"/>
-<polygon fill="#000000" stroke="#000000" points="190.9,-115.39 182.34,-121.63 192.93,-122.09 190.9,-115.39"/>
-</g>
-<!-- module~xy_coordinates&#45;&gt;assert_m -->
-<g id="module~~honeytools~~UsesGraph_edge9" class="edge">
-<title>module~xy_coordinates&#45;&gt;assert_m</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M234.67,-88.85C196.22,-88.02 140.74,-91.13 97,-111 76.78,-120.19 58.72,-138.14 46.71,-152.19"/>
-<polygon fill="#000000" stroke="#000000" points="44,-149.97 40.37,-159.93 49.41,-154.41 44,-149.97"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M96.78,-162.52C88.25,-161.03 79.49,-159.5 71.26,-158.06"/>
+<polygon fill="#000000" stroke="#000000" points="71.63,-154.57 61.17,-156.3 70.42,-161.47 71.63,-154.57"/>
 </g>
 <!-- module~hex_geometries&#45;&gt;module~hex_coordinates -->
-<g id="module~~honeytools~~UsesGraph_edge11" class="edge">
+<g id="module~~honeytools~~UsesGraph_edge9" class="edge">
 <title>module~hex_geometries&#45;&gt;module~hex_coordinates</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M240.75,-184C227.24,-188.08 211.98,-192.68 197.8,-196.97"/>
-<polygon fill="#000000" stroke="#000000" points="196.75,-193.63 188.18,-199.87 198.77,-200.33 196.75,-193.63"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M252.82,-122.22C246.31,-125.11 239.4,-128.2 233,-131.12 216.29,-138.74 197.83,-147.4 182.4,-154.71"/>
+<polygon fill="#000000" stroke="#000000" points="180.75,-151.61 173.22,-159.06 183.75,-157.94 180.75,-151.61"/>
 </g>
 <!-- module~hex_geometries&#45;&gt;module~hex_layout -->
-<g id="module~~honeytools~~UsesGraph_edge13" class="edge">
+<g id="module~~honeytools~~UsesGraph_edge10" class="edge">
 <title>module~hex_geometries&#45;&gt;module~hex_layout</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M240.75,-160C225.49,-155.39 207.99,-150.11 192.33,-145.38"/>
-<polygon fill="#000000" stroke="#000000" points="192.93,-141.91 182.34,-142.37 190.9,-148.61 192.93,-141.91"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M232.66,-102.9C219.45,-100.9 205.16,-98.75 192.16,-96.78"/>
+<polygon fill="#000000" stroke="#000000" points="192.47,-93.29 182.06,-95.26 191.42,-100.21 192.47,-93.29"/>
 </g>
 <!-- module~hex_geometries&#45;&gt;assert_m -->
-<g id="module~~honeytools~~UsesGraph_edge12" class="edge">
+<g id="module~~honeytools~~UsesGraph_edge8" class="edge">
 <title>module~hex_geometries&#45;&gt;assert_m</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M232.78,-172C185.85,-172 115.03,-172 71.12,-172"/>
-<polygon fill="#000000" stroke="#000000" points="71.1,-168.5 61.1,-172 71.1,-175.5 71.1,-168.5"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M232.87,-119.37C207.73,-123.82 176.31,-128.71 148,-131.12"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M146,-131.12C121.01,-133.25 93.29,-138.03 71.38,-142.38"/>
+<polygon fill="#000000" stroke="#000000" points="70.55,-138.97 61.45,-144.4 71.94,-145.83 70.55,-138.97"/>
 </g>
-<!-- module~xy_neighbors&#45;&gt;module~xy_coordinates -->
-<g id="module~~honeytools~~UsesGraph_edge16" class="edge">
-<title>module~xy_neighbors&#45;&gt;module~xy_coordinates</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M369.31,-78.38C359.37,-79.94 348.56,-81.64 338.06,-83.29"/>
-<polygon fill="#000000" stroke="#000000" points="337.45,-79.84 328.12,-84.84 338.54,-86.75 337.45,-79.84"/>
+<!-- module~hex_neighbors&#45;&gt;module~hex_coordinates -->
+<g id="module~~honeytools~~UsesGraph_edge11" class="edge">
+<title>module~hex_neighbors&#45;&gt;module~hex_coordinates</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M386.72,-164.13C361.66,-175.92 320.31,-192.15 282.5,-192.12"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M280.5,-192.12C256.26,-192.1 229.82,-188.62 206.98,-184.5"/>
+<polygon fill="#000000" stroke="#000000" points="207.58,-181.05 197.1,-182.64 206.28,-187.93 207.58,-181.05"/>
+</g>
+<!-- module~xy_coordinates&#45;&gt;module~hex_coordinates -->
+<g id="module~~honeytools~~UsesGraph_edge13" class="edge">
+<title>module~xy_coordinates&#45;&gt;module~hex_coordinates</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M234.9,-158.66C226,-159.93 216.54,-161.29 207.26,-162.62"/>
+<polygon fill="#000000" stroke="#000000" points="206.71,-159.16 197.31,-164.05 207.7,-166.09 206.71,-159.16"/>
+</g>
+<!-- module~xy_coordinates&#45;&gt;module~hex_layout -->
+<g id="module~~honeytools~~UsesGraph_edge14" class="edge">
+<title>module~xy_coordinates&#45;&gt;module~hex_layout</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M252.8,-140.06C246.29,-137.17 239.38,-134.07 233,-131.12 216,-123.26 197.24,-114.25 181.68,-106.68"/>
+<polygon fill="#000000" stroke="#000000" points="182.97,-103.42 172.45,-102.18 179.9,-109.71 182.97,-103.42"/>
+</g>
+<!-- module~xy_coordinates&#45;&gt;assert_m -->
+<g id="module~~honeytools~~UsesGraph_edge12" class="edge">
+<title>module~xy_coordinates&#45;&gt;assert_m</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M238.03,-140.06C212.12,-134.04 178.28,-128.54 148,-131.12"/>
 </g>
 <!-- module~xy_neighbors&#45;&gt;module~hex_layout -->
 <g id="module~~honeytools~~UsesGraph_edge15" class="edge">
 <title>module~xy_neighbors&#45;&gt;module~hex_layout</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M369.19,-64.7C332.6,-59.79 277.9,-56.55 233,-71 207.53,-79.19 183.22,-98.16 167.18,-112.78"/>
-<polygon fill="#000000" stroke="#000000" points="164.45,-110.55 159.58,-119.96 169.25,-115.64 164.45,-110.55"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M369.35,-74.07C321.31,-77.55 241.67,-83.33 192.15,-86.92"/>
+<polygon fill="#000000" stroke="#000000" points="191.78,-83.43 182.06,-87.65 192.29,-90.41 191.78,-83.43"/>
+</g>
+<!-- module~xy_neighbors&#45;&gt;module~xy_coordinates -->
+<g id="module~~honeytools~~UsesGraph_edge16" class="edge">
+<title>module~xy_neighbors&#45;&gt;module~xy_coordinates</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M388.42,-83.23C381.1,-87.63 373.01,-92.83 366,-98.12 348.67,-111.19 348.17,-119.24 330,-131.12 327.71,-132.62 325.29,-134.05 322.81,-135.43"/>
+<polygon fill="#000000" stroke="#000000" points="320.99,-132.43 313.67,-140.09 324.17,-138.66 320.99,-132.43"/>
 </g>
 <!-- stdlib_sorting -->
 <g id="module~~honeytools~~UsesGraph_node9" class="node">
 <title>stdlib_sorting</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="323,-24 240,-24 240,0 323,0 323,-24"/>
-<text text-anchor="middle" x="281.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">stdlib_sorting</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="323,-42.12 240,-42.12 240,-18.12 323,-18.12 323,-42.12"/>
+<text text-anchor="middle" x="281.5" y="-27.72" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">stdlib_sorting</text>
 </g>
 <!-- module~xy_neighbors&#45;&gt;stdlib_sorting -->
-<g id="module~~honeytools~~UsesGraph_edge14" class="edge">
-<title>module~xy_neighbors&#45;&gt;stdlib_sorting</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M384.2,-59.86C365.02,-50.83 338.63,-38.41 317.54,-28.49"/>
-<polygon fill="#000000" stroke="#000000" points="318.8,-25.21 308.26,-24.12 315.82,-31.55 318.8,-25.21"/>
-</g>
-<!-- module~hex_neighbors&#45;&gt;module~hex_coordinates -->
 <g id="module~~honeytools~~UsesGraph_edge17" class="edge">
-<title>module~hex_neighbors&#45;&gt;module~hex_coordinates</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M383.84,-184.07C358.54,-194.8 318.82,-209.21 282.5,-212"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M280.5,-212C256.63,-213.83 230.27,-214.17 207.4,-213.94"/>
-<polygon fill="#000000" stroke="#000000" points="207.2,-210.43 197.15,-213.79 207.1,-217.43 207.2,-210.43"/>
+<title>module~xy_neighbors&#45;&gt;stdlib_sorting</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M372.44,-59.04C359.07,-54.74 343.84,-49.84 329.76,-45.32"/>
+<polygon fill="#000000" stroke="#000000" points="330.83,-41.98 320.24,-42.25 328.69,-48.65 330.83,-41.98"/>
 </g>
 </g>
 </svg>
-</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
-    <p>Nodes of different colours represent the following: </p>
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -387,225 +431,393 @@
 </g>
 </svg>
 
-    
-    <p>Solid arrows point from a submodule to the (sub)module which it is
-    descended from. Dashed arrows point from a module or program unit to 
-    modules which it uses.
-    </p>
-    </div></div></div></div>
-      </li>
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+          </li>
       </ul>
     </div>
 
-    
-    <br>
+      
+      <br>
 
-    <section class="visible-xs visible-sm hidden-md">
-      <h3>Contents</h3>
- 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
-  <div id="funcs-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/honeytools.html#proc-get_supercell">get_supercell</a>
-      <a class="list-group-item" href="../module/honeytools.html#proc-get_triangle">get_triangle</a>
-      <a class="list-group-item" href="../module/honeytools.html#proc-get_flake">get_flake</a>
-      <a class="list-group-item" href="../module/honeytools.html#proc-get_stripe">get_stripe</a>
+      <section class="visible-xs visible-sm hidden-md">
+          <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#funcs-1">Functions</a>
+        </h3>
+      </div>
+      <div id="funcs-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/honeytools.html#proc-get_supercell">get_supercell</a>
+            <a class="list-group-item" href="../module/honeytools.html#proc-get_triangle">get_triangle</a>
+            <a class="list-group-item" href="../module/honeytools.html#proc-get_flake">get_flake</a>
+            <a class="list-group-item" href="../module/honeytools.html#proc-get_stripe">get_stripe</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
+  
+  
+  
+  
+  
+  
+  
 
 
+      </section>
+      <br class="visible-xs visible-sm hidden-md">
+
+
+
+
+
+
+
+        <section>
+          <h2>Functions</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_supercell"></span><h3>public pure function <a href='../proc/get_supercell.html'>get_supercell</a>(rows, cols, layout) result(lattice)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Get the lattice for a honeycomb supercell</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rows</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cols</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small>
+    </h4>
     
-    
 
-    
-    
- 
-    <section>
-    <h2>Functions</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_supercell"></span><h3>public pure function <a href='../proc/get_supercell.html'>get_supercell</a>(rows, cols, layout) result(lattice)</h3></div>
-  <div class="panel-body">
-       
-<p>Get the lattice for a honeycomb supercell</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>rows</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>cols</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_triangle"></span><h3>public pure function <a href='../proc/get_triangle.html'>get_triangle</a>(size, layout) result(lattice)</h3></div>
-  <div class="panel-body">
-       
-<p>Get the lattice for a triangle-shaped flake</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>size</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_flake"></span><h3>public pure function <a href='../proc/get_flake.html'>get_flake</a>(radius, layout) result(lattice)</h3></div>
-  <div class="panel-body">
-       
-<p>Get the lattice for a hexagon-shaped flake</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>radius</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_stripe"></span><h3>public pure function <a href='../proc/get_stripe.html'>get_stripe</a>(height, width, layout) result(lattice)</h3></div>
-  <div class="panel-body">
-       
-<p>Get the lattice for a hexagon-shaped flake</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>height</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>width</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small></h4>  
-
-  </div>
-  </div>
-
-    </section>
-    <br>
-
-    
     </div>
   </div>
 
-    <hr>    
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_triangle"></span><h3>public pure function <a href='../proc/get_triangle.html'>get_triangle</a>(size, layout) result(lattice)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Get the lattice for a triangle-shaped flake</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>size</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_flake"></span><h3>public pure function <a href='../proc/get_flake.html'>get_flake</a>(radius, layout) result(lattice)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Get the lattice for a hexagon-shaped flake</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>radius</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_stripe"></span><h3>public pure function <a href='../proc/get_stripe.html'>get_stripe</a>(height, width, layout) result(lattice)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Get the lattice for a hexagon-shaped flake</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>height</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>width</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+
+    </div>
+  </div>
+
+      <hr>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2022 
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2023 
 </p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
         </div>
-        <div class="col-xs-6 col-md-6">
-          <p class="text-right">
-            Documentation generated by 
-            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-          </p>
-        </div>
-      </div>
-      <br>
-      </div> <!-- /container -->    
+        <br>
+      </div> <!-- /container -->
     </footer>
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-<!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
--->
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
 
-    <!-- MathJax JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-      });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script src="../tipuesearch/tipuesearch_content.js"></script>
-    <script src="../tipuesearch/tipuesearch_set.js"></script>
-    <script src="../tipuesearch/tipuesearch.js"></script>
-    
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
   </body>
 </html>

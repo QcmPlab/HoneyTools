@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
+      <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
     <meta name="author" content="Gabriele Bellomia" >
     <link rel="icon" href="../favicon.png">
 
@@ -14,16 +14,16 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script src="../js/jquery-2.1.3.min.js"></script>
-    <script src="../js/svg-pan-zoom.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="../js/jquery-2.1.3.min.js"></script>
+         <script src="../js/svg-pan-zoom.min.js"></script>
 
   </head>
 
@@ -45,194 +45,244 @@
           <ul class="nav navbar-nav">
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
-              data-toggle="dropdown" role="button"
-              aria-haspopup="true"
-     aria-expanded="false">Contents <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="../lists/files.html">Source Files</a></li>
-            <li><a href="../lists/modules.html">Modules</a></li>
-            <li><a href="../lists/procedures.html">Procedures</a></li>
-                   <li><a href="../lists/types.html">Derived Types</a></li>
-       
-            </ul>
-        
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="../lists/files.html">Source Files</a></li>
+                  <li><a href="../lists/modules.html">Modules</a></li>
+                  <li><a href="../lists/procedures.html">Procedures</a></li>
+                  <li><a href="../lists/types.html">Derived Types</a></li>
+              </ul>
             </li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="../lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/types.html">Derived Types</a>
+              </li>
           </ul>
-        <form action="../search.html" class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
-        </div>
-<!--
-        <button type="submit" class="btn btn-default">Submit</button>
--->
-        </form>
+            <form action="../search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
   <div class="row">
-    <h1>xy_coordinates 
-    <small>Module</small>
+    <h1>xy_coordinates
+      <small>Module</small>
+      
     </h1>
-    <div class="row">
-  <div class="col-lg-12">
-<div class="well well-sm">
-  <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     <li><i class="fa fa-list-ol"></i>
-       <a data-toggle="tooltip"
-    data-placement="bottom" data-html="true"
-    title="25.8% of total for modules and submodules.">246 statements</a>
-     </li> 
-    <li><i class="fa fa-code"></i><a href="../src/xy_coordinates.f90"> Source File</a></li>
-  </ul>
-  <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/xy_coordinates.f90.html'>xy_coordinates.f90</a></li>
-     <li class="active">xy_coordinates</li>
-  </ol>
-</div>
-</div>
-</div>
-<script>
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-  })
-</script>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title="25.8% of total for modules and submodules.">246 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/xy_coordinates.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/xy_coordinates.f90.html'>xy_coordinates.f90</a></li>
+          <li class="active">xy_coordinates</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 
   </div>
-  
+
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    <div id="sidebar">
-  <h3>Contents</h3>
- 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/xy_coordinates.html#variable-n">N</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#variable-pi">PI</a>
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#vars-0">Variables</a>
+        </h3>
+      </div>
+      <div id="vars-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_coordinates.html#variable-n~4">N</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#variable-pi~2">PI</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-0">Interfaces</a></h3></div>
-  <div id="inters-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/xy_coordinates.html#interface-xy_print">xy_print</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
-  <div id="types-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/xy_coordinates.html#type-xy">xy</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#type-xy_site">xy_site</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#type-xy_lattice">xy_lattice</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
-  <div id="funcs-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_distance">xy_distance</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2site">hex2site</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2corner">hex2corner</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2center">hex2center</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2lattice">hex2lattice</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-get_sublattice">get_sublattice</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_ordered_union">xy_ordered_union</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-ith_corner_offset">ith_corner_offset</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-eq_xy">eq_xy</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-neq_xy">neq_xy</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-eq_lattice">eq_lattice</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-neq_lattice">neq_lattice</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_norm">xy_norm</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
-  <div class="list-group">
-    <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-push_back">push_back</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_class_print">xy_class_print</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_lattice_print">xy_lattice_print</a>
-    </div>
-  </div>
-</div>
 
-</div>
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#inters-0">Interfaces</a>
+        </h3>
+      </div>
+      <div id="inters-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_coordinates.html#interface-xy_print">xy_print</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#types-0">Derived Types</a>
+        </h3>
+      </div>
+      <div id="types-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_coordinates.html#type-xy">xy</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#type-xy_site">xy_site</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#type-xy_lattice">xy_lattice</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#funcs-0">Functions</a>
+        </h3>
+      </div>
+      <div id="funcs-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_distance">xy_distance</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2site">hex2site</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2corner">hex2corner</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2center">hex2center</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2lattice">hex2lattice</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-get_sublattice">get_sublattice</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_ordered_union">xy_ordered_union</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-ith_corner_offset">ith_corner_offset</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-eq_xy">eq_xy</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-neq_xy">neq_xy</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-eq_lattice">eq_lattice</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-neq_lattice">neq_lattice</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_norm">xy_norm</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#subs-0">Subroutines</a>
+        </h3>
+      </div>
+      <div id="subs-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-push_back">push_back</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_class_print">xy_class_print</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_lattice_print">xy_lattice_print</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+
+
+  </div>
 
     </div>
-    
+
     <div class="col-md-9" id='text'>
-    <p>Defining real space 2D coordinates for honeycomb lattice sites</p>
-<br>        <div class="panel panel-default">
+      <p>Defining real space 2D coordinates for honeycomb lattice sites</p>
+<br>          <div class="panel panel-default">
       <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
+        <h3 class="panel-title">Uses</h3>
       </div>
       <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/hex_coordinates.html'>hex_coordinates</a></li>
-    <li><a href="https://github.com/sourceryinstitute/assert#documentation-1">assert_m</a></li>
-    <li><a href='../module/hex_layout.html'>hex_layout</a></li>
-  </ul>
-      </li>
-      <li class="list-group-item">
-  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+          <li class="list-group-item">
+            <ul class="list-inline">
+                <li><a href='../module/hex_coordinates.html'>hex_coordinates</a></li>
+                <li><a href='../module/hex_layout.html'>hex_layout</a></li>
+                <li><a href='<a href="https://github.com/sourceryinstitute/assert#documentation-1">assert_m</a>'>assert_m</a></li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: module~~xy_coordinates~~UsesGraph Pages: 1 -->
-<svg id="modulexy_coordinatesUsesGraph" width="334pt" height="112pt"
- viewBox="0.00 0.00 334.00 112.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~xy_coordinates~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 108)">
+<svg id="modulexy_coordinatesUsesGraph" width="334pt" height="94pt"
+ viewBox="0.00 0.00 334.00 94.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~xy_coordinates~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 90)">
 <title>module~~xy_coordinates~~UsesGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-108 330,-108 330,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-90 330,-90 330,4 -4,4"/>
 <!-- module~xy_coordinates -->
 <g id="module~~xy_coordinates~~UsesGraph_node1" class="node">
 <title>module~xy_coordinates</title>
-<polygon fill="none" stroke="black" points="326,-64 233,-64 233,-40 326,-40 326,-64"/>
-<text text-anchor="middle" x="279.5" y="-49.6" font-family="Helvetica,sans-Serif" font-size="10.50">xy_coordinates</text>
+<polygon fill="none" stroke="black" points="326,-66 233,-66 233,-42 326,-42 326,-66"/>
+<text text-anchor="middle" x="279.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">xy_coordinates</text>
+</g>
+<!-- assert_m -->
+<g id="module~~xy_coordinates~~UsesGraph_node2" class="node">
+<title>assert_m</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="61,-86 0,-86 0,-62 61,-62 61,-86"/>
+<text text-anchor="middle" x="30.5" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">assert_m</text>
+</g>
+<!-- module~xy_coordinates&#45;&gt;assert_m -->
+<g id="module~~xy_coordinates~~UsesGraph_edge1" class="edge">
+<title>module~xy_coordinates&#45;&gt;assert_m</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M239.92,-66.07C226.48,-69.7 211.21,-73.2 197,-75 152.91,-80.59 141.44,-75.34 97,-75 88.67,-74.94 79.75,-74.83 71.25,-74.7"/>
+<polygon fill="#000000" stroke="#000000" points="71.22,-71.2 61.17,-74.55 71.12,-78.2 71.22,-71.2"/>
 </g>
 <!-- module~hex_coordinates -->
-<g id="module~~xy_coordinates~~UsesGraph_node2" class="node">
+<g id="module~~xy_coordinates~~UsesGraph_node3" class="node">
 <title>module~hex_coordinates</title>
-<g id="a_module~~xy_coordinates~~UsesGraph_node2"><a xlink:href=".././module/hex_coordinates.html" xlink:title="hex_coordinates">
-<polygon fill="#337ab7" stroke="#337ab7" points="197,-104 97,-104 97,-80 197,-80 197,-104"/>
-<text text-anchor="middle" x="147" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_coordinates</text>
+<g id="a_module~~xy_coordinates~~UsesGraph_node3"><a xlink:href=".././module/hex_coordinates.html" xlink:title="hex_coordinates">
+<polygon fill="#337ab7" stroke="#337ab7" points="197,-66 97,-66 97,-42 197,-42 197,-66"/>
+<text text-anchor="middle" x="147" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_coordinates</text>
 </a>
 </g>
 </g>
 <!-- module~xy_coordinates&#45;&gt;module~hex_coordinates -->
-<g id="module~~xy_coordinates~~UsesGraph_edge1" class="edge">
-<title>module~xy_coordinates&#45;&gt;module~hex_coordinates</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M239.35,-64C226.18,-68.04 211.31,-72.6 197.45,-76.84"/>
-<polygon fill="#000000" stroke="#000000" points="196.11,-73.59 187.58,-79.87 198.16,-80.28 196.11,-73.59"/>
-</g>
-<!-- assert_m -->
-<g id="module~~xy_coordinates~~UsesGraph_node3" class="node">
-<title>assert_m</title>
-<g id="a_module~~xy_coordinates~~UsesGraph_node3"><a xlink:href="https://github.com/sourceryinstitute/assert#documentation-1" xlink:title="assert_m">
-<polygon fill="#337ab7" stroke="#337ab7" points="61,-84 0,-84 0,-60 61,-60 61,-84"/>
-<text text-anchor="middle" x="30.5" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">assert_m</text>
-</a>
-</g>
-</g>
-<!-- module~xy_coordinates&#45;&gt;assert_m -->
 <g id="module~~xy_coordinates~~UsesGraph_edge2" class="edge">
-<title>module~xy_coordinates&#45;&gt;assert_m</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M232.91,-55.69C186.58,-59.44 115.53,-65.2 71.38,-68.77"/>
-<polygon fill="#000000" stroke="#000000" points="70.99,-65.29 61.3,-69.59 71.55,-72.27 70.99,-65.29"/>
+<title>module~xy_coordinates&#45;&gt;module~hex_coordinates</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M232.86,-54C224.71,-54 216.1,-54 207.63,-54"/>
+<polygon fill="#000000" stroke="#000000" points="207.39,-50.5 197.39,-54 207.39,-57.5 207.39,-50.5"/>
 </g>
 <!-- module~hex_layout -->
 <g id="module~~xy_coordinates~~UsesGraph_node4" class="node">
@@ -246,20 +296,30 @@
 <!-- module~xy_coordinates&#45;&gt;module~hex_layout -->
 <g id="module~~xy_coordinates~~UsesGraph_edge3" class="edge">
 <title>module~xy_coordinates&#45;&gt;module~hex_layout</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M239.35,-40C224.44,-35.43 207.36,-30.2 192.04,-25.5"/>
-<polygon fill="#000000" stroke="#000000" points="192.84,-22.08 182.26,-22.5 190.79,-28.78 192.84,-22.08"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M241.1,-41.96C225.76,-37.03 207.89,-31.27 191.93,-26.14"/>
+<polygon fill="#000000" stroke="#000000" points="192.87,-22.76 182.28,-23.03 190.72,-29.43 192.87,-22.76"/>
 </g>
 <!-- module~hex_coordinates&#45;&gt;assert_m -->
 <g id="module~~xy_coordinates~~UsesGraph_edge4" class="edge">
 <title>module~hex_coordinates&#45;&gt;assert_m</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M96.78,-83.4C88.25,-81.91 79.49,-80.38 71.26,-78.94"/>
-<polygon fill="#000000" stroke="#000000" points="71.63,-75.46 61.17,-77.18 70.42,-82.35 71.63,-75.46"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M96.78,-62.6C88.25,-64.09 79.49,-65.62 71.26,-67.06"/>
+<polygon fill="#000000" stroke="#000000" points="70.42,-63.65 61.17,-68.82 71.63,-70.54 70.42,-63.65"/>
 </g>
 </g>
 </svg>
-</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
-    <p>Nodes of different colours represent the following: </p>
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -309,23 +369,25 @@
 </g>
 </svg>
 
-    
-    <p>Solid arrows point from a submodule to the (sub)module which it is
-    descended from. Dashed arrows point from a module or program unit to 
-    modules which it uses.
-    </p>
-    </div></div></div></div>
-      </li>
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+          </li>
       </ul>
     </div>
 
-        <div class="panel panel-default">
+          <div class="panel panel-default">
       <div class="panel-heading">
-  <h3 class="panel-title">Used by</h3>
+        <h3 class="panel-title">Used by</h3>
       </div>
       <ul class="list-group">
-  <li class="list-group-item">
-    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+          <li class="list-group-item">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -342,35 +404,29 @@
 <polygon fill="none" stroke="black" points="93,-45 0,-45 0,-21 93,-21 93,-45"/>
 <text text-anchor="middle" x="46.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">xy_coordinates</text>
 </g>
-<!-- module~xy_neighbors -->
-<g id="module~~xy_coordinates~~UsedByGraph_node2" class="node">
-<title>module~xy_neighbors</title>
-<g id="a_module~~xy_coordinates~~UsedByGraph_node2"><a xlink:href=".././module/xy_neighbors.html" xlink:title="xy_neighbors">
-<polygon fill="#337ab7" stroke="#337ab7" points="212,-45 129,-45 129,-21 212,-21 212,-45"/>
-<text text-anchor="middle" x="170.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_neighbors</text>
-</a>
-</g>
-</g>
-<!-- module~xy_neighbors&#45;&gt;module~xy_coordinates -->
-<g id="module~~xy_coordinates~~UsedByGraph_edge1" class="edge">
-<title>module~xy_neighbors&#45;&gt;module~xy_coordinates</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M128.88,-33C120.79,-33 112.17,-33 103.68,-33"/>
-<polygon fill="#000000" stroke="#000000" points="103.42,-29.5 93.42,-33 103.42,-36.5 103.42,-29.5"/>
-</g>
 <!-- module~honeyplots -->
-<g id="module~~xy_coordinates~~UsedByGraph_node3" class="node">
+<g id="module~~xy_coordinates~~UsedByGraph_node2" class="node">
 <title>module~honeyplots</title>
-<g id="a_module~~xy_coordinates~~UsedByGraph_node3"><a xlink:href=".././module/honeyplots.html" xlink:title="honeyplots">
+<g id="a_module~~xy_coordinates~~UsedByGraph_node2"><a xlink:href=".././module/honeyplots.html" xlink:title="honeyplots">
 <polygon fill="#337ab7" stroke="#337ab7" points="319,-75 248,-75 248,-51 319,-51 319,-75"/>
 <text text-anchor="middle" x="283.5" y="-60.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeyplots</text>
 </a>
 </g>
 </g>
 <!-- module~honeyplots&#45;&gt;module~xy_coordinates -->
-<g id="module~~xy_coordinates~~UsedByGraph_edge3" class="edge">
+<g id="module~~xy_coordinates~~UsedByGraph_edge1" class="edge">
 <title>module~honeyplots&#45;&gt;module~xy_coordinates</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M247.85,-62.88C216.61,-62.31 169.48,-60.34 129,-54 118.72,-52.39 107.85,-50.05 97.51,-47.51"/>
 <polygon fill="#000000" stroke="#000000" points="98.36,-44.11 87.8,-45.03 96.63,-50.9 98.36,-44.11"/>
+</g>
+<!-- module~xy_neighbors -->
+<g id="module~~xy_coordinates~~UsedByGraph_node4" class="node">
+<title>module~xy_neighbors</title>
+<g id="a_module~~xy_coordinates~~UsedByGraph_node4"><a xlink:href=".././module/xy_neighbors.html" xlink:title="xy_neighbors">
+<polygon fill="#337ab7" stroke="#337ab7" points="212,-45 129,-45 129,-21 212,-21 212,-45"/>
+<text text-anchor="middle" x="170.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_neighbors</text>
+</a>
+</g>
 </g>
 <!-- module~honeyplots&#45;&gt;module~xy_neighbors -->
 <g id="module~~xy_coordinates~~UsedByGraph_edge4" class="edge">
@@ -379,9 +435,9 @@
 <polygon fill="#000000" stroke="#000000" points="222.79,-43.24 212.22,-44.01 220.96,-49.99 222.79,-43.24"/>
 </g>
 <!-- module~honeytools -->
-<g id="module~~xy_coordinates~~UsedByGraph_node4" class="node">
+<g id="module~~xy_coordinates~~UsedByGraph_node3" class="node">
 <title>module~honeytools</title>
-<g id="a_module~~xy_coordinates~~UsedByGraph_node4"><a xlink:href=".././module/honeytools.html" xlink:title="honeytools">
+<g id="a_module~~xy_coordinates~~UsedByGraph_node3"><a xlink:href=".././module/honeytools.html" xlink:title="honeytools">
 <polygon fill="#337ab7" stroke="#337ab7" points="319,-24 248,-24 248,0 319,0 319,-24"/>
 <text text-anchor="middle" x="283.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeytools</text>
 </a>
@@ -399,11 +455,27 @@
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M247.99,-18.53C239.85,-20.07 231,-21.74 222.3,-23.39"/>
 <polygon fill="#000000" stroke="#000000" points="221.39,-20 212.22,-25.3 222.7,-26.88 221.39,-20"/>
 </g>
+<!-- module~xy_neighbors&#45;&gt;module~xy_coordinates -->
+<g id="module~~xy_coordinates~~UsedByGraph_edge3" class="edge">
+<title>module~xy_neighbors&#45;&gt;module~xy_coordinates</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M128.88,-33C120.79,-33 112.17,-33 103.68,-33"/>
+<polygon fill="#000000" stroke="#000000" points="103.42,-29.5 93.42,-33 103.42,-36.5 103.42,-29.5"/>
+</g>
 </g>
 </svg>
-</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
-    <p>Nodes of different colours represent the following: </p>
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -453,497 +525,1081 @@
 </g>
 </svg>
 
-    
-    <p>Solid arrows point from a submodule to the (sub)module which it is
-    descended from. Dashed arrows point from a module or program unit to 
-    modules which it uses.
-    </p>
-    </div></div></div></div>
-  </li>
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+          </li>
       </ul>
     </div>
 
-    <br>
+      <br>
 
-    <section class="visible-xs visible-sm hidden-md">
-      <h3>Contents</h3>
- 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/xy_coordinates.html#variable-n">N</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#variable-pi">PI</a>
+      <section class="visible-xs visible-sm hidden-md">
+          <h3>Contents</h3>
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#vars-1">Variables</a>
+        </h3>
+      </div>
+      <div id="vars-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_coordinates.html#variable-n~4">N</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#variable-pi~2">PI</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-1">Interfaces</a></h3></div>
-  <div id="inters-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/xy_coordinates.html#interface-xy_print">xy_print</a>
+
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#inters-1">Interfaces</a>
+        </h3>
+      </div>
+      <div id="inters-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_coordinates.html#interface-xy_print">xy_print</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
-  <div id="types-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/xy_coordinates.html#type-xy">xy</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#type-xy_site">xy_site</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#type-xy_lattice">xy_lattice</a>
+
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#types-1">Derived Types</a>
+        </h3>
+      </div>
+      <div id="types-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_coordinates.html#type-xy">xy</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#type-xy_site">xy_site</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#type-xy_lattice">xy_lattice</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
-  <div id="funcs-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_distance">xy_distance</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2site">hex2site</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2corner">hex2corner</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2center">hex2center</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2lattice">hex2lattice</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-get_sublattice">get_sublattice</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_ordered_union">xy_ordered_union</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-ith_corner_offset">ith_corner_offset</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-eq_xy">eq_xy</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-neq_xy">neq_xy</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-eq_lattice">eq_lattice</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-neq_lattice">neq_lattice</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_norm">xy_norm</a>
+
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#funcs-1">Functions</a>
+        </h3>
+      </div>
+      <div id="funcs-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_distance">xy_distance</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2site">hex2site</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2corner">hex2corner</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2center">hex2center</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-hex2lattice">hex2lattice</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-get_sublattice">get_sublattice</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_ordered_union">xy_ordered_union</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-ith_corner_offset">ith_corner_offset</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-eq_xy">eq_xy</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-neq_xy">neq_xy</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-eq_lattice">eq_lattice</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-neq_lattice">neq_lattice</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_norm">xy_norm</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
-  <div class="list-group">
-    <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-push_back">push_back</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_class_print">xy_class_print</a>
-      <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_lattice_print">xy_lattice_print</a>
+
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#subs-1">Subroutines</a>
+        </h3>
+      </div>
+      <div id="subs-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-push_back">push_back</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_class_print">xy_class_print</a>
+            <a class="list-group-item" href="../module/xy_coordinates.html#proc-xy_lattice_print">xy_lattice_print</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
+  
+  
+  
+  
+  
+  
 
 
-    <section>
-    <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-n"></span>integer,</td>
-<td>private,</td>  <td>parameter</td><td>::</td>
-  <td><strong>N</strong></td><td> =</td><td>6</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-pi"></span>real(kind=8),</td>
-<td>private,</td>  <td>parameter</td><td>::</td>
-  <td><strong>PI</strong></td><td> =</td><td>4d0*atan(1d0)</td><td></td>
-</tr>
-</tbody>
-</table>
+      </section>
+      <br class="visible-xs visible-sm hidden-md">
 
-    </section>
-    <br>
+
+        <section>
+          <h2>Variables</h2>
+            <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~4"></span>
+              integer,
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>N</strong></td>
+<td> =</td>
+                <td>6</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pi~2"></span>
+              real(kind=8),
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>PI</strong></td>
+<td> =</td>
+                <td>4d0*atan(1d0)</td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+        </section>
+        <br>
+
+
+        <section>
+          <h2>Interfaces</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum">
+      <span class="anchor" id="interface-xy_print"></span>
+      <h3>public        interface <a href='../interface/xy_print.html'>xy_print</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private impure elemental subroutine <a href='../proc/xy_class_print.html'>xy_class_print</a>(S, unit, quiet)  
+
+    </h3>
     
-    
-    <section>
-   <h2>Interfaces</h2>
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-xy_print"></span><h3>public interface <a href='../interface/xy_print.html'>xy_print</a>  </h3></div>
-  <ul class="list-group">
-    <li class="list-group-item">
-    <h3>private impure elemental subroutine <a href='../proc/xy_class_print.html'>xy_class_print</a>(S, unit, quiet)</h3>
-<p>Pretty print of xy coordinates in static arrays</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy.html'>xy</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>S</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>unit</strong></td><td><p>default = $stdout</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>quiet</strong></td><td><p>default = .false.</p></td>
-</tr>
-</tbody>
-</table>
+  <p>Pretty print of xy coordinates in static arrays</p>
 
-
-    </li>
-    <li class="list-group-item">
-    <h3>private impure elemental subroutine <a href='../proc/xy_lattice_print.html'>xy_lattice_print</a>(S, unit, quiet)</h3>
-<p>Pretty print of xy coordinates in dynamic arrays</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>S</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>unit</strong></td><td><p>default = $stdout</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>quiet</strong></td><td><p>default = .false.</p></td>
-</tr>
-</tbody>
-</table>
-
-
-    </li>
-  </ul>
-</div>
-
-    </section>
-  <br>
-
-    
-    <section>
-     <h2>Derived Types</h2>
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="type-xy"></span><h3>type, public :: <a href='../type/xy.html'>xy</a>  </h3></div>
-  <div class="panel-body">
-    <p>Base type for 2D points</p>
-     <h4>Components</h4>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-x"></span>real(kind=8),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>x</strong></td><td></td><td></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-y"></span>real(kind=8),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>y</strong></td><td></td><td></td><td></td>
-</tr>
-</tbody>
-</table>
-
-     
-     <h4>Type-Bound Procedures</h4>
+  <h4>Arguments</h4>
       <table class="table table-striped varlist">
-      <tbody>
-       <tr><td>generic, public :: <strong><a href='../type/xy.html#boundprocedure-operator%28%3D%3D%29'>operator(==)</a></strong>  => eq_xy </td>
-       <td></td></tr>
-       <tr><td>generic, public :: <strong><a href='../type/xy.html#boundprocedure-operator%28SLASH%3D%29'>operator(/=)</a></strong>  => neq_xy </td>
-       <td></td></tr>
-       <tr><td>procedure, private :: <strong><a href='../type/xy.html#boundprocedure-eq_xy'>eq_xy</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, private :: <strong><a href='../type/xy.html#boundprocedure-neq_xy'>neq_xy</a></strong>  </td>
-       <td></td></tr>
-       </tbody>
-       </table>
-  </div>
-</div>
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy.html'>xy</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>S</strong></td>
+            <td>
 
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="type-xy_site"></span><h3>type, public, extends(<a href='../type/xy.html'>xy</a>) :: <a href='../type/xy_site.html'>xy_site</a>  </h3></div>
-  <div class="panel-body">
-    <p>A 2D point extension for inequivalent sites</p>
-     <h4>Components</h4>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-label"></span>character(len=1),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>label</strong></td><td></td><td></td><td><p>A or B (sublattice)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-key"></span>integer,</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>key</strong></td><td> =</td><td>0</td><td><p>for lattice lookup</p></td>
-</tr>
-</tbody>
-</table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>unit</strong></td>
+            <td>
+<p>default = $stdout</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>quiet</strong></td>
+            <td>
+<p>default = .false.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
-     
-     <h4>Type-Bound Procedures</h4>
+
+          </li>
+          <li class="list-group-item">
+                <h3>
+    private impure elemental subroutine <a href='../proc/xy_lattice_print.html'>xy_lattice_print</a>(S, unit, quiet)  
+
+    </h3>
+    
+  <p>Pretty print of xy coordinates in dynamic arrays</p>
+
+  <h4>Arguments</h4>
       <table class="table table-striped varlist">
-      <tbody>
-       <tr><td>generic, public :: <strong><a href='../type/xy_site.html#boundprocedure-operator%28%3D%3D%29~2'>operator(==)</a></strong>  => eq_xy </td>
-       <td></td></tr>
-       <tr><td>generic, public :: <strong><a href='../type/xy_site.html#boundprocedure-operator%28SLASH%3D%29~2'>operator(/=)</a></strong>  => neq_xy </td>
-       <td></td></tr>
-       </tbody>
-       </table>
-  </div>
-</div>
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>S</strong></td>
+            <td>
 
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="type-xy_lattice"></span><h3>type, public :: <a href='../type/xy_lattice.html'>xy_lattice</a>  </h3></div>
-  <div class="panel-body">
-    <p>Wrapper type for storing dynamically
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>unit</strong></td>
+            <td>
+<p>default = $stdout</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>quiet</strong></td>
+            <td>
+<p>default = .false.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+    </ul>
+  </div>
+
+        </section>
+        <br>
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum">
+      <span class="anchor" id="type-xy"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/xy.html'>xy</a>
+        
+      </h3>
+    </div>
+    <div class="panel-body">
+      <p>Base type for 2D points</p>
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x"></span>
+              real(kind=8),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y"></span>
+              real(kind=8),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>
+generic,
+                  public
+,                   :: <strong><a href='../type/xy.html#boundprocedure-operator%28%3D%3D%29~2'>operator(==)</a></strong>
+ =>
+                    <a href='../type/xy.html#boundprocedure-eq_xy'>eq_xy</a>
+<small></small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+,                   :: <strong><a href='../type/xy.html#boundprocedure-operator%28SLASH%3D%29'>operator(/=)</a></strong>
+ =>
+                    <a href='../type/xy.html#boundprocedure-neq_xy'>neq_xy</a>
+<small></small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  private
+                  :: <strong><a href='../type/xy.html#boundprocedure-eq_xy'>eq_xy</a></strong>
+<small>Function</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  private
+                  :: <strong><a href='../type/xy.html#boundprocedure-neq_xy'>neq_xy</a></strong>
+<small>Function</small>                </td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum">
+      <span class="anchor" id="type-xy_site"></span>
+      <h3>
+        type, public, extends(<a href='../type/xy.html'>xy</a>)&nbsp;::&nbsp;
+        <a href='../type/xy_site.html'>xy_site</a>
+        
+      </h3>
+    </div>
+    <div class="panel-body">
+      <p>A 2D point extension for inequivalent sites</p>
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x"></span>
+              real(kind=8),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y"></span>
+              real(kind=8),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-label~3"></span>
+              character(len=1),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>label</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p>A or B (sublattice)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-key"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+<p>for lattice lookup</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>
+generic,
+                  public
+,                   :: <strong><a href='../type/xy_site.html#boundprocedure-operator%28%3D%3D%29~3'>operator(==)</a></strong>
+ =>
+                    <a href='../type/xy.html#boundprocedure-eq_xy'>eq_xy</a>
+<small></small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+,                   :: <strong><a href='../type/xy_site.html#boundprocedure-operator%28SLASH%3D%29~2'>operator(/=)</a></strong>
+ =>
+                    <a href='../type/xy.html#boundprocedure-neq_xy'>neq_xy</a>
+<small></small>                </td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum">
+      <span class="anchor" id="type-xy_lattice"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/xy_lattice.html'>xy_lattice</a>
+        
+      </h3>
+    </div>
+    <div class="panel-body">
+      <p>Wrapper type for storing dynamically
 sized collections of lattice sites</p>
-     <h4>Components</h4>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-site"></span>type(<a href='../type/xy_site.html'>xy_site</a>),</td>
-<td>private,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>site</strong>(:)</td><td></td><td></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-size~2"></span>integer,</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>size</strong></td><td></td><td></td><td></td>
-</tr>
-</tbody>
-</table>
 
-     
-     <h4>Type-Bound Procedures</h4>
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-site"></span>
+              type(<a href='../type/xy_site.html'>xy_site</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>site</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-size~2"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>size</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>
+generic,
+                  public
+,                   :: <strong><a href='../type/xy_lattice.html#boundprocedure-operator%28%3D%3D%29~4'>operator(==)</a></strong>
+ =>
+                    <a href='../type/xy_lattice.html#boundprocedure-eq_lattice'>eq_lattice</a>
+<small></small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+generic,
+                  public
+,                   :: <strong><a href='../type/xy_lattice.html#boundprocedure-operator%28SLASH%3D%29~3'>operator(/=)</a></strong>
+ =>
+                    <a href='../type/xy_lattice.html#boundprocedure-neq_lattice'>neq_lattice</a>
+<small></small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/xy_lattice.html#boundprocedure-push_back'>push_back</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  private
+                  :: <strong><a href='../type/xy_lattice.html#boundprocedure-eq_lattice'>eq_lattice</a></strong>
+<small>Function</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  private
+                  :: <strong><a href='../type/xy_lattice.html#boundprocedure-neq_lattice'>neq_lattice</a></strong>
+<small>Function</small>                </td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Functions</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-xy_distance"></span><h3>public pure elemental function <a href='../proc/xy_distance.html'>xy_distance</a>(A, B) result(d)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Polymorphic euclidean distance for xy class</p>
+
+  <h4>Arguments</h4>
       <table class="table table-striped varlist">
-      <tbody>
-       <tr><td>generic, public :: <strong><a href='../type/xy_lattice.html#boundprocedure-operator%28%3D%3D%29~3'>operator(==)</a></strong>  => eq_lattice </td>
-       <td></td></tr>
-       <tr><td>generic, public :: <strong><a href='../type/xy_lattice.html#boundprocedure-operator%28SLASH%3D%29~3'>operator(/=)</a></strong>  => neq_lattice </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/xy_lattice.html#boundprocedure-push_back'>push_back</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, private :: <strong><a href='../type/xy_lattice.html#boundprocedure-eq_lattice'>eq_lattice</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, private :: <strong><a href='../type/xy_lattice.html#boundprocedure-neq_lattice'>neq_lattice</a></strong>  </td>
-       <td></td></tr>
-       </tbody>
-       </table>
-  </div>
-</div>
-
-    </section>
-  <br>
-    
- 
-    <section>
-    <h2>Functions</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-xy_distance"></span><h3>public pure elemental function <a href='../proc/xy_distance.html'>xy_distance</a>(A, B) result(d)</h3></div>
-  <div class="panel-body">
-       
-<p>Polymorphic euclidean distance for xy class</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy.html'>xy</a>),</td>
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy.html'>xy</a>),
+            </td>
 <td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>A</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy.html'>xy</a>),</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>A</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy.html'>xy</a>),
+            </td>
 <td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>B</strong></td><td></td>
-</tr>
-</tbody>
-</table>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>B</strong></td>
+            <td>
 
-<h4>Return Value <small>real(kind=8)</small></h4>  
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
+    <h4>
+    Return Value
+    <small>real(kind=8)</small>
+    </h4>
+    
+
+    </div>
   </div>
-  </div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-hex2site"></span><h3>public pure elemental function <a href='../proc/hex2site.html'>hex2site</a>(layout, H, label) result(site)</h3></div>
-  <div class="panel-body">
-       
-<p>Convert hex coordinates to real 2D lattice sites
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-hex2site"></span><h3>public pure elemental function <a href='../proc/hex2site.html'>hex2site</a>(layout, H, label) result(site)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Convert hex coordinates to real 2D lattice sites
 [returning the xy coordinates for the unique unit-cell,
  sites "A" and "B": this of course does not account for
  border effects, so would be suitable only for simple,
  periodized, systems, which for now are out of scope.]
 Actual real-space layout has to be specified by passing
 a (scalar) unit_cell object.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/hex.html'>hex</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>H</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=1),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>label</strong></td>
+            <td>
+<p>A or B</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy_site.html'>xy_site</a>)</small>
+    </h4>
     
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/hex.html'>hex</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>H</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=1),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>label</strong></td><td><p>A or B</p></td>
-</tr>
-</tbody>
-</table>
 
-<h4>Return Value <small>type(<a href='../type/xy_site.html'>xy_site</a>)</small></h4>  
-
-  </div>
+    </div>
   </div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-hex2corner"></span><h3>public pure elemental function <a href='../proc/hex2corner.html'>hex2corner</a>(layout, H) result(corner)</h3></div>
-  <div class="panel-body">
-       
-<p>Convert hex coordinates to real 2D space
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-hex2corner"></span><h3>public pure elemental function <a href='../proc/hex2corner.html'>hex2corner</a>(layout, H) result(corner)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Convert hex coordinates to real 2D space
 [returning the xy coordinates for the hexagon corners,
  as appropriatiely wrapped in the "xy_lattice" type]
 Actual real-space layout has to be specified by passing
 a (scalar) unit_cell object.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/hex.html'>hex</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>H</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small>
+    </h4>
     
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/hex.html'>hex</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>H</strong></td><td></td>
-</tr>
-</tbody>
-</table>
 
-<h4>Return Value <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small></h4>  
-
-  </div>
+    </div>
   </div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-hex2center"></span><h3>public pure elemental function <a href='../proc/hex2center.html'>hex2center</a>(layout, H) result(center)</h3></div>
-  <div class="panel-body">
-       
-<p>Convert hex coordinates to real 2D space
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-hex2center"></span><h3>public pure elemental function <a href='../proc/hex2center.html'>hex2center</a>(layout, H) result(center)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Convert hex coordinates to real 2D space
 [returning the xy coordinates of the hexagon center]
 Actual real-space layout has to be specified by passing
 a (scalar) unit_cell object.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/hex.html'>hex</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>H</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy.html'>xy</a>)</small>
+    </h4>
     
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/hex.html'>hex</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>H</strong></td><td></td>
-</tr>
-</tbody>
-</table>
 
-<h4>Return Value <small>type(<a href='../type/xy.html'>xy</a>)</small></h4>  
-
-  </div>
+    </div>
   </div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-hex2lattice"></span><h3>public pure function <a href='../proc/hex2lattice.html'>hex2lattice</a>(layout, hexagons) result(lattice)</h3></div>
-  <div class="panel-body">
-       
-<p>Generate a type(xy_lattice) object from any given hex
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-hex2lattice"></span><h3>public pure function <a href='../proc/hex2lattice.html'>hex2lattice</a>(layout, hexagons) result(lattice)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Generate a type(xy_lattice) object from any given hex
 array, provided a suitable layout (unit-cell)</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/hex.html'>hex</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hexagons</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small>
+    </h4>
     
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/hex.html'>hex</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>hexagons</strong>(:)</td><td></td>
-</tr>
-</tbody>
-</table>
 
-<h4>Return Value <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small></h4>  
-
-  </div>
+    </div>
   </div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_sublattice"></span><h3>public pure elemental function <a href='../proc/get_sublattice.html'>get_sublattice</a>(lattice, label) result(sublattice)</h3></div>
-  <div class="panel-body">
-       
-<p>Extract sublattice, given a lattice and a label ("A" or "B")</p>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_sublattice"></span><h3>public pure elemental function <a href='../proc/get_sublattice.html'>get_sublattice</a>(lattice, label) result(sublattice)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Extract sublattice, given a lattice and a label ("A" or "B")</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lattice</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=1),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>label</strong></td>
+            <td>
+<p>A or B</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small>
+    </h4>
     
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>lattice</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=1),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>label</strong></td><td><p>A or B</p></td>
-</tr>
-</tbody>
-</table>
 
-<h4>Return Value <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small></h4>  
-
-  </div>
+    </div>
   </div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-xy_ordered_union"></span><h3>public pure function <a href='../proc/xy_ordered_union.html'>xy_ordered_union</a>(A, B) result(C)</h3></div>
-  <div class="panel-body">
-       
-<p>An ordered-keys set union for xy_lattices.
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-xy_ordered_union"></span><h3>public pure function <a href='../proc/xy_ordered_union.html'>xy_ordered_union</a>(A, B) result(C)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>An ordered-keys set union for xy_lattices.
 It compares the lattice sites, looking at
 their x and y coordinates only: equal x,y
 entries are inserted in C just once, so to
@@ -963,356 +1619,664 @@ as real-space tight-binding hamiltonians.
 The keys would then be used to index other
 real space quantities, such as LDOS, Chern
 marker, local magnetization, and so on.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>A</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>B</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small>
+    </h4>
     
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>A</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>B</strong></td><td></td>
-</tr>
-</tbody>
-</table>
 
-<h4>Return Value <small>type(<a href='../type/xy_lattice.html'>xy_lattice</a>)</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-ith_corner_offset"></span><h3>private pure function <a href='../proc/ith_corner_offset.html'>ith_corner_offset</a>(layout, i) result(offset)</h3></div>
-  <div class="panel-body">
-       
-<p>Compute the i-th offset vector connecting the hexagon center
-to its corners, returning a (scalar) xy coordinate</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>i</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>type(<a href='../type/xy.html'>xy</a>)</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-eq_xy"></span><h3>private pure elemental function <a href='../proc/eq_xy.html'>eq_xy</a>(A, B) result(isequal)</h3></div>
-  <div class="panel-body">
-       
-<p>tolerance equality for xy class
-[absolute tol hard-coded to 1d-12]
--&gt; probably to improve...</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy.html'>xy</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>A</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy.html'>xy</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>B</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>logical</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-neq_xy"></span><h3>private pure elemental function <a href='../proc/neq_xy.html'>neq_xy</a>(A, B) result(notequal)</h3></div>
-  <div class="panel-body">
-       
-<p>tolerance inequality for xy class
-[absolute tol hard-coded to 1d-12]
--&gt; probably to improve...</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy.html'>xy</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>A</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy.html'>xy</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>B</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>logical</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-eq_lattice"></span><h3>private pure elemental function <a href='../proc/eq_lattice.html'>eq_lattice</a>(A, B) result(isequal)</h3></div>
-  <div class="panel-body">
-       
-<p>polymorphic equality overload for xy_lattice type</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>A</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>B</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>logical</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-neq_lattice"></span><h3>private pure elemental function <a href='../proc/neq_lattice.html'>neq_lattice</a>(A, B) result(notequal)</h3></div>
-  <div class="panel-body">
-       
-<p>polymorphic inequality overload for xy_lattice type</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>A</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>B</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>logical</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-xy_norm"></span><h3>private pure elemental function <a href='../proc/xy_norm.html'>xy_norm</a>(A) result(r)</h3></div>
-  <div class="panel-body">
-       
-<p>polymorphic euclidean norm for xy class</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy.html'>xy</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>A</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=8)</small></h4>  
-
-  </div>
-  </div>
-
-    </section>
-    <br>
-
-    <section>
-    <h2>Subroutines</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-push_back"></span><h3>private pure subroutine <a href='../proc/push_back.html'>push_back</a>(vec, val)</h3></div>
-  <div class="panel-body">
-       
-<p>Poor man implementation of a dynamic
-array, a là std::vector (but without
-preallocation and smart doubling...)</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>vec</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/xy_site.html'>xy_site</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>val</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-xy_class_print"></span><h3>private impure elemental subroutine <a href='../proc/xy_class_print.html'>xy_class_print</a>(S, unit, quiet)</h3></div>
-  <div class="panel-body">
-       
-<p>Pretty print of xy coordinates in static arrays</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/xy.html'>xy</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>S</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>unit</strong></td><td><p>default = $stdout</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>quiet</strong></td><td><p>default = .false.</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-xy_lattice_print"></span><h3>private impure elemental subroutine <a href='../proc/xy_lattice_print.html'>xy_lattice_print</a>(S, unit, quiet)</h3></div>
-  <div class="panel-body">
-       
-<p>Pretty print of xy coordinates in dynamic arrays</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>S</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>unit</strong></td><td><p>default = $stdout</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>quiet</strong></td><td><p>default = .false.</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-    </section>    
-    <br>
-    
     </div>
   </div>
 
-    <hr>    
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-ith_corner_offset"></span><h3>private pure function <a href='../proc/ith_corner_offset.html'>ith_corner_offset</a>(layout, i) result(offset)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Compute the i-th offset vector connecting the hexagon center
+to its corners, returning a (scalar) xy coordinate</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy.html'>xy</a>)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-eq_xy"></span><h3>private pure elemental function <a href='../proc/eq_xy.html'>eq_xy</a>(A, B) result(isequal)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>tolerance equality for xy class
+[absolute tol hard-coded to 1d-12]
+-&gt; probably to improve...</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy.html'>xy</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>A</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy.html'>xy</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>B</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-neq_xy"></span><h3>private pure elemental function <a href='../proc/neq_xy.html'>neq_xy</a>(A, B) result(notequal)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>tolerance inequality for xy class
+[absolute tol hard-coded to 1d-12]
+-&gt; probably to improve...</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy.html'>xy</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>A</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy.html'>xy</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>B</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-eq_lattice"></span><h3>private pure elemental function <a href='../proc/eq_lattice.html'>eq_lattice</a>(A, B) result(isequal)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>polymorphic equality overload for xy_lattice type</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>A</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>B</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-neq_lattice"></span><h3>private pure elemental function <a href='../proc/neq_lattice.html'>neq_lattice</a>(A, B) result(notequal)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>polymorphic inequality overload for xy_lattice type</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>A</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>B</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-xy_norm"></span><h3>private pure elemental function <a href='../proc/xy_norm.html'>xy_norm</a>(A) result(r)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>polymorphic euclidean norm for xy class</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy.html'>xy</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>A</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=8)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-push_back"></span><h3>private pure subroutine <a href='../proc/push_back.html'>push_back</a>(vec, val)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Poor man implementation of a dynamic
+array, a là std::vector (but without
+preallocation and smart doubling...)</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vec</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/xy_site.html'>xy_site</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>val</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-xy_class_print"></span><h3>private impure elemental subroutine <a href='../proc/xy_class_print.html'>xy_class_print</a>(S, unit, quiet)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Pretty print of xy coordinates in static arrays</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/xy.html'>xy</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>S</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>unit</strong></td>
+            <td>
+<p>default = $stdout</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>quiet</strong></td>
+            <td>
+<p>default = .false.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-xy_lattice_print"></span><h3>private impure elemental subroutine <a href='../proc/xy_lattice_print.html'>xy_lattice_print</a>(S, unit, quiet)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Pretty print of xy coordinates in dynamic arrays</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>S</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>unit</strong></td>
+            <td>
+<p>default = $stdout</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>quiet</strong></td>
+            <td>
+<p>default = .false.</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2022 
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2023 
 </p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
         </div>
-        <div class="col-xs-6 col-md-6">
-          <p class="text-right">
-            Documentation generated by 
-            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-          </p>
-        </div>
-      </div>
-      <br>
-      </div> <!-- /container -->    
+        <br>
+      </div> <!-- /container -->
     </footer>
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-<!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
--->
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
 
-    <!-- MathJax JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-      });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script src="../tipuesearch/tipuesearch_content.js"></script>
-    <script src="../tipuesearch/tipuesearch_set.js"></script>
-    <script src="../tipuesearch/tipuesearch.js"></script>
-    
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
   </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
+      <meta name="description" content="Honeycomb flakes, sheets, ribbons, whatever. Made easy.">
     <meta name="author" content="Gabriele Bellomia" >
     <link rel="icon" href="../favicon.png">
 
@@ -14,16 +14,16 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script src="../js/jquery-2.1.3.min.js"></script>
-    <script src="../js/svg-pan-zoom.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="../js/jquery-2.1.3.min.js"></script>
+         <script src="../js/svg-pan-zoom.min.js"></script>
 
   </head>
 
@@ -45,227 +45,279 @@
           <ul class="nav navbar-nav">
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
-              data-toggle="dropdown" role="button"
-              aria-haspopup="true"
-     aria-expanded="false">Contents <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="../lists/files.html">Source Files</a></li>
-            <li><a href="../lists/modules.html">Modules</a></li>
-            <li><a href="../lists/procedures.html">Procedures</a></li>
-                   <li><a href="../lists/types.html">Derived Types</a></li>
-       
-            </ul>
-        
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="../lists/files.html">Source Files</a></li>
+                  <li><a href="../lists/modules.html">Modules</a></li>
+                  <li><a href="../lists/procedures.html">Procedures</a></li>
+                  <li><a href="../lists/types.html">Derived Types</a></li>
+              </ul>
             </li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="../lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/types.html">Derived Types</a>
+              </li>
           </ul>
-        <form action="../search.html" class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
-        </div>
-<!--
-        <button type="submit" class="btn btn-default">Submit</button>
--->
-        </form>
+            <form action="../search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
   <div class="row">
-    <h1>xy_neighbors 
-    <small>Module</small>
+    <h1>xy_neighbors
+      <small>Module</small>
+      
     </h1>
-    <div class="row">
-  <div class="col-lg-12">
-<div class="well well-sm">
-  <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     <li><i class="fa fa-list-ol"></i>
-       <a data-toggle="tooltip"
-    data-placement="bottom" data-html="true"
-    title="12.4% of total for modules and submodules.">118 statements</a>
-     </li> 
-    <li><i class="fa fa-code"></i><a href="../src/xy_neighbors.f90"> Source File</a></li>
-  </ul>
-  <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/xy_neighbors.f90.html'>xy_neighbors.f90</a></li>
-     <li class="active">xy_neighbors</li>
-  </ol>
-</div>
-</div>
-</div>
-<script>
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-  })
-</script>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title="12.4% of total for modules and submodules.">118 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/xy_neighbors.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/xy_neighbors.f90.html'>xy_neighbors.f90</a></li>
+          <li class="active">xy_neighbors</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 
   </div>
-  
+
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    <div id="sidebar">
-  <h3>Contents</h3>
- 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/xy_neighbors.html#variable-n~2">N</a>
-      <a class="list-group-item" href="../module/xy_neighbors.html#variable-pi~2">PI</a>
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#vars-0">Variables</a>
+        </h3>
+      </div>
+      <div id="vars-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_neighbors.html#variable-n">N</a>
+            <a class="list-group-item" href="../module/xy_neighbors.html#variable-pi">PI</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
-  <div id="funcs-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_nn_hop">xy_nn_hop</a>
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_nnn_hop">xy_nnn_hop</a>
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-ith_a_offset">ith_A_offset</a>
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-ith_b_offset">ith_B_offset</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
-  <div class="list-group">
-    <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_nearest_neighbors">xy_nearest_neighbors</a>
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_next_nearest_neighbors">xy_next_nearest_neighbors</a>
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_shells">xy_shells</a>
-    </div>
-  </div>
-</div>
 
-</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#funcs-0">Functions</a>
+        </h3>
+      </div>
+      <div id="funcs-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_nn_hop">xy_nn_hop</a>
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_nnn_hop">xy_nnn_hop</a>
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-ith_a_offset">ith_A_offset</a>
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-ith_b_offset">ith_B_offset</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#subs-0">Subroutines</a>
+        </h3>
+      </div>
+      <div id="subs-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_nearest_neighbors">xy_nearest_neighbors</a>
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_next_nearest_neighbors">xy_next_nearest_neighbors</a>
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_shells">xy_shells</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+
+
+  </div>
 
     </div>
-    
+
     <div class="col-md-9" id='text'>
-    <p>Defining all neighbors shells for given xy lattices</p>
-<br>        <div class="panel panel-default">
+      <p>Defining all neighbors shells for given xy lattices</p>
+<br>          <div class="panel panel-default">
       <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
+        <h3 class="panel-title">Uses</h3>
       </div>
       <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li>stdlib_sorting</li>
-    <li><a href='../module/xy_coordinates.html'>xy_coordinates</a></li>
-    <li><a href='../module/hex_layout.html'>hex_layout</a></li>
-  </ul>
-      </li>
-      <li class="list-group-item">
-  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+          <li class="list-group-item">
+            <ul class="list-inline">
+                <li><a href='../module/hex_layout.html'>hex_layout</a></li>
+                <li><a href='../module/xy_coordinates.html'>xy_coordinates</a></li>
+                <li>stdlib_sorting</li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: module~~xy_neighbors~~UsesGraph Pages: 1 -->
-<svg id="modulexy_neighborsUsesGraph" width="453pt" height="133pt"
- viewBox="0.00 0.00 453.00 133.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~xy_neighbors~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 129)">
+<svg id="modulexy_neighborsUsesGraph" width="453pt" height="114pt"
+ viewBox="0.00 0.00 453.00 114.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~xy_neighbors~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 110)">
 <title>module~~xy_neighbors~~UsesGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-129 449,-129 449,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-110 449,-110 449,4 -4,4"/>
 <!-- module~xy_neighbors -->
 <g id="module~~xy_neighbors~~UsesGraph_node1" class="node">
 <title>module~xy_neighbors</title>
-<polygon fill="none" stroke="black" points="445,-85 362,-85 362,-61 445,-61 445,-85"/>
-<text text-anchor="middle" x="403.5" y="-70.6" font-family="Helvetica,sans-Serif" font-size="10.50">xy_neighbors</text>
+<polygon fill="none" stroke="black" points="445,-66 362,-66 362,-42 445,-42 445,-66"/>
+<text text-anchor="middle" x="403.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">xy_neighbors</text>
 </g>
-<!-- stdlib_sorting -->
+<!-- module~hex_layout -->
 <g id="module~~xy_neighbors~~UsesGraph_node2" class="node">
-<title>stdlib_sorting</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="321,-125 238,-125 238,-101 321,-101 321,-125"/>
-<text text-anchor="middle" x="279.5" y="-110.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">stdlib_sorting</text>
+<title>module~hex_layout</title>
+<g id="a_module~~xy_neighbors~~UsesGraph_node2"><a xlink:href=".././module/hex_layout.html" xlink:title="hex_layout">
+<polygon fill="#337ab7" stroke="#337ab7" points="182,-106 112,-106 112,-82 182,-82 182,-106"/>
+<text text-anchor="middle" x="147" y="-91.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_layout</text>
+</a>
 </g>
-<!-- module~xy_neighbors&#45;&gt;stdlib_sorting -->
+</g>
+<!-- module~xy_neighbors&#45;&gt;module~hex_layout -->
 <g id="module~~xy_neighbors~~UsesGraph_edge1" class="edge">
-<title>module~xy_neighbors&#45;&gt;stdlib_sorting</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M365.9,-85C353.7,-89 339.95,-93.51 327.11,-97.72"/>
-<polygon fill="#000000" stroke="#000000" points="325.91,-94.43 317.5,-100.87 328.09,-101.08 325.91,-94.43"/>
+<title>module~xy_neighbors&#45;&gt;module~hex_layout</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M363.47,-66.02C351.54,-69.34 338.31,-72.67 326,-75 280.84,-83.55 228.45,-88.56 192.25,-91.27"/>
+<polygon fill="#000000" stroke="#000000" points="191.75,-87.8 182.03,-92.01 192.26,-94.78 191.75,-87.8"/>
 </g>
 <!-- module~xy_coordinates -->
 <g id="module~~xy_neighbors~~UsesGraph_node3" class="node">
 <title>module~xy_coordinates</title>
 <g id="a_module~~xy_neighbors~~UsesGraph_node3"><a xlink:href=".././module/xy_coordinates.html" xlink:title="xy_coordinates">
-<polygon fill="#337ab7" stroke="#337ab7" points="326,-45 233,-45 233,-21 326,-21 326,-45"/>
-<text text-anchor="middle" x="279.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="326,-66 233,-66 233,-42 326,-42 326,-66"/>
+<text text-anchor="middle" x="279.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates</text>
 </a>
 </g>
 </g>
 <!-- module~xy_neighbors&#45;&gt;module~xy_coordinates -->
-<g id="module~~xy_neighbors~~UsesGraph_edge3" class="edge">
-<title>module~xy_neighbors&#45;&gt;module~xy_coordinates</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M365.9,-61C353.7,-57 339.95,-52.49 327.11,-48.28"/>
-<polygon fill="#000000" stroke="#000000" points="328.09,-44.92 317.5,-45.13 325.91,-51.57 328.09,-44.92"/>
-</g>
-<!-- module~hex_layout -->
-<g id="module~~xy_neighbors~~UsesGraph_node4" class="node">
-<title>module~hex_layout</title>
-<g id="a_module~~xy_neighbors~~UsesGraph_node4"><a xlink:href=".././module/hex_layout.html" xlink:title="hex_layout">
-<polygon fill="#337ab7" stroke="#337ab7" points="182,-86 112,-86 112,-62 182,-62 182,-86"/>
-<text text-anchor="middle" x="147" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_layout</text>
-</a>
-</g>
-</g>
-<!-- module~xy_neighbors&#45;&gt;module~hex_layout -->
 <g id="module~~xy_neighbors~~UsesGraph_edge2" class="edge">
-<title>module~xy_neighbors&#45;&gt;module~hex_layout</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M361.89,-73.16C315.61,-73.34 240.2,-73.64 192.4,-73.83"/>
-<polygon fill="#000000" stroke="#000000" points="192.33,-70.33 182.34,-73.87 192.36,-77.33 192.33,-70.33"/>
+<title>module~xy_neighbors&#45;&gt;module~xy_coordinates</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M361.88,-54C353.79,-54 345.17,-54 336.68,-54"/>
+<polygon fill="#000000" stroke="#000000" points="336.42,-50.5 326.42,-54 336.42,-57.5 336.42,-50.5"/>
+</g>
+<!-- stdlib_sorting -->
+<g id="module~~xy_neighbors~~UsesGraph_node4" class="node">
+<title>stdlib_sorting</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="321,-24 238,-24 238,0 321,0 321,-24"/>
+<text text-anchor="middle" x="279.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">stdlib_sorting</text>
+</g>
+<!-- module~xy_neighbors&#45;&gt;stdlib_sorting -->
+<g id="module~~xy_neighbors~~UsesGraph_edge3" class="edge">
+<title>module~xy_neighbors&#45;&gt;stdlib_sorting</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M367.54,-41.96C354.27,-37.4 338.97,-32.13 324.94,-27.3"/>
+<polygon fill="#000000" stroke="#000000" points="326.06,-23.98 315.47,-24.04 323.78,-30.6 326.06,-23.98"/>
 </g>
 <!-- module~xy_coordinates&#45;&gt;module~hex_layout -->
 <g id="module~~xy_neighbors~~UsesGraph_edge6" class="edge">
 <title>module~xy_coordinates&#45;&gt;module~hex_layout</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M240.05,-45.08C225,-49.81 207.65,-55.26 192.1,-60.15"/>
-<polygon fill="#000000" stroke="#000000" points="190.67,-56.92 182.18,-63.26 192.77,-63.6 190.67,-56.92"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M239.35,-66C224.44,-70.57 207.36,-75.8 192.04,-80.5"/>
+<polygon fill="#000000" stroke="#000000" points="190.79,-77.22 182.26,-83.5 192.84,-83.92 190.79,-77.22"/>
+</g>
+<!-- assert_m -->
+<g id="module~~xy_neighbors~~UsesGraph_node5" class="node">
+<title>assert_m</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="61,-46 0,-46 0,-22 61,-22 61,-46"/>
+<text text-anchor="middle" x="30.5" y="-31.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">assert_m</text>
+</g>
+<!-- module~xy_coordinates&#45;&gt;assert_m -->
+<g id="module~~xy_neighbors~~UsesGraph_edge4" class="edge">
+<title>module~xy_coordinates&#45;&gt;assert_m</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M232.91,-50.31C186.58,-46.56 115.53,-40.8 71.38,-37.23"/>
+<polygon fill="#000000" stroke="#000000" points="71.55,-33.73 61.3,-36.41 70.99,-40.71 71.55,-33.73"/>
 </g>
 <!-- module~hex_coordinates -->
-<g id="module~~xy_neighbors~~UsesGraph_node5" class="node">
+<g id="module~~xy_neighbors~~UsesGraph_node6" class="node">
 <title>module~hex_coordinates</title>
-<g id="a_module~~xy_neighbors~~UsesGraph_node5"><a xlink:href=".././module/hex_coordinates.html" xlink:title="hex_coordinates">
-<polygon fill="#337ab7" stroke="#337ab7" points="197,-44 97,-44 97,-20 197,-20 197,-44"/>
-<text text-anchor="middle" x="147" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_coordinates</text>
+<g id="a_module~~xy_neighbors~~UsesGraph_node6"><a xlink:href=".././module/hex_coordinates.html" xlink:title="hex_coordinates">
+<polygon fill="#337ab7" stroke="#337ab7" points="197,-26 97,-26 97,-2 197,-2 197,-26"/>
+<text text-anchor="middle" x="147" y="-11.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_coordinates</text>
 </a>
 </g>
 </g>
 <!-- module~xy_coordinates&#45;&gt;module~hex_coordinates -->
-<g id="module~~xy_neighbors~~UsesGraph_edge4" class="edge">
-<title>module~xy_coordinates&#45;&gt;module~hex_coordinates</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M232.86,-32.65C224.71,-32.59 216.1,-32.52 207.63,-32.46"/>
-<polygon fill="#000000" stroke="#000000" points="207.42,-28.96 197.39,-32.38 207.37,-35.96 207.42,-28.96"/>
-</g>
-<!-- assert_m -->
-<g id="module~~xy_neighbors~~UsesGraph_node6" class="node">
-<title>assert_m</title>
-<g id="a_module~~xy_neighbors~~UsesGraph_node6"><a xlink:href="https://github.com/sourceryinstitute/assert#documentation-1" xlink:title="assert_m">
-<polygon fill="#337ab7" stroke="#337ab7" points="61,-24 0,-24 0,0 61,0 61,-24"/>
-<text text-anchor="middle" x="30.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">assert_m</text>
-</a>
-</g>
-</g>
-<!-- module~xy_coordinates&#45;&gt;assert_m -->
 <g id="module~~xy_neighbors~~UsesGraph_edge5" class="edge">
-<title>module~xy_coordinates&#45;&gt;assert_m</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M242,-20.94C228.08,-16.93 211.96,-12.98 197,-11 152.94,-5.16 141.44,-10.66 97,-11 88.67,-11.06 79.75,-11.17 71.25,-11.3"/>
-<polygon fill="#000000" stroke="#000000" points="71.12,-7.8 61.17,-11.45 71.22,-14.8 71.12,-7.8"/>
+<title>module~xy_coordinates&#45;&gt;module~hex_coordinates</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M239.35,-42C226.18,-37.96 211.31,-33.4 197.45,-29.16"/>
+<polygon fill="#000000" stroke="#000000" points="198.16,-25.72 187.58,-26.13 196.11,-32.41 198.16,-25.72"/>
 </g>
 <!-- module~hex_coordinates&#45;&gt;assert_m -->
 <g id="module~~xy_neighbors~~UsesGraph_edge7" class="edge">
 <title>module~hex_coordinates&#45;&gt;assert_m</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M96.78,-23.4C88.25,-21.91 79.49,-20.38 71.26,-18.94"/>
-<polygon fill="#000000" stroke="#000000" points="71.63,-15.46 61.17,-17.18 70.42,-22.35 71.63,-15.46"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M96.78,-22.6C88.25,-24.09 79.49,-25.62 71.26,-27.06"/>
+<polygon fill="#000000" stroke="#000000" points="70.42,-23.65 61.17,-28.82 71.63,-30.54 70.42,-23.65"/>
 </g>
 </g>
 </svg>
-</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
-    <p>Nodes of different colours represent the following: </p>
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -315,23 +367,25 @@
 </g>
 </svg>
 
-    
-    <p>Solid arrows point from a submodule to the (sub)module which it is
-    descended from. Dashed arrows point from a module or program unit to 
-    modules which it uses.
-    </p>
-    </div></div></div></div>
-      </li>
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+          </li>
       </ul>
     </div>
 
-        <div class="panel panel-default">
+          <div class="panel panel-default">
       <div class="panel-heading">
-  <h3 class="panel-title">Used by</h3>
+        <h3 class="panel-title">Used by</h3>
       </div>
       <ul class="list-group">
-  <li class="list-group-item">
-    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+          <li class="list-group-item">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -380,9 +434,19 @@
 </g>
 </g>
 </svg>
-</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
-    <p>Nodes of different colours represent the following: </p>
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -432,238 +496,444 @@
 </g>
 </svg>
 
-    
-    <p>Solid arrows point from a submodule to the (sub)module which it is
-    descended from. Dashed arrows point from a module or program unit to 
-    modules which it uses.
-    </p>
-    </div></div></div></div>
-  </li>
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+          </li>
       </ul>
     </div>
 
-    <br>
+      <br>
 
-    <section class="visible-xs visible-sm hidden-md">
-      <h3>Contents</h3>
- 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/xy_neighbors.html#variable-n~2">N</a>
-      <a class="list-group-item" href="../module/xy_neighbors.html#variable-pi~2">PI</a>
+      <section class="visible-xs visible-sm hidden-md">
+          <h3>Contents</h3>
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#vars-1">Variables</a>
+        </h3>
+      </div>
+      <div id="vars-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_neighbors.html#variable-n">N</a>
+            <a class="list-group-item" href="../module/xy_neighbors.html#variable-pi">PI</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
-  <div id="funcs-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_nn_hop">xy_nn_hop</a>
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_nnn_hop">xy_nnn_hop</a>
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-ith_a_offset">ith_A_offset</a>
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-ith_b_offset">ith_B_offset</a>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#funcs-1">Functions</a>
+        </h3>
+      </div>
+      <div id="funcs-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_nn_hop">xy_nn_hop</a>
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_nnn_hop">xy_nnn_hop</a>
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-ith_a_offset">ith_A_offset</a>
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-ith_b_offset">ith_B_offset</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
-  <div class="list-group">
-    <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_nearest_neighbors">xy_nearest_neighbors</a>
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_next_nearest_neighbors">xy_next_nearest_neighbors</a>
-      <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_shells">xy_shells</a>
+
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#subs-1">Subroutines</a>
+        </h3>
+      </div>
+      <div id="subs-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_nearest_neighbors">xy_nearest_neighbors</a>
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_next_nearest_neighbors">xy_next_nearest_neighbors</a>
+            <a class="list-group-item" href="../module/xy_neighbors.html#proc-xy_shells">xy_shells</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
+  
+  
+  
+  
+  
+  
 
 
-    <section>
-    <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-n~2"></span>integer,</td>
-<td>private,</td>  <td>parameter</td><td>::</td>
-  <td><strong>N</strong></td><td> =</td><td>6</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-pi~2"></span>real(kind=8),</td>
-<td>private,</td>  <td>parameter</td><td>::</td>
-  <td><strong>PI</strong></td><td> =</td><td>4d0*atan(1d0)</td><td></td>
-</tr>
-</tbody>
-</table>
+      </section>
+      <br class="visible-xs visible-sm hidden-md">
 
-    </section>
-    <br>
-    
-    
 
-    
-    
- 
-    <section>
-    <h2>Functions</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-xy_nn_hop"></span><h3>public pure function <a href='../proc/xy_nn_hop.html'>xy_nn_hop</a>(layout, S, i) result(Ni)</h3></div>
-  <div class="panel-body">
-       
-<p>Return the nearest neighbor of a lattice site, by hopping in
+        <section>
+          <h2>Variables</h2>
+            <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n"></span>
+              integer,
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>N</strong></td>
+<td> =</td>
+                <td>6</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pi"></span>
+              real(kind=8),
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>PI</strong></td>
+<td> =</td>
+                <td>4d0*atan(1d0)</td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+        </section>
+        <br>
+
+
+
+
+
+        <section>
+          <h2>Functions</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-xy_nn_hop"></span><h3>public pure function <a href='../proc/xy_nn_hop.html'>xy_nn_hop</a>(layout, S, i) result(Ni)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Return the nearest neighbor of a lattice site, by hopping in
 the i-th direction. You can feed any i ∈ ℤ, but you can get
 only 3 inequivalent neighbors, depending on the label of the
 given site: "A" and "B" activate two different suitable sets
 of hopping directions. A lattice layout is required to build
 the concrete hopping vectors.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/xy_site.html'>xy_site</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>S</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy_site.html'>xy_site</a>)</small>
+    </h4>
     
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/xy_site.html'>xy_site</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>S</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>i</strong></td><td></td>
-</tr>
-</tbody>
-</table>
 
-<h4>Return Value <small>type(<a href='../type/xy_site.html'>xy_site</a>)</small></h4>  
-
-  </div>
+    </div>
   </div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-xy_nnn_hop"></span><h3>public pure function <a href='../proc/xy_nnn_hop.html'>xy_nnn_hop</a>(layout, S, i) result(Ni)</h3></div>
-  <div class="panel-body">
-       
-<p>Return the i-th next-nearest neighbor of a lattice site, by
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-xy_nnn_hop"></span><h3>public pure function <a href='../proc/xy_nnn_hop.html'>xy_nnn_hop</a>(layout, S, i) result(Ni)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Return the i-th next-nearest neighbor of a lattice site, by
 taking two xy_nn_hops in the suitable direction.
 You can feed any i ∈ ℤ, but you can get only 6 inequivalent
 neighbors, depending on the label of the given site:
 "A" and "B" activate two different suitable sets of NN hops,
 A lattice layout is required to build the concrete hoppings.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/xy_site.html'>xy_site</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>S</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy_site.html'>xy_site</a>)</small>
+    </h4>
     
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/xy_site.html'>xy_site</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>S</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>i</strong></td><td></td>
-</tr>
-</tbody>
-</table>
 
-<h4>Return Value <small>type(<a href='../type/xy_site.html'>xy_site</a>)</small></h4>  
-
-  </div>
+    </div>
   </div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-ith_a_offset"></span><h3>private pure function <a href='../proc/ith_a_offset.html'>ith_A_offset</a>(layout, i) result(offset)</h3></div>
-  <div class="panel-body">
-       
-<p>Compute the offset vector connecting a site with label "A",
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-ith_a_offset"></span><h3>private pure function <a href='../proc/ith_a_offset.html'>ith_A_offset</a>(layout, i) result(offset)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Compute the offset vector connecting a site with label "A",
 to its i-th neighbor, returning a (scalar) xy coordinate.
 It takes any i ∈ ℤ, but there will only be 3 inequivalent
 output vectors, pointing to the three nearest neighbors.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy.html'>xy</a>)</small>
+    </h4>
     
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>i</strong></td><td></td>
-</tr>
-</tbody>
-</table>
 
-<h4>Return Value <small>type(<a href='../type/xy.html'>xy</a>)</small></h4>  
-
-  </div>
+    </div>
   </div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-ith_b_offset"></span><h3>private pure function <a href='../proc/ith_b_offset.html'>ith_B_offset</a>(layout, i) result(offset)</h3></div>
-  <div class="panel-body">
-       
-<p>Compute the offset vector connecting a site with label "B",
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-ith_b_offset"></span><h3>private pure function <a href='../proc/ith_b_offset.html'>ith_B_offset</a>(layout, i) result(offset)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Compute the offset vector connecting a site with label "B",
 to its i-th neighbor, returning a (scalar) xy coordinate.
 It takes any i ∈ ℤ, but there will only be 3 inequivalent
 output vectors, pointing to the three nearest neighbors.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/unit_cell.html'>unit_cell</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>layout</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/xy.html'>xy</a>)</small>
+    </h4>
     
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/unit_cell.html'>unit_cell</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>layout</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>i</strong></td><td></td>
-</tr>
-</tbody>
-</table>
 
-<h4>Return Value <small>type(<a href='../type/xy.html'>xy</a>)</small></h4>  
-
-  </div>
+    </div>
   </div>
 
-    </section>
-    <br>
+        </section>
+        <br>
 
-    <section>
-    <h2>Subroutines</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-xy_nearest_neighbors"></span><h3>public pure subroutine <a href='../proc/xy_nearest_neighbors.html'>xy_nearest_neighbors</a>(lattice, nn_mask)</h3></div>
-  <div class="panel-body">
-       
-<p>Build a mask for the nearest neighbors of a given
+        <section>
+          <h2>Subroutines</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-xy_nearest_neighbors"></span><h3>public pure subroutine <a href='../proc/xy_nearest_neighbors.html'>xy_nearest_neighbors</a>(lattice, nn_mask)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Build a mask for the nearest neighbors of a given
 lattice. It is a NxN matrix, with N the number of
 sites in the lattice, stocking .true. values only
 for the pairs of sites linked by a "NN-bond".
@@ -673,34 +943,61 @@ calling xy_shells directly. Note that we provide
 a similar subroutine for next-nearest-neighbors,
 which optionally gives also the NNs, so if just
 two shells are needed you should call that.</p><a href="../proc/xy_nearest_neighbors.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
 <td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>lattice</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lattice</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
 <td>intent(out),</td>
-  <td></td>  <td>allocatable</td><td>::</td>
-  <td><strong>nn_mask</strong>(:,:)</td><td></td>
-</tr>
-</tbody>
-</table>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>nn_mask</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+    </div>
   </div>
-  </div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-xy_next_nearest_neighbors"></span><h3>public pure subroutine <a href='../proc/xy_next_nearest_neighbors.html'>xy_next_nearest_neighbors</a>(lattice, nnn_mask, nn_mask)</h3></div>
-  <div class="panel-body">
-       
-<p>Build a mask for the next-nearest neighbors of a given lattice.
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-xy_next_nearest_neighbors"></span><h3>public pure subroutine <a href='../proc/xy_next_nearest_neighbors.html'>xy_next_nearest_neighbors</a>(lattice, nnn_mask, nn_mask)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Build a mask for the next-nearest neighbors of a given lattice.
 It is a NxN matrix, with N the number of sites in the lattice,
 storing .true. values only for the pairs of sites linked by a
 "NNN-bond". Optionally builds a nearest-neighbors mask, too.
@@ -709,40 +1006,76 @@ distances, so if you need more than NNNs consider
 calling xy_shells directly. Note that we provide
 a similar subroutine for nearest-neighbors only,
 so if you just need NNs consider calling it.</p><a href="../proc/xy_next_nearest_neighbors.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
 <td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>lattice</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lattice</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
 <td>intent(out),</td>
-  <td></td>  <td>allocatable</td><td>::</td>
-  <td><strong>nnn_mask</strong>(:,:)</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>nnn_mask</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
 <td>intent(out),</td>
-  <td>optional</td>  <td>allocatable</td><td>::</td>
-  <td><strong>nn_mask</strong>(:,:)</td><td></td>
-</tr>
-</tbody>
-</table>
+              <td>optional,</td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>nn_mask</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
+    </div>
   </div>
-  </div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-xy_shells"></span><h3>public pure subroutine <a href='../proc/xy_shells.html'>xy_shells</a>(lattice, shell_table, distance_set)</h3></div>
-  <div class="panel-body">
-       
-<p>Build a /ordered/ set of all inter-atomic distances
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-xy_shells"></span><h3>public pure subroutine <a href='../proc/xy_shells.html'>xy_shells</a>(lattice, shell_table, distance_set)  
+</h3></div>
+    <div class="panel-body">
+          
+  <p>Build a /ordered/ set of all inter-atomic distances
 in a given xy_lattice and a table storing distances
 among all sites. Searching this matrix for the n-th
 set entry gives a mask of all pairs of atomic sites
@@ -751,85 +1084,122 @@ E.g. shell_table == distance_set(1) would provide a
 mask for nearest neighbors, from which we can build
 the tight-binding hopping term of the corresponding
 lattice hamiltonian.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/xy_lattice.html'>xy_lattice</a>),</td>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='../type/xy_lattice.html'>xy_lattice</a>),
+            </td>
 <td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>lattice</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=8),</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lattice</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=8),
+            </td>
 <td>intent(out),</td>
-  <td></td>  <td>allocatable</td><td>::</td>
-  <td><strong>shell_table</strong>(:,:)</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=8),</td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>shell_table</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=8),
+            </td>
 <td>intent(out),</td>
-  <td></td>  <td>allocatable</td><td>::</td>
-  <td><strong>distance_set</strong>(:)</td><td></td>
-</tr>
-</tbody>
-</table>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>distance_set</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
 
-  </div>
-  </div>
-
-    </section>    
-    <br>
-    
     </div>
   </div>
 
-    <hr>    
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2022 
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2023 
 </p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
         </div>
-        <div class="col-xs-6 col-md-6">
-          <p class="text-right">
-            Documentation generated by 
-            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-          </p>
-        </div>
-      </div>
-      <br>
-      </div> <!-- /container -->    
+        <br>
+      </div> <!-- /container -->
     </footer>
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-<!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
--->
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
 
-    <!-- MathJax JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-      });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script src="../tipuesearch/tipuesearch_content.js"></script>
-    <script src="../tipuesearch/tipuesearch_set.js"></script>
-    <script src="../tipuesearch/tipuesearch.js"></script>
-    
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
   </body>
 </html>
