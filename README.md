@@ -2,9 +2,9 @@
 
 ###### Honeycomb flakes, sheets, ribbons, whatever. Made easy.
 -------
-[![build](https://img.shields.io/github/workflow/status/qcmplab/honeytools/BUILD?logo=Fortran&style=flat-square)](https://github.com/qcmplab/HoneyTools/actions/workflows/build.yaml)
-[![test](https://img.shields.io/github/workflow/status/qcmplab/honeytools/TEST?label=test-suite&logo=Fortran&style=flat-square)](https://github.com/qcmplab/HoneyTools/actions/workflows/test.yaml)
-[![docs](https://img.shields.io/github/workflow/status/qcmplab/honeytools/DOCS?label=docs-gen&logo=Fortran&style=flat-square)](https://qcmplab.github.io/HoneyTools/)
+[![build](https://img.shields.io/github/actions/workflow/status/qcmplab/honeytools/build.yaml?logo=Fortran&style=flat-square)](https://github.com/qcmplab/HoneyTools/actions/workflows/build.yaml)
+[![test](https://img.shields.io/github/actions/workflow/status/qcmplab/honeytools/test.yaml?label=test-suite&logo=Fortran&style=flat-square)](https://github.com/qcmplab/HoneyTools/actions/workflows/test.yaml)
+[![docs](https://img.shields.io/github/actions/workflow/status/qcmplab/honeytools/docs.yaml?label=docs-gen&logo=Fortran&style=flat-square)](https://qcmplab.github.io/HoneyTools/)
 [![codecov](https://img.shields.io/codecov/c/github/qcmplab/honeytools?label=coverage&logo=codecov&style=flat-square)](https://codecov.io/gh/qcmplab/honeytools)
 [![codacy](https://img.shields.io/codacy/grade/dc72f36f44b74dcda8b942c9d9760d4f?logo=codacy&style=flat-square)](https://app.codacy.com/gh/QcmPlab/HoneyTools/dashboard?branch=master)
 
@@ -19,7 +19,7 @@
 
 ## Installation as library
 
-The library supports the Fortran Package Manager ([`fpm`](https://fpm.fortran-lang.org/en/index.html)). As such it can be built by simply invoking
+The library supports the Fortran Package Manager ([`fpm ≥ 0.9.0`](https://fpm.fortran-lang.org/en/index.html)). As such it can be built by simply invoking
 
 ```
 fpm build
@@ -54,7 +54,7 @@ Name: honeytools
 Description: The HoneyTools library
 Version: x.y.z
 Cflags: -I${includedir}
-Libs: -L${libdir} -lHoneytools 
+Libs: -L${libdir} -lHoneyTools 
 ```
 and then load it invoking 
 
