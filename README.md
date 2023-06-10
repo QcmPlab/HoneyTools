@@ -19,7 +19,7 @@
 
 ## Installation as library
 
-The library supports the Fortran Package Manager ([`fpm`](https://fpm.fortran-lang.org/en/index.html)). As such it can be built by simply invoking
+The library supports the Fortran Package Manager ([`fpm ≥ 0.9.0`](https://fpm.fortran-lang.org/en/index.html)). As such it can be built by simply invoking
 
 ```
 fpm build
@@ -54,7 +54,7 @@ Name: honeytools
 Description: The HoneyTools library
 Version: x.y.z
 Cflags: -I${includedir}
-Libs: -L${libdir} -lHoneytools 
+Libs: -L${libdir} -lHoneyTools 
 ```
 and then load it invoking 
 
