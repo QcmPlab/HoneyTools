@@ -16,7 +16,7 @@ module honeyplots
 
    integer, parameter :: N = 6 ! Number of vertices in a hexagon
    real(8), parameter :: FL(3) = [0.4510d0, 0.3098d0, 0.5882d0] ! Fortran-lang color
-   real(8), parameter :: HY(3) = [0.9608d0, 0.8157d0, 0.0118d0] ! HoneyTools' Yellow
+   real(8), parameter :: HY(3) = [0.9804d0, 0.7608d0, 0.0196d0] ! HoneyTools' Yellow
 
    interface plot
       procedure :: xy_plot

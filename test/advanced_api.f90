@@ -55,7 +55,7 @@ contains
       do i = -radius,+radius
          do j = max(-radius,-i-radius),min(radius,-i+radius)
             k = randi(i,j)
-            if(mod(k,2)/=0)then
+            if(mod(k,3)/=0)then
                call hex_insert(hexagons,hex(i,j))
             endif
          enddo
