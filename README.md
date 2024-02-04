@@ -128,11 +128,11 @@ Here some output from our `matplotlib` backend:
 
 | Structure | Representation |
 |:---------:|:--------------:|
-|zigzag supercell|<img width=500 src=https://user-images.githubusercontent.com/56808633/191342648-1879fdb8-e98b-4365-bf5b-47148e8c6d9b.svg>|
-|armchair stripe|<img width=500 src=https://user-images.githubusercontent.com/56808633/191429369-18b55155-3274-4548-aa13-5a38d36f8ea3.svg>|
-|generic-radius flake|<img width=500 src=https://user-images.githubusercontent.com/56808633/191437811-0376f77f-db0e-4418-bf79-f7e6fa52979e.gif>|
-|random-vacancy nanoflake|<img width=500 src=https://user-images.githubusercontent.com/56808633/191356110-696a0e32-01db-44be-95e2-b854465e2986.svg>|
-|triangular islands|<img width=500 src=https://user-images.githubusercontent.com/56808633/191435668-a745faf6-7e94-41b9-b7df-3e87fddcaf2b.gif>|
+|zigzag supercell|<img width=500 src=https://raw.githubusercontent.com/wiki/QcmPlab/HoneyTools/gallery/supercell_zigzag.svg>|
+|armchair stripe|<img width=500 src=https://raw.githubusercontent.com/wiki/QcmPlab/HoneyTools/gallery/stripe_armchair.svg>|
+|generic-radius flake|<img width=500 src=https://raw.githubusercontent.com/wiki/QcmPlab/HoneyTools/gallery/flakes.gif>|
+|random-vacancy nanoflake|<img width=500 src=https://raw.githubusercontent.com/wiki/QcmPlab/HoneyTools/gallery/holed2a.svg>|
+|triangular islands|<img width=500 src=https://raw.githubusercontent.com/wiki/QcmPlab/HoneyTools/gallery/triangles.gif>|
 
 ## License
 
