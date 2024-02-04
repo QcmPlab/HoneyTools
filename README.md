@@ -125,7 +125,7 @@ at the root directory of the project. Alternatively you can examine the [officia
 
 ## Gallery
 
-Here some output from our `matplotlib` backend:
+Here some output from our `pyplot` backend:
 
 | Structure | Representation |
 |:---------:|:--------------:|
