@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,77 +12,53 @@
 
     <title>get_triangle &ndash; HoneyTools</title>
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-         <script src="../js/jquery-2.1.3.min.js"></script>
-         <script src="../js/svg-pan-zoom.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
           <a class="navbar-brand" href="../index.html">HoneyTools </a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
-              <a href="#" class="dropdown-toggle"
-                 data-toggle="dropdown" role="button"
-                 aria-haspopup="true"
-                 aria-expanded="false">
-                 Contents <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                    <li><a href="../lists/files.html">Source Files</a></li>
-                  <li><a href="../lists/modules.html">Modules</a></li>
-                  <li><a href="../lists/procedures.html">Procedures</a></li>
-                  <li><a href="../lists/types.html">Derived Types</a></li>
-              </ul>
-            </li>
-                <li class="visible-xs hidden-sm visible-lg">
-                  <a href="../lists/files.html">Source Files</a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
                 </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/modules.html">Modules</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/procedures.html">Procedures</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/types.html">Derived Types</a>
-              </li>
-          </ul>
-            <form action="../search.html" class="navbar-form navbar-right" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
               </div>
-              <!--
-                  <button type="submit" class="btn btn-default">Submit</button>
-                  -->
-            </form>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
 
     <div class="container">
   <div class="row">
@@ -88,33 +66,37 @@
       <small>Function</small>
       
     </h1>
-      <div class="row" id="info-bar">
-    <div class="col-lg-12">
-      <div class="well well-sm">
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
 
-          <li id="statements"><i class="fa fa-list-ol"></i>
-            <a data-toggle="tooltip"
-               data-placement="bottom" data-html="true"
-               title=" 1.0% of total for procedures.">8 statements</a>
-          </li>
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip"
+                 data-bs-placement="bottom" data-html="true"
+                 title=" 1.0% of total for procedures.">8 statements</a>
+            </li>
 
-            <li id="source-file">
+            <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
               <a href="../src/honeytools.f90"> Source File</a>
             </li>
         </ul>
-        <ol class="breadcrumb in-well text-right">
-              <li><a href='../sourcefile/honeytools.f90.html'>honeytools.f90</a></li>
-              <li><a href='../module/honeytools.html'>honeytools</a></li>
-          <li class="active">get_triangle</li>
-        </ol>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/honeytools.f90.html'>honeytools.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/honeytools.html'>honeytools</a></li>
+            <li class="breadcrumb-item active" aria-current="page">get_triangle</li>
+          </ol>
+        </nav>
       </div>
     </div>
   </div>
   <script>
     $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-bs-toggle="tooltip"]').tooltip()
     })
   </script>
 
@@ -124,6 +106,7 @@
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
       <div id="sidebar">
       <h3>Contents</h3>
+  
   
   
   
@@ -161,16 +144,16 @@
         <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-size~4"></span>
+              <span class="anchor" id="variable-size~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -185,7 +168,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-layout~12"></span>
+              <span class="anchor" id="variable-layout~2"></span>
               type(<a href='../type/unit_cell.html'>unit_cell</a>),
             </td>
 <td>intent(in)</td>
@@ -203,28 +186,28 @@
 
       <h3>Return Value
         <small>
-          <span class="anchor" id="variable-lattice~8"></span>
+          <span class="anchor" id="variable-lattice~2"></span>
           type(<a href='../type/xy_lattice.html'>xy_lattice</a>)
         </small>
       </h3>
       
     <br>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Calls</h3>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
       </div>
-      <div class="panel-body">
+      <div class="card-body">
   <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~get_triangle~~CallsGraph Pages: 1 -->
-<svg id="procget_triangleCallsGraph" width="641pt" height="193pt"
- viewBox="0.00 0.00 641.00 192.99" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~get_triangle~~CallsGraph" class="graph" transform="scale(1.45 1.45) rotate(0) translate(4 276)">
+<svg id="procget_triangleCallsGraph" width="641pt" height="153pt"
+ viewBox="0.00 0.00 641.00 152.62" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~get_triangle~~CallsGraph" class="graph" transform="scale(1.31 1.31) rotate(0) translate(4 196)">
 <title>proc~~get_triangle~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-276 926,-276 926,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-196 836,-196 836,4 -4,4"/>
 <!-- proc~get_triangle -->
 <g id="proc~~get_triangle~~CallsGraph_node1" class="node">
 <title>proc~get_triangle</title>
@@ -234,7 +217,7 @@
 <!-- proc~hex2lattice -->
 <g id="proc~~get_triangle~~CallsGraph_node2" class="node">
 <title>proc~hex2lattice</title>
-<g id="a_proc~~get_triangle~~CallsGraph_node2"><a xlink:href=".././proc/hex2lattice.html" xlink:title="xy_coordinates::hex2lattice">
+<g id="a_proc~~get_triangle~~CallsGraph_node2"><a xlink:href="../proc/hex2lattice.html" xlink:title="xy_coordinates::hex2lattice">
 <polygon fill="#d94e8f" stroke="#d94e8f" points="342.5,-108 183.5,-108 183.5,-84 342.5,-84 342.5,-108"/>
 <text text-anchor="middle" x="263" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2lattice</text>
 </a>
@@ -249,7 +232,7 @@
 <!-- proc~hex_triangle -->
 <g id="proc~~get_triangle~~CallsGraph_node3" class="node">
 <title>proc~hex_triangle</title>
-<g id="a_proc~~get_triangle~~CallsGraph_node3"><a xlink:href=".././proc/hex_triangle.html" xlink:title="hex_geometries::hex_triangle">
+<g id="a_proc~~get_triangle~~CallsGraph_node3"><a xlink:href="../proc/hex_triangle.html" xlink:title="hex_geometries::hex_triangle">
 <polygon fill="#d94e8f" stroke="#d94e8f" points="348,-66 178,-66 178,-42 348,-42 348,-66"/>
 <text text-anchor="middle" x="263" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_geometries::hex_triangle</text>
 </a>
@@ -264,22 +247,22 @@
 <!-- proc~hex2corner -->
 <g id="proc~~get_triangle~~CallsGraph_node5" class="node">
 <title>proc~hex2corner</title>
-<g id="a_proc~~get_triangle~~CallsGraph_node5"><a xlink:href=".././proc/hex2corner.html" xlink:title="xy_coordinates::hex2corner">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="562,-169 401,-169 401,-145 562,-145 562,-169"/>
-<text text-anchor="middle" x="481.5" y="-154.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2corner</text>
+<g id="a_proc~~get_triangle~~CallsGraph_node5"><a xlink:href="../proc/hex2corner.html" xlink:title="xy_coordinates::hex2corner">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="562,-150 401,-150 401,-126 562,-126 562,-150"/>
+<text text-anchor="middle" x="481.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2corner</text>
 </a>
 </g>
 </g>
 <!-- proc~hex2lattice&#45;&gt;proc~hex2corner -->
 <g id="proc~~get_triangle~~CallsGraph_edge3" class="edge">
 <title>proc~hex2lattice&#45;&gt;proc~hex2corner</title>
-<path fill="none" stroke="#000000" d="M306.77,-108.05C341.62,-117.87 390.95,-131.77 428.15,-142.25"/>
-<polygon fill="#000000" stroke="#000000" points="427.24,-145.63 437.82,-144.97 429.14,-138.89 427.24,-145.63"/>
+<path fill="none" stroke="#000000" d="M326.04,-108.04C351.75,-113.02 381.73,-118.84 408.4,-124.01"/>
+<polygon fill="#000000" stroke="#000000" points="407.97,-127.49 418.45,-125.96 409.3,-120.62 407.97,-127.49"/>
 </g>
 <!-- proc~xy_ordered_union -->
 <g id="proc~~get_triangle~~CallsGraph_node7" class="node">
 <title>proc~xy_ordered_union</title>
-<g id="a_proc~~get_triangle~~CallsGraph_node7"><a xlink:href=".././proc/xy_ordered_union.html" xlink:title="xy_coordinates::xy_ordered_union">
+<g id="a_proc~~get_triangle~~CallsGraph_node7"><a xlink:href="../proc/xy_ordered_union.html" xlink:title="xy_coordinates::xy_ordered_union">
 <polygon fill="#d94e8f" stroke="#d94e8f" points="579,-108 384,-108 384,-84 579,-84 579,-108"/>
 <text text-anchor="middle" x="481.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::xy_ordered_union</text>
 </a>
@@ -306,7 +289,7 @@
 <!-- proc~hex_insert -->
 <g id="proc~~get_triangle~~CallsGraph_node6" class="node">
 <title>proc~hex_insert</title>
-<g id="a_proc~~get_triangle~~CallsGraph_node6"><a xlink:href=".././proc/hex_insert.html" xlink:title="hex_geometries::hex_insert">
+<g id="a_proc~~get_triangle~~CallsGraph_node6"><a xlink:href="../proc/hex_insert.html" xlink:title="hex_geometries::hex_insert">
 <polygon fill="#d9534f" stroke="#d9534f" points="561,-24 402,-24 402,0 561,0 561,-24"/>
 <text text-anchor="middle" x="481.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_geometries::hex_insert</text>
 </a>
@@ -321,107 +304,47 @@
 <!-- proc~hex2center -->
 <g id="proc~~get_triangle~~CallsGraph_node8" class="node">
 <title>proc~hex2center</title>
-<g id="a_proc~~get_triangle~~CallsGraph_node8"><a xlink:href=".././proc/hex2center.html" xlink:title="xy_coordinates::hex2center">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="803.5,-230 643.5,-230 643.5,-206 803.5,-206 803.5,-230"/>
-<text text-anchor="middle" x="723.5" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2center</text>
+<g id="a_proc~~get_triangle~~CallsGraph_node8"><a xlink:href="../proc/hex2center.html" xlink:title="xy_coordinates::hex2center">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="803.5,-192 643.5,-192 643.5,-168 803.5,-168 803.5,-192"/>
+<text text-anchor="middle" x="723.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2center</text>
 </a>
 </g>
 </g>
 <!-- proc~hex2corner&#45;&gt;proc~hex2center -->
 <g id="proc~~get_triangle~~CallsGraph_edge7" class="edge">
 <title>proc~hex2corner&#45;&gt;proc~hex2center</title>
-<path fill="none" stroke="#000000" d="M518.78,-169.03C545.26,-177.54 582.12,-188.85 615,-197 624.86,-199.45 635.29,-201.78 645.62,-203.96"/>
-<polygon fill="#000000" stroke="#000000" points="644.96,-207.39 655.46,-205.98 646.38,-200.54 644.96,-207.39"/>
+<path fill="none" stroke="#000000" d="M551.27,-150.04C580.15,-155.09 613.89,-160.99 643.75,-166.22"/>
+<polygon fill="#000000" stroke="#000000" points="643.26,-169.69 653.72,-167.96 644.47,-162.79 643.26,-169.69"/>
 </g>
 <!-- proc~ith_corner_offset -->
 <g id="proc~~get_triangle~~CallsGraph_node9" class="node">
 <title>proc~ith_corner_offset</title>
-<g id="a_proc~~get_triangle~~CallsGraph_node9"><a xlink:href=".././proc/ith_corner_offset.html" xlink:title="xy_coordinates::ith_corner_offset">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="818.5,-188 628.5,-188 628.5,-164 818.5,-164 818.5,-188"/>
-<text text-anchor="middle" x="723.5" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::ith_corner_offset</text>
+<g id="a_proc~~get_triangle~~CallsGraph_node9"><a xlink:href="../proc/ith_corner_offset.html" xlink:title="xy_coordinates::ith_corner_offset">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="818.5,-150 628.5,-150 628.5,-126 818.5,-126 818.5,-150"/>
+<text text-anchor="middle" x="723.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::ith_corner_offset</text>
 </a>
 </g>
 </g>
 <!-- proc~hex2corner&#45;&gt;proc~ith_corner_offset -->
 <g id="proc~~get_triangle~~CallsGraph_edge8" class="edge">
 <title>proc~hex2corner&#45;&gt;proc~ith_corner_offset</title>
-<path fill="none" stroke="#000000" d="M562.08,-163.3C580.01,-164.72 599.3,-166.25 618.07,-167.73"/>
-<polygon fill="#000000" stroke="#000000" points="617.89,-171.23 628.13,-168.53 618.44,-164.25 617.89,-171.23"/>
-</g>
-<!-- site -->
-<g id="proc~~get_triangle~~CallsGraph_node11" class="node">
-<title>site</title>
-<polygon fill="#777777" stroke="#777777" points="922,-108 868,-108 868,-84 922,-84 922,-108"/>
-<text text-anchor="middle" x="895" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">site</text>
-</g>
-<!-- proc~hex2corner&#45;&gt;site -->
-<g id="proc~~get_triangle~~CallsGraph_edge9" class="edge">
-<title>proc~hex2corner&#45;&gt;site</title>
-<path fill="none" stroke="#000000" d="M562.07,-152.72C633.44,-147.75 740.67,-137.45 832,-117 840.61,-115.07 849.7,-112.38 858.18,-109.57"/>
-<polygon fill="#000000" stroke="#000000" points="859.49,-112.82 867.8,-106.25 857.21,-106.21 859.49,-112.82"/>
+<path fill="none" stroke="#000000" d="M562.08,-138C580.01,-138 599.3,-138 618.07,-138"/>
+<polygon fill="#000000" stroke="#000000" points="618.13,-141.5 628.13,-138 618.13,-134.5 618.13,-141.5"/>
 </g>
 <!-- proc~push_back -->
 <g id="proc~~get_triangle~~CallsGraph_node10" class="node">
 <title>proc~push_back</title>
-<g id="a_proc~~get_triangle~~CallsGraph_node10"><a xlink:href=".././proc/push_back.html" xlink:title="xy_coordinates::xy_lattice%push_back">
+<g id="a_proc~~get_triangle~~CallsGraph_node10"><a xlink:href="../proc/push_back.html" xlink:title="xy_coordinates::xy_lattice%push_back">
 <polygon fill="#d9534f" stroke="#d9534f" points="832,-108 615,-108 615,-84 832,-84 832,-108"/>
 <text text-anchor="middle" x="723.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::xy_lattice%push_back</text>
 </a>
 </g>
 </g>
 <!-- proc~xy_ordered_union&#45;&gt;proc~push_back -->
-<g id="proc~~get_triangle~~CallsGraph_edge10" class="edge">
+<g id="proc~~get_triangle~~CallsGraph_edge9" class="edge">
 <title>proc~xy_ordered_union&#45;&gt;proc~push_back</title>
 <path fill="none" stroke="#000000" d="M579.08,-96C587.51,-96 596.09,-96 604.66,-96"/>
 <polygon fill="#000000" stroke="#000000" points="604.71,-99.5 614.71,-96 604.71,-92.5 604.71,-99.5"/>
-</g>
-<!-- proc~xy_ordered_union&#45;&gt;site -->
-<g id="proc~~get_triangle~~CallsGraph_edge11" class="edge">
-<title>proc~xy_ordered_union&#45;&gt;site</title>
-<path fill="none" stroke="#000000" d="M544.8,-83.96C615.04,-72.3 732.44,-58.6 832,-75 840.7,-76.43 849.83,-78.93 858.32,-81.71"/>
-<polygon fill="#000000" stroke="#000000" points="857.34,-85.07 867.94,-85.06 859.64,-78.46 857.34,-85.07"/>
-</g>
-<!-- origin -->
-<g id="proc~~get_triangle~~CallsGraph_node12" class="node">
-<title>origin</title>
-<polygon fill="#777777" stroke="#777777" points="922,-272 868,-272 868,-248 922,-248 922,-272"/>
-<text text-anchor="middle" x="895" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">origin</text>
-</g>
-<!-- proc~hex2center&#45;&gt;origin -->
-<g id="proc~~get_triangle~~CallsGraph_edge12" class="edge">
-<title>proc~hex2center&#45;&gt;origin</title>
-<path fill="none" stroke="#000000" d="M773.07,-230.04C800.24,-236.77 833.52,-245.01 858.28,-251.15"/>
-<polygon fill="#000000" stroke="#000000" points="857.45,-254.55 867.99,-253.56 859.13,-247.75 857.45,-254.55"/>
-</g>
-<!-- uq -->
-<g id="proc~~get_triangle~~CallsGraph_node13" class="node">
-<title>uq</title>
-<polygon fill="#777777" stroke="#777777" points="922,-230 868,-230 868,-206 922,-206 922,-230"/>
-<text text-anchor="middle" x="895" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">uq</text>
-</g>
-<!-- proc~hex2center&#45;&gt;uq -->
-<g id="proc~~get_triangle~~CallsGraph_edge13" class="edge">
-<title>proc~hex2center&#45;&gt;uq</title>
-<path fill="none" stroke="#000000" d="M803.79,-218C822.55,-218 841.67,-218 857.45,-218"/>
-<polygon fill="#000000" stroke="#000000" points="857.8,-221.5 867.8,-218 857.8,-214.5 857.8,-221.5"/>
-</g>
-<!-- ur -->
-<g id="proc~~get_triangle~~CallsGraph_node14" class="node">
-<title>ur</title>
-<polygon fill="#777777" stroke="#777777" points="922,-188 868,-188 868,-164 922,-164 922,-188"/>
-<text text-anchor="middle" x="895" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ur</text>
-</g>
-<!-- proc~hex2center&#45;&gt;ur -->
-<g id="proc~~get_triangle~~CallsGraph_edge14" class="edge">
-<title>proc~hex2center&#45;&gt;ur</title>
-<path fill="none" stroke="#000000" d="M793.34,-205.97C806.26,-203.31 819.59,-200.3 832,-197 840.6,-194.71 849.75,-191.86 858.3,-189"/>
-<polygon fill="#000000" stroke="#000000" points="859.67,-192.23 867.99,-185.67 857.4,-185.61 859.67,-192.23"/>
-</g>
-<!-- proc~push_back&#45;&gt;site -->
-<g id="proc~~get_triangle~~CallsGraph_edge15" class="edge">
-<title>proc~push_back&#45;&gt;site</title>
-<path fill="none" stroke="#000000" d="M832.33,-96C841.3,-96 849.91,-96 857.69,-96"/>
-<polygon fill="#000000" stroke="#000000" points="857.75,-99.5 867.75,-96 857.75,-92.5 857.75,-99.5"/>
 </g>
 </g>
 </svg>
@@ -429,17 +352,17 @@
                   var panprocget_triangleCallsGraph = svgPanZoom('#procget_triangleCallsGraph',
                     {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
                   );
-                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
-          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -447,11 +370,11 @@
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: Graph Key Pages: 1 -->
-<svg width="597pt" height="32pt"
- viewBox="0.00 0.00 596.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
 <title>Graph Key</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 592.5,-28 592.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
 <!-- Subroutine -->
 <g id="node1" class="node">
 <title>Subroutine</title>
@@ -470,23 +393,29 @@
 <polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
 <text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
 </g>
-<!-- Unknown Procedure Type -->
+<!-- Type Bound Procedure -->
 <g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
 <title>Unknown Procedure Type</title>
-<polygon fill="#777777" stroke="#777777" points="388.5,-24 243.5,-24 243.5,0 388.5,0 388.5,-24"/>
-<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
 </g>
 <!-- Program -->
-<g id="node5" class="node">
+<g id="node6" class="node">
 <title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="465,-24 407,-24 407,0 465,0 465,-24"/>
-<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
 </g>
 <!-- This Page&#39;s Entity -->
-<g id="node6" class="node">
+<g id="node7" class="node">
 <title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="black" points="588.5,-24 483.5,-24 483.5,0 588.5,0 588.5,-24"/>
-<text text-anchor="middle" x="536" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
 </g>
 </g>
 </svg>
@@ -504,38 +433,13 @@ implementation in a submodule of an interface in a parent module.
     </div>
     <br>
 
-    <section class="visible-xs visible-sm hidden-md">
-        <h3>Contents</h3>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
-
 
     
     
 
     
     
+
 
 
     
@@ -547,12 +451,12 @@ implementation in a submodule of an interface in a parent module.
     </div> <!-- /container -->
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2023 
+        <div class="row justify-content-between">
+          <div class="col"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2024 
 </p>
           </div>
-          <div class="col-xs-6 col-md-6">
-            <p class="text-right">
+          <div class="col">
+            <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
             </p>
@@ -562,17 +466,12 @@ implementation in a submodule of an interface in a parent module.
       </div> <!-- /container -->
     </footer>
 
-    <!-- Bootstrap core JavaScript
-         ================================================== -->
-         <!-- Placed at the end of the document so the pages load faster -->
-    <!--
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        -->
-        <script src="../js/bootstrap.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
 
-        <!-- MathJax JavaScript
+    <!-- MathJax JavaScript
              ================================================== -->
              <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/x-mathjax-config">

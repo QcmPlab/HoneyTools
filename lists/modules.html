@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,77 +13,53 @@
     <title>All Modules &ndash; HoneyTools
 </title>
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-         <script src="../js/jquery-2.1.3.min.js"></script>
-         <script src="../js/svg-pan-zoom.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
           <a class="navbar-brand" href="../index.html">HoneyTools </a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
-              <a href="#" class="dropdown-toggle"
-                 data-toggle="dropdown" role="button"
-                 aria-haspopup="true"
-                 aria-expanded="false">
-                 Contents <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                    <li><a href="../lists/files.html">Source Files</a></li>
-                  <li><a href="../lists/modules.html">Modules</a></li>
-                  <li><a href="../lists/procedures.html">Procedures</a></li>
-                  <li><a href="../lists/types.html">Derived Types</a></li>
-              </ul>
-            </li>
-                <li class="visible-xs hidden-sm visible-lg">
-                  <a href="../lists/files.html">Source Files</a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
                 </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/modules.html">Modules</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/procedures.html">Procedures</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/types.html">Derived Types</a>
-              </li>
-          </ul>
-            <form action="../search.html" class="navbar-form navbar-right" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
               </div>
-              <!--
-                  <button type="submit" class="btn btn-default">Submit</button>
-                  -->
-            </form>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
 
     <div class="container">
       <div class="row">
@@ -90,14 +68,46 @@
 			 <table class="table">
 			 <thead><tr><th>Module</th><th>Source File</th><th>Description</th></tr></thead>
 			 <tbody>
-			   <tr class="active"><td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td><td><a href='../sourcefile/hex_coordinates.f90.html'>hex_coordinates.f90</a></td><td><p>Defining special 3D coordinates for honeycomb lattices</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/hex_geometries.html'>hex_geometries</a></td><td><a href='../sourcefile/hex_geometries.f90.html'>hex_geometries.f90</a></td><td><p>Provide common honeycomb geometries, as dynamic type(hex) arrays</p></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/hex_layout.html'>hex_layout</a></td><td><a href='../sourcefile/hex_layout.f90.html'>hex_layout.f90</a></td><td><p>Defining hexagonal unit-cells</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/hex_neighbors.html'>hex_neighbors</a></td><td><a href='../sourcefile/hex_neighbors.f90.html'>hex_neighbors.f90</a></td><td><p>Defining nearest neighbors for given hex coordinates</p></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/honeyplots.html'>honeyplots</a></td><td><a href='../sourcefile/honeyplots.f90.html'>honeyplots.f90</a></td><td><p>Providing plotting facilities for hex tessellations</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/honeytools.html'>honeytools</a></td><td><a href='../sourcefile/honeytools.f90.html'>honeytools.f90</a></td><td><p>Top level API: what you probably want to use</p></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td><td><a href='../sourcefile/xy_coordinates.f90.html'>xy_coordinates.f90</a></td><td><p>Defining real space 2D coordinates for honeycomb lattice sites</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/xy_neighbors.html'>xy_neighbors</a></td><td><a href='../sourcefile/xy_neighbors.f90.html'>xy_neighbors.f90</a></td><td><p>Defining all neighbors shells for given xy lattices</p></td></tr>
+			   <tr class="active">
+                 <td><a href='../module/hex_coordinates.html'>hex_coordinates</a></td>
+                 <td><a href='../sourcefile/hex_coordinates.f90.html'>hex_coordinates.f90</a></td>
+                 <td><p>Defining special 3D coordinates for honeycomb lattices</p></td>
+               </tr>
+<!--active-->			   <tr class="">
+                 <td><a href='../module/hex_geometries.html'>hex_geometries</a></td>
+                 <td><a href='../sourcefile/hex_geometries.f90.html'>hex_geometries.f90</a></td>
+                 <td><p>Provide common honeycomb geometries, as dynamic type(hex) arrays</p></td>
+               </tr>
+<!---->			   <tr class="active">
+                 <td><a href='../module/hex_layout.html'>hex_layout</a></td>
+                 <td><a href='../sourcefile/hex_layout.f90.html'>hex_layout.f90</a></td>
+                 <td><p>Defining hexagonal unit-cells</p></td>
+               </tr>
+<!--active-->			   <tr class="">
+                 <td><a href='../module/hex_neighbors.html'>hex_neighbors</a></td>
+                 <td><a href='../sourcefile/hex_neighbors.f90.html'>hex_neighbors.f90</a></td>
+                 <td><p>Defining nearest neighbors for given hex coordinates</p></td>
+               </tr>
+<!---->			   <tr class="active">
+                 <td><a href='../module/honeyplots.html'>honeyplots</a></td>
+                 <td><a href='../sourcefile/honeyplots.f90.html'>honeyplots.f90</a></td>
+                 <td><p>Providing plotting facilities for hex tessellations</p></td>
+               </tr>
+<!--active-->			   <tr class="">
+                 <td><a href='../module/honeytools.html'>honeytools</a></td>
+                 <td><a href='../sourcefile/honeytools.f90.html'>honeytools.f90</a></td>
+                 <td><p>Top level API: what you probably want to use</p></td>
+               </tr>
+<!---->			   <tr class="active">
+                 <td><a href='../module/xy_coordinates.html'>xy_coordinates</a></td>
+                 <td><a href='../sourcefile/xy_coordinates.f90.html'>xy_coordinates.f90</a></td>
+                 <td><p>Defining real space 2D coordinates for honeycomb lattice sites</p></td>
+               </tr>
+<!--active-->			   <tr class="">
+                 <td><a href='../module/xy_neighbors.html'>xy_neighbors</a></td>
+                 <td><a href='../sourcefile/xy_neighbors.f90.html'>xy_neighbors.f90</a></td>
+                 <td><p>Defining all neighbors shells for given xy lattices</p></td>
+               </tr>
 <!---->			 </tbody></table>
              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -113,7 +123,7 @@
 <!-- module~hex_coordinates -->
 <g id="module~~graph~~ModuleGraph_node1" class="node">
 <title>module~hex_coordinates</title>
-<g id="a_module~~graph~~ModuleGraph_node1"><a xlink:href=".././module/hex_coordinates.html" xlink:title="hex_coordinates">
+<g id="a_module~~graph~~ModuleGraph_node1"><a xlink:href="../module/hex_coordinates.html" xlink:title="hex_coordinates">
 <polygon fill="#337ab7" stroke="#337ab7" points="197,-265.69 97,-265.69 97,-241.69 197,-241.69 197,-265.69"/>
 <text text-anchor="middle" x="147" y="-251.29" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_coordinates</text>
 </a>
@@ -134,7 +144,7 @@
 <!-- module~hex_geometries -->
 <g id="module~~graph~~ModuleGraph_node2" class="node">
 <title>module~hex_geometries</title>
-<g id="a_module~~graph~~ModuleGraph_node2"><a xlink:href=".././module/hex_geometries.html" xlink:title="hex_geometries">
+<g id="a_module~~graph~~ModuleGraph_node2"><a xlink:href="../module/hex_geometries.html" xlink:title="hex_geometries">
 <polygon fill="#337ab7" stroke="#337ab7" points="330,-305.69 233,-305.69 233,-281.69 330,-281.69 330,-305.69"/>
 <text text-anchor="middle" x="281.5" y="-291.29" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_geometries</text>
 </a>
@@ -149,7 +159,7 @@
 <!-- module~hex_layout -->
 <g id="module~~graph~~ModuleGraph_node3" class="node">
 <title>module~hex_layout</title>
-<g id="a_module~~graph~~ModuleGraph_node3"><a xlink:href=".././module/hex_layout.html" xlink:title="hex_layout">
+<g id="a_module~~graph~~ModuleGraph_node3"><a xlink:href="../module/hex_layout.html" xlink:title="hex_layout">
 <polygon fill="#337ab7" stroke="#337ab7" points="182,-185.69 112,-185.69 112,-161.69 182,-161.69 182,-185.69"/>
 <text text-anchor="middle" x="147" y="-171.29" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_layout</text>
 </a>
@@ -170,7 +180,7 @@
 <!-- module~hex_neighbors -->
 <g id="module~~graph~~ModuleGraph_node4" class="node">
 <title>module~hex_neighbors</title>
-<g id="a_module~~graph~~ModuleGraph_node4"><a xlink:href=".././module/hex_neighbors.html" xlink:title="hex_neighbors">
+<g id="a_module~~graph~~ModuleGraph_node4"><a xlink:href="../module/hex_neighbors.html" xlink:title="hex_neighbors">
 <polygon fill="#337ab7" stroke="#337ab7" points="456.5,-303.69 366.5,-303.69 366.5,-279.69 456.5,-279.69 456.5,-303.69"/>
 <text text-anchor="middle" x="411.5" y="-289.29" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_neighbors</text>
 </a>
@@ -184,7 +194,7 @@
 <!-- module~honeyplots -->
 <g id="module~~graph~~ModuleGraph_node5" class="node">
 <title>module~honeyplots</title>
-<g id="a_module~~graph~~ModuleGraph_node5"><a xlink:href=".././module/honeyplots.html" xlink:title="honeyplots">
+<g id="a_module~~graph~~ModuleGraph_node5"><a xlink:href="../module/honeyplots.html" xlink:title="honeyplots">
 <polygon fill="#337ab7" stroke="#337ab7" points="564,-126.69 493,-126.69 493,-102.69 564,-102.69 564,-126.69"/>
 <text text-anchor="middle" x="528.5" y="-112.29" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeyplots</text>
 </a>
@@ -213,7 +223,7 @@
 <!-- module~xy_coordinates -->
 <g id="module~~graph~~ModuleGraph_node7" class="node">
 <title>module~xy_coordinates</title>
-<g id="a_module~~graph~~ModuleGraph_node7"><a xlink:href=".././module/xy_coordinates.html" xlink:title="xy_coordinates">
+<g id="a_module~~graph~~ModuleGraph_node7"><a xlink:href="../module/xy_coordinates.html" xlink:title="xy_coordinates">
 <polygon fill="#337ab7" stroke="#337ab7" points="328,-225.69 235,-225.69 235,-201.69 328,-201.69 328,-225.69"/>
 <text text-anchor="middle" x="281.5" y="-211.29" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates</text>
 </a>
@@ -229,7 +239,7 @@
 <!-- module~xy_neighbors -->
 <g id="module~~graph~~ModuleGraph_node8" class="node">
 <title>module~xy_neighbors</title>
-<g id="a_module~~graph~~ModuleGraph_node8"><a xlink:href=".././module/xy_neighbors.html" xlink:title="xy_neighbors">
+<g id="a_module~~graph~~ModuleGraph_node8"><a xlink:href="../module/xy_neighbors.html" xlink:title="xy_neighbors">
 <polygon fill="#337ab7" stroke="#337ab7" points="453,-147.69 370,-147.69 370,-123.69 453,-123.69 453,-147.69"/>
 <text text-anchor="middle" x="411.5" y="-133.29" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_neighbors</text>
 </a>
@@ -268,7 +278,7 @@
 <!-- module~honeytools -->
 <g id="module~~graph~~ModuleGraph_node6" class="node">
 <title>module~honeytools</title>
-<g id="a_module~~graph~~ModuleGraph_node6"><a xlink:href=".././module/honeytools.html" xlink:title="honeytools">
+<g id="a_module~~graph~~ModuleGraph_node6"><a xlink:href="../module/honeytools.html" xlink:title="honeytools">
 <polygon fill="#337ab7" stroke="#337ab7" points="564,-263.69 493,-263.69 493,-239.69 564,-239.69 564,-263.69"/>
 <text text-anchor="middle" x="528.5" y="-249.29" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeytools</text>
 </a>
@@ -354,17 +364,17 @@
 </g>
 </g>
 </svg>
-</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
-          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#ModuleGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="ModuleGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -430,12 +440,12 @@ modules which it uses.
     </div> <!-- /container -->
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2023 
+        <div class="row justify-content-between">
+          <div class="col"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2024 
 </p>
           </div>
-          <div class="col-xs-6 col-md-6">
-            <p class="text-right">
+          <div class="col">
+            <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
             </p>
@@ -445,17 +455,12 @@ modules which it uses.
       </div> <!-- /container -->
     </footer>
 
-    <!-- Bootstrap core JavaScript
-         ================================================== -->
-         <!-- Placed at the end of the document so the pages load faster -->
-    <!--
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        -->
-        <script src="../js/bootstrap.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
 
-        <!-- MathJax JavaScript
+    <!-- MathJax JavaScript
              ================================================== -->
              <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/x-mathjax-config">

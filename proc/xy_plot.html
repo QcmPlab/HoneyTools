@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,77 +12,53 @@
 
     <title>xy_plot &ndash; HoneyTools</title>
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-         <script src="../js/jquery-2.1.3.min.js"></script>
-         <script src="../js/svg-pan-zoom.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
           <a class="navbar-brand" href="../index.html">HoneyTools </a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
-              <a href="#" class="dropdown-toggle"
-                 data-toggle="dropdown" role="button"
-                 aria-haspopup="true"
-                 aria-expanded="false">
-                 Contents <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                    <li><a href="../lists/files.html">Source Files</a></li>
-                  <li><a href="../lists/modules.html">Modules</a></li>
-                  <li><a href="../lists/procedures.html">Procedures</a></li>
-                  <li><a href="../lists/types.html">Derived Types</a></li>
-              </ul>
-            </li>
-                <li class="visible-xs hidden-sm visible-lg">
-                  <a href="../lists/files.html">Source Files</a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
                 </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/modules.html">Modules</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/procedures.html">Procedures</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/types.html">Derived Types</a>
-              </li>
-          </ul>
-            <form action="../search.html" class="navbar-form navbar-right" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
               </div>
-              <!--
-                  <button type="submit" class="btn btn-default">Submit</button>
-                  -->
-            </form>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
 
     <div class="container">
   <div class="row">
@@ -88,33 +66,37 @@
       <small>Subroutine</small>
       
     </h1>
-      <div class="row" id="info-bar">
-    <div class="col-lg-12">
-      <div class="well well-sm">
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
 
-          <li id="statements"><i class="fa fa-list-ol"></i>
-            <a data-toggle="tooltip"
-               data-placement="bottom" data-html="true"
-               title="12.5% of total for procedures.">102 statements</a>
-          </li>
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip"
+                 data-bs-placement="bottom" data-html="true"
+                 title="12.5% of total for procedures.">102 statements</a>
+            </li>
 
-            <li id="source-file">
+            <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
               <a href="../src/honeyplots.f90"> Source File</a>
             </li>
         </ul>
-        <ol class="breadcrumb in-well text-right">
-              <li><a href='../sourcefile/honeyplots.f90.html'>honeyplots.f90</a></li>
-              <li><a href='../module/honeyplots.html'>honeyplots</a></li>
-          <li class="active">xy_plot</li>
-        </ol>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/honeyplots.f90.html'>honeyplots.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/honeyplots.html'>honeyplots</a></li>
+            <li class="breadcrumb-item active" aria-current="page">xy_plot</li>
+          </ol>
+        </nav>
       </div>
     </div>
   </div>
   <script>
     $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-bs-toggle="tooltip"]').tooltip()
     })
   </script>
 
@@ -143,8 +125,9 @@
   
   
   
-    <div class="panel panel-primary">
-      <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
       <div class="list-group">
         <a class="list-group-item" href="../proc/xy_plot.html#src">xy_plot</a>
       </div>
@@ -196,16 +179,16 @@ very useful for HPC workflows.</p>
         <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-lattice~4"></span>
+              <span class="anchor" id="variable-lattice~5"></span>
               type(<a href='../type/xy_lattice.html'>xy_lattice</a>),
             </td>
 <td>intent(in)</td>
@@ -220,7 +203,7 @@ very useful for HPC workflows.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nn_mask~3"></span>
+              <span class="anchor" id="variable-nn_mask"></span>
               logical,
             </td>
 <td>intent(in),</td>
@@ -235,7 +218,7 @@ very useful for HPC workflows.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nnn_mask~2"></span>
+              <span class="anchor" id="variable-nnn_mask"></span>
               logical,
             </td>
 <td>intent(in),</td>
@@ -312,345 +295,164 @@ very useful for HPC workflows.</p>
   </table>
 
     <br>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Calls</h3>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
       </div>
-      <div class="panel-body">
+      <div class="card-body">
   <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~xy_plot~~CallsGraph Pages: 1 -->
-<svg id="procxy_plotCallsGraph" width="641pt" height="290pt"
- viewBox="0.00 0.00 641.00 289.54" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~xy_plot~~CallsGraph" class="graph" transform="scale(1.57 1.57) rotate(0) translate(4 450.87)">
+<svg id="procxy_plotCallsGraph" width="335pt" height="410pt"
+ viewBox="0.00 0.00 335.00 410.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~xy_plot~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 406)">
 <title>proc~~xy_plot~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-450.87 1003,-450.87 1003,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-406 331,-406 331,4 -4,4"/>
 <!-- proc~xy_plot -->
 <g id="proc~~xy_plot~~CallsGraph_node1" class="node">
 <title>proc~xy_plot</title>
-<polygon fill="none" stroke="black" points="116,-245 0,-245 0,-221 116,-221 116,-245"/>
-<text text-anchor="middle" x="58" y="-230.6" font-family="Helvetica,sans-Serif" font-size="10.50">honeyplots::xy_plot</text>
+<polygon fill="none" stroke="black" points="116,-213 0,-213 0,-189 116,-189 116,-213"/>
+<text text-anchor="middle" x="58" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50">honeyplots::xy_plot</text>
 </g>
 <!-- add_plot -->
 <g id="proc~~xy_plot~~CallsGraph_node2" class="node">
 <title>add_plot</title>
-<polygon fill="#777777" stroke="#777777" points="631.5,-440 573.5,-440 573.5,-416 631.5,-416 631.5,-440"/>
-<text text-anchor="middle" x="602.5" y="-425.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">add_plot</text>
+<polygon fill="#777777" stroke="#777777" points="268.5,-402 210.5,-402 210.5,-378 268.5,-378 268.5,-402"/>
+<text text-anchor="middle" x="239.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">add_plot</text>
 </g>
 <!-- proc~xy_plot&#45;&gt;add_plot -->
 <g id="proc~~xy_plot~~CallsGraph_edge1" class="edge">
 <title>proc~xy_plot&#45;&gt;add_plot</title>
-<path fill="none" stroke="#000000" d="M62.52,-245.43C71.68,-275.17 99.25,-350.48 152,-384 283.38,-467.47 481.29,-447.95 563.55,-434.97"/>
-<polygon fill="#000000" stroke="#000000" points="564.15,-438.42 573.46,-433.35 563.02,-431.51 564.15,-438.42"/>
+<path fill="none" stroke="#000000" d="M62.13,-213.41C70.71,-244.75 97.66,-327.55 152,-369 165.71,-379.46 183.89,-384.79 200.05,-387.47"/>
+<polygon fill="#000000" stroke="#000000" points="199.93,-390.99 210.31,-388.89 200.88,-384.06 199.93,-390.99"/>
 </g>
 <!-- filename -->
 <g id="proc~~xy_plot~~CallsGraph_node3" class="node">
 <title>filename</title>
-<polygon fill="#777777" stroke="#777777" points="632.5,-398 572.5,-398 572.5,-374 632.5,-374 632.5,-398"/>
-<text text-anchor="middle" x="602.5" y="-383.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">filename</text>
+<polygon fill="#777777" stroke="#777777" points="269.5,-360 209.5,-360 209.5,-336 269.5,-336 269.5,-360"/>
+<text text-anchor="middle" x="239.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">filename</text>
 </g>
 <!-- proc~xy_plot&#45;&gt;filename -->
 <g id="proc~~xy_plot~~CallsGraph_edge2" class="edge">
 <title>proc~xy_plot&#45;&gt;filename</title>
-<path fill="none" stroke="#000000" d="M64.86,-245.25C77.16,-269.42 108.18,-322.88 152,-346 288.25,-417.88 480.39,-402.94 562.17,-392.14"/>
-<polygon fill="#000000" stroke="#000000" points="562.85,-395.58 572.28,-390.75 561.89,-388.65 562.85,-395.58"/>
+<path fill="none" stroke="#000000" d="M64.43,-213.27C76.37,-238.72 107.39,-297.35 152,-327 165.94,-336.26 183.56,-341.45 199.26,-344.34"/>
+<polygon fill="#000000" stroke="#000000" points="198.81,-347.82 209.23,-345.94 199.91,-340.9 198.81,-347.82"/>
 </g>
 <!-- initialize -->
 <g id="proc~~xy_plot~~CallsGraph_node4" class="node">
 <title>initialize</title>
-<polygon fill="#777777" stroke="#777777" points="631,-356 574,-356 574,-332 631,-332 631,-356"/>
-<text text-anchor="middle" x="602.5" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">initialize</text>
+<polygon fill="#777777" stroke="#777777" points="268,-318 211,-318 211,-294 268,-294 268,-318"/>
+<text text-anchor="middle" x="239.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">initialize</text>
 </g>
 <!-- proc~xy_plot&#45;&gt;initialize -->
 <g id="proc~~xy_plot~~CallsGraph_edge3" class="edge">
 <title>proc~xy_plot&#45;&gt;initialize</title>
-<path fill="none" stroke="#000000" d="M68.58,-245.19C83.92,-263.68 115.95,-298.2 152,-313 294.66,-371.58 484.18,-358.32 563.77,-349.13"/>
-<polygon fill="#000000" stroke="#000000" points="564.3,-352.59 573.82,-347.92 563.47,-345.64 564.3,-352.59"/>
-</g>
-<!-- interface~plot -->
-<g id="proc~~xy_plot~~CallsGraph_node5" class="node">
-<title>interface~plot</title>
-<g id="a_proc~~xy_plot~~CallsGraph_node5"><a xlink:href=".././interface/plot.html" xlink:title="honeyplots::plot">
-<polygon fill="#a7506f" stroke="#a7506f" points="289,-304 190,-304 190,-280 289,-280 289,-304"/>
-<text text-anchor="middle" x="239.5" y="-289.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeyplots::plot</text>
-</a>
-</g>
-</g>
-<!-- proc~xy_plot&#45;&gt;interface~plot -->
-<g id="proc~~xy_plot~~CallsGraph_edge4" class="edge">
-<title>proc~xy_plot&#45;&gt;interface~plot</title>
-<path fill="none" stroke="#000000" d="M116.4,-245.05C128.14,-248.99 140.44,-253.21 152,-257 171.68,-263.45 194.08,-270.16 211.15,-276.39"/>
-<polygon fill="#000000" stroke="#000000" points="209.94,-279.67 220.53,-279.99 212.45,-273.14 209.94,-279.67"/>
+<path fill="none" stroke="#000000" d="M68.79,-213.06C84.4,-231.46 116.8,-266.39 152,-285 167.02,-292.94 185.09,-297.93 200.82,-301.05"/>
+<polygon fill="#000000" stroke="#000000" points="200.3,-304.51 210.76,-302.83 201.54,-297.62 200.3,-304.51"/>
 </g>
 <!-- options -->
-<g id="proc~~xy_plot~~CallsGraph_node6" class="node">
+<g id="proc~~xy_plot~~CallsGraph_node5" class="node">
 <title>options</title>
-<polygon fill="#777777" stroke="#777777" points="629.5,-272 575.5,-272 575.5,-248 629.5,-248 629.5,-272"/>
-<text text-anchor="middle" x="602.5" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">options</text>
+<polygon fill="#777777" stroke="#777777" points="266.5,-276 212.5,-276 212.5,-252 266.5,-252 266.5,-276"/>
+<text text-anchor="middle" x="239.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">options</text>
 </g>
 <!-- proc~xy_plot&#45;&gt;options -->
-<g id="proc~~xy_plot~~CallsGraph_edge5" class="edge">
+<g id="proc~~xy_plot~~CallsGraph_edge4" class="edge">
 <title>proc~xy_plot&#45;&gt;options</title>
-<path fill="none" stroke="#000000" d="M116.05,-236.11C127.93,-236.75 140.37,-237.4 152,-238 305.52,-245.88 488.57,-254.64 565.08,-258.28"/>
-<polygon fill="#000000" stroke="#000000" points="565,-261.78 575.15,-258.75 565.33,-254.78 565,-261.78"/>
+<path fill="none" stroke="#000000" d="M82.59,-213.13C101.1,-222.28 127.71,-234.65 152,-243 168.3,-248.61 186.82,-253.31 202.53,-256.84"/>
+<polygon fill="#000000" stroke="#000000" points="201.89,-260.28 212.4,-258.99 203.37,-253.44 201.89,-260.28"/>
+</g>
+<!-- plot -->
+<g id="proc~~xy_plot~~CallsGraph_node6" class="node">
+<title>plot</title>
+<polygon fill="#777777" stroke="#777777" points="266.5,-234 212.5,-234 212.5,-210 266.5,-210 266.5,-234"/>
+<text text-anchor="middle" x="239.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">plot</text>
+</g>
+<!-- proc~xy_plot&#45;&gt;plot -->
+<g id="proc~~xy_plot~~CallsGraph_edge5" class="edge">
+<title>proc~xy_plot&#45;&gt;plot</title>
+<path fill="none" stroke="#000000" d="M116.29,-207.7C144.48,-211 177.61,-214.88 202.25,-217.76"/>
+<polygon fill="#000000" stroke="#000000" points="201.92,-221.24 212.26,-218.93 202.73,-214.29 201.92,-221.24"/>
 </g>
 <!-- proc~get_sublattice -->
 <g id="proc~~xy_plot~~CallsGraph_node7" class="node">
 <title>proc~get_sublattice</title>
-<g id="a_proc~~xy_plot~~CallsGraph_node7"><a xlink:href=".././proc/get_sublattice.html" xlink:title="xy_coordinates::get_sublattice">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="327,-24 152,-24 152,0 327,0 327,-24"/>
-<text text-anchor="middle" x="239.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::get_sublattice</text>
+<g id="a_proc~~xy_plot~~CallsGraph_node7"><a xlink:href="../proc/get_sublattice.html" xlink:title="xy_coordinates::get_sublattice">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="327,-192 152,-192 152,-168 327,-168 327,-192"/>
+<text text-anchor="middle" x="239.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::get_sublattice</text>
 </a>
 </g>
 </g>
 <!-- proc~xy_plot&#45;&gt;proc~get_sublattice -->
 <g id="proc~~xy_plot~~CallsGraph_edge6" class="edge">
 <title>proc~xy_plot&#45;&gt;proc~get_sublattice</title>
-<path fill="none" stroke="#000000" d="M61.24,-220.86C68.16,-186.71 92.49,-89.03 152,-38 156.24,-34.36 160.98,-31.24 165.99,-28.54"/>
-<polygon fill="#000000" stroke="#000000" points="167.71,-31.6 175.25,-24.16 164.72,-25.27 167.71,-31.6"/>
+<path fill="none" stroke="#000000" d="M116.29,-194.3C124.56,-193.33 133.26,-192.31 142.05,-191.28"/>
+<polygon fill="#000000" stroke="#000000" points="142.46,-194.76 151.99,-190.12 141.65,-187.81 142.46,-194.76"/>
 </g>
 <!-- savefig -->
 <g id="proc~~xy_plot~~CallsGraph_node8" class="node">
 <title>savefig</title>
-<polygon fill="#777777" stroke="#777777" points="629.5,-230 575.5,-230 575.5,-206 629.5,-206 629.5,-230"/>
-<text text-anchor="middle" x="602.5" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">savefig</text>
+<polygon fill="#777777" stroke="#777777" points="266.5,-150 212.5,-150 212.5,-126 266.5,-126 266.5,-150"/>
+<text text-anchor="middle" x="239.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">savefig</text>
 </g>
 <!-- proc~xy_plot&#45;&gt;savefig -->
 <g id="proc~~xy_plot~~CallsGraph_edge7" class="edge">
 <title>proc~xy_plot&#45;&gt;savefig</title>
-<path fill="none" stroke="#000000" d="M116.03,-231.42C227.77,-228.33 472.66,-221.56 565.15,-219"/>
-<polygon fill="#000000" stroke="#000000" points="565.51,-222.5 575.41,-218.72 565.31,-215.5 565.51,-222.5"/>
+<path fill="none" stroke="#000000" d="M82.59,-188.87C101.1,-179.72 127.71,-167.35 152,-159 168.3,-153.39 186.82,-148.69 202.53,-145.16"/>
+<polygon fill="#000000" stroke="#000000" points="203.37,-148.56 212.4,-143.01 201.89,-141.72 203.37,-148.56"/>
 </g>
 <!-- showfig -->
 <g id="proc~~xy_plot~~CallsGraph_node9" class="node">
 <title>showfig</title>
-<polygon fill="#777777" stroke="#777777" points="629.5,-188 575.5,-188 575.5,-164 629.5,-164 629.5,-188"/>
-<text text-anchor="middle" x="602.5" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">showfig</text>
+<polygon fill="#777777" stroke="#777777" points="266.5,-108 212.5,-108 212.5,-84 266.5,-84 266.5,-108"/>
+<text text-anchor="middle" x="239.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">showfig</text>
 </g>
 <!-- proc~xy_plot&#45;&gt;showfig -->
 <g id="proc~~xy_plot~~CallsGraph_edge8" class="edge">
 <title>proc~xy_plot&#45;&gt;showfig</title>
-<path fill="none" stroke="#000000" d="M116.02,-225.38C127.9,-223.87 140.35,-222.33 152,-221 305.3,-203.44 488.47,-186.29 565.04,-179.29"/>
-<polygon fill="#000000" stroke="#000000" points="565.49,-182.77 575.13,-178.38 564.85,-175.8 565.49,-182.77"/>
-</g>
-<!-- site -->
-<g id="proc~~xy_plot~~CallsGraph_node10" class="node">
-<title>site</title>
-<polygon fill="#777777" stroke="#777777" points="841,-168 787,-168 787,-144 841,-144 841,-168"/>
-<text text-anchor="middle" x="814" y="-153.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">site</text>
-</g>
-<!-- proc~xy_plot&#45;&gt;site -->
-<g id="proc~~xy_plot~~CallsGraph_edge9" class="edge">
-<title>proc~xy_plot&#45;&gt;site</title>
-<path fill="none" stroke="#000000" d="M63.75,-220.91C74.75,-194.7 104.71,-132.86 152,-106 254.83,-47.6 569.67,-37.24 683,-71 726.23,-83.88 768.47,-116.22 792.56,-137.09"/>
-<polygon fill="#000000" stroke="#000000" points="790.49,-139.93 800.29,-143.94 795.13,-134.69 790.49,-139.93"/>
+<path fill="none" stroke="#000000" d="M68.79,-188.94C84.4,-170.54 116.8,-135.61 152,-117 167.47,-108.82 186.17,-103.77 202.22,-100.68"/>
+<polygon fill="#000000" stroke="#000000" points="203.07,-104.08 212.32,-98.92 201.87,-97.19 203.07,-104.08"/>
 </g>
 <!-- xlabel -->
-<g id="proc~~xy_plot~~CallsGraph_node11" class="node">
+<g id="proc~~xy_plot~~CallsGraph_node10" class="node">
 <title>xlabel</title>
-<polygon fill="#777777" stroke="#777777" points="629.5,-146 575.5,-146 575.5,-122 629.5,-122 629.5,-146"/>
-<text text-anchor="middle" x="602.5" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xlabel</text>
+<polygon fill="#777777" stroke="#777777" points="266.5,-66 212.5,-66 212.5,-42 266.5,-42 266.5,-66"/>
+<text text-anchor="middle" x="239.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xlabel</text>
 </g>
 <!-- proc~xy_plot&#45;&gt;xlabel -->
-<g id="proc~~xy_plot~~CallsGraph_edge10" class="edge">
+<g id="proc~~xy_plot~~CallsGraph_edge9" class="edge">
 <title>proc~xy_plot&#45;&gt;xlabel</title>
-<path fill="none" stroke="#000000" d="M86.16,-220.98C104.44,-213.33 129.27,-203.82 152,-198 302.6,-159.43 487.94,-142.31 565.11,-136.47"/>
-<polygon fill="#000000" stroke="#000000" points="565.55,-139.95 575.27,-135.72 565.04,-132.97 565.55,-139.95"/>
+<path fill="none" stroke="#000000" d="M64.43,-188.73C76.37,-163.28 107.39,-104.65 152,-75 166.78,-65.18 185.71,-59.94 202.09,-57.15"/>
+<polygon fill="#000000" stroke="#000000" points="203.02,-60.55 212.41,-55.65 202.01,-53.63 203.02,-60.55"/>
 </g>
 <!-- ylabel -->
-<g id="proc~~xy_plot~~CallsGraph_node12" class="node">
+<g id="proc~~xy_plot~~CallsGraph_node11" class="node">
 <title>ylabel</title>
-<polygon fill="#777777" stroke="#777777" points="629.5,-104 575.5,-104 575.5,-80 629.5,-80 629.5,-104"/>
-<text text-anchor="middle" x="602.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ylabel</text>
+<polygon fill="#777777" stroke="#777777" points="266.5,-24 212.5,-24 212.5,0 266.5,0 266.5,-24"/>
+<text text-anchor="middle" x="239.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ylabel</text>
 </g>
 <!-- proc~xy_plot&#45;&gt;ylabel -->
-<g id="proc~~xy_plot~~CallsGraph_edge11" class="edge">
+<g id="proc~~xy_plot~~CallsGraph_edge10" class="edge">
 <title>proc~xy_plot&#45;&gt;ylabel</title>
-<path fill="none" stroke="#000000" d="M69.99,-220.94C86.16,-204.04 118.13,-173.72 152,-159 295.4,-96.67 486.16,-90.69 565.01,-91.17"/>
-<polygon fill="#000000" stroke="#000000" points="565.34,-94.67 575.38,-91.28 565.42,-87.67 565.34,-94.67"/>
-</g>
-<!-- interface~plot&#45;&gt;proc~xy_plot -->
-<g id="proc~~xy_plot~~CallsGraph_edge13" class="edge">
-<title>interface~plot&#45;&gt;proc~xy_plot</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.88,-286.54C177.49,-283.11 164.22,-279 152,-275 128.68,-267.36 102.33,-257.94 83.66,-249.54"/>
-<polygon fill="#000000" stroke="#000000" points="84.92,-246.27 74.39,-245.13 81.91,-252.59 84.92,-246.27"/>
-</g>
-<!-- proc~hex_plot -->
-<g id="proc~~xy_plot~~CallsGraph_node13" class="node">
-<title>proc~hex_plot</title>
-<g id="a_proc~~xy_plot~~CallsGraph_node13"><a xlink:href=".././proc/hex_plot.html" xlink:title="honeyplots::hex_plot">
-<polygon fill="#d9534f" stroke="#d9534f" points="486,-304 363,-304 363,-280 486,-280 486,-304"/>
-<text text-anchor="middle" x="424.5" y="-289.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeyplots::hex_plot</text>
-</a>
-</g>
-</g>
-<!-- interface~plot&#45;&gt;proc~hex_plot -->
-<g id="proc~~xy_plot~~CallsGraph_edge12" class="edge">
-<title>interface~plot&#45;&gt;proc~hex_plot</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M289.06,-285.96C308.62,-285.26 331.57,-285.08 352.91,-285.41"/>
-<polygon fill="#000000" stroke="#000000" points="352.85,-288.91 362.92,-285.6 352.99,-281.91 352.85,-288.91"/>
-</g>
-<!-- proc~hex_plot&#45;&gt;add_plot -->
-<g id="proc~~xy_plot~~CallsGraph_edge14" class="edge">
-<title>proc~hex_plot&#45;&gt;add_plot</title>
-<path fill="none" stroke="#000000" d="M432.23,-304.2C445.9,-327.84 479.31,-379.91 522,-407 534.29,-414.8 549.41,-419.72 563.15,-422.81"/>
-<polygon fill="#000000" stroke="#000000" points="562.83,-426.32 573.32,-424.84 564.2,-419.45 562.83,-426.32"/>
-</g>
-<!-- proc~hex_plot&#45;&gt;filename -->
-<g id="proc~~xy_plot~~CallsGraph_edge15" class="edge">
-<title>proc~hex_plot&#45;&gt;filename</title>
-<path fill="none" stroke="#000000" d="M438.14,-304.19C455.61,-320.38 488.76,-348.82 522,-365 534.58,-371.12 549.18,-375.64 562.41,-378.87"/>
-<polygon fill="#000000" stroke="#000000" points="561.68,-382.3 572.21,-381.11 563.23,-375.47 561.68,-382.3"/>
-</g>
-<!-- proc~hex_plot&#45;&gt;initialize -->
-<g id="proc~~xy_plot~~CallsGraph_edge16" class="edge">
-<title>proc~hex_plot&#45;&gt;initialize</title>
-<path fill="none" stroke="#000000" d="M461.56,-304.08C479.64,-310.01 501.9,-317.12 522,-323 535.65,-326.99 550.71,-331.06 564.02,-334.53"/>
-<polygon fill="#000000" stroke="#000000" points="563.25,-337.95 573.81,-337.07 565,-331.17 563.25,-337.95"/>
-</g>
-<!-- proc~hex_plot&#45;&gt;interface~plot -->
-<g id="proc~~xy_plot~~CallsGraph_edge17" class="edge">
-<title>proc~hex_plot&#45;&gt;interface~plot</title>
-<path fill="none" stroke="#000000" d="M362.92,-298.4C342.39,-298.88 319.52,-298.87 299.15,-298.35"/>
-<polygon fill="#000000" stroke="#000000" points="299.16,-294.85 289.06,-298.04 298.95,-301.84 299.16,-294.85"/>
-</g>
-<!-- proc~hex_plot&#45;&gt;options -->
-<g id="proc~~xy_plot~~CallsGraph_edge18" class="edge">
-<title>proc~hex_plot&#45;&gt;options</title>
-<path fill="none" stroke="#000000" d="M486.07,-280.99C512.46,-276.19 542.5,-270.73 565.32,-266.58"/>
-<polygon fill="#000000" stroke="#000000" points="566.04,-270 575.26,-264.77 564.79,-263.12 566.04,-270"/>
-</g>
-<!-- proc~hex_plot&#45;&gt;savefig -->
-<g id="proc~~xy_plot~~CallsGraph_edge20" class="edge">
-<title>proc~hex_plot&#45;&gt;savefig</title>
-<path fill="none" stroke="#000000" d="M444.41,-279.8C463.39,-267.99 493.78,-250.28 522,-239 535.73,-233.51 551.37,-229.03 565.12,-225.63"/>
-<polygon fill="#000000" stroke="#000000" points="566.28,-228.95 575.21,-223.25 564.67,-222.14 566.28,-228.95"/>
-</g>
-<!-- proc~hex_plot&#45;&gt;showfig -->
-<g id="proc~~xy_plot~~CallsGraph_edge21" class="edge">
-<title>proc~hex_plot&#45;&gt;showfig</title>
-<path fill="none" stroke="#000000" d="M434.43,-279.76C449.92,-259.42 483.8,-218.76 522,-197 535.17,-189.49 551.1,-184.6 565.23,-181.45"/>
-<polygon fill="#000000" stroke="#000000" points="566.03,-184.85 575.14,-179.44 564.64,-177.99 566.03,-184.85"/>
-</g>
-<!-- proc~hex_plot&#45;&gt;xlabel -->
-<g id="proc~~xy_plot~~CallsGraph_edge22" class="edge">
-<title>proc~hex_plot&#45;&gt;xlabel</title>
-<path fill="none" stroke="#000000" d="M430.48,-279.97C442.2,-253.15 474.23,-188.22 522,-155 534.64,-146.21 550.73,-141.1 565.13,-138.13"/>
-<polygon fill="#000000" stroke="#000000" points="566.02,-141.53 575.24,-136.32 564.78,-134.64 566.02,-141.53"/>
-</g>
-<!-- proc~hex_plot&#45;&gt;ylabel -->
-<g id="proc~~xy_plot~~CallsGraph_edge23" class="edge">
-<title>proc~hex_plot&#45;&gt;ylabel</title>
-<path fill="none" stroke="#000000" d="M428.44,-279.81C436.93,-247.35 464.6,-158.23 522,-113 534.18,-103.4 550.34,-98.17 564.91,-95.32"/>
-<polygon fill="#000000" stroke="#000000" points="565.85,-98.72 575.15,-93.65 564.72,-91.81 565.85,-98.72"/>
-</g>
-<!-- proc~hex2corner -->
-<g id="proc~~xy_plot~~CallsGraph_node14" class="node">
-<title>proc~hex2corner</title>
-<g id="a_proc~~xy_plot~~CallsGraph_node14"><a xlink:href=".././proc/hex2corner.html" xlink:title="xy_coordinates::hex2corner">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="683,-314 522,-314 522,-290 683,-290 683,-314"/>
-<text text-anchor="middle" x="602.5" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2corner</text>
-</a>
-</g>
-</g>
-<!-- proc~hex_plot&#45;&gt;proc~hex2corner -->
-<g id="proc~~xy_plot~~CallsGraph_edge19" class="edge">
-<title>proc~hex_plot&#45;&gt;proc~hex2corner</title>
-<path fill="none" stroke="#000000" d="M486.07,-295.44C494.36,-295.91 503.01,-296.4 511.69,-296.9"/>
-<polygon fill="#000000" stroke="#000000" points="511.68,-300.4 521.86,-297.47 512.07,-293.41 511.68,-300.4"/>
-</g>
-<!-- proc~hex2corner&#45;&gt;site -->
-<g id="proc~~xy_plot~~CallsGraph_edge26" class="edge">
-<title>proc~hex2corner&#45;&gt;site</title>
-<path fill="none" stroke="#000000" d="M663,-289.88C669.95,-287.43 676.78,-284.5 683,-281 731.52,-253.73 775.34,-204.06 797.59,-176.25"/>
-<polygon fill="#000000" stroke="#000000" points="800.61,-178.07 804.04,-168.04 795.11,-173.74 800.61,-178.07"/>
-</g>
-<!-- proc~hex2center -->
-<g id="proc~~xy_plot~~CallsGraph_node15" class="node">
-<title>proc~hex2center</title>
-<g id="a_proc~~xy_plot~~CallsGraph_node15"><a xlink:href=".././proc/hex2center.html" xlink:title="xy_coordinates::hex2center">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="894,-293 734,-293 734,-269 894,-269 894,-293"/>
-<text text-anchor="middle" x="814" y="-278.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::hex2center</text>
-</a>
-</g>
-</g>
-<!-- proc~hex2corner&#45;&gt;proc~hex2center -->
-<g id="proc~~xy_plot~~CallsGraph_edge24" class="edge">
-<title>proc~hex2corner&#45;&gt;proc~hex2center</title>
-<path fill="none" stroke="#000000" d="M683,-294.03C696.28,-292.7 710.14,-291.31 723.65,-289.96"/>
-<polygon fill="#000000" stroke="#000000" points="724.3,-293.41 733.9,-288.93 723.6,-286.44 724.3,-293.41"/>
-</g>
-<!-- proc~ith_corner_offset -->
-<g id="proc~~xy_plot~~CallsGraph_node16" class="node">
-<title>proc~ith_corner_offset</title>
-<g id="a_proc~~xy_plot~~CallsGraph_node16"><a xlink:href=".././proc/ith_corner_offset.html" xlink:title="xy_coordinates::ith_corner_offset">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="909,-335 719,-335 719,-311 909,-311 909,-335"/>
-<text text-anchor="middle" x="814" y="-320.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xy_coordinates::ith_corner_offset</text>
-</a>
-</g>
-</g>
-<!-- proc~hex2corner&#45;&gt;proc~ith_corner_offset -->
-<g id="proc~~xy_plot~~CallsGraph_edge25" class="edge">
-<title>proc~hex2corner&#45;&gt;proc~ith_corner_offset</title>
-<path fill="none" stroke="#000000" d="M683,-309.97C691.4,-310.81 700.04,-311.68 708.67,-312.54"/>
-<polygon fill="#000000" stroke="#000000" points="708.48,-316.04 718.78,-313.56 709.18,-309.08 708.48,-316.04"/>
-</g>
-<!-- origin -->
-<g id="proc~~xy_plot~~CallsGraph_node17" class="node">
-<title>origin</title>
-<polygon fill="#777777" stroke="#777777" points="999,-335 945,-335 945,-311 999,-311 999,-335"/>
-<text text-anchor="middle" x="972" y="-320.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">origin</text>
-</g>
-<!-- proc~hex2center&#45;&gt;origin -->
-<g id="proc~~xy_plot~~CallsGraph_edge27" class="edge">
-<title>proc~hex2center&#45;&gt;origin</title>
-<path fill="none" stroke="#000000" d="M873.41,-293.03C885.25,-295.76 897.57,-298.8 909,-302 917.57,-304.4 926.71,-307.3 935.25,-310.17"/>
-<polygon fill="#000000" stroke="#000000" points="934.35,-313.56 944.95,-313.49 936.62,-306.94 934.35,-313.56"/>
-</g>
-<!-- uq -->
-<g id="proc~~xy_plot~~CallsGraph_node18" class="node">
-<title>uq</title>
-<polygon fill="#777777" stroke="#777777" points="999,-293 945,-293 945,-269 999,-269 999,-293"/>
-<text text-anchor="middle" x="972" y="-278.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">uq</text>
-</g>
-<!-- proc~hex2center&#45;&gt;uq -->
-<g id="proc~~xy_plot~~CallsGraph_edge28" class="edge">
-<title>proc~hex2center&#45;&gt;uq</title>
-<path fill="none" stroke="#000000" d="M894.37,-281C908.46,-281 922.49,-281 934.62,-281"/>
-<polygon fill="#000000" stroke="#000000" points="934.74,-284.5 944.74,-281 934.74,-277.5 934.74,-284.5"/>
-</g>
-<!-- ur -->
-<g id="proc~~xy_plot~~CallsGraph_node19" class="node">
-<title>ur</title>
-<polygon fill="#777777" stroke="#777777" points="999,-251 945,-251 945,-227 999,-227 999,-251"/>
-<text text-anchor="middle" x="972" y="-236.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ur</text>
-</g>
-<!-- proc~hex2center&#45;&gt;ur -->
-<g id="proc~~xy_plot~~CallsGraph_edge29" class="edge">
-<title>proc~hex2center&#45;&gt;ur</title>
-<path fill="none" stroke="#000000" d="M859.7,-268.96C883.59,-262.53 912.62,-254.72 935.03,-248.68"/>
-<polygon fill="#000000" stroke="#000000" points="936.08,-252.03 944.83,-246.05 934.26,-245.27 936.08,-252.03"/>
+<path fill="none" stroke="#000000" d="M62.13,-188.59C70.71,-157.25 97.66,-74.45 152,-33 166.35,-22.06 185.6,-16.73 202.3,-14.17"/>
+<polygon fill="#000000" stroke="#000000" points="202.82,-17.63 212.3,-12.9 201.94,-10.68 202.82,-17.63"/>
 </g>
 </g>
 </svg>
-</div>                <script>
-                  var panprocxy_plotCallsGraph = svgPanZoom('#procxy_plotCallsGraph',
-                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
-                  );
-                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
-          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -658,11 +460,11 @@ very useful for HPC workflows.</p>
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: Graph Key Pages: 1 -->
-<svg width="597pt" height="32pt"
- viewBox="0.00 0.00 596.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
 <title>Graph Key</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 592.5,-28 592.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
 <!-- Subroutine -->
 <g id="node1" class="node">
 <title>Subroutine</title>
@@ -681,23 +483,29 @@ very useful for HPC workflows.</p>
 <polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
 <text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
 </g>
-<!-- Unknown Procedure Type -->
+<!-- Type Bound Procedure -->
 <g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
 <title>Unknown Procedure Type</title>
-<polygon fill="#777777" stroke="#777777" points="388.5,-24 243.5,-24 243.5,0 388.5,0 388.5,-24"/>
-<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
 </g>
 <!-- Program -->
-<g id="node5" class="node">
+<g id="node6" class="node">
 <title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="465,-24 407,-24 407,0 465,0 465,-24"/>
-<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
 </g>
 <!-- This Page&#39;s Entity -->
-<g id="node6" class="node">
+<g id="node7" class="node">
 <title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="black" points="588.5,-24 483.5,-24 483.5,0 588.5,0 588.5,-24"/>
-<text text-anchor="middle" x="536" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
 </g>
 </g>
 </svg>
@@ -713,83 +521,56 @@ implementation in a submodule of an interface in a parent module.
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Called by</h3>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
       </div>
-      <div class="panel-body">
+      <div class="card-body">
   <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~xy_plot~~CalledByGraph Pages: 1 -->
-<svg id="procxy_plotCalledByGraph" width="418pt" height="32pt"
- viewBox="0.00 0.00 418.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="procxy_plotCalledByGraph" width="259pt" height="32pt"
+ viewBox="0.00 0.00 259.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="proc~~xy_plot~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>proc~~xy_plot~~CalledByGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 414,-28 414,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 255,-28 255,4 -4,4"/>
 <!-- proc~xy_plot -->
 <g id="proc~~xy_plot~~CalledByGraph_node1" class="node">
 <title>proc~xy_plot</title>
-<polygon fill="none" stroke="black" points="116,-24 0,-24 0,0 116,0 116,-24"/>
-<text text-anchor="middle" x="58" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">honeyplots::xy_plot</text>
+<polygon fill="none" stroke="black" points="251,-24 135,-24 135,0 251,0 251,-24"/>
+<text text-anchor="middle" x="193" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">honeyplots::xy_plot</text>
 </g>
 <!-- interface~plot -->
 <g id="proc~~xy_plot~~CalledByGraph_node2" class="node">
 <title>interface~plot</title>
-<g id="a_proc~~xy_plot~~CalledByGraph_node2"><a xlink:href=".././interface/plot.html" xlink:title="honeyplots::plot">
-<polygon fill="#a7506f" stroke="#a7506f" points="251,-24 152,-24 152,0 251,0 251,-24"/>
-<text text-anchor="middle" x="201.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeyplots::plot</text>
+<g id="a_proc~~xy_plot~~CalledByGraph_node2"><a xlink:href="../interface/plot.html" xlink:title="honeyplots::plot">
+<polygon fill="#a7506f" stroke="#a7506f" points="99,-24 0,-24 0,0 99,0 99,-24"/>
+<text text-anchor="middle" x="49.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeyplots::plot</text>
 </a>
 </g>
-</g>
-<!-- proc~xy_plot&#45;&gt;interface~plot -->
-<g id="proc~~xy_plot~~CalledByGraph_edge3" class="edge">
-<title>proc~xy_plot&#45;&gt;interface~plot</title>
-<path fill="none" stroke="#000000" d="M116.15,-5.36C124.54,-5.22 133.21,-5.21 141.64,-5.34"/>
-<polygon fill="#000000" stroke="#000000" points="141.7,-8.84 151.77,-5.55 141.85,-1.84 141.7,-8.84"/>
 </g>
 <!-- interface~plot&#45;&gt;proc~xy_plot -->
 <g id="proc~~xy_plot~~CalledByGraph_edge1" class="edge">
 <title>interface~plot&#45;&gt;proc~xy_plot</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M151.77,-18.45C143.52,-18.68 134.83,-18.78 126.21,-18.74"/>
-<polygon fill="#000000" stroke="#000000" points="126.18,-15.24 116.15,-18.64 126.11,-22.24 126.18,-15.24"/>
-</g>
-<!-- proc~hex_plot -->
-<g id="proc~~xy_plot~~CalledByGraph_node3" class="node">
-<title>proc~hex_plot</title>
-<g id="a_proc~~xy_plot~~CalledByGraph_node3"><a xlink:href=".././proc/hex_plot.html" xlink:title="honeyplots::hex_plot">
-<polygon fill="#d9534f" stroke="#d9534f" points="410,-24 287,-24 287,0 410,0 410,-24"/>
-<text text-anchor="middle" x="348.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">honeyplots::hex_plot</text>
-</a>
-</g>
-</g>
-<!-- interface~plot&#45;&gt;proc~hex_plot -->
-<g id="proc~~xy_plot~~CalledByGraph_edge4" class="edge">
-<title>interface~plot&#45;&gt;proc~hex_plot</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M251.19,-5.58C259.41,-5.35 268.08,-5.23 276.73,-5.25"/>
-<polygon fill="#000000" stroke="#000000" points="276.81,-8.75 286.84,-5.33 276.86,-1.75 276.81,-8.75"/>
-</g>
-<!-- proc~hex_plot&#45;&gt;interface~plot -->
-<g id="proc~~xy_plot~~CalledByGraph_edge2" class="edge">
-<title>proc~hex_plot&#45;&gt;interface~plot</title>
-<path fill="none" stroke="#000000" d="M286.84,-18.67C278.38,-18.79 269.71,-18.78 261.29,-18.64"/>
-<polygon fill="#000000" stroke="#000000" points="261.26,-15.14 251.19,-18.42 261.11,-22.14 261.26,-15.14"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M99.2,-12C107.47,-12 116.19,-12 124.84,-12"/>
+<polygon fill="#000000" stroke="#000000" points="124.93,-15.5 134.93,-12 124.93,-8.5 124.93,-15.5"/>
 </g>
 </g>
 </svg>
-</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
-          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -797,11 +578,11 @@ implementation in a submodule of an interface in a parent module.
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: Graph Key Pages: 1 -->
-<svg width="597pt" height="32pt"
- viewBox="0.00 0.00 596.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
 <title>Graph Key</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 592.5,-28 592.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
 <!-- Subroutine -->
 <g id="node1" class="node">
 <title>Subroutine</title>
@@ -820,23 +601,29 @@ implementation in a submodule of an interface in a parent module.
 <polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
 <text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
 </g>
-<!-- Unknown Procedure Type -->
+<!-- Type Bound Procedure -->
 <g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
 <title>Unknown Procedure Type</title>
-<polygon fill="#777777" stroke="#777777" points="388.5,-24 243.5,-24 243.5,0 388.5,0 388.5,-24"/>
-<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
 </g>
 <!-- Program -->
-<g id="node5" class="node">
+<g id="node6" class="node">
 <title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="465,-24 407,-24 407,0 465,0 465,-24"/>
-<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
 </g>
 <!-- This Page&#39;s Entity -->
-<g id="node6" class="node">
+<g id="node7" class="node">
 <title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="black" points="588.5,-24 483.5,-24 483.5,0 588.5,0 588.5,-24"/>
-<text text-anchor="middle" x="536" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
 </g>
 </g>
 </svg>
@@ -854,50 +641,19 @@ implementation in a submodule of an interface in a parent module.
     </div>
     <br>
 
-    <section class="visible-xs visible-sm hidden-md">
-        <h3>Contents</h3>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    <div class="panel panel-primary">
-      <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
-      <div class="list-group">
-        <a class="list-group-item" href="../proc/xy_plot.html#src">xy_plot</a>
-      </div>
-    </div>
-
-
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
-
 
     
     
 
     
     
+
 
 
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span><span class="w">   </span><span class="k">subroutine </span><span class="n">xy_plot</span><span class="p">(</span><span class="n">lattice</span><span class="p">,</span><span class="n">nn_mask</span><span class="p">,</span><span class="n">nnn_mask</span><span class="p">,</span><span class="n">backend</span><span class="p">,</span><span class="n">figure_name</span><span class="p">,</span><span class="n">script_name</span><span class="p">,</span><span class="n">set_terminal</span><span class="p">)</span><span class="w"></span>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">subroutine </span><span class="n">xy_plot</span><span class="p">(</span><span class="n">lattice</span><span class="p">,</span><span class="n">nn_mask</span><span class="p">,</span><span class="n">nnn_mask</span><span class="p">,</span><span class="n">backend</span><span class="p">,</span><span class="n">figure_name</span><span class="p">,</span><span class="n">script_name</span><span class="p">,</span><span class="n">set_terminal</span><span class="p">)</span>
 <span class="w">      </span><span class="c">!! &gt;&gt;&gt; CURRENTLY GNUPLOT DOES NOT SUPPORT NN AND NNN LINKS, HELP IS WELCOME!</span>
 <span class="w">      </span><span class="c">!! Simple plotter for class(xy_lattice) objects. If optional argument nn_mask</span>
 <span class="w">      </span><span class="c">!! is passed it draws the nearest-neighbor bonds too. Similarly, if optional</span>
@@ -922,132 +678,132 @@ implementation in a submodule of an interface in a parent module.
 <span class="w">      </span><span class="c">!! should be compatible with the &quot;dumb&quot; terminal option, which would direct</span>
 <span class="w">      </span><span class="c">!! the plot to the terminal itself, in the form of ASCII art. This can be</span>
 <span class="w">      </span><span class="c">!! very useful for HPC workflows.</span>
-<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">xy_lattice</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">lattice</span><span class="w"></span>
-<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nn_mask</span><span class="p">(:,:)</span><span class="w"></span>
-<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nnn_mask</span><span class="p">(:,:)</span><span class="w"></span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">xy_lattice</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">lattice</span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nn_mask</span><span class="p">(:,:)</span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nnn_mask</span><span class="p">(:,:)</span>
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">backend</span><span class="w"> </span><span class="c">!! default: &quot;pyplot&quot; (or &quot;gnuplot&quot;)</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">figure_name</span><span class="w"></span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">script_name</span><span class="w"></span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">figure_name</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">script_name</span>
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">set_terminal</span><span class="w"> </span><span class="c">!! relevant to gnuplot backend</span>
-<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">xy_lattice</span><span class="p">)</span><span class="w">                        </span><span class="kd">::</span><span class="w"> </span><span class="n">sublattice</span><span class="w"></span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">engine</span><span class="w"></span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="w">                           </span><span class="kd">::</span><span class="w"> </span><span class="n">source_name</span><span class="w"></span>
-<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="k">allocatable</span><span class="w">                     </span><span class="kd">::</span><span class="w"> </span><span class="n">Ax</span><span class="p">(:),</span><span class="n">Ay</span><span class="p">(:)</span><span class="w"></span>
-<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="k">allocatable</span><span class="w">                     </span><span class="kd">::</span><span class="w"> </span><span class="n">Bx</span><span class="p">(:),</span><span class="n">By</span><span class="p">(:)</span><span class="w"></span>
-<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">                    </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="w"></span>
-<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">pyplot</span><span class="p">)</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">plt</span><span class="w"></span>
-<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">gpf</span><span class="p">)</span><span class="w">                               </span><span class="kd">::</span><span class="w"> </span><span class="n">gnu</span><span class="w"></span>
-<span class="w">      </span><span class="kt">integer</span><span class="w">                                 </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="w"></span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">xy_lattice</span><span class="p">)</span><span class="w">                        </span><span class="kd">::</span><span class="w"> </span><span class="n">sublattice</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">engine</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="w">                           </span><span class="kd">::</span><span class="w"> </span><span class="n">source_name</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="k">allocatable</span><span class="w">                     </span><span class="kd">::</span><span class="w"> </span><span class="n">Ax</span><span class="p">(:),</span><span class="n">Ay</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="k">allocatable</span><span class="w">                     </span><span class="kd">::</span><span class="w"> </span><span class="n">Bx</span><span class="p">(:),</span><span class="n">By</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">                    </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">pyplot</span><span class="p">)</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">plt</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">gpf</span><span class="p">)</span><span class="w">                               </span><span class="kd">::</span><span class="w"> </span><span class="n">gnu</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                                 </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span>
 
-<span class="w">      </span><span class="n">sublattice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_sublattice</span><span class="p">(</span><span class="n">lattice</span><span class="p">,</span><span class="s2">&quot;A&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="n">Ax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sublattice</span><span class="p">%</span><span class="n">site</span><span class="p">%</span><span class="n">x</span><span class="w"></span>
-<span class="w">      </span><span class="n">Ay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sublattice</span><span class="p">%</span><span class="n">site</span><span class="p">%</span><span class="n">y</span><span class="w"></span>
+<span class="w">      </span><span class="n">sublattice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_sublattice</span><span class="p">(</span><span class="n">lattice</span><span class="p">,</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">Ax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sublattice</span><span class="p">%</span><span class="n">site</span><span class="p">%</span><span class="n">x</span>
+<span class="w">      </span><span class="n">Ay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sublattice</span><span class="p">%</span><span class="n">site</span><span class="p">%</span><span class="n">y</span>
 
-<span class="w">      </span><span class="n">sublattice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_sublattice</span><span class="p">(</span><span class="n">lattice</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="n">Bx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sublattice</span><span class="p">%</span><span class="n">site</span><span class="p">%</span><span class="n">x</span><span class="w"></span>
-<span class="w">      </span><span class="n">By</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sublattice</span><span class="p">%</span><span class="n">site</span><span class="p">%</span><span class="n">y</span><span class="w"></span>
+<span class="w">      </span><span class="n">sublattice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_sublattice</span><span class="p">(</span><span class="n">lattice</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">Bx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sublattice</span><span class="p">%</span><span class="n">site</span><span class="p">%</span><span class="n">x</span>
+<span class="w">      </span><span class="n">By</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sublattice</span><span class="p">%</span><span class="n">site</span><span class="p">%</span><span class="n">y</span>
 
 <span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">backend</span><span class="p">))</span><span class="k">then</span>
-<span class="k">         </span><span class="n">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span><span class="w"></span>
+<span class="k">         </span><span class="n">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
 <span class="w">      </span><span class="k">else</span>
-<span class="k">         </span><span class="n">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyplot&quot;</span><span class="w"></span>
+<span class="k">         </span><span class="n">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyplot&quot;</span>
 <span class="w">      </span><span class="k">end if</span>
 
-<span class="k">      select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">engine</span><span class="p">))</span><span class="w"></span>
+<span class="k">      select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">engine</span><span class="p">))</span>
 
-<span class="w">       </span><span class="k">case </span><span class="n">default</span><span class="w"></span>
-<span class="w">         </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;unknown backend: no plot generated&quot;</span><span class="w"></span>
+<span class="w">       </span><span class="k">case </span><span class="n">default</span>
+<span class="w">         </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;unknown backend: no plot generated&quot;</span>
 
-<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;pyplot&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;pyplot&quot;</span><span class="p">)</span>
 
-<span class="w">         </span><span class="k">call </span><span class="n">plt</span><span class="p">%</span><span class="n">initialize</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">axis_equal</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span><span class="w"></span>
+<span class="w">         </span><span class="k">call </span><span class="n">plt</span><span class="p">%</span><span class="n">initialize</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">axis_equal</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
 <span class="w">         </span><span class="c">! Nearest Neighbor Links</span>
 <span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">nn_mask</span><span class="p">))</span><span class="k">then</span>
-<span class="k">            do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">nn_mask</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-<span class="w">               </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">nn_mask</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="k">            do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">nn_mask</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">               </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">nn_mask</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="w">                  </span><span class="k">if</span><span class="p">(</span><span class="n">nn_mask</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span><span class="k">then</span>
-<span class="k">                     </span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">x</span><span class="w"></span>
-<span class="w">                     </span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">j</span><span class="p">)%</span><span class="n">x</span><span class="w"></span>
-<span class="w">                     </span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">y</span><span class="w"></span>
-<span class="w">                     </span><span class="n">y</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">j</span><span class="p">)%</span><span class="n">y</span><span class="w"></span>
-<span class="w">                     </span><span class="k">call </span><span class="n">plt</span><span class="p">%</span><span class="n">add_plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="k">                     </span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">x</span>
+<span class="w">                     </span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">j</span><span class="p">)%</span><span class="n">x</span>
+<span class="w">                     </span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">y</span>
+<span class="w">                     </span><span class="n">y</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">j</span><span class="p">)%</span><span class="n">y</span>
+<span class="w">                     </span><span class="k">call </span><span class="n">plt</span><span class="p">%</span><span class="n">add_plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="w">                  </span><span class="k">endif</span>
 <span class="k">               enddo</span>
 <span class="k">            enddo</span>
-<span class="k">         endif</span><span class="w"></span>
+<span class="k">         endif</span>
 <span class="w">         </span><span class="c">! Next Nearest Neighbors</span>
 <span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">nnn_mask</span><span class="p">))</span><span class="k">then</span>
-<span class="k">            do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">nnn_mask</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-<span class="w">               </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">nnn_mask</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="k">            do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">nnn_mask</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">               </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">nnn_mask</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="w">                  </span><span class="k">if</span><span class="p">(</span><span class="n">nnn_mask</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span><span class="k">then</span>
-<span class="k">                     </span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">x</span><span class="w"></span>
-<span class="w">                     </span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">j</span><span class="p">)%</span><span class="n">x</span><span class="w"></span>
-<span class="w">                     </span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">y</span><span class="w"></span>
-<span class="w">                     </span><span class="n">y</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">j</span><span class="p">)%</span><span class="n">y</span><span class="w"></span>
-<span class="w">                     </span><span class="k">call </span><span class="n">plt</span><span class="p">%</span><span class="n">add_plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="k">                     </span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">x</span>
+<span class="w">                     </span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">j</span><span class="p">)%</span><span class="n">x</span>
+<span class="w">                     </span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">y</span>
+<span class="w">                     </span><span class="n">y</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lattice</span><span class="p">%</span><span class="n">site</span><span class="p">(</span><span class="n">j</span><span class="p">)%</span><span class="n">y</span>
+<span class="w">                     </span><span class="k">call </span><span class="n">plt</span><span class="p">%</span><span class="n">add_plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="w">                  </span><span class="k">endif</span>
 <span class="k">               enddo</span>
 <span class="k">            enddo</span>
-<span class="k">         endif</span><span class="w"></span>
+<span class="k">         endif</span>
 <span class="w">         </span><span class="c">! Sublattice &quot;A&quot;</span>
-<span class="w">         </span><span class="k">call </span><span class="n">plt</span><span class="p">%</span><span class="n">add_plot</span><span class="p">(</span><span class="n">Ax</span><span class="p">,</span><span class="n">Ay</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">call </span><span class="n">plt</span><span class="p">%</span><span class="n">add_plot</span><span class="p">(</span><span class="n">Ax</span><span class="p">,</span><span class="n">Ay</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">FL</span><span class="p">)</span>
 <span class="w">         </span><span class="c">! Sublattice &quot;B</span>
-<span class="w">         </span><span class="k">call </span><span class="n">plt</span><span class="p">%</span><span class="n">add_plot</span><span class="p">(</span><span class="n">Bx</span><span class="p">,</span><span class="n">By</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">call </span><span class="n">plt</span><span class="p">%</span><span class="n">add_plot</span><span class="p">(</span><span class="n">Bx</span><span class="p">,</span><span class="n">By</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">HY</span><span class="p">)</span>
 
 <span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">script_name</span><span class="p">))</span><span class="k">then</span>
-<span class="k">            </span><span class="n">source_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">script_name</span><span class="w"></span>
+<span class="k">            </span><span class="n">source_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">script_name</span>
 <span class="w">         </span><span class="k">else</span>
-<span class="k">            </span><span class="n">source_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hex_plot.py&quot;</span><span class="w"></span>
+<span class="k">            </span><span class="n">source_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;xy_plot.py&quot;</span>
 <span class="w">         </span><span class="k">endif</span>
 
 <span class="k">         if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">figure_name</span><span class="p">))</span><span class="k">then</span>
-<span class="k">            call </span><span class="n">plt</span><span class="p">%</span><span class="n">savefig</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">figure_name</span><span class="p">),</span><span class="w"> </span><span class="n">pyfile</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">source_name</span><span class="p">))</span><span class="w"></span>
-<span class="w">            </span><span class="k">print</span><span class="o">*</span><span class="w"></span>
-<span class="w">            </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&gt; PyPlot figure saved to: &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">figure_name</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="k">print</span><span class="o">*</span><span class="w"></span>
+<span class="k">            call </span><span class="n">plt</span><span class="p">%</span><span class="n">savefig</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">figure_name</span><span class="p">),</span><span class="w"> </span><span class="n">pyfile</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">source_name</span><span class="p">))</span>
+<span class="w">            </span><span class="k">print</span><span class="o">*</span>
+<span class="w">            </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&gt; PyPlot figure saved to: &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">figure_name</span><span class="p">)</span>
+<span class="w">            </span><span class="k">print</span><span class="o">*</span>
 <span class="w">         </span><span class="k">else</span>
-<span class="k">            print</span><span class="o">*</span><span class="w"></span>
-<span class="w">            </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&gt; PyPlot GUI popping up...&quot;</span><span class="w"></span>
-<span class="w">            </span><span class="k">print</span><span class="o">*</span><span class="w"></span>
-<span class="w">            </span><span class="k">call </span><span class="n">plt</span><span class="p">%</span><span class="n">showfig</span><span class="p">(</span><span class="n">pyfile</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">source_name</span><span class="p">))</span><span class="w"></span>
+<span class="k">            print</span><span class="o">*</span>
+<span class="w">            </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&gt; PyPlot GUI popping up...&quot;</span>
+<span class="w">            </span><span class="k">print</span><span class="o">*</span>
+<span class="w">            </span><span class="k">call </span><span class="n">plt</span><span class="p">%</span><span class="n">showfig</span><span class="p">(</span><span class="n">pyfile</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">source_name</span><span class="p">))</span>
 <span class="w">         </span><span class="k">endif</span>
 
-<span class="k">       case</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;gnuplot&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="k">       case</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;gnuplot&quot;</span><span class="p">)</span>
 
 <span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">script_name</span><span class="p">))</span><span class="k">then</span>
-<span class="k">            </span><span class="n">source_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">script_name</span><span class="w"></span>
+<span class="k">            </span><span class="n">source_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">script_name</span>
 <span class="w">         </span><span class="k">else</span>
-<span class="k">            </span><span class="n">source_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hex_plot.gp&quot;</span><span class="w"></span>
+<span class="k">            </span><span class="n">source_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;xy_plot.gp&quot;</span>
 <span class="w">         </span><span class="k">endif</span>
 
 <span class="k">         if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">set_terminal</span><span class="p">))</span><span class="k">then</span>
-<span class="k">            call </span><span class="n">gnu</span><span class="p">%</span><span class="k">options</span><span class="p">(</span><span class="s2">&quot;set term &quot;</span><span class="o">//</span><span class="n">set_terminal</span><span class="o">//</span><span class="s2">&quot;;&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="k">            call </span><span class="n">gnu</span><span class="p">%</span><span class="k">options</span><span class="p">(</span><span class="s2">&quot;set term &quot;</span><span class="o">//</span><span class="n">set_terminal</span><span class="o">//</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
 <span class="w">         </span><span class="k">else</span>
-<span class="k">            call </span><span class="n">gnu</span><span class="p">%</span><span class="k">options</span><span class="p">(</span><span class="s2">&quot;set term qt;&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="k">            call </span><span class="n">gnu</span><span class="p">%</span><span class="k">options</span><span class="p">(</span><span class="s2">&quot;set term qt;&quot;</span><span class="p">)</span>
 <span class="w">         </span><span class="k">endif</span>
 
 <span class="k">         if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">figure_name</span><span class="p">))</span><span class="k">then</span>
-<span class="k">            call </span><span class="n">gnu</span><span class="p">%</span><span class="k">options</span><span class="p">(</span><span class="s1">&#39;set output &quot;&#39;</span><span class="o">//</span><span class="n">figure_name</span><span class="o">//</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">            call </span><span class="n">gnu</span><span class="p">%</span><span class="k">options</span><span class="p">(</span><span class="s1">&#39;set output &quot;&#39;</span><span class="o">//</span><span class="n">figure_name</span><span class="o">//</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span>
 <span class="w">         </span><span class="k">endif</span>
 
 <span class="k">         call </span><span class="n">gnu</span><span class="p">%</span><span class="k">options</span><span class="p">(</span><span class="s2">&quot;set size ratio -1;&quot;</span><span class="p">)</span><span class="w"> </span><span class="c">! --&gt; axis equal</span>
 <span class="w">         </span><span class="k">call </span><span class="n">gnu</span><span class="p">%</span><span class="k">options</span><span class="p">(</span><span class="s2">&quot;unset grid&quot;</span><span class="p">)</span><span class="w"> </span><span class="c">! --&gt; grid off</span>
-<span class="w">         </span><span class="k">call </span><span class="n">gnu</span><span class="p">%</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">         </span><span class="k">call </span><span class="n">gnu</span><span class="p">%</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">         </span><span class="k">call </span><span class="n">gnu</span><span class="p">%</span><span class="n">filename</span><span class="p">(</span><span class="n">source_name</span><span class="p">)</span><span class="w"></span>
-<span class="w">         </span><span class="k">print</span><span class="o">*</span><span class="w"></span>
-<span class="w">         </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&gt; Gnuplot GUI popping up...&quot;</span><span class="w"></span>
-<span class="w">         </span><span class="k">print</span><span class="o">*</span><span class="w"></span>
-<span class="w">         </span><span class="k">call </span><span class="n">gnu</span><span class="p">%</span><span class="n">plot</span><span class="p">(</span><span class="w">                                        </span><span class="p">&amp;</span><span class="w"></span>
-<span class="w">            </span><span class="n">x1</span><span class="o">=</span><span class="n">Ax</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="o">=</span><span class="n">Ay</span><span class="p">,</span><span class="w">                                      </span><span class="p">&amp;</span><span class="w"></span>
-<span class="w">            </span><span class="n">ls1</span><span class="o">=</span><span class="s1">&#39;with points pt 7 ps 1 lc rgb &quot;#1F77B4&quot;&#39;</span><span class="p">,</span><span class="w">      </span><span class="p">&amp;</span><span class="w"></span>
-<span class="w">            </span><span class="n">x2</span><span class="o">=</span><span class="n">Bx</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="o">=</span><span class="n">By</span><span class="p">,</span><span class="w">                                      </span><span class="p">&amp;</span><span class="w"></span>
-<span class="w">            </span><span class="n">ls2</span><span class="o">=</span><span class="s1">&#39;with points pt 7 ps 1 lc rgb &quot;#FF7F0E&quot;&#39;</span><span class="w">       </span><span class="p">&amp;</span><span class="w"></span>
-<span class="w">            </span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">call </span><span class="n">gnu</span><span class="p">%</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="w">         </span><span class="k">call </span><span class="n">gnu</span><span class="p">%</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="w">         </span><span class="k">call </span><span class="n">gnu</span><span class="p">%</span><span class="n">filename</span><span class="p">(</span><span class="n">source_name</span><span class="p">)</span>
+<span class="w">         </span><span class="k">print</span><span class="o">*</span>
+<span class="w">         </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&gt; Gnuplot GUI popping up...&quot;</span>
+<span class="w">         </span><span class="k">print</span><span class="o">*</span>
+<span class="w">         </span><span class="k">call </span><span class="n">gnu</span><span class="p">%</span><span class="n">plot</span><span class="p">(</span><span class="w">                                        </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">x1</span><span class="o">=</span><span class="n">Ax</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="o">=</span><span class="n">Ay</span><span class="p">,</span><span class="w">                                      </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ls1</span><span class="o">=</span><span class="s1">&#39;with points pt 7 ps 1 lc rgb &quot;#734F96&quot;&#39;</span><span class="p">,</span><span class="w">      </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">x2</span><span class="o">=</span><span class="n">Bx</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="o">=</span><span class="n">By</span><span class="p">,</span><span class="w">                                      </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ls2</span><span class="o">=</span><span class="s1">&#39;with points pt 7 ps 1 lc rgb &quot;#F5D003&quot;&#39;</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="p">)</span>
 
 <span class="w">      </span><span class="k">end select</span>
 
-<span class="k">   end subroutine </span><span class="n">xy_plot</span><span class="w"></span>
+<span class="k">   end subroutine </span><span class="n">xy_plot</span>
 </pre></div>
 
     </section>
@@ -1060,12 +816,12 @@ implementation in a submodule of an interface in a parent module.
     </div> <!-- /container -->
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="col-xs-6 col-md-6"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2023 
+        <div class="row justify-content-between">
+          <div class="col"><p>HoneyTools was developed by Gabriele Bellomia<br>&copy; 2024 
 </p>
           </div>
-          <div class="col-xs-6 col-md-6">
-            <p class="text-right">
+          <div class="col">
+            <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
             </p>
@@ -1075,17 +831,12 @@ implementation in a submodule of an interface in a parent module.
       </div> <!-- /container -->
     </footer>
 
-    <!-- Bootstrap core JavaScript
-         ================================================== -->
-         <!-- Placed at the end of the document so the pages load faster -->
-    <!--
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        -->
-        <script src="../js/bootstrap.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
 
-        <!-- MathJax JavaScript
+    <!-- MathJax JavaScript
              ================================================== -->
              <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/x-mathjax-config">
