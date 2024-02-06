@@ -7,6 +7,7 @@
 [![docs](https://img.shields.io/github/actions/workflow/status/qcmplab/honeytools/docs.yaml?label=docs-gen&logo=Fortran&style=flat-square)](https://qcmplab.github.io/HoneyTools/)
 [![codecov](https://img.shields.io/codecov/c/github/qcmplab/honeytools?label=coverage&logo=codecov&style=flat-square)](https://codecov.io/gh/qcmplab/honeytools)
 [![codacy](https://img.shields.io/codacy/grade/dc72f36f44b74dcda8b942c9d9760d4f?logo=codacy&style=flat-square)](https://app.codacy.com/gh/QcmPlab/HoneyTools/dashboard?branch=master)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10622564.svg)](https://doi.org/10.5281/zenodo.10622564)
 
 `HoneyTools` provides a set of Fortran modules to easily deal with nontrivial honeycomb structures in real-space: generate the coordinates, compute all the distance shells, get direct access to logical masks for nearest and next-nearest neighbors (nth-order can be easily computed from the shell table). All this is primarily intended as a convenience to build tight-binding hamiltonians, but it can easily be exploited to work on any other lattice quantity, requiring real-space geometrical information.
 
@@ -137,10 +138,23 @@ Here some output from our `pyplot` backend:
 
 ## License
 
-© Gabriele Bellomia, 2022
+© Gabriele Bellomia, 2022-2024
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License (LGPL) as published by the Free Software Foundation, either version 3 of the License, or any later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU LGPL for more details.
 
 You should have received a copy of the GNU LGPL along with this program. If not, see [gnu.org/licenses](http://www.gnu.org/licenses/).
+
+If you use the software in academic work, please consider citing the associated DOI, as
+```bibtex
+@software{HoneyTools,
+  doi = {10.5281/ZENODO.10622563},
+  url = {https://zenodo.org/doi/10.5281/zenodo.10622563},
+  author = {Gabriele Bellomia},
+  title = {{HoneyTools}},
+  year = {2024},
+  publisher = {Zenodo},
+  license = {LGPL-3.0}
+}
+```
